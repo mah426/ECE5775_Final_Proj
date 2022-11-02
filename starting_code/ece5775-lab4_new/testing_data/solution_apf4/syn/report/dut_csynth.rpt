@@ -1,0 +1,298 @@
+
+
+================================================================
+== Vivado HLS Report for 'dut'
+================================================================
+* Date:           Fri Oct 28 23:21:24 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        bnn.prj
+* Solution:       solution3
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.47|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+----------+---------+----------+---------+
+    |       Latency      |      Interval      | Pipeline|
+    |   min   |    max   |   min   |    max   |   Type  |
+    +---------+----------+---------+----------+---------+
+    |  1832643|  49268959|  1832644|  49268960|   none  |
+    +---------+----------+---------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+--------------+---------+----------+---------+----------+---------+
+        |                         |              |       Latency      |      Interval      | Pipeline|
+        |         Instance        |    Module    |   min   |    max   |   min   |    max   |   Type  |
+        +-------------------------+--------------+---------+----------+---------+----------+---------+
+        |grp_dut_max_pool_fu_245  |dut_max_pool  |     6184|     44232|     6184|     44232|   none  |
+        |grp_dut_reshape_fu_263   |dut_reshape   |      256|       256|      256|       256|   none  |
+        |grp_dut_conv_fu_269      |dut_conv      |    32033|  23635009|    32033|  23635009|   none  |
+        |grp_dut_dense_fu_309     |dut_dense     |    33491|     33491|    33491|     33491|   none  |
+        |grp_dut_dense_1_fu_319   |dut_dense_1   |  1709313|   1709313|  1709313|   1709313|   none  |
+        |grp_dut_pad_fu_329       |dut_pad       |     6420|     83554|     6420|     83554|   none  |
+        +-------------------------+--------------+---------+----------+---------+----------+---------+
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  272|  272|        34|          -|          -|     8|    no    |
+        | + Loop 1.1  |   32|   32|         1|          -|          -|    32|    no    |
+        |- Loop 2     |   18|   18|         2|          -|          -|     9|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     63|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |       12|     44|    9088|  35998|
+|Memory           |       20|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    418|
+|Register         |        -|      -|     121|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       32|     44|    9209|  36479|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       11|     20|       8|     68|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+--------------+---------+-------+------+-------+
+    |         Instance        |    Module    | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-------------------------+--------------+---------+-------+------+-------+
+    |grp_dut_conv_fu_269      |dut_conv      |        2|     21|  5077|   5694|
+    |grp_dut_dense_fu_309     |dut_dense     |        1|      5|  1048|   1876|
+    |grp_dut_dense_1_fu_319   |dut_dense_1   |        9|      5|  1006|   1803|
+    |grp_dut_max_pool_fu_245  |dut_max_pool  |        0|      8|  1277|  21624|
+    |grp_dut_pad_fu_329       |dut_pad       |        0|      5|   423|    549|
+    |grp_dut_reshape_fu_263   |dut_reshape   |        0|      0|   257|   4452|
+    +-------------------------+--------------+---------+-------+------+-------+
+    |Total                    |              |       12|     44|  9088|  35998|
+    +-------------------------+--------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +------------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |      Memory      |       Module       | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +------------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |input_0_U         |dut_input_0         |        1|  0|   0|  1296|    1|     1|         1296|
+    |input_1_U         |dut_input_1         |        1|  0|   0|  1296|    1|     1|         1296|
+    |input_2_U         |dut_input_1         |        1|  0|   0|  1296|    1|     1|         1296|
+    |input_3_U         |dut_input_1         |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv1_0_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv1_1_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv1_2_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv1_3_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv2_0_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv2_1_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv2_2_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |mem_conv2_3_U     |dut_mem_conv1_0     |        1|  0|   0|  1296|    1|     1|         1296|
+    |threshold1_V_0_U  |dut_threshold1_V_0  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold1_V_1_U  |dut_threshold1_V_1  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold1_V_2_U  |dut_threshold1_V_2  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold1_V_3_U  |dut_threshold1_V_3  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold2_V_0_U  |dut_threshold2_V_0  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold2_V_1_U  |dut_threshold2_V_1  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold2_V_2_U  |dut_threshold2_V_2  |        1|  0|   0|  1296|    8|     1|        10368|
+    |threshold2_V_3_U  |dut_threshold2_V_2  |        1|  0|   0|  1296|    8|     1|        10368|
+    +------------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |Total             |                    |       20|  0|   0| 25920|   76|    20|        98496|
+    +------------------+--------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |i_2_fu_353_p2         |     +    |      0|  0|   4|           4|           1|
+    |i_3_fu_424_p2         |     +    |      0|  0|   4|           4|           1|
+    |j_fu_385_p2           |     +    |      0|  0|   6|           6|           1|
+    |tmp_7_fu_399_p2       |     +    |      0|  0|   8|           8|           8|
+    |ap_sig_143            |    and   |      0|  0|   1|           1|           1|
+    |ap_sig_164            |    and   |      0|  0|   1|           1|           1|
+    |exitcond1_fu_347_p2   |   icmp   |      0|  0|   2|           4|           5|
+    |exitcond_fu_379_p2    |   icmp   |      0|  0|   3|           6|           7|
+    |exitcond_i_fu_413_p2  |   icmp   |      0|  0|   2|           4|           4|
+    |phitmp_i_fu_430_p3    |  select  |      0|  0|  32|           1|          32|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      0|  0|  63|          39|          61|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Hi_assign_reg_210                     |   6|          2|    6|         12|
+    |ap_NS_fsm                             |  18|         23|    1|         23|
+    |grp_dut_conv_fu_269_I                 |   6|          3|    6|         18|
+    |grp_dut_conv_fu_269_L                 |   1|          3|    1|          3|
+    |grp_dut_conv_fu_269_M                 |   7|          3|    7|         21|
+    |grp_dut_conv_fu_269_N                 |   7|          3|    7|         21|
+    |grp_dut_conv_fu_269_input_0_q0        |   1|          3|    1|          3|
+    |grp_dut_conv_fu_269_input_1_q0        |   1|          3|    1|          3|
+    |grp_dut_conv_fu_269_input_2_q0        |   1|          3|    1|          3|
+    |grp_dut_conv_fu_269_input_3_q0        |   1|          3|    1|          3|
+    |grp_dut_conv_fu_269_threshold_0_V_q0  |   8|          3|    8|         24|
+    |grp_dut_conv_fu_269_threshold_1_V_q0  |   8|          3|    8|         24|
+    |grp_dut_conv_fu_269_threshold_2_V_q0  |   8|          3|    8|         24|
+    |grp_dut_conv_fu_269_threshold_3_V_q0  |   8|          3|    8|         24|
+    |grp_dut_max_pool_fu_245_I             |   6|          3|    6|         18|
+    |grp_dut_max_pool_fu_245_M             |   7|          3|    7|         21|
+    |grp_dut_max_pool_fu_245_input_0_q0    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_0_q1    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_1_q0    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_1_q1    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_2_q0    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_2_q1    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_3_q0    |   1|          3|    1|          3|
+    |grp_dut_max_pool_fu_245_input_3_q1    |   1|          3|    1|          3|
+    |grp_dut_pad_fu_329_I                  |   6|          3|    6|         18|
+    |grp_dut_pad_fu_329_M                  |   7|          3|    7|         21|
+    |grp_dut_pad_fu_329_input_0_q0         |   1|          3|    1|          3|
+    |grp_dut_pad_fu_329_input_1_q0         |   1|          3|    1|          3|
+    |grp_dut_pad_fu_329_input_2_q0         |   1|          3|    1|          3|
+    |grp_dut_pad_fu_329_input_3_q0         |   1|          3|    1|          3|
+    |i_reg_199                             |   4|          2|    4|          8|
+    |input_0_address0                      |  11|          3|   11|         33|
+    |input_0_ce0                           |   1|          3|    1|          3|
+    |max_id_V_reg_234                      |   4|          2|    4|          8|
+    |mem_conv1_0_address0                  |  22|         11|   11|        121|
+    |mem_conv1_0_address1                  |  11|          4|   11|         44|
+    |mem_conv1_0_ce0                       |   4|         11|    1|         11|
+    |mem_conv1_0_ce1                       |   1|          4|    1|          4|
+    |mem_conv1_0_d0                        |   1|          6|    1|          6|
+    |mem_conv1_0_d1                        |   1|          3|    1|          3|
+    |mem_conv1_0_we0                       |   1|          6|    1|          6|
+    |mem_conv1_0_we1                       |   1|          3|    1|          3|
+    |mem_conv1_1_address0                  |  11|          7|   11|         77|
+    |mem_conv1_1_address1                  |  11|          3|   11|         33|
+    |mem_conv1_1_ce0                       |   1|          7|    1|          7|
+    |mem_conv1_1_ce1                       |   1|          3|    1|          3|
+    |mem_conv1_1_d0                        |   1|          4|    1|          4|
+    |mem_conv1_1_we0                       |   1|          4|    1|          4|
+    |mem_conv1_1_we1                       |   1|          2|    1|          2|
+    |mem_conv1_2_address0                  |  11|          7|   11|         77|
+    |mem_conv1_2_address1                  |  11|          3|   11|         33|
+    |mem_conv1_2_ce0                       |   1|          7|    1|          7|
+    |mem_conv1_2_ce1                       |   1|          3|    1|          3|
+    |mem_conv1_2_d0                        |   1|          4|    1|          4|
+    |mem_conv1_2_we0                       |   1|          4|    1|          4|
+    |mem_conv1_2_we1                       |   1|          2|    1|          2|
+    |mem_conv1_3_address0                  |  11|          7|   11|         77|
+    |mem_conv1_3_address1                  |  11|          3|   11|         33|
+    |mem_conv1_3_ce0                       |   1|          7|    1|          7|
+    |mem_conv1_3_ce1                       |   1|          3|    1|          3|
+    |mem_conv1_3_d0                        |   1|          4|    1|          4|
+    |mem_conv1_3_we0                       |   1|          4|    1|          4|
+    |mem_conv1_3_we1                       |   1|          2|    1|          2|
+    |mem_conv2_0_address0                  |  22|          9|   11|         99|
+    |mem_conv2_0_address1                  |  11|          4|   11|         44|
+    |mem_conv2_0_ce0                       |   4|          9|    1|          9|
+    |mem_conv2_0_ce1                       |   1|          4|    1|          4|
+    |mem_conv2_0_d0                        |   1|          5|    1|          5|
+    |mem_conv2_0_we0                       |   1|          5|    1|          5|
+    |mem_conv2_0_we1                       |   1|          2|    1|          2|
+    |mem_conv2_1_address0                  |  11|          6|   11|         66|
+    |mem_conv2_1_address1                  |  11|          3|   11|         33|
+    |mem_conv2_1_ce0                       |   1|          6|    1|          6|
+    |mem_conv2_1_ce1                       |   1|          3|    1|          3|
+    |mem_conv2_1_d0                        |   1|          4|    1|          4|
+    |mem_conv2_1_we0                       |   1|          4|    1|          4|
+    |mem_conv2_1_we1                       |   1|          2|    1|          2|
+    |mem_conv2_2_address0                  |  11|          6|   11|         66|
+    |mem_conv2_2_address1                  |  11|          3|   11|         33|
+    |mem_conv2_2_ce0                       |   1|          6|    1|          6|
+    |mem_conv2_2_ce1                       |   1|          3|    1|          3|
+    |mem_conv2_2_d0                        |   1|          4|    1|          4|
+    |mem_conv2_2_we0                       |   1|          4|    1|          4|
+    |mem_conv2_2_we1                       |   1|          2|    1|          2|
+    |mem_conv2_3_address0                  |  11|          6|   11|         66|
+    |mem_conv2_3_address1                  |  11|          3|   11|         33|
+    |mem_conv2_3_ce0                       |   1|          6|    1|          6|
+    |mem_conv2_3_ce1                       |   1|          3|    1|          3|
+    |mem_conv2_3_d0                        |   1|          4|    1|          4|
+    |mem_conv2_3_we0                       |   1|          4|    1|          4|
+    |mem_conv2_3_we1                       |   1|          2|    1|          2|
+    |output_V_reg_221                      |  32|          2|   32|         64|
+    |strm_in_V_V_blk_n                     |   1|          2|    1|          2|
+    |strm_out_V_V_blk_n                    |   1|          2|    1|          2|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 418|        385|  373|       1550|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------+----+----+-----+-----------+
+    |                   Name                  | FF | LUT| Bits| Const Bits|
+    +-----------------------------------------+----+----+-----+-----------+
+    |Hi_assign_reg_210                        |   6|   0|    6|          0|
+    |ap_CS_fsm                                |  22|   0|   22|          0|
+    |ap_reg_grp_dut_conv_fu_269_ap_start      |   1|   0|    1|          0|
+    |ap_reg_grp_dut_dense_1_fu_319_ap_start   |   1|   0|    1|          0|
+    |ap_reg_grp_dut_dense_fu_309_ap_start     |   1|   0|    1|          0|
+    |ap_reg_grp_dut_max_pool_fu_245_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_dut_pad_fu_329_ap_start       |   1|   0|    1|          0|
+    |ap_reg_grp_dut_reshape_fu_263_ap_start   |   1|   0|    1|          0|
+    |i_2_reg_440                              |   4|   0|    4|          0|
+    |i_3_reg_476                              |   4|   0|    4|          0|
+    |i_reg_199                                |   4|   0|    4|          0|
+    |max_id_V_cast2_reg_463                   |   4|   0|   32|         28|
+    |max_id_V_reg_234                         |   4|   0|    4|          0|
+    |output_V_reg_221                         |  32|   0|   32|          0|
+    |tmp_V_1_reg_445                          |  32|   0|   32|          0|
+    |tmp_s_reg_450                            |   3|   0|    8|          5|
+    +-----------------------------------------+----+----+-----+-----------+
+    |Total                                    | 121|   0|  154|         33|
+    +-----------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+--------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------------+-----+-----+------------+--------------+--------------+
+|ap_clk               |  in |    1| ap_ctrl_hs |      dut     | return value |
+|ap_rst               |  in |    1| ap_ctrl_hs |      dut     | return value |
+|ap_start             |  in |    1| ap_ctrl_hs |      dut     | return value |
+|ap_done              | out |    1| ap_ctrl_hs |      dut     | return value |
+|ap_idle              | out |    1| ap_ctrl_hs |      dut     | return value |
+|ap_ready             | out |    1| ap_ctrl_hs |      dut     | return value |
+|strm_in_V_V_dout     |  in |   32|   ap_fifo  |  strm_in_V_V |    pointer   |
+|strm_in_V_V_empty_n  |  in |    1|   ap_fifo  |  strm_in_V_V |    pointer   |
+|strm_in_V_V_read     | out |    1|   ap_fifo  |  strm_in_V_V |    pointer   |
+|strm_out_V_V_din     | out |   32|   ap_fifo  | strm_out_V_V |    pointer   |
+|strm_out_V_V_full_n  |  in |    1|   ap_fifo  | strm_out_V_V |    pointer   |
+|strm_out_V_V_write   | out |    1|   ap_fifo  | strm_out_V_V |    pointer   |
++---------------------+-----+-----+------------+--------------+--------------+
+

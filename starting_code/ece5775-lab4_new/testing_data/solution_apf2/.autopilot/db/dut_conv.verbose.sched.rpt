@@ -1,0 +1,2997 @@
+
+
+================================================================
+== Vivado HLS Report for 'dut_conv'
+================================================================
+* Date:           Fri Oct 28 23:06:57 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        bnn.prj
+* Solution:       solution3
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.47|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+----------+-------+----------+---------+
+    |      Latency     |     Interval     | Pipeline|
+    |  min  |    max   |  min  |    max   |   Type  |
+    +-------+----------+-------+----------+---------+
+    |  31009|  23626817|  31009|  23626817|   none  |
+    +-------+----------+-------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+-------+----------+---------------+-----------+-----------+---------+----------+
+        |               |      Latency     |   Iteration   |  Initiation Interval  |   Trip  |          |
+        |   Loop Name   |  min  |    max   |    Latency    |  achieved |   target  |  Count  | Pipelined|
+        +---------------+-------+----------+---------------+-----------+-----------+---------+----------+
+        |- LOOP_N       |  31008|  23626816| 1938 ~ 738338 |          -|          -| 16 ~ 32 |    no    |
+        | + LOOP_X      |   1936|    738336|  242 ~ 46146  |          -|          -|  8 ~ 16 |    no    |
+        |  ++ LOOP_Y    |    240|     46144|   30 ~ 2884   |          -|          -|  8 ~ 16 |    no    |
+        |   +++ LOOP_M  |     10|      2864|    10 ~ 179   |          -|          -|  1 ~ 16 |    no    |
+        +---------------+-------+----------+---------------+-----------+-----------+---------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 202
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (tmp_s)
+3 --> 
+	4  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+	5  / (!exitcond3)
+	3  / (exitcond3)
+5 --> 
+	6  / true
+6 --> 
+	186  / (!tmp_24)
+	7  / (tmp_24 & sel_tmp1_i)
+	25  / (tmp_24 & !sel_tmp1_i)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / (sel_tmp1_i1)
+	45  / (!sel_tmp1_i1)
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / (sel_tmp1_i2)
+	65  / (!sel_tmp1_i2)
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / (sel_tmp1_i3)
+	84  / (!sel_tmp1_i3)
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / (sel_tmp1_i4)
+	104  / (!sel_tmp1_i4)
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	104  / true
+104 --> 
+	105  / (sel_tmp1_i5)
+	124  / (!sel_tmp1_i5)
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	117  / true
+117 --> 
+	118  / true
+118 --> 
+	119  / true
+119 --> 
+	120  / true
+120 --> 
+	121  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / (sel_tmp1_i6)
+	143  / (!sel_tmp1_i6)
+125 --> 
+	126  / true
+126 --> 
+	127  / true
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	131  / true
+131 --> 
+	132  / true
+132 --> 
+	133  / true
+133 --> 
+	134  / true
+134 --> 
+	135  / true
+135 --> 
+	136  / true
+136 --> 
+	137  / true
+137 --> 
+	138  / true
+138 --> 
+	139  / true
+139 --> 
+	140  / true
+140 --> 
+	141  / true
+141 --> 
+	142  / true
+142 --> 
+	143  / true
+143 --> 
+	144  / (sel_tmp1_i7)
+	163  / (!sel_tmp1_i7)
+144 --> 
+	145  / true
+145 --> 
+	146  / true
+146 --> 
+	147  / true
+147 --> 
+	148  / true
+148 --> 
+	149  / true
+149 --> 
+	150  / true
+150 --> 
+	151  / true
+151 --> 
+	152  / true
+152 --> 
+	153  / true
+153 --> 
+	154  / true
+154 --> 
+	155  / true
+155 --> 
+	156  / true
+156 --> 
+	157  / true
+157 --> 
+	158  / true
+158 --> 
+	159  / true
+159 --> 
+	160  / true
+160 --> 
+	161  / true
+161 --> 
+	162  / true
+162 --> 
+	163  / true
+163 --> 
+	164  / (sel_tmp1_i8)
+	185  / (!sel_tmp1_i8)
+164 --> 
+	165  / true
+165 --> 
+	166  / true
+166 --> 
+	167  / true
+167 --> 
+	168  / true
+168 --> 
+	169  / true
+169 --> 
+	170  / true
+170 --> 
+	171  / true
+171 --> 
+	172  / true
+172 --> 
+	173  / true
+173 --> 
+	174  / true
+174 --> 
+	175  / true
+175 --> 
+	176  / true
+176 --> 
+	177  / true
+177 --> 
+	178  / true
+178 --> 
+	179  / true
+179 --> 
+	180  / true
+180 --> 
+	181  / true
+181 --> 
+	182  / true
+182 --> 
+	183  / (!L_read)
+	184  / (L_read)
+183 --> 
+	185  / true
+184 --> 
+	185  / true
+185 --> 
+	6  / true
+186 --> 
+	187  / true
+187 --> 
+	188  / true
+188 --> 
+	189  / true
+189 --> 
+	190  / true
+190 --> 
+	191  / true
+191 --> 
+	192  / true
+192 --> 
+	193  / true
+193 --> 
+	194  / true
+194 --> 
+	195  / true
+195 --> 
+	196  / true
+196 --> 
+	197  / true
+197 --> 
+	198  / true
+198 --> 
+	199  / true
+199 --> 
+	200  / true
+200 --> 
+	201  / true
+201 --> 
+	202  / true
+202 --> 
+	4  / true
+* FSM state operations: 
+
+ <State 1>: 2.76ns
+ST_1: L_read [1/1] 1.04ns
+:0  %L_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %L)
+
+ST_1: I_read [1/1] 1.04ns
+:1  %I_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %I)
+
+ST_1: N_read [1/1] 1.04ns
+:2  %N_read = call i7 @_ssdm_op_Read.ap_auto.i7(i7 %N)
+
+ST_1: M_read [1/1] 1.04ns
+:3  %M_read = call i7 @_ssdm_op_Read.ap_auto.i7(i7 %M)
+
+ST_1: tmp_25 [1/1] 0.00ns
+:4  %tmp_25 = trunc i6 %I_read to i5
+
+ST_1: O [1/1] 1.72ns
+:5  %O = add i5 -2, %tmp_25
+
+ST_1: O_cast123_cast [1/1] 0.00ns
+:6  %O_cast123_cast = zext i5 %O to i13
+
+ST_1: O_cast122_cast [1/1] 0.00ns
+:7  %O_cast122_cast = zext i5 %O to i9
+
+ST_1: tmp_26 [1/1] 0.00ns
+:8  %tmp_26 = trunc i7 %M_read to i6
+
+ST_1: I_cast4 [1/1] 0.00ns
+:9  %I_cast4 = zext i6 %I_read to i9
+
+ST_1: N_cast [1/1] 0.00ns
+:10  %N_cast = zext i7 %N_read to i9
+
+ST_1: tmp_i [1/1] 1.72ns
+:11  %tmp_i = add i5 -1, %tmp_25
+
+ST_1: I_cast6 [1/1] 0.00ns
+:12  %I_cast6 = zext i6 %I_read to i13
+
+ST_1: stg_216 [1/1] 1.57ns
+:13  br label %1
+
+
+ <State 2>: 6.38ns
+ST_2: n [1/1] 0.00ns
+:0  %n = phi i6 [ 0, %0 ], [ %n_2, %29 ]
+
+ST_2: n_cast [1/1] 0.00ns
+:1  %n_cast = zext i6 %n to i7
+
+ST_2: tmp_s [1/1] 1.97ns
+:2  %tmp_s = icmp slt i7 %n_cast, %N_read
+
+ST_2: n_2 [1/1] 1.72ns
+:3  %n_2 = add i6 %n, 1
+
+ST_2: stg_221 [1/1] 0.00ns
+:4  br i1 %tmp_s, label %2, label %30
+
+ST_2: n_cast1 [1/1] 0.00ns
+:0  %n_cast1 = zext i6 %n to i9
+
+ST_2: empty [1/1] 0.00ns
+:1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 32, i64 0)
+
+ST_2: stg_224 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str8) nounwind
+
+ST_2: tmp [1/1] 0.00ns
+:3  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str8)
+
+ST_2: stg_226 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str3) nounwind
+
+ST_2: tmp_21 [1/1] 6.38ns
+:5  %tmp_21 = mul i9 %n_cast1, %O_cast122_cast
+
+ST_2: stg_228 [1/1] 1.57ns
+:6  br label %3
+
+ST_2: stg_229 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 3>: 3.63ns
+ST_3: x_assign [1/1] 0.00ns
+:0  %x_assign = phi i5 [ 0, %2 ], [ %x, %28 ]
+
+ST_3: x_cast [1/1] 0.00ns
+:1  %x_cast = zext i5 %x_assign to i13
+
+ST_3: empty_26 [1/1] 0.00ns
+:2  %empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 16, i64 0)
+
+ST_3: exitcond [1/1] 1.91ns
+:3  %exitcond = icmp eq i5 %x_assign, %O
+
+ST_3: x [1/1] 1.72ns
+:4  %x = add i5 %x_assign, 1
+
+ST_3: stg_235 [1/1] 0.00ns
+:5  br i1 %exitcond, label %29, label %4
+
+ST_3: stg_236 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str9) nounwind
+
+ST_3: tmp_22 [1/1] 0.00ns
+:1  %tmp_22 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str9)
+
+ST_3: tmp_51_1_cast1 [1/1] 0.00ns
+:2  %tmp_51_1_cast1 = zext i5 %x to i13
+
+ST_3: x_assign_2 [1/1] 1.72ns
+:3  %x_assign_2 = add i5 %x_assign, 2
+
+ST_3: tmp_51_2_cast1 [1/1] 0.00ns
+:4  %tmp_51_2_cast1 = zext i5 %x_assign_2 to i13
+
+ST_3: notlhs_i [1/1] 1.91ns
+:5  %notlhs_i = icmp ugt i5 %tmp_i, %x_assign
+
+ST_3: sel_tmp_i [1/1] 1.91ns
+:6  %sel_tmp_i = icmp ne i5 %x_assign, 0
+
+ST_3: notlhs_i3 [1/1] 1.91ns
+:7  %notlhs_i3 = icmp ugt i5 %tmp_i, %x
+
+ST_3: sel_tmp_i3 [1/1] 1.91ns
+:8  %sel_tmp_i3 = icmp ne i5 %x, 0
+
+ST_3: notlhs_i6 [1/1] 1.91ns
+:9  %notlhs_i6 = icmp ugt i5 %tmp_i, %x_assign_2
+
+ST_3: sel_tmp_i6 [1/1] 1.91ns
+:10  %sel_tmp_i6 = icmp ne i5 %x_assign_2, 0
+
+ST_3: stg_247 [1/1] 1.57ns
+:11  br label %5
+
+ST_3: empty_31 [1/1] 0.00ns
+:0  %empty_31 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str8, i32 %tmp)
+
+ST_3: stg_249 [1/1] 0.00ns
+:1  br label %1
+
+
+ <State 4>: 8.22ns
+ST_4: y_assign [1/1] 0.00ns
+:0  %y_assign = phi i5 [ 0, %4 ], [ %y, %27 ]
+
+ST_4: y_cast [1/1] 0.00ns
+:1  %y_cast = zext i5 %y_assign to i9
+
+ST_4: exitcond3 [1/1] 1.91ns
+:2  %exitcond3 = icmp eq i5 %y_assign, %O
+
+ST_4: empty_27 [1/1] 0.00ns
+:3  %empty_27 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 16, i64 0)
+
+ST_4: y [1/1] 1.72ns
+:4  %y = add i5 %y_assign, 1
+
+ST_4: stg_255 [1/1] 0.00ns
+:5  br i1 %exitcond3, label %28, label %6
+
+ST_4: tmp4 [1/1] 1.84ns
+:2  %tmp4 = add i9 %y_cast, %tmp_21
+
+ST_4: tmp4_cast_cast [1/1] 0.00ns
+:3  %tmp4_cast_cast = zext i9 %tmp4 to i13
+
+ST_4: tmp5 [1/1] 6.38ns
+:4  %tmp5 = mul i13 %tmp4_cast_cast, %O_cast123_cast
+
+ST_4: y_assign_2 [1/1] 1.72ns
+:6  %y_assign_2 = add i5 %y_assign, 2
+
+ST_4: notrhs_i [1/1] 1.91ns
+:7  %notrhs_i = icmp ne i5 %y_assign, 0
+
+ST_4: tmp_5_i [1/1] 1.91ns
+:8  %tmp_5_i = icmp ugt i5 %tmp_i, %y_assign
+
+ST_4: notrhs_i1 [1/1] 1.91ns
+:12  %notrhs_i1 = icmp ne i5 %y, 0
+
+ST_4: tmp_5_i1 [1/1] 1.91ns
+:13  %tmp_5_i1 = icmp ugt i5 %tmp_i, %y
+
+ST_4: notrhs_i2 [1/1] 1.91ns
+:17  %notrhs_i2 = icmp ne i5 %y_assign_2, 0
+
+ST_4: tmp_5_i2 [1/1] 1.91ns
+:18  %tmp_5_i2 = icmp ugt i5 %tmp_i, %y_assign_2
+
+ST_4: empty_30 [1/1] 0.00ns
+:0  %empty_30 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str9, i32 %tmp_22)
+
+ST_4: stg_267 [1/1] 0.00ns
+:1  br label %3
+
+
+ <State 5>: 1.96ns
+ST_5: stg_268 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str10) nounwind
+
+ST_5: tmp_23 [1/1] 0.00ns
+:1  %tmp_23 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str10)
+
+ST_5: o_index [1/1] 1.96ns
+:5  %o_index = add i13 %tmp5, %x_cast
+
+ST_5: tmp14 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i)
+:9  %tmp14 = and i1 %notrhs_i, %notlhs_i
+
+ST_5: tmp15 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i)
+:10  %tmp15 = and i1 %tmp_5_i, %sel_tmp_i
+
+ST_5: sel_tmp1_i [1/1] 1.37ns (out node of the LUT)
+:11  %sel_tmp1_i = and i1 %tmp15, %tmp14
+
+ST_5: tmp16 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i1)
+:14  %tmp16 = and i1 %notrhs_i1, %notlhs_i
+
+ST_5: tmp17 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i1)
+:15  %tmp17 = and i1 %tmp_5_i1, %sel_tmp_i
+
+ST_5: sel_tmp1_i1 [1/1] 1.37ns (out node of the LUT)
+:16  %sel_tmp1_i1 = and i1 %tmp17, %tmp16
+
+ST_5: tmp19 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i2)
+:19  %tmp19 = and i1 %notrhs_i2, %notlhs_i
+
+ST_5: tmp20 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i2)
+:20  %tmp20 = and i1 %tmp_5_i2, %sel_tmp_i
+
+ST_5: sel_tmp1_i2 [1/1] 1.37ns (out node of the LUT)
+:21  %sel_tmp1_i2 = and i1 %tmp20, %tmp19
+
+ST_5: tmp22 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i3)
+:22  %tmp22 = and i1 %notrhs_i, %notlhs_i3
+
+ST_5: tmp23 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i3)
+:23  %tmp23 = and i1 %tmp_5_i, %sel_tmp_i3
+
+ST_5: sel_tmp1_i3 [1/1] 1.37ns (out node of the LUT)
+:24  %sel_tmp1_i3 = and i1 %tmp23, %tmp22
+
+ST_5: tmp24 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i4)
+:25  %tmp24 = and i1 %notrhs_i1, %notlhs_i3
+
+ST_5: tmp25 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i4)
+:26  %tmp25 = and i1 %tmp_5_i1, %sel_tmp_i3
+
+ST_5: sel_tmp1_i4 [1/1] 1.37ns (out node of the LUT)
+:27  %sel_tmp1_i4 = and i1 %tmp25, %tmp24
+
+ST_5: tmp27 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i5)
+:28  %tmp27 = and i1 %notrhs_i2, %notlhs_i3
+
+ST_5: tmp28 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i5)
+:29  %tmp28 = and i1 %tmp_5_i2, %sel_tmp_i3
+
+ST_5: sel_tmp1_i5 [1/1] 1.37ns (out node of the LUT)
+:30  %sel_tmp1_i5 = and i1 %tmp28, %tmp27
+
+ST_5: tmp30 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i6)
+:31  %tmp30 = and i1 %notrhs_i, %notlhs_i6
+
+ST_5: tmp31 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i6)
+:32  %tmp31 = and i1 %tmp_5_i, %sel_tmp_i6
+
+ST_5: sel_tmp1_i6 [1/1] 1.37ns (out node of the LUT)
+:33  %sel_tmp1_i6 = and i1 %tmp31, %tmp30
+
+ST_5: tmp32 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i7)
+:34  %tmp32 = and i1 %notrhs_i1, %notlhs_i6
+
+ST_5: tmp33 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i7)
+:35  %tmp33 = and i1 %tmp_5_i1, %sel_tmp_i6
+
+ST_5: sel_tmp1_i7 [1/1] 1.37ns (out node of the LUT)
+:36  %sel_tmp1_i7 = and i1 %tmp33, %tmp32
+
+ST_5: tmp35 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i8)
+:37  %tmp35 = and i1 %notrhs_i2, %notlhs_i6
+
+ST_5: tmp36 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1_i8)
+:38  %tmp36 = and i1 %tmp_5_i2, %sel_tmp_i6
+
+ST_5: sel_tmp1_i8 [1/1] 1.37ns (out node of the LUT)
+:39  %sel_tmp1_i8 = and i1 %tmp36, %tmp35
+
+ST_5: stg_298 [1/1] 1.57ns
+:40  br label %7
+
+
+ <State 6>: 8.22ns
+ST_6: sum [1/1] 0.00ns
+:0  %sum = phi i32 [ 0, %6 ], [ %sum_1, %._crit_edge.2.2 ]
+
+ST_6: m [1/1] 0.00ns
+:1  %m = phi i5 [ 0, %6 ], [ %m_4, %._crit_edge.2.2 ]
+
+ST_6: phi_mul [1/1] 0.00ns
+:2  %phi_mul = phi i9 [ 0, %6 ], [ %next_mul, %._crit_edge.2.2 ]
+
+ST_6: phi_mul1 [1/1] 0.00ns
+:3  %phi_mul1 = phi i9 [ 0, %6 ], [ %next_mul2, %._crit_edge.2.2 ]
+
+ST_6: m_cast [1/1] 0.00ns
+:4  %m_cast = zext i5 %m to i6
+
+ST_6: tmp_24 [1/1] 1.94ns
+:5  %tmp_24 = icmp slt i6 %m_cast, %tmp_26
+
+ST_6: empty_28 [1/1] 0.00ns
+:6  %empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 16, i64 0)
+
+ST_6: m_4 [1/1] 1.72ns
+:7  %m_4 = add i5 %m, 1
+
+ST_6: stg_307 [1/1] 0.00ns
+:8  br i1 %tmp_24, label %8, label %_ifconv18
+
+ST_6: stg_308 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str11) nounwind
+
+ST_6: next_mul [1/1] 1.84ns
+:1  %next_mul = add i9 %phi_mul, %I_cast4
+
+ST_6: next_mul2 [1/1] 1.84ns
+:2  %next_mul2 = add i9 %phi_mul1, %N_cast
+
+ST_6: tmp_27 [1/1] 1.84ns
+:3  %tmp_27 = add i9 %n_cast1, %phi_mul1
+
+ST_6: tmp_34_cast1 [1/1] 0.00ns
+:4  %tmp_34_cast1 = zext i9 %tmp_27 to i13
+
+ST_6: p_shl [1/1] 0.00ns
+:5  %p_shl = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_27, i3 0)
+
+ST_6: p_shl_cast [1/1] 0.00ns
+:6  %p_shl_cast = zext i12 %p_shl to i13
+
+ST_6: tmp_28 [1/1] 1.84ns
+:7  %tmp_28 = add i13 %p_shl_cast, %tmp_34_cast1
+
+ST_6: stg_316 [1/1] 1.57ns
+:8  br i1 %sel_tmp1_i, label %10, label %._crit_edge.0.0
+
+ST_6: tmp6 [1/1] 1.84ns
+:0  %tmp6 = add i9 %phi_mul, %y_cast
+
+ST_6: tmp6_cast [1/1] 0.00ns
+:1  %tmp6_cast = zext i9 %tmp6 to i13
+
+ST_6: tmp7 [1/1] 6.38ns
+:2  %tmp7 = mul i13 %I_cast6, %tmp6_cast
+
+ST_6: newIndex2 [17/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+ST_6: tmp_29 [1/1] 2.18ns
+_ifconv18:4  %tmp_29 = icmp ult i13 %o_index, 2592
+
+
+ <State 7>: 5.62ns
+ST_7: i_index [1/1] 1.96ns
+:3  %i_index = add i13 %tmp7, %x_cast
+
+ST_7: newIndex5 [17/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+ST_7: tmp_32 [1/1] 2.18ns
+:8  %tmp_32 = icmp ult i13 %i_index, 2592
+
+
+ <State 8>: 3.66ns
+ST_8: newIndex5 [16/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 9>: 3.66ns
+ST_9: newIndex5 [15/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 10>: 3.66ns
+ST_10: newIndex5 [14/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 11>: 3.66ns
+ST_11: newIndex5 [13/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 12>: 3.66ns
+ST_12: newIndex5 [12/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 13>: 3.66ns
+ST_13: newIndex5 [11/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 14>: 3.66ns
+ST_14: newIndex5 [10/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 15>: 3.66ns
+ST_15: newIndex5 [9/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 16>: 3.66ns
+ST_16: newIndex5 [8/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 17>: 3.66ns
+ST_17: newIndex5 [7/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 18>: 3.66ns
+ST_18: newIndex5 [6/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 19>: 3.66ns
+ST_19: newIndex5 [5/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 20>: 3.66ns
+ST_20: newIndex5 [4/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 21>: 3.66ns
+ST_21: newIndex5 [3/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 22>: 3.66ns
+ST_22: newIndex5 [2/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+
+ <State 23>: 6.37ns
+ST_23: newIndex5 [1/17] 3.66ns
+:4  %newIndex5 = urem i13 %i_index, 2592
+
+ST_23: newIndex6 [1/1] 0.00ns
+:5  %newIndex6 = zext i13 %newIndex5 to i64
+
+ST_23: input_0_addr [1/1] 0.00ns
+:6  %input_0_addr = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex6
+
+ST_23: input_1_addr [1/1] 0.00ns
+:7  %input_1_addr = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex6
+
+ST_23: input_0_load [2/2] 2.71ns
+:9  %input_0_load = load i1* %input_0_addr, align 1
+
+ST_23: input_1_load [2/2] 2.71ns
+:10  %input_1_load = load i1* %input_1_addr, align 1
+
+
+ <State 24>: 4.08ns
+ST_24: input_0_load [1/2] 2.71ns
+:9  %input_0_load = load i1* %input_0_addr, align 1
+
+ST_24: input_1_load [1/2] 2.71ns
+:10  %input_1_load = load i1* %input_1_addr, align 1
+
+ST_24: input_load_1_0_0_phi [1/1] 1.37ns
+:11  %input_load_1_0_0_phi = select i1 %tmp_32, i1 %input_0_load, i1 %input_1_load
+
+ST_24: tmp_33 [1/1] 0.00ns
+:12  %tmp_33 = zext i13 %tmp_28 to i64
+
+ST_24: stg_350 [1/1] 0.00ns
+:13  br i1 %L_read, label %_ifconv1, label %_ifconv
+
+ST_24: w_conv1_addr [1/1] 0.00ns
+_ifconv:0  %w_conv1_addr = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_33
+
+ST_24: w_conv1_load [2/2] 2.39ns
+_ifconv:1  %w_conv1_load = load i1* %w_conv1_addr, align 1
+
+ST_24: w_conv2_addr [1/1] 0.00ns
+_ifconv1:0  %w_conv2_addr = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_33
+
+ST_24: w_conv2_load [2/2] 2.39ns
+_ifconv1:1  %w_conv2_load = load i1* %w_conv2_addr, align 1
+
+
+ <State 25>: 8.47ns
+ST_25: w_conv1_load [1/2] 2.39ns
+_ifconv:1  %w_conv1_load = load i1* %w_conv1_addr, align 1
+
+ST_25: stg_356 [1/1] 1.57ns
+_ifconv:2  br label %9
+
+ST_25: w_conv2_load [1/2] 2.39ns
+_ifconv1:1  %w_conv2_load = load i1* %w_conv2_addr, align 1
+
+ST_25: stg_358 [1/1] 1.57ns
+_ifconv1:2  br label %9
+
+ST_25: w_conv1_load_pn [1/1] 0.00ns (grouped into LUT with out node p_pn_in)
+:0  %w_conv1_load_pn = phi i1 [ %w_conv1_load, %_ifconv ], [ %w_conv2_load, %_ifconv1 ]
+
+ST_25: p_pn_in_in [1/1] 0.00ns (grouped into LUT with out node p_pn_in)
+:1  %p_pn_in_in = xor i1 %w_conv1_load_pn, %input_load_1_0_0_phi
+
+ST_25: p_pn_in [1/1] 1.37ns (out node of the LUT)
+:2  %p_pn_in = xor i1 %p_pn_in_in, true
+
+ST_25: stg_362 [1/1] 1.57ns
+:3  br label %._crit_edge.0.0
+
+ST_25: one_out_3 [1/1] 0.00ns
+._crit_edge.0.0:0  %one_out_3 = phi i1 [ %p_pn_in, %9 ], [ false, %8 ]
+
+ST_25: mac_num_2 [1/1] 0.00ns
+._crit_edge.0.0:1  %mac_num_2 = phi i1 [ true, %9 ], [ false, %8 ]
+
+ST_25: one_out_3_cast [1/1] 0.00ns
+._crit_edge.0.0:2  %one_out_3_cast = zext i1 %one_out_3 to i2
+
+ST_25: mac_num_2_cast [1/1] 0.00ns
+._crit_edge.0.0:3  %mac_num_2_cast = zext i1 %mac_num_2 to i2
+
+ST_25: stg_367 [1/1] 1.57ns
+._crit_edge.0.0:4  br i1 %sel_tmp1_i1, label %12, label %._crit_edge.0.1
+
+ST_25: tmp18 [1/1] 1.37ns
+:0  %tmp18 = add i9 %phi_mul, 1
+
+ST_25: tmp6_0_1 [1/1] 1.37ns
+:1  %tmp6_0_1 = add i9 %y_cast, %tmp18
+
+
+ <State 26>: 6.38ns
+ST_26: tmp6_0_1_cast [1/1] 0.00ns
+:2  %tmp6_0_1_cast = zext i9 %tmp6_0_1 to i13
+
+ST_26: tmp7_0_1 [1/1] 6.38ns
+:3  %tmp7_0_1 = mul i13 %I_cast6, %tmp6_0_1_cast
+
+
+ <State 27>: 5.62ns
+ST_27: i_index_0_1 [1/1] 1.96ns
+:4  %i_index_0_1 = add i13 %tmp7_0_1, %x_cast
+
+ST_27: newIndex1 [17/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+ST_27: tmp_34 [1/1] 2.18ns
+:10  %tmp_34 = icmp ult i13 %i_index_0_1, 2592
+
+
+ <State 28>: 3.66ns
+ST_28: newIndex1 [16/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 29>: 3.66ns
+ST_29: newIndex1 [15/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 30>: 3.66ns
+ST_30: newIndex1 [14/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 31>: 3.66ns
+ST_31: newIndex1 [13/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 32>: 3.66ns
+ST_32: newIndex1 [12/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 33>: 3.66ns
+ST_33: newIndex1 [11/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 34>: 3.66ns
+ST_34: newIndex1 [10/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 35>: 3.66ns
+ST_35: newIndex1 [9/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 36>: 3.66ns
+ST_36: newIndex1 [8/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 37>: 3.66ns
+ST_37: newIndex1 [7/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 38>: 3.66ns
+ST_38: newIndex1 [6/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 39>: 3.66ns
+ST_39: newIndex1 [5/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 40>: 3.66ns
+ST_40: newIndex1 [4/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 41>: 3.66ns
+ST_41: newIndex1 [3/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 42>: 3.66ns
+ST_42: newIndex1 [2/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+
+ <State 43>: 6.37ns
+ST_43: newIndex1 [1/17] 3.66ns
+:6  %newIndex1 = urem i13 %i_index_0_1, 2592
+
+ST_43: newIndex7 [1/1] 0.00ns
+:7  %newIndex7 = zext i13 %newIndex1 to i64
+
+ST_43: input_0_addr_515 [1/1] 0.00ns
+:8  %input_0_addr_515 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex7
+
+ST_43: input_1_addr_4 [1/1] 0.00ns
+:9  %input_1_addr_4 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex7
+
+ST_43: input_0_load_515 [2/2] 2.71ns
+:11  %input_0_load_515 = load i1* %input_0_addr_515, align 1
+
+ST_43: input_1_load_4 [2/2] 2.71ns
+:12  %input_1_load_4 = load i1* %input_1_addr_4, align 1
+
+
+ <State 44>: 4.35ns
+ST_44: w_index_0_1 [1/1] 1.96ns
+:5  %w_index_0_1 = add i13 %tmp_28, 3
+
+ST_44: input_0_load_515 [1/2] 2.71ns
+:11  %input_0_load_515 = load i1* %input_0_addr_515, align 1
+
+ST_44: input_1_load_4 [1/2] 2.71ns
+:12  %input_1_load_4 = load i1* %input_1_addr_4, align 1
+
+ST_44: input_load_1_0_1_phi [1/1] 1.37ns
+:13  %input_load_1_0_1_phi = select i1 %tmp_34, i1 %input_0_load_515, i1 %input_1_load_4
+
+ST_44: tmp_60_0_1 [1/1] 0.00ns
+:14  %tmp_60_0_1 = zext i13 %w_index_0_1 to i64
+
+ST_44: stg_401 [1/1] 0.00ns
+:15  br i1 %L_read, label %_ifconv3, label %_ifconv2
+
+ST_44: w_conv1_addr_1 [1/1] 0.00ns
+_ifconv2:0  %w_conv1_addr_1 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_0_1
+
+ST_44: w_conv1_load_1 [2/2] 2.39ns
+_ifconv2:1  %w_conv1_load_1 = load i1* %w_conv1_addr_1, align 1
+
+ST_44: w_conv2_addr_1 [1/1] 0.00ns
+_ifconv3:0  %w_conv2_addr_1 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_0_1
+
+ST_44: w_conv2_load_1 [2/2] 2.39ns
+_ifconv3:1  %w_conv2_load_1 = load i1* %w_conv2_addr_1, align 1
+
+
+ <State 45>: 8.47ns
+ST_45: w_conv1_load_1 [1/2] 2.39ns
+_ifconv2:1  %w_conv1_load_1 = load i1* %w_conv1_addr_1, align 1
+
+ST_45: stg_407 [1/1] 1.57ns
+_ifconv2:2  br label %11
+
+ST_45: w_conv2_load_1 [1/2] 2.39ns
+_ifconv3:1  %w_conv2_load_1 = load i1* %w_conv2_addr_1, align 1
+
+ST_45: stg_409 [1/1] 1.57ns
+_ifconv3:2  br label %11
+
+ST_45: w_conv1_load_1_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_1)
+:0  %w_conv1_load_1_pn = phi i1 [ %w_conv1_load_1, %_ifconv2 ], [ %w_conv2_load_1, %_ifconv3 ]
+
+ST_45: p_pn_in_in_0_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_1)
+:1  %p_pn_in_in_0_1 = xor i1 %w_conv1_load_1_pn, %input_load_1_0_1_phi
+
+ST_45: p_pn_in_0_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_1)
+:2  %p_pn_in_0_1 = xor i1 %p_pn_in_in_0_1, true
+
+ST_45: p_pn_0_1_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_1)
+:3  %p_pn_0_1_cast = zext i1 %p_pn_in_0_1 to i2
+
+ST_45: one_out_2_0_1 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_0_1 = add i2 %one_out_3_cast, %p_pn_0_1_cast
+
+ST_45: mac_num_3_0_1 [1/1] 1.37ns
+:5  %mac_num_3_0_1 = select i1 %mac_num_2, i2 -2, i2 1
+
+ST_45: stg_416 [1/1] 1.57ns
+:6  br label %._crit_edge.0.1
+
+ST_45: one_out_3_0_1 [1/1] 0.00ns
+._crit_edge.0.1:0  %one_out_3_0_1 = phi i2 [ %one_out_2_0_1, %11 ], [ %one_out_3_cast, %._crit_edge.0.0 ]
+
+ST_45: mac_num_2_0_1 [1/1] 0.00ns
+._crit_edge.0.1:1  %mac_num_2_0_1 = phi i2 [ %mac_num_3_0_1, %11 ], [ %mac_num_2_cast, %._crit_edge.0.0 ]
+
+ST_45: stg_419 [1/1] 1.57ns
+._crit_edge.0.1:2  br i1 %sel_tmp1_i2, label %14, label %._crit_edge.0.2
+
+ST_45: tmp21 [1/1] 1.37ns
+:0  %tmp21 = add i9 %phi_mul, 2
+
+ST_45: tmp6_0_2 [1/1] 1.37ns
+:1  %tmp6_0_2 = add i9 %y_cast, %tmp21
+
+
+ <State 46>: 8.34ns
+ST_46: tmp6_0_2_cast [1/1] 0.00ns
+:2  %tmp6_0_2_cast = zext i9 %tmp6_0_2 to i13
+
+ST_46: tmp7_0_2 [1/1] 6.38ns
+:3  %tmp7_0_2 = mul i13 %I_cast6, %tmp6_0_2_cast
+
+ST_46: i_index_0_2 [1/1] 1.96ns
+:4  %i_index_0_2 = add i13 %tmp7_0_2, %x_cast
+
+
+ <State 47>: 3.66ns
+ST_47: newIndex8 [17/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+ST_47: tmp_35 [1/1] 2.18ns
+:10  %tmp_35 = icmp ult i13 %i_index_0_2, 2592
+
+
+ <State 48>: 3.66ns
+ST_48: newIndex8 [16/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 49>: 3.66ns
+ST_49: newIndex8 [15/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 50>: 3.66ns
+ST_50: newIndex8 [14/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 51>: 3.66ns
+ST_51: newIndex8 [13/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 52>: 3.66ns
+ST_52: newIndex8 [12/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 53>: 3.66ns
+ST_53: newIndex8 [11/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 54>: 3.66ns
+ST_54: newIndex8 [10/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 55>: 3.66ns
+ST_55: newIndex8 [9/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 56>: 3.66ns
+ST_56: newIndex8 [8/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 57>: 3.66ns
+ST_57: newIndex8 [7/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 58>: 3.66ns
+ST_58: newIndex8 [6/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 59>: 3.66ns
+ST_59: newIndex8 [5/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 60>: 3.66ns
+ST_60: newIndex8 [4/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 61>: 3.66ns
+ST_61: newIndex8 [3/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 62>: 3.66ns
+ST_62: newIndex8 [2/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+
+ <State 63>: 6.37ns
+ST_63: newIndex8 [1/17] 3.66ns
+:6  %newIndex8 = urem i13 %i_index_0_2, 2592
+
+ST_63: newIndex9 [1/1] 0.00ns
+:7  %newIndex9 = zext i13 %newIndex8 to i64
+
+ST_63: input_0_addr_516 [1/1] 0.00ns
+:8  %input_0_addr_516 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex9
+
+ST_63: input_1_addr_5 [1/1] 0.00ns
+:9  %input_1_addr_5 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex9
+
+ST_63: input_0_load_516 [2/2] 2.71ns
+:11  %input_0_load_516 = load i1* %input_0_addr_516, align 1
+
+ST_63: input_1_load_5 [2/2] 2.71ns
+:12  %input_1_load_5 = load i1* %input_1_addr_5, align 1
+
+
+ <State 64>: 4.35ns
+ST_64: w_index_0_2 [1/1] 1.96ns
+:5  %w_index_0_2 = add i13 %tmp_28, 6
+
+ST_64: input_0_load_516 [1/2] 2.71ns
+:11  %input_0_load_516 = load i1* %input_0_addr_516, align 1
+
+ST_64: input_1_load_5 [1/2] 2.71ns
+:12  %input_1_load_5 = load i1* %input_1_addr_5, align 1
+
+ST_64: input_load_1_0_2_phi [1/1] 1.37ns
+:13  %input_load_1_0_2_phi = select i1 %tmp_35, i1 %input_0_load_516, i1 %input_1_load_5
+
+ST_64: tmp_60_0_2 [1/1] 0.00ns
+:14  %tmp_60_0_2 = zext i13 %w_index_0_2 to i64
+
+ST_64: stg_453 [1/1] 0.00ns
+:15  br i1 %L_read, label %_ifconv5, label %_ifconv4
+
+ST_64: w_conv1_addr_2 [1/1] 0.00ns
+_ifconv4:0  %w_conv1_addr_2 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_0_2
+
+ST_64: w_conv1_load_2 [2/2] 2.39ns
+_ifconv4:1  %w_conv1_load_2 = load i1* %w_conv1_addr_2, align 1
+
+ST_64: w_conv2_addr_2 [1/1] 0.00ns
+_ifconv5:0  %w_conv2_addr_2 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_0_2
+
+ST_64: w_conv2_load_2 [2/2] 2.39ns
+_ifconv5:1  %w_conv2_load_2 = load i1* %w_conv2_addr_2, align 1
+
+
+ <State 65>: 8.47ns
+ST_65: w_conv1_load_2 [1/2] 2.39ns
+_ifconv4:1  %w_conv1_load_2 = load i1* %w_conv1_addr_2, align 1
+
+ST_65: stg_459 [1/1] 1.57ns
+_ifconv4:2  br label %13
+
+ST_65: w_conv2_load_2 [1/2] 2.39ns
+_ifconv5:1  %w_conv2_load_2 = load i1* %w_conv2_addr_2, align 1
+
+ST_65: stg_461 [1/1] 1.57ns
+_ifconv5:2  br label %13
+
+ST_65: w_conv1_load_2_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_2)
+:0  %w_conv1_load_2_pn = phi i1 [ %w_conv1_load_2, %_ifconv4 ], [ %w_conv2_load_2, %_ifconv5 ]
+
+ST_65: p_pn_in_in_0_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_2)
+:1  %p_pn_in_in_0_2 = xor i1 %w_conv1_load_2_pn, %input_load_1_0_2_phi
+
+ST_65: p_pn_in_0_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_2)
+:2  %p_pn_in_0_2 = xor i1 %p_pn_in_in_0_2, true
+
+ST_65: p_pn_0_2_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_0_2)
+:3  %p_pn_0_2_cast = zext i1 %p_pn_in_0_2 to i2
+
+ST_65: one_out_2_0_2 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_0_2 = add i2 %one_out_3_0_1, %p_pn_0_2_cast
+
+ST_65: mac_num_3_0_2 [1/1] 0.80ns
+:5  %mac_num_3_0_2 = add i2 %mac_num_2_0_1, 1
+
+ST_65: stg_468 [1/1] 1.57ns
+:6  br label %._crit_edge.0.2
+
+ST_65: one_out_3_0_2 [1/1] 0.00ns
+._crit_edge.0.2:0  %one_out_3_0_2 = phi i2 [ %one_out_2_0_2, %13 ], [ %one_out_3_0_1, %._crit_edge.0.1 ]
+
+ST_65: mac_num_2_0_2 [1/1] 0.00ns
+._crit_edge.0.2:1  %mac_num_2_0_2 = phi i2 [ %mac_num_3_0_2, %13 ], [ %mac_num_2_0_1, %._crit_edge.0.1 ]
+
+ST_65: one_out_3_0_2_cast [1/1] 0.00ns
+._crit_edge.0.2:2  %one_out_3_0_2_cast = zext i2 %one_out_3_0_2 to i3
+
+ST_65: mac_num_2_0_2_cast [1/1] 0.00ns
+._crit_edge.0.2:3  %mac_num_2_0_2_cast = zext i2 %mac_num_2_0_2 to i3
+
+ST_65: stg_473 [1/1] 1.57ns
+._crit_edge.0.2:4  br i1 %sel_tmp1_i3, label %16, label %._crit_edge.1.0
+
+ST_65: tmp6_1 [1/1] 1.84ns
+:0  %tmp6_1 = add i9 %phi_mul, %y_cast
+
+ST_65: tmp6_1_cast [1/1] 0.00ns
+:1  %tmp6_1_cast = zext i9 %tmp6_1 to i13
+
+ST_65: tmp7_1 [1/1] 6.38ns
+:2  %tmp7_1 = mul i13 %I_cast6, %tmp6_1_cast
+
+
+ <State 66>: 5.62ns
+ST_66: i_index_1 [1/1] 1.96ns
+:3  %i_index_1 = add i13 %tmp7_1, %tmp_51_1_cast1
+
+ST_66: newIndex10 [17/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+ST_66: tmp_36 [1/1] 2.18ns
+:9  %tmp_36 = icmp ult i13 %i_index_1, 2592
+
+
+ <State 67>: 3.66ns
+ST_67: newIndex10 [16/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 68>: 3.66ns
+ST_68: newIndex10 [15/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 69>: 3.66ns
+ST_69: newIndex10 [14/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 70>: 3.66ns
+ST_70: newIndex10 [13/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 71>: 3.66ns
+ST_71: newIndex10 [12/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 72>: 3.66ns
+ST_72: newIndex10 [11/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 73>: 3.66ns
+ST_73: newIndex10 [10/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 74>: 3.66ns
+ST_74: newIndex10 [9/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 75>: 3.66ns
+ST_75: newIndex10 [8/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 76>: 3.66ns
+ST_76: newIndex10 [7/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 77>: 3.66ns
+ST_77: newIndex10 [6/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 78>: 3.66ns
+ST_78: newIndex10 [5/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 79>: 3.66ns
+ST_79: newIndex10 [4/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 80>: 3.66ns
+ST_80: newIndex10 [3/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 81>: 3.66ns
+ST_81: newIndex10 [2/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+
+ <State 82>: 6.37ns
+ST_82: newIndex10 [1/17] 3.66ns
+:5  %newIndex10 = urem i13 %i_index_1, 2592
+
+ST_82: newIndex11 [1/1] 0.00ns
+:6  %newIndex11 = zext i13 %newIndex10 to i64
+
+ST_82: input_0_addr_517 [1/1] 0.00ns
+:7  %input_0_addr_517 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex11
+
+ST_82: input_1_addr_6 [1/1] 0.00ns
+:8  %input_1_addr_6 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex11
+
+ST_82: input_0_load_517 [2/2] 2.71ns
+:10  %input_0_load_517 = load i1* %input_0_addr_517, align 1
+
+ST_82: input_1_load_6 [2/2] 2.71ns
+:11  %input_1_load_6 = load i1* %input_1_addr_6, align 1
+
+
+ <State 83>: 4.35ns
+ST_83: w_index_1 [1/1] 1.96ns
+:4  %w_index_1 = add i13 %tmp_28, 1
+
+ST_83: input_0_load_517 [1/2] 2.71ns
+:10  %input_0_load_517 = load i1* %input_0_addr_517, align 1
+
+ST_83: input_1_load_6 [1/2] 2.71ns
+:11  %input_1_load_6 = load i1* %input_1_addr_6, align 1
+
+ST_83: input_load_1_1_0_phi [1/1] 1.37ns
+:12  %input_load_1_1_0_phi = select i1 %tmp_36, i1 %input_0_load_517, i1 %input_1_load_6
+
+ST_83: tmp_60_1 [1/1] 0.00ns
+:13  %tmp_60_1 = zext i13 %w_index_1 to i64
+
+ST_83: stg_506 [1/1] 0.00ns
+:14  br i1 %L_read, label %_ifconv7, label %_ifconv6
+
+ST_83: w_conv1_addr_3 [1/1] 0.00ns
+_ifconv6:0  %w_conv1_addr_3 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_1
+
+ST_83: w_conv1_load_3 [2/2] 2.39ns
+_ifconv6:1  %w_conv1_load_3 = load i1* %w_conv1_addr_3, align 1
+
+ST_83: w_conv2_addr_3 [1/1] 0.00ns
+_ifconv7:0  %w_conv2_addr_3 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_1
+
+ST_83: w_conv2_load_3 [2/2] 2.39ns
+_ifconv7:1  %w_conv2_load_3 = load i1* %w_conv2_addr_3, align 1
+
+
+ <State 84>: 8.47ns
+ST_84: w_conv1_load_3 [1/2] 2.39ns
+_ifconv6:1  %w_conv1_load_3 = load i1* %w_conv1_addr_3, align 1
+
+ST_84: stg_512 [1/1] 1.57ns
+_ifconv6:2  br label %15
+
+ST_84: w_conv2_load_3 [1/2] 2.39ns
+_ifconv7:1  %w_conv2_load_3 = load i1* %w_conv2_addr_3, align 1
+
+ST_84: stg_514 [1/1] 1.57ns
+_ifconv7:2  br label %15
+
+ST_84: w_conv1_load_3_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_1)
+:0  %w_conv1_load_3_pn = phi i1 [ %w_conv1_load_3, %_ifconv6 ], [ %w_conv2_load_3, %_ifconv7 ]
+
+ST_84: p_pn_in_in_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_1)
+:1  %p_pn_in_in_1 = xor i1 %w_conv1_load_3_pn, %input_load_1_1_0_phi
+
+ST_84: p_pn_in_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_1)
+:2  %p_pn_in_1 = xor i1 %p_pn_in_in_1, true
+
+ST_84: p_pn_1_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_1)
+:3  %p_pn_1_cast = zext i1 %p_pn_in_1 to i3
+
+ST_84: one_out_2_1 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_1 = add i3 %one_out_3_0_2_cast, %p_pn_1_cast
+
+ST_84: mac_num_3_1 [1/1] 0.80ns
+:5  %mac_num_3_1 = add i3 %mac_num_2_0_2_cast, 1
+
+ST_84: stg_521 [1/1] 1.57ns
+:6  br label %._crit_edge.1.0
+
+ST_84: one_out_3_1 [1/1] 0.00ns
+._crit_edge.1.0:0  %one_out_3_1 = phi i3 [ %one_out_2_1, %15 ], [ %one_out_3_0_2_cast, %._crit_edge.0.2 ]
+
+ST_84: mac_num_2_1 [1/1] 0.00ns
+._crit_edge.1.0:1  %mac_num_2_1 = phi i3 [ %mac_num_3_1, %15 ], [ %mac_num_2_0_2_cast, %._crit_edge.0.2 ]
+
+ST_84: stg_524 [1/1] 1.57ns
+._crit_edge.1.0:2  br i1 %sel_tmp1_i4, label %18, label %._crit_edge.1.1
+
+ST_84: tmp26 [1/1] 1.37ns
+:0  %tmp26 = add i9 %phi_mul, 1
+
+ST_84: tmp6_1_1 [1/1] 1.37ns
+:1  %tmp6_1_1 = add i9 %y_cast, %tmp26
+
+
+ <State 85>: 6.38ns
+ST_85: tmp6_1_1_cast [1/1] 0.00ns
+:2  %tmp6_1_1_cast = zext i9 %tmp6_1_1 to i13
+
+ST_85: tmp7_1_1 [1/1] 6.38ns
+:3  %tmp7_1_1 = mul i13 %I_cast6, %tmp6_1_1_cast
+
+
+ <State 86>: 5.62ns
+ST_86: i_index_1_1 [1/1] 1.96ns
+:4  %i_index_1_1 = add i13 %tmp7_1_1, %tmp_51_1_cast1
+
+ST_86: newIndex12 [17/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+ST_86: tmp_37 [1/1] 2.18ns
+:10  %tmp_37 = icmp ult i13 %i_index_1_1, 2592
+
+
+ <State 87>: 3.66ns
+ST_87: newIndex12 [16/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 88>: 3.66ns
+ST_88: newIndex12 [15/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 89>: 3.66ns
+ST_89: newIndex12 [14/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 90>: 3.66ns
+ST_90: newIndex12 [13/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 91>: 3.66ns
+ST_91: newIndex12 [12/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 92>: 3.66ns
+ST_92: newIndex12 [11/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 93>: 3.66ns
+ST_93: newIndex12 [10/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 94>: 3.66ns
+ST_94: newIndex12 [9/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 95>: 3.66ns
+ST_95: newIndex12 [8/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 96>: 3.66ns
+ST_96: newIndex12 [7/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 97>: 3.66ns
+ST_97: newIndex12 [6/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 98>: 3.66ns
+ST_98: newIndex12 [5/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 99>: 3.66ns
+ST_99: newIndex12 [4/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 100>: 3.66ns
+ST_100: newIndex12 [3/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 101>: 3.66ns
+ST_101: newIndex12 [2/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+
+ <State 102>: 6.37ns
+ST_102: newIndex12 [1/17] 3.66ns
+:6  %newIndex12 = urem i13 %i_index_1_1, 2592
+
+ST_102: newIndex13 [1/1] 0.00ns
+:7  %newIndex13 = zext i13 %newIndex12 to i64
+
+ST_102: input_0_addr_518 [1/1] 0.00ns
+:8  %input_0_addr_518 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex13
+
+ST_102: input_1_addr_7 [1/1] 0.00ns
+:9  %input_1_addr_7 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex13
+
+ST_102: input_0_load_518 [2/2] 2.71ns
+:11  %input_0_load_518 = load i1* %input_0_addr_518, align 1
+
+ST_102: input_1_load_7 [2/2] 2.71ns
+:12  %input_1_load_7 = load i1* %input_1_addr_7, align 1
+
+
+ <State 103>: 4.35ns
+ST_103: w_index_1_1 [1/1] 1.96ns
+:5  %w_index_1_1 = add i13 %tmp_28, 4
+
+ST_103: input_0_load_518 [1/2] 2.71ns
+:11  %input_0_load_518 = load i1* %input_0_addr_518, align 1
+
+ST_103: input_1_load_7 [1/2] 2.71ns
+:12  %input_1_load_7 = load i1* %input_1_addr_7, align 1
+
+ST_103: input_load_1_1_1_phi [1/1] 1.37ns
+:13  %input_load_1_1_1_phi = select i1 %tmp_37, i1 %input_0_load_518, i1 %input_1_load_7
+
+ST_103: tmp_60_1_1 [1/1] 0.00ns
+:14  %tmp_60_1_1 = zext i13 %w_index_1_1 to i64
+
+ST_103: stg_558 [1/1] 0.00ns
+:15  br i1 %L_read, label %_ifconv9, label %_ifconv8
+
+ST_103: w_conv1_addr_4 [1/1] 0.00ns
+_ifconv8:0  %w_conv1_addr_4 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_1_1
+
+ST_103: w_conv1_load_4 [2/2] 2.39ns
+_ifconv8:1  %w_conv1_load_4 = load i1* %w_conv1_addr_4, align 1
+
+ST_103: w_conv2_addr_4 [1/1] 0.00ns
+_ifconv9:0  %w_conv2_addr_4 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_1_1
+
+ST_103: w_conv2_load_4 [2/2] 2.39ns
+_ifconv9:1  %w_conv2_load_4 = load i1* %w_conv2_addr_4, align 1
+
+
+ <State 104>: 8.47ns
+ST_104: w_conv1_load_4 [1/2] 2.39ns
+_ifconv8:1  %w_conv1_load_4 = load i1* %w_conv1_addr_4, align 1
+
+ST_104: stg_564 [1/1] 1.57ns
+_ifconv8:2  br label %17
+
+ST_104: w_conv2_load_4 [1/2] 2.39ns
+_ifconv9:1  %w_conv2_load_4 = load i1* %w_conv2_addr_4, align 1
+
+ST_104: stg_566 [1/1] 1.57ns
+_ifconv9:2  br label %17
+
+ST_104: w_conv1_load_4_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_1)
+:0  %w_conv1_load_4_pn = phi i1 [ %w_conv1_load_4, %_ifconv8 ], [ %w_conv2_load_4, %_ifconv9 ]
+
+ST_104: p_pn_in_in_1_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_1)
+:1  %p_pn_in_in_1_1 = xor i1 %w_conv1_load_4_pn, %input_load_1_1_1_phi
+
+ST_104: p_pn_in_1_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_1)
+:2  %p_pn_in_1_1 = xor i1 %p_pn_in_in_1_1, true
+
+ST_104: p_pn_1_1_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_1)
+:3  %p_pn_1_1_cast = zext i1 %p_pn_in_1_1 to i3
+
+ST_104: one_out_2_1_1 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_1_1 = add i3 %one_out_3_1, %p_pn_1_1_cast
+
+ST_104: mac_num_3_1_1 [1/1] 0.80ns
+:5  %mac_num_3_1_1 = add i3 %mac_num_2_1, 1
+
+ST_104: stg_573 [1/1] 1.57ns
+:6  br label %._crit_edge.1.1
+
+ST_104: one_out_3_1_1 [1/1] 0.00ns
+._crit_edge.1.1:0  %one_out_3_1_1 = phi i3 [ %one_out_2_1_1, %17 ], [ %one_out_3_1, %._crit_edge.1.0 ]
+
+ST_104: mac_num_2_1_1 [1/1] 0.00ns
+._crit_edge.1.1:1  %mac_num_2_1_1 = phi i3 [ %mac_num_3_1_1, %17 ], [ %mac_num_2_1, %._crit_edge.1.0 ]
+
+ST_104: stg_576 [1/1] 1.57ns
+._crit_edge.1.1:2  br i1 %sel_tmp1_i5, label %20, label %._crit_edge.1.2
+
+ST_104: tmp29 [1/1] 1.37ns
+:0  %tmp29 = add i9 %phi_mul, 2
+
+ST_104: tmp6_1_2 [1/1] 1.37ns
+:1  %tmp6_1_2 = add i9 %y_cast, %tmp29
+
+
+ <State 105>: 8.34ns
+ST_105: tmp6_1_2_cast [1/1] 0.00ns
+:2  %tmp6_1_2_cast = zext i9 %tmp6_1_2 to i13
+
+ST_105: tmp7_1_2 [1/1] 6.38ns
+:3  %tmp7_1_2 = mul i13 %I_cast6, %tmp6_1_2_cast
+
+ST_105: i_index_1_2 [1/1] 1.96ns
+:4  %i_index_1_2 = add i13 %tmp7_1_2, %tmp_51_1_cast1
+
+
+ <State 106>: 3.66ns
+ST_106: newIndex14 [17/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+ST_106: tmp_40 [1/1] 2.18ns
+:10  %tmp_40 = icmp ult i13 %i_index_1_2, 2592
+
+
+ <State 107>: 3.66ns
+ST_107: newIndex14 [16/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 108>: 3.66ns
+ST_108: newIndex14 [15/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 109>: 3.66ns
+ST_109: newIndex14 [14/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 110>: 3.66ns
+ST_110: newIndex14 [13/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 111>: 3.66ns
+ST_111: newIndex14 [12/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 112>: 3.66ns
+ST_112: newIndex14 [11/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 113>: 3.66ns
+ST_113: newIndex14 [10/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 114>: 3.66ns
+ST_114: newIndex14 [9/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 115>: 3.66ns
+ST_115: newIndex14 [8/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 116>: 3.66ns
+ST_116: newIndex14 [7/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 117>: 3.66ns
+ST_117: newIndex14 [6/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 118>: 3.66ns
+ST_118: newIndex14 [5/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 119>: 3.66ns
+ST_119: newIndex14 [4/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 120>: 3.66ns
+ST_120: newIndex14 [3/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 121>: 3.66ns
+ST_121: newIndex14 [2/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+
+ <State 122>: 6.37ns
+ST_122: newIndex14 [1/17] 3.66ns
+:6  %newIndex14 = urem i13 %i_index_1_2, 2592
+
+ST_122: newIndex15 [1/1] 0.00ns
+:7  %newIndex15 = zext i13 %newIndex14 to i64
+
+ST_122: input_0_addr_519 [1/1] 0.00ns
+:8  %input_0_addr_519 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex15
+
+ST_122: input_1_addr_8 [1/1] 0.00ns
+:9  %input_1_addr_8 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex15
+
+ST_122: input_0_load_519 [2/2] 2.71ns
+:11  %input_0_load_519 = load i1* %input_0_addr_519, align 1
+
+ST_122: input_1_load_8 [2/2] 2.71ns
+:12  %input_1_load_8 = load i1* %input_1_addr_8, align 1
+
+
+ <State 123>: 4.35ns
+ST_123: w_index_1_2 [1/1] 1.96ns
+:5  %w_index_1_2 = add i13 %tmp_28, 7
+
+ST_123: input_0_load_519 [1/2] 2.71ns
+:11  %input_0_load_519 = load i1* %input_0_addr_519, align 1
+
+ST_123: input_1_load_8 [1/2] 2.71ns
+:12  %input_1_load_8 = load i1* %input_1_addr_8, align 1
+
+ST_123: input_load_1_1_2_phi [1/1] 1.37ns
+:13  %input_load_1_1_2_phi = select i1 %tmp_40, i1 %input_0_load_519, i1 %input_1_load_8
+
+ST_123: tmp_60_1_2 [1/1] 0.00ns
+:14  %tmp_60_1_2 = zext i13 %w_index_1_2 to i64
+
+ST_123: stg_610 [1/1] 0.00ns
+:15  br i1 %L_read, label %_ifconv11, label %_ifconv10
+
+ST_123: w_conv1_addr_5 [1/1] 0.00ns
+_ifconv10:0  %w_conv1_addr_5 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_1_2
+
+ST_123: w_conv1_load_5 [2/2] 2.39ns
+_ifconv10:1  %w_conv1_load_5 = load i1* %w_conv1_addr_5, align 1
+
+ST_123: w_conv2_addr_5 [1/1] 0.00ns
+_ifconv11:0  %w_conv2_addr_5 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_1_2
+
+ST_123: w_conv2_load_5 [2/2] 2.39ns
+_ifconv11:1  %w_conv2_load_5 = load i1* %w_conv2_addr_5, align 1
+
+
+ <State 124>: 8.47ns
+ST_124: w_conv1_load_5 [1/2] 2.39ns
+_ifconv10:1  %w_conv1_load_5 = load i1* %w_conv1_addr_5, align 1
+
+ST_124: stg_616 [1/1] 1.57ns
+_ifconv10:2  br label %19
+
+ST_124: w_conv2_load_5 [1/2] 2.39ns
+_ifconv11:1  %w_conv2_load_5 = load i1* %w_conv2_addr_5, align 1
+
+ST_124: stg_618 [1/1] 1.57ns
+_ifconv11:2  br label %19
+
+ST_124: w_conv1_load_5_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_2)
+:0  %w_conv1_load_5_pn = phi i1 [ %w_conv1_load_5, %_ifconv10 ], [ %w_conv2_load_5, %_ifconv11 ]
+
+ST_124: p_pn_in_in_1_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_2)
+:1  %p_pn_in_in_1_2 = xor i1 %w_conv1_load_5_pn, %input_load_1_1_2_phi
+
+ST_124: p_pn_in_1_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_2)
+:2  %p_pn_in_1_2 = xor i1 %p_pn_in_in_1_2, true
+
+ST_124: p_pn_1_2_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_1_2)
+:3  %p_pn_1_2_cast = zext i1 %p_pn_in_1_2 to i3
+
+ST_124: one_out_2_1_2 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_1_2 = add i3 %one_out_3_1_1, %p_pn_1_2_cast
+
+ST_124: mac_num_3_1_2 [1/1] 0.80ns
+:5  %mac_num_3_1_2 = add i3 %mac_num_2_1_1, 1
+
+ST_124: stg_625 [1/1] 1.57ns
+:6  br label %._crit_edge.1.2
+
+ST_124: one_out_3_1_2 [1/1] 0.00ns
+._crit_edge.1.2:0  %one_out_3_1_2 = phi i3 [ %one_out_2_1_2, %19 ], [ %one_out_3_1_1, %._crit_edge.1.1 ]
+
+ST_124: mac_num_2_1_2 [1/1] 0.00ns
+._crit_edge.1.2:1  %mac_num_2_1_2 = phi i3 [ %mac_num_3_1_2, %19 ], [ %mac_num_2_1_1, %._crit_edge.1.1 ]
+
+ST_124: stg_628 [1/1] 1.57ns
+._crit_edge.1.2:2  br i1 %sel_tmp1_i6, label %22, label %._crit_edge.2.0
+
+ST_124: tmp6_2 [1/1] 1.84ns
+:0  %tmp6_2 = add i9 %phi_mul, %y_cast
+
+ST_124: tmp6_2_cast [1/1] 0.00ns
+:1  %tmp6_2_cast = zext i9 %tmp6_2 to i13
+
+ST_124: tmp7_2 [1/1] 6.38ns
+:2  %tmp7_2 = mul i13 %I_cast6, %tmp6_2_cast
+
+
+ <State 125>: 5.62ns
+ST_125: i_index_2 [1/1] 1.96ns
+:3  %i_index_2 = add i13 %tmp7_2, %tmp_51_2_cast1
+
+ST_125: newIndex17 [17/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+ST_125: tmp_41 [1/1] 2.18ns
+:9  %tmp_41 = icmp ult i13 %i_index_2, 2592
+
+
+ <State 126>: 3.66ns
+ST_126: newIndex17 [16/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 127>: 3.66ns
+ST_127: newIndex17 [15/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 128>: 3.66ns
+ST_128: newIndex17 [14/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 129>: 3.66ns
+ST_129: newIndex17 [13/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 130>: 3.66ns
+ST_130: newIndex17 [12/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 131>: 3.66ns
+ST_131: newIndex17 [11/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 132>: 3.66ns
+ST_132: newIndex17 [10/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 133>: 3.66ns
+ST_133: newIndex17 [9/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 134>: 3.66ns
+ST_134: newIndex17 [8/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 135>: 3.66ns
+ST_135: newIndex17 [7/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 136>: 3.66ns
+ST_136: newIndex17 [6/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 137>: 3.66ns
+ST_137: newIndex17 [5/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 138>: 3.66ns
+ST_138: newIndex17 [4/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 139>: 3.66ns
+ST_139: newIndex17 [3/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 140>: 3.66ns
+ST_140: newIndex17 [2/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+
+ <State 141>: 6.37ns
+ST_141: newIndex17 [1/17] 3.66ns
+:5  %newIndex17 = urem i13 %i_index_2, 2592
+
+ST_141: newIndex18 [1/1] 0.00ns
+:6  %newIndex18 = zext i13 %newIndex17 to i64
+
+ST_141: input_0_addr_520 [1/1] 0.00ns
+:7  %input_0_addr_520 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex18
+
+ST_141: input_1_addr_9 [1/1] 0.00ns
+:8  %input_1_addr_9 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex18
+
+ST_141: input_0_load_520 [2/2] 2.71ns
+:10  %input_0_load_520 = load i1* %input_0_addr_520, align 1
+
+ST_141: input_1_load_9 [2/2] 2.71ns
+:11  %input_1_load_9 = load i1* %input_1_addr_9, align 1
+
+
+ <State 142>: 4.35ns
+ST_142: w_index_2 [1/1] 1.96ns
+:4  %w_index_2 = add i13 %tmp_28, 2
+
+ST_142: input_0_load_520 [1/2] 2.71ns
+:10  %input_0_load_520 = load i1* %input_0_addr_520, align 1
+
+ST_142: input_1_load_9 [1/2] 2.71ns
+:11  %input_1_load_9 = load i1* %input_1_addr_9, align 1
+
+ST_142: input_load_1_2_0_phi [1/1] 1.37ns
+:12  %input_load_1_2_0_phi = select i1 %tmp_41, i1 %input_0_load_520, i1 %input_1_load_9
+
+ST_142: tmp_60_2 [1/1] 0.00ns
+:13  %tmp_60_2 = zext i13 %w_index_2 to i64
+
+ST_142: stg_661 [1/1] 0.00ns
+:14  br i1 %L_read, label %_ifconv13, label %_ifconv12
+
+ST_142: w_conv1_addr_6 [1/1] 0.00ns
+_ifconv12:0  %w_conv1_addr_6 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_2
+
+ST_142: w_conv1_load_6 [2/2] 2.39ns
+_ifconv12:1  %w_conv1_load_6 = load i1* %w_conv1_addr_6, align 1
+
+ST_142: w_conv2_addr_6 [1/1] 0.00ns
+_ifconv13:0  %w_conv2_addr_6 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_2
+
+ST_142: w_conv2_load_6 [2/2] 2.39ns
+_ifconv13:1  %w_conv2_load_6 = load i1* %w_conv2_addr_6, align 1
+
+
+ <State 143>: 8.47ns
+ST_143: w_conv1_load_6 [1/2] 2.39ns
+_ifconv12:1  %w_conv1_load_6 = load i1* %w_conv1_addr_6, align 1
+
+ST_143: stg_667 [1/1] 1.57ns
+_ifconv12:2  br label %21
+
+ST_143: w_conv2_load_6 [1/2] 2.39ns
+_ifconv13:1  %w_conv2_load_6 = load i1* %w_conv2_addr_6, align 1
+
+ST_143: stg_669 [1/1] 1.57ns
+_ifconv13:2  br label %21
+
+ST_143: w_conv1_load_6_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_2)
+:0  %w_conv1_load_6_pn = phi i1 [ %w_conv1_load_6, %_ifconv12 ], [ %w_conv2_load_6, %_ifconv13 ]
+
+ST_143: p_pn_in_in_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_2)
+:1  %p_pn_in_in_2 = xor i1 %w_conv1_load_6_pn, %input_load_1_2_0_phi
+
+ST_143: p_pn_in_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_2)
+:2  %p_pn_in_2 = xor i1 %p_pn_in_in_2, true
+
+ST_143: p_pn_2_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_2)
+:3  %p_pn_2_cast = zext i1 %p_pn_in_2 to i3
+
+ST_143: one_out_2_2 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_2 = add i3 %one_out_3_1_2, %p_pn_2_cast
+
+ST_143: mac_num_3_2 [1/1] 0.80ns
+:5  %mac_num_3_2 = add i3 %mac_num_2_1_2, 1
+
+ST_143: stg_676 [1/1] 1.57ns
+:6  br label %._crit_edge.2.0
+
+ST_143: one_out_3_2 [1/1] 0.00ns
+._crit_edge.2.0:0  %one_out_3_2 = phi i3 [ %one_out_2_2, %21 ], [ %one_out_3_1_2, %._crit_edge.1.2 ]
+
+ST_143: mac_num_2_2 [1/1] 0.00ns
+._crit_edge.2.0:1  %mac_num_2_2 = phi i3 [ %mac_num_3_2, %21 ], [ %mac_num_2_1_2, %._crit_edge.1.2 ]
+
+ST_143: one_out_3_2_cast [1/1] 0.00ns
+._crit_edge.2.0:2  %one_out_3_2_cast = zext i3 %one_out_3_2 to i4
+
+ST_143: mac_num_2_2_cast [1/1] 0.00ns
+._crit_edge.2.0:3  %mac_num_2_2_cast = zext i3 %mac_num_2_2 to i4
+
+ST_143: stg_681 [1/1] 1.57ns
+._crit_edge.2.0:4  br i1 %sel_tmp1_i7, label %24, label %._crit_edge.2.1
+
+ST_143: tmp34 [1/1] 1.37ns
+:0  %tmp34 = add i9 %phi_mul, 1
+
+ST_143: tmp6_2_1 [1/1] 1.37ns
+:1  %tmp6_2_1 = add i9 %y_cast, %tmp34
+
+
+ <State 144>: 6.38ns
+ST_144: tmp6_2_1_cast [1/1] 0.00ns
+:2  %tmp6_2_1_cast = zext i9 %tmp6_2_1 to i13
+
+ST_144: tmp7_2_1 [1/1] 6.38ns
+:3  %tmp7_2_1 = mul i13 %I_cast6, %tmp6_2_1_cast
+
+
+ <State 145>: 5.62ns
+ST_145: i_index_2_1 [1/1] 1.96ns
+:4  %i_index_2_1 = add i13 %tmp7_2_1, %tmp_51_2_cast1
+
+ST_145: newIndex16 [17/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+ST_145: tmp_42 [1/1] 2.18ns
+:10  %tmp_42 = icmp ult i13 %i_index_2_1, 2592
+
+
+ <State 146>: 3.66ns
+ST_146: newIndex16 [16/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 147>: 3.66ns
+ST_147: newIndex16 [15/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 148>: 3.66ns
+ST_148: newIndex16 [14/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 149>: 3.66ns
+ST_149: newIndex16 [13/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 150>: 3.66ns
+ST_150: newIndex16 [12/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 151>: 3.66ns
+ST_151: newIndex16 [11/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 152>: 3.66ns
+ST_152: newIndex16 [10/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 153>: 3.66ns
+ST_153: newIndex16 [9/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 154>: 3.66ns
+ST_154: newIndex16 [8/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 155>: 3.66ns
+ST_155: newIndex16 [7/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 156>: 3.66ns
+ST_156: newIndex16 [6/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 157>: 3.66ns
+ST_157: newIndex16 [5/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 158>: 3.66ns
+ST_158: newIndex16 [4/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 159>: 3.66ns
+ST_159: newIndex16 [3/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 160>: 3.66ns
+ST_160: newIndex16 [2/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+
+ <State 161>: 6.37ns
+ST_161: newIndex16 [1/17] 3.66ns
+:6  %newIndex16 = urem i13 %i_index_2_1, 2592
+
+ST_161: newIndex19 [1/1] 0.00ns
+:7  %newIndex19 = zext i13 %newIndex16 to i64
+
+ST_161: input_0_addr_521 [1/1] 0.00ns
+:8  %input_0_addr_521 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex19
+
+ST_161: input_1_addr_10 [1/1] 0.00ns
+:9  %input_1_addr_10 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex19
+
+ST_161: input_0_load_521 [2/2] 2.71ns
+:11  %input_0_load_521 = load i1* %input_0_addr_521, align 1
+
+ST_161: input_1_load_10 [2/2] 2.71ns
+:12  %input_1_load_10 = load i1* %input_1_addr_10, align 1
+
+
+ <State 162>: 4.35ns
+ST_162: w_index_2_1 [1/1] 1.96ns
+:5  %w_index_2_1 = add i13 %tmp_28, 5
+
+ST_162: input_0_load_521 [1/2] 2.71ns
+:11  %input_0_load_521 = load i1* %input_0_addr_521, align 1
+
+ST_162: input_1_load_10 [1/2] 2.71ns
+:12  %input_1_load_10 = load i1* %input_1_addr_10, align 1
+
+ST_162: input_load_1_2_1_phi [1/1] 1.37ns
+:13  %input_load_1_2_1_phi = select i1 %tmp_42, i1 %input_0_load_521, i1 %input_1_load_10
+
+ST_162: tmp_60_2_1 [1/1] 0.00ns
+:14  %tmp_60_2_1 = zext i13 %w_index_2_1 to i64
+
+ST_162: stg_715 [1/1] 0.00ns
+:15  br i1 %L_read, label %_ifconv15, label %_ifconv14
+
+ST_162: w_conv1_addr_7 [1/1] 0.00ns
+_ifconv14:0  %w_conv1_addr_7 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_2_1
+
+ST_162: w_conv1_load_7 [2/2] 2.39ns
+_ifconv14:1  %w_conv1_load_7 = load i1* %w_conv1_addr_7, align 1
+
+ST_162: w_conv2_addr_7 [1/1] 0.00ns
+_ifconv15:0  %w_conv2_addr_7 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_2_1
+
+ST_162: w_conv2_load_7 [2/2] 2.39ns
+_ifconv15:1  %w_conv2_load_7 = load i1* %w_conv2_addr_7, align 1
+
+
+ <State 163>: 8.47ns
+ST_163: w_conv1_load_7 [1/2] 2.39ns
+_ifconv14:1  %w_conv1_load_7 = load i1* %w_conv1_addr_7, align 1
+
+ST_163: stg_721 [1/1] 1.57ns
+_ifconv14:2  br label %23
+
+ST_163: w_conv2_load_7 [1/2] 2.39ns
+_ifconv15:1  %w_conv2_load_7 = load i1* %w_conv2_addr_7, align 1
+
+ST_163: stg_723 [1/1] 1.57ns
+_ifconv15:2  br label %23
+
+ST_163: w_conv1_load_7_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_1)
+:0  %w_conv1_load_7_pn = phi i1 [ %w_conv1_load_7, %_ifconv14 ], [ %w_conv2_load_7, %_ifconv15 ]
+
+ST_163: p_pn_in_in_2_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_1)
+:1  %p_pn_in_in_2_1 = xor i1 %w_conv1_load_7_pn, %input_load_1_2_1_phi
+
+ST_163: p_pn_in_2_1 [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_1)
+:2  %p_pn_in_2_1 = xor i1 %p_pn_in_in_2_1, true
+
+ST_163: p_pn_2_1_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_1)
+:3  %p_pn_2_1_cast = zext i1 %p_pn_in_2_1 to i4
+
+ST_163: one_out_2_2_1 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_2_1 = add i4 %one_out_3_2_cast, %p_pn_2_1_cast
+
+ST_163: mac_num_3_2_1 [1/1] 0.80ns
+:5  %mac_num_3_2_1 = add i4 %mac_num_2_2_cast, 1
+
+ST_163: stg_730 [1/1] 1.57ns
+:6  br label %._crit_edge.2.1
+
+ST_163: one_out_3_2_1 [1/1] 0.00ns
+._crit_edge.2.1:0  %one_out_3_2_1 = phi i4 [ %one_out_2_2_1, %23 ], [ %one_out_3_2_cast, %._crit_edge.2.0 ]
+
+ST_163: mac_num_2_2_1 [1/1] 0.00ns
+._crit_edge.2.1:1  %mac_num_2_2_1 = phi i4 [ %mac_num_3_2_1, %23 ], [ %mac_num_2_2_cast, %._crit_edge.2.0 ]
+
+ST_163: stg_733 [1/1] 1.57ns
+._crit_edge.2.1:2  br i1 %sel_tmp1_i8, label %26, label %._crit_edge.2.2
+
+ST_163: tmp37 [1/1] 1.37ns
+:0  %tmp37 = add i9 %phi_mul, 2
+
+ST_163: tmp6_2_2 [1/1] 1.37ns
+:1  %tmp6_2_2 = add i9 %y_cast, %tmp37
+
+
+ <State 164>: 8.34ns
+ST_164: tmp6_2_2_cast [1/1] 0.00ns
+:2  %tmp6_2_2_cast = zext i9 %tmp6_2_2 to i13
+
+ST_164: tmp7_2_2 [1/1] 6.38ns
+:3  %tmp7_2_2 = mul i13 %I_cast6, %tmp6_2_2_cast
+
+ST_164: i_index_2_2 [1/1] 1.96ns
+:4  %i_index_2_2 = add i13 %tmp7_2_2, %tmp_51_2_cast1
+
+
+ <State 165>: 3.66ns
+ST_165: newIndex [17/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+ST_165: tmp_43 [1/1] 2.18ns
+:10  %tmp_43 = icmp ult i13 %i_index_2_2, 2592
+
+
+ <State 166>: 3.66ns
+ST_166: newIndex [16/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 167>: 3.66ns
+ST_167: newIndex [15/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 168>: 3.66ns
+ST_168: newIndex [14/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 169>: 3.66ns
+ST_169: newIndex [13/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 170>: 3.66ns
+ST_170: newIndex [12/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 171>: 3.66ns
+ST_171: newIndex [11/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 172>: 3.66ns
+ST_172: newIndex [10/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 173>: 3.66ns
+ST_173: newIndex [9/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 174>: 3.66ns
+ST_174: newIndex [8/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 175>: 3.66ns
+ST_175: newIndex [7/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 176>: 3.66ns
+ST_176: newIndex [6/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 177>: 3.66ns
+ST_177: newIndex [5/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 178>: 3.66ns
+ST_178: newIndex [4/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 179>: 3.66ns
+ST_179: newIndex [3/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 180>: 3.66ns
+ST_180: newIndex [2/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+
+ <State 181>: 6.37ns
+ST_181: newIndex [1/17] 3.66ns
+:6  %newIndex = urem i13 %i_index_2_2, 2592
+
+ST_181: newIndex4 [1/1] 0.00ns
+:7  %newIndex4 = zext i13 %newIndex to i64
+
+ST_181: input_0_addr_522 [1/1] 0.00ns
+:8  %input_0_addr_522 = getelementptr [2592 x i1]* %input_0, i64 0, i64 %newIndex4
+
+ST_181: input_1_addr_11 [1/1] 0.00ns
+:9  %input_1_addr_11 = getelementptr [2592 x i1]* %input_1, i64 0, i64 %newIndex4
+
+ST_181: input_0_load_522 [2/2] 2.71ns
+:11  %input_0_load_522 = load i1* %input_0_addr_522, align 1
+
+ST_181: input_1_load_11 [2/2] 2.71ns
+:12  %input_1_load_11 = load i1* %input_1_addr_11, align 1
+
+
+ <State 182>: 4.35ns
+ST_182: w_index_2_2 [1/1] 1.96ns
+:5  %w_index_2_2 = add i13 %tmp_28, 8
+
+ST_182: input_0_load_522 [1/2] 2.71ns
+:11  %input_0_load_522 = load i1* %input_0_addr_522, align 1
+
+ST_182: input_1_load_11 [1/2] 2.71ns
+:12  %input_1_load_11 = load i1* %input_1_addr_11, align 1
+
+ST_182: input_load_1_2_2_phi [1/1] 1.37ns
+:13  %input_load_1_2_2_phi = select i1 %tmp_43, i1 %input_0_load_522, i1 %input_1_load_11
+
+ST_182: tmp_60_2_2 [1/1] 0.00ns
+:14  %tmp_60_2_2 = zext i13 %w_index_2_2 to i64
+
+ST_182: stg_767 [1/1] 0.00ns
+:15  br i1 %L_read, label %_ifconv17, label %_ifconv16
+
+ST_182: w_conv1_addr_8 [1/1] 0.00ns
+_ifconv16:0  %w_conv1_addr_8 = getelementptr inbounds [4608 x i1]* @w_conv1, i64 0, i64 %tmp_60_2_2
+
+ST_182: w_conv1_load_8 [2/2] 2.39ns
+_ifconv16:1  %w_conv1_load_8 = load i1* %w_conv1_addr_8, align 1
+
+ST_182: w_conv2_addr_8 [1/1] 0.00ns
+_ifconv17:0  %w_conv2_addr_8 = getelementptr inbounds [4608 x i1]* @w_conv2, i64 0, i64 %tmp_60_2_2
+
+ST_182: w_conv2_load_8 [2/2] 2.39ns
+_ifconv17:1  %w_conv2_load_8 = load i1* %w_conv2_addr_8, align 1
+
+
+ <State 183>: 3.96ns
+ST_183: w_conv1_load_8 [1/2] 2.39ns
+_ifconv16:1  %w_conv1_load_8 = load i1* %w_conv1_addr_8, align 1
+
+ST_183: stg_773 [1/1] 1.57ns
+_ifconv16:2  br label %25
+
+
+ <State 184>: 3.96ns
+ST_184: w_conv2_load_8 [1/2] 2.39ns
+_ifconv17:1  %w_conv2_load_8 = load i1* %w_conv2_addr_8, align 1
+
+ST_184: stg_775 [1/1] 1.57ns
+_ifconv17:2  br label %25
+
+
+ <State 185>: 6.88ns
+ST_185: w_conv1_load_8_pn [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_2)
+:0  %w_conv1_load_8_pn = phi i1 [ %w_conv1_load_8, %_ifconv16 ], [ %w_conv2_load_8, %_ifconv17 ]
+
+ST_185: p_pn_in_in_2_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_2)
+:1  %p_pn_in_in_2_2 = xor i1 %w_conv1_load_8_pn, %input_load_1_2_2_phi
+
+ST_185: p_pn_in_2_2 [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_2)
+:2  %p_pn_in_2_2 = xor i1 %p_pn_in_in_2_2, true
+
+ST_185: p_pn_2_2_cast [1/1] 0.00ns (grouped into LUT with out node one_out_2_2_2)
+:3  %p_pn_2_2_cast = zext i1 %p_pn_in_2_2 to i4
+
+ST_185: one_out_2_2_2 [1/1] 1.37ns (out node of the LUT)
+:4  %one_out_2_2_2 = add i4 %one_out_3_2_1, %p_pn_2_2_cast
+
+ST_185: mac_num_3_2_2 [1/1] 0.80ns
+:5  %mac_num_3_2_2 = add i4 %mac_num_2_2_1, 1
+
+ST_185: stg_782 [1/1] 1.57ns
+:6  br label %._crit_edge.2.2
+
+ST_185: one_out_3_2_2 [1/1] 0.00ns
+._crit_edge.2.2:0  %one_out_3_2_2 = phi i4 [ %one_out_2_2_2, %25 ], [ %one_out_3_2_1, %._crit_edge.2.1 ]
+
+ST_185: mac_num_2_2_2 [1/1] 0.00ns
+._crit_edge.2.2:1  %mac_num_2_2_2 = phi i4 [ %mac_num_3_2_2, %25 ], [ %mac_num_2_2_1, %._crit_edge.2.1 ]
+
+ST_185: mac_num_2_2_2_cast [1/1] 0.00ns
+._crit_edge.2.2:2  %mac_num_2_2_2_cast = zext i4 %mac_num_2_2_2 to i32
+
+ST_185: tmp_38 [1/1] 0.00ns
+._crit_edge.2.2:3  %tmp_38 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %one_out_3_2_2, i1 false)
+
+ST_185: tmp_38_cast [1/1] 0.00ns
+._crit_edge.2.2:4  %tmp_38_cast = zext i5 %tmp_38 to i32
+
+ST_185: tmp_39 [1/1] 1.97ns
+._crit_edge.2.2:5  %tmp_39 = sub i32 %sum, %mac_num_2_2_2_cast
+
+ST_185: sum_1 [1/1] 1.97ns
+._crit_edge.2.2:6  %sum_1 = add i32 %tmp_38_cast, %tmp_39
+
+ST_185: stg_790 [1/1] 0.00ns
+._crit_edge.2.2:7  br label %7
+
+
+ <State 186>: 3.66ns
+ST_186: newIndex2 [16/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 187>: 3.66ns
+ST_187: newIndex2 [15/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 188>: 3.66ns
+ST_188: newIndex2 [14/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 189>: 3.66ns
+ST_189: newIndex2 [13/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 190>: 3.66ns
+ST_190: newIndex2 [12/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 191>: 3.66ns
+ST_191: newIndex2 [11/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 192>: 3.66ns
+ST_192: newIndex2 [10/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 193>: 3.66ns
+ST_193: newIndex2 [9/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 194>: 3.66ns
+ST_194: newIndex2 [8/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 195>: 3.66ns
+ST_195: newIndex2 [7/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 196>: 3.66ns
+ST_196: newIndex2 [6/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 197>: 3.66ns
+ST_197: newIndex2 [5/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 198>: 3.66ns
+ST_198: newIndex2 [4/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 199>: 3.66ns
+ST_199: newIndex2 [3/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 200>: 3.66ns
+ST_200: newIndex2 [2/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+
+ <State 201>: 6.37ns
+ST_201: newIndex2 [1/17] 3.66ns
+_ifconv18:0  %newIndex2 = urem i13 %o_index, 2592
+
+ST_201: newIndex3 [1/1] 0.00ns
+_ifconv18:1  %newIndex3 = zext i13 %newIndex2 to i64
+
+ST_201: threshold_0_V_addr [1/1] 0.00ns
+_ifconv18:2  %threshold_0_V_addr = getelementptr [2592 x i8]* %threshold_0_V, i64 0, i64 %newIndex3
+
+ST_201: threshold_1_V_addr [1/1] 0.00ns
+_ifconv18:3  %threshold_1_V_addr = getelementptr [2592 x i8]* %threshold_1_V, i64 0, i64 %newIndex3
+
+ST_201: threshold_0_V_load [2/2] 2.71ns
+_ifconv18:5  %threshold_0_V_load = load i8* %threshold_0_V_addr, align 1
+
+ST_201: threshold_1_V_load [2/2] 2.71ns
+_ifconv18:6  %threshold_1_V_load = load i8* %threshold_1_V_addr, align 1
+
+ST_201: output_0_addr [1/1] 0.00ns
+_ifconv18:10  %output_0_addr = getelementptr [2592 x i1]* %output_0, i64 0, i64 %newIndex3
+
+ST_201: output_1_addr [1/1] 0.00ns
+_ifconv18:11  %output_1_addr = getelementptr [2592 x i1]* %output_1, i64 0, i64 %newIndex3
+
+
+ <State 202>: 7.94ns
+ST_202: threshold_0_V_load [1/2] 2.71ns
+_ifconv18:5  %threshold_0_V_load = load i8* %threshold_0_V_addr, align 1
+
+ST_202: threshold_1_V_load [1/2] 2.71ns
+_ifconv18:6  %threshold_1_V_load = load i8* %threshold_1_V_addr, align 1
+
+ST_202: threshold_V_load_phi [1/1] 0.00ns (grouped into LUT with out node tmp_31)
+_ifconv18:7  %threshold_V_load_phi = select i1 %tmp_29, i8 %threshold_0_V_load, i8 %threshold_1_V_load
+
+ST_202: tmp_30 [1/1] 0.00ns (grouped into LUT with out node tmp_31)
+_ifconv18:8  %tmp_30 = sext i8 %threshold_V_load_phi to i32
+
+ST_202: tmp_31 [1/1] 2.52ns (out node of the LUT)
+_ifconv18:9  %tmp_31 = icmp sgt i32 %sum, %tmp_30
+
+ST_202: stg_819 [1/1] 0.00ns
+_ifconv18:12  br i1 %tmp_29, label %branch36, label %branch37
+
+ST_202: stg_820 [1/1] 2.71ns
+branch37:0  store i1 %tmp_31, i1* %output_1_addr, align 1
+
+ST_202: stg_821 [1/1] 0.00ns
+branch37:1  br label %27
+
+ST_202: stg_822 [1/1] 2.71ns
+branch36:0  store i1 %tmp_31, i1* %output_0_addr, align 1
+
+ST_202: stg_823 [1/1] 0.00ns
+branch36:1  br label %27
+
+ST_202: empty_29 [1/1] 0.00ns
+:0  %empty_29 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str10, i32 %tmp_23)
+
+ST_202: stg_825 [1/1] 0.00ns
+:1  br label %5
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+	State 137
+	State 138
+	State 139
+	State 140
+	State 141
+	State 142
+	State 143
+	State 144
+	State 145
+	State 146
+	State 147
+	State 148
+	State 149
+	State 150
+	State 151
+	State 152
+	State 153
+	State 154
+	State 155
+	State 156
+	State 157
+	State 158
+	State 159
+	State 160
+	State 161
+	State 162
+	State 163
+	State 164
+	State 165
+	State 166
+	State 167
+	State 168
+	State 169
+	State 170
+	State 171
+	State 172
+	State 173
+	State 174
+	State 175
+	State 176
+	State 177
+	State 178
+	State 179
+	State 180
+	State 181
+	State 182
+	State 183
+	State 184
+	State 185
+	State 186
+	State 187
+	State 188
+	State 189
+	State 190
+	State 191
+	State 192
+	State 193
+	State 194
+	State 195
+	State 196
+	State 197
+	State 198
+	State 199
+	State 200
+	State 201
+	State 202
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,160 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="conv" label="LOOP_N" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_X" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_Y" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_M" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_C" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_R" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_0" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_3" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_4" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_5" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="reshape" label="LOOP_RESHAPE_0" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="reshape" label="LOOP_RESHAPE_1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense" label="LOOP_DENSE_0" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="dense" label="LOOP_DENSE_1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="pad" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="input" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="pad" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="output" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="max_pool" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="input" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="max_pool" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="output" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="input" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="output" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="threshold" positionalBoolean="4"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="8"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv" label="LOOP_N" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_X" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_Y" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_M" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_C" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="conv" label="LOOP_R" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_0" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_1" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_2" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_3" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_4" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="max_pool" label="LOOP_MAX_POOL_5" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="reshape" label="LOOP_RESHAPE_0" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="reshape" label="LOOP_RESHAPE_1" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="reshape" label="LOOP_RESHAPE_2" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="dense" label="LOOP_DENSE_0" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+        <directive functionName="dense" label="LOOP_DENSE_1" functionLabel="">
+            <pragma name="LOOP_UNROLL"/>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

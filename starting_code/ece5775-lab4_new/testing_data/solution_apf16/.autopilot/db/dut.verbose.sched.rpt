@@ -1,0 +1,546 @@
+
+
+================================================================
+== Vivado HLS Report for 'dut'
+================================================================
+* Date:           Fri Oct 28 23:45:31 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        bnn.prj
+* Solution:       solution3
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.47|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+----------+---------+----------+---------+
+    |       Latency      |      Interval      | Pipeline|
+    |   min   |    max   |   min   |    max   |   Type  |
+    +---------+----------+---------+----------+---------+
+    |  1843993|  49294645|  1843994|  49294646|   none  |
+    +---------+----------+---------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  272|  272|        34|          -|          -|     8|    no    |
+        | + Loop 1.1  |   32|   32|         1|          -|          -|    32|    no    |
+        |- Loop 2     |   18|   18|         2|          -|          -|     9|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 22
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (exitcond1)
+	3  / (!exitcond1)
+3 --> 
+	2  / (exitcond)
+	3  / (!exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / (!exitcond_i)
+22 --> 
+	21  / true
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str)
+
+ST_1: empty_25 [1/1] 0.00ns
+:1  %empty_25 = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str)
+
+ST_1: mem_conv1_0 [1/1] 0.00ns
+:2  %mem_conv1_0 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_1 [1/1] 0.00ns
+:3  %mem_conv1_1 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_2 [1/1] 0.00ns
+:4  %mem_conv1_2 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_3 [1/1] 0.00ns
+:5  %mem_conv1_3 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_4 [1/1] 0.00ns
+:6  %mem_conv1_4 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_5 [1/1] 0.00ns
+:7  %mem_conv1_5 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_6 [1/1] 0.00ns
+:8  %mem_conv1_6 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_7 [1/1] 0.00ns
+:9  %mem_conv1_7 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_8 [1/1] 0.00ns
+:10  %mem_conv1_8 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_9 [1/1] 0.00ns
+:11  %mem_conv1_9 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_10 [1/1] 0.00ns
+:12  %mem_conv1_10 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_11 [1/1] 0.00ns
+:13  %mem_conv1_11 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_12 [1/1] 0.00ns
+:14  %mem_conv1_12 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_13 [1/1] 0.00ns
+:15  %mem_conv1_13 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_14 [1/1] 0.00ns
+:16  %mem_conv1_14 = alloca [324 x i1], align 1
+
+ST_1: mem_conv1_15 [1/1] 0.00ns
+:17  %mem_conv1_15 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_0 [1/1] 0.00ns
+:18  %mem_conv2_0 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_1 [1/1] 0.00ns
+:19  %mem_conv2_1 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_2 [1/1] 0.00ns
+:20  %mem_conv2_2 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_3 [1/1] 0.00ns
+:21  %mem_conv2_3 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_4 [1/1] 0.00ns
+:22  %mem_conv2_4 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_5 [1/1] 0.00ns
+:23  %mem_conv2_5 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_6 [1/1] 0.00ns
+:24  %mem_conv2_6 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_7 [1/1] 0.00ns
+:25  %mem_conv2_7 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_8 [1/1] 0.00ns
+:26  %mem_conv2_8 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_9 [1/1] 0.00ns
+:27  %mem_conv2_9 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_10 [1/1] 0.00ns
+:28  %mem_conv2_10 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_11 [1/1] 0.00ns
+:29  %mem_conv2_11 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_12 [1/1] 0.00ns
+:30  %mem_conv2_12 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_13 [1/1] 0.00ns
+:31  %mem_conv2_13 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_14 [1/1] 0.00ns
+:32  %mem_conv2_14 = alloca [324 x i1], align 1
+
+ST_1: mem_conv2_15 [1/1] 0.00ns
+:33  %mem_conv2_15 = alloca [324 x i1], align 1
+
+ST_1: stg_57 [1/1] 0.00ns
+:34  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_in_V_V), !map !75
+
+ST_1: stg_58 [1/1] 0.00ns
+:35  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_out_V_V), !map !81
+
+ST_1: stg_59 [1/1] 0.00ns
+:36  call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @dut_str) nounwind
+
+ST_1: input_0 [1/1] 0.00ns
+:37  %input_0 = alloca [324 x i1], align 1
+
+ST_1: input_1 [1/1] 0.00ns
+:38  %input_1 = alloca [324 x i1], align 1
+
+ST_1: input_2 [1/1] 0.00ns
+:39  %input_2 = alloca [324 x i1], align 1
+
+ST_1: input_3 [1/1] 0.00ns
+:40  %input_3 = alloca [324 x i1], align 1
+
+ST_1: input_4 [1/1] 0.00ns
+:41  %input_4 = alloca [324 x i1], align 1
+
+ST_1: input_5 [1/1] 0.00ns
+:42  %input_5 = alloca [324 x i1], align 1
+
+ST_1: input_6 [1/1] 0.00ns
+:43  %input_6 = alloca [324 x i1], align 1
+
+ST_1: input_7 [1/1] 0.00ns
+:44  %input_7 = alloca [324 x i1], align 1
+
+ST_1: input_8 [1/1] 0.00ns
+:45  %input_8 = alloca [324 x i1], align 1
+
+ST_1: input_9 [1/1] 0.00ns
+:46  %input_9 = alloca [324 x i1], align 1
+
+ST_1: input_10 [1/1] 0.00ns
+:47  %input_10 = alloca [324 x i1], align 1
+
+ST_1: input_11 [1/1] 0.00ns
+:48  %input_11 = alloca [324 x i1], align 1
+
+ST_1: input_12 [1/1] 0.00ns
+:49  %input_12 = alloca [324 x i1], align 1
+
+ST_1: input_13 [1/1] 0.00ns
+:50  %input_13 = alloca [324 x i1], align 1
+
+ST_1: input_14 [1/1] 0.00ns
+:51  %input_14 = alloca [324 x i1], align 1
+
+ST_1: input_15 [1/1] 0.00ns
+:52  %input_15 = alloca [324 x i1], align 1
+
+ST_1: stg_76 [1/1] 1.57ns
+:53  br label %.loopexit
+
+
+ <State 2>: 4.38ns
+ST_2: i [1/1] 0.00ns
+.loopexit:0  %i = phi i4 [ 0, %0 ], [ %i_2, %2 ]
+
+ST_2: exitcond1 [1/1] 1.88ns
+.loopexit:1  %exitcond1 = icmp eq i4 %i, -8
+
+ST_2: empty_26 [1/1] 0.00ns
+.loopexit:2  %empty_26 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)
+
+ST_2: i_2 [1/1] 0.80ns
+.loopexit:3  %i_2 = add i4 %i, 1
+
+ST_2: stg_81 [1/1] 0.00ns
+.loopexit:4  br i1 %exitcond1, label %3, label %1
+
+ST_2: tmp_V_1 [1/1] 4.38ns
+:0  %tmp_V_1 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %strm_in_V_V)
+
+ST_2: tmp [1/1] 0.00ns
+:1  %tmp = trunc i4 %i to i3
+
+ST_2: tmp_s [1/1] 0.00ns
+:2  %tmp_s = call i8 @_ssdm_op_BitConcatenate.i8.i3.i5(i3 %tmp, i5 0)
+
+ST_2: stg_85 [1/1] 1.57ns
+:3  br label %2
+
+ST_2: stg_86 [2/2] 2.76ns
+:0  call fastcc void @dut_pad([324 x i1]* %input_0, [324 x i1]* %input_1, [324 x i1]* %input_2, [324 x i1]* %input_3, [324 x i1]* %input_4, [324 x i1]* %input_5, [324 x i1]* %input_6, [324 x i1]* %input_7, [324 x i1]* %input_8, [324 x i1]* %input_9, [324 x i1]* %input_10, [324 x i1]* %input_11, [324 x i1]* %input_12, [324 x i1]* %input_13, [324 x i1]* %input_14, [324 x i1]* %input_15, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, i7 1, i6 16)
+
+
+ <State 3>: 4.11ns
+ST_3: Hi_assign [1/1] 0.00ns
+:0  %Hi_assign = phi i6 [ 0, %1 ], [ %j, %branch0 ]
+
+ST_3: Hi_assign_cast4 [1/1] 0.00ns
+:1  %Hi_assign_cast4 = zext i6 %Hi_assign to i8
+
+ST_3: Hi_assign_cast3 [1/1] 0.00ns
+:2  %Hi_assign_cast3 = zext i6 %Hi_assign to i32
+
+ST_3: exitcond [1/1] 1.94ns
+:3  %exitcond = icmp eq i6 %Hi_assign, -32
+
+ST_3: empty_27 [1/1] 0.00ns
+:4  %empty_27 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)
+
+ST_3: j [1/1] 1.72ns
+:5  %j = add i6 %Hi_assign, 1
+
+ST_3: stg_93 [1/1] 0.00ns
+:6  br i1 %exitcond, label %.loopexit, label %branch0
+
+ST_3: tmp_20 [1/1] 0.00ns
+branch0:0  %tmp_20 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %tmp_V_1, i32 %Hi_assign_cast3)
+
+ST_3: tmp_7 [1/1] 1.72ns
+branch0:1  %tmp_7 = add i8 %tmp_s, %Hi_assign_cast4
+
+ST_3: newIndex1 [1/1] 0.00ns
+branch0:2  %newIndex1 = zext i8 %tmp_7 to i64
+
+ST_3: input_0_addr [1/1] 0.00ns
+branch0:3  %input_0_addr = getelementptr [324 x i1]* %input_0, i64 0, i64 %newIndex1
+
+ST_3: stg_98 [1/1] 2.39ns
+branch0:4  store i1 %tmp_20, i1* %input_0_addr, align 1
+
+ST_3: stg_99 [1/1] 0.00ns
+branch0:5  br label %2
+
+
+ <State 4>: 0.00ns
+ST_4: stg_100 [1/2] 0.00ns
+:0  call fastcc void @dut_pad([324 x i1]* %input_0, [324 x i1]* %input_1, [324 x i1]* %input_2, [324 x i1]* %input_3, [324 x i1]* %input_4, [324 x i1]* %input_5, [324 x i1]* %input_6, [324 x i1]* %input_7, [324 x i1]* %input_8, [324 x i1]* %input_9, [324 x i1]* %input_10, [324 x i1]* %input_11, [324 x i1]* %input_12, [324 x i1]* %input_13, [324 x i1]* %input_14, [324 x i1]* %input_15, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, i7 1, i6 16)
+
+
+ <State 5>: 2.76ns
+ST_5: stg_101 [2/2] 2.76ns
+:1  call fastcc void @dut_conv([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, [324 x i8]* @threshold1_V_0, [324 x i8]* @threshold1_V_1, [324 x i8]* @threshold1_V_2, [324 x i8]* @threshold1_V_3, [324 x i8]* @threshold1_V_4, [324 x i8]* @threshold1_V_5, [324 x i8]* @threshold1_V_6, [324 x i8]* @threshold1_V_7, [324 x i8]* @threshold1_V_8, [324 x i8]* @threshold1_V_9, [324 x i8]* @threshold1_V_10, [324 x i8]* @threshold1_V_11, [324 x i8]* @threshold1_V_12, [324 x i8]* @threshold1_V_13, [324 x i8]* @threshold1_V_14, [324 x i8]* @threshold1_V_15, i7 1, i7 16, i6 18, i1 false)
+
+
+ <State 6>: 0.00ns
+ST_6: stg_102 [1/2] 0.00ns
+:1  call fastcc void @dut_conv([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, [324 x i8]* @threshold1_V_0, [324 x i8]* @threshold1_V_1, [324 x i8]* @threshold1_V_2, [324 x i8]* @threshold1_V_3, [324 x i8]* @threshold1_V_4, [324 x i8]* @threshold1_V_5, [324 x i8]* @threshold1_V_6, [324 x i8]* @threshold1_V_7, [324 x i8]* @threshold1_V_8, [324 x i8]* @threshold1_V_9, [324 x i8]* @threshold1_V_10, [324 x i8]* @threshold1_V_11, [324 x i8]* @threshold1_V_12, [324 x i8]* @threshold1_V_13, [324 x i8]* @threshold1_V_14, [324 x i8]* @threshold1_V_15, i7 1, i7 16, i6 18, i1 false)
+
+
+ <State 7>: 1.04ns
+ST_7: stg_103 [2/2] 1.04ns
+:2  call fastcc void @dut_max_pool([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, i7 16, i6 16)
+
+
+ <State 8>: 0.00ns
+ST_8: stg_104 [1/2] 0.00ns
+:2  call fastcc void @dut_max_pool([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, i7 16, i6 16)
+
+
+ <State 9>: 2.76ns
+ST_9: stg_105 [2/2] 2.76ns
+:3  call fastcc void @dut_pad([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, i7 16, i6 8)
+
+
+ <State 10>: 0.00ns
+ST_10: stg_106 [1/2] 0.00ns
+:3  call fastcc void @dut_pad([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, i7 16, i6 8)
+
+
+ <State 11>: 2.76ns
+ST_11: stg_107 [2/2] 2.76ns
+:4  call fastcc void @dut_conv([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i8]* @threshold2_V_0, [324 x i8]* @threshold2_V_1, [324 x i8]* @threshold2_V_2, [324 x i8]* @threshold2_V_3, [324 x i8]* @threshold2_V_4, [324 x i8]* @threshold2_V_5, [324 x i8]* @threshold2_V_6, [324 x i8]* @threshold2_V_7, [324 x i8]* @threshold2_V_8, [324 x i8]* @threshold2_V_9, [324 x i8]* @threshold2_V_10, [324 x i8]* @threshold2_V_11, [324 x i8]* @threshold2_V_12, [324 x i8]* @threshold2_V_13, [324 x i8]* @threshold2_V_14, [324 x i8]* @threshold2_V_15, i7 16, i7 32, i6 10, i1 true)
+
+
+ <State 12>: 0.00ns
+ST_12: stg_108 [1/2] 0.00ns
+:4  call fastcc void @dut_conv([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i8]* @threshold2_V_0, [324 x i8]* @threshold2_V_1, [324 x i8]* @threshold2_V_2, [324 x i8]* @threshold2_V_3, [324 x i8]* @threshold2_V_4, [324 x i8]* @threshold2_V_5, [324 x i8]* @threshold2_V_6, [324 x i8]* @threshold2_V_7, [324 x i8]* @threshold2_V_8, [324 x i8]* @threshold2_V_9, [324 x i8]* @threshold2_V_10, [324 x i8]* @threshold2_V_11, [324 x i8]* @threshold2_V_12, [324 x i8]* @threshold2_V_13, [324 x i8]* @threshold2_V_14, [324 x i8]* @threshold2_V_15, i7 16, i7 32, i6 10, i1 true)
+
+
+ <State 13>: 1.04ns
+ST_13: stg_109 [2/2] 1.04ns
+:5  call fastcc void @dut_max_pool([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, i7 32, i6 8)
+
+
+ <State 14>: 0.00ns
+ST_14: stg_110 [1/2] 0.00ns
+:5  call fastcc void @dut_max_pool([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv2_2, [324 x i1]* %mem_conv2_3, [324 x i1]* %mem_conv2_4, [324 x i1]* %mem_conv2_5, [324 x i1]* %mem_conv2_6, [324 x i1]* %mem_conv2_7, [324 x i1]* %mem_conv2_8, [324 x i1]* %mem_conv2_9, [324 x i1]* %mem_conv2_10, [324 x i1]* %mem_conv2_11, [324 x i1]* %mem_conv2_12, [324 x i1]* %mem_conv2_13, [324 x i1]* %mem_conv2_14, [324 x i1]* %mem_conv2_15, i7 32, i6 8)
+
+
+ <State 15>: 0.00ns
+ST_15: stg_111 [2/2] 0.00ns
+:6  call fastcc void @dut_reshape([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1)
+
+
+ <State 16>: 0.00ns
+ST_16: stg_112 [1/2] 0.00ns
+:6  call fastcc void @dut_reshape([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv2_1, [324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1)
+
+
+ <State 17>: 0.00ns
+ST_17: stg_113 [2/2] 0.00ns
+:7  call fastcc void @dut_dense.1([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0)
+
+
+ <State 18>: 0.00ns
+ST_18: stg_114 [1/2] 0.00ns
+:7  call fastcc void @dut_dense.1([324 x i1]* %mem_conv1_0, [324 x i1]* %mem_conv1_1, [324 x i1]* %mem_conv1_2, [324 x i1]* %mem_conv1_3, [324 x i1]* %mem_conv1_4, [324 x i1]* %mem_conv1_5, [324 x i1]* %mem_conv1_6, [324 x i1]* %mem_conv1_7, [324 x i1]* %mem_conv1_8, [324 x i1]* %mem_conv1_9, [324 x i1]* %mem_conv1_10, [324 x i1]* %mem_conv1_11, [324 x i1]* %mem_conv1_12, [324 x i1]* %mem_conv1_13, [324 x i1]* %mem_conv1_14, [324 x i1]* %mem_conv1_15, [324 x i1]* %mem_conv2_0)
+
+
+ <State 19>: 0.00ns
+ST_19: stg_115 [2/2] 0.00ns
+:8  call fastcc void @dut_dense([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv1_0)
+
+
+ <State 20>: 1.57ns
+ST_20: stg_116 [1/2] 0.00ns
+:8  call fastcc void @dut_dense([324 x i1]* %mem_conv2_0, [324 x i1]* %mem_conv1_0)
+
+ST_20: stg_117 [1/1] 1.57ns
+:9  br label %4
+
+
+ <State 21>: 4.38ns
+ST_21: output_V [1/1] 0.00ns
+:0  %output_V = phi i32 [ 0, %3 ], [ %phitmp_i, %._crit_edge.i ]
+
+ST_21: max_id_V [1/1] 0.00ns
+:1  %max_id_V = phi i4 [ 1, %3 ], [ %i_3, %._crit_edge.i ]
+
+ST_21: max_id_V_cast2 [1/1] 0.00ns
+:2  %max_id_V_cast2 = zext i4 %max_id_V to i32
+
+ST_21: exitcond_i [1/1] 1.88ns
+:3  %exitcond_i = icmp eq i4 %max_id_V, -6
+
+ST_21: empty_28 [1/1] 0.00ns
+:4  %empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 9, i64 9, i64 9)
+
+ST_21: stg_123 [1/1] 0.00ns
+:5  br i1 %exitcond_i, label %bnn_xcel.exit, label %._crit_edge.i
+
+ST_21: newIndex32_i [1/1] 0.00ns
+._crit_edge.i:0  %newIndex32_i = zext i4 %max_id_V to i64
+
+ST_21: mem_conv1_0_addr [1/1] 0.00ns
+._crit_edge.i:1  %mem_conv1_0_addr = getelementptr [324 x i1]* %mem_conv1_0, i64 0, i64 %newIndex32_i
+
+ST_21: mem_conv1_0_load [2/2] 2.39ns
+._crit_edge.i:2  %mem_conv1_0_load = load i1* %mem_conv1_0_addr, align 1
+
+ST_21: i_3 [1/1] 0.80ns
+._crit_edge.i:4  %i_3 = add i4 %max_id_V, 1
+
+ST_21: stg_128 [1/1] 4.38ns
+bnn_xcel.exit:0  call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %strm_out_V_V, i32 %output_V)
+
+ST_21: stg_129 [1/1] 0.00ns
+bnn_xcel.exit:1  ret void
+
+
+ <State 22>: 3.76ns
+ST_22: mem_conv1_0_load [1/2] 2.39ns
+._crit_edge.i:2  %mem_conv1_0_load = load i1* %mem_conv1_0_addr, align 1
+
+ST_22: phitmp_i [1/1] 1.37ns
+._crit_edge.i:3  %phitmp_i = select i1 %mem_conv1_0_load, i32 %max_id_V_cast2, i32 %output_V
+
+ST_22: stg_132 [1/1] 0.00ns
+._crit_edge.i:5  br label %4
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

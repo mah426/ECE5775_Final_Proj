@@ -1,0 +1,820 @@
+
+
+================================================================
+== Vivado HLS Report for 'dut_pad'
+================================================================
+* Date:           Fri Oct 28 23:28:21 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        bnn.prj
+* Solution:       solution3
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.34|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  11604|  88738|  11604|  88738|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-------+-------+-------------+-----------+-----------+--------+----------+
+        |                 |    Latency    |  Iteration  |  Initiation Interval  |  Trip  |          |
+        |    Loop Name    |  min  |  max  |   Latency   |  achieved |   target  |  Count | Pipelined|
+        +-----------------+-------+-------+-------------+-----------+-----------+--------+----------+
+        |- LOOP_PAD_0     |  10368|  10368|            2|          -|          -|    5184|    no    |
+        |- LOOP_PAD_1     |   1234|  78368| 1234 ~ 4898 |          -|          -| 1 ~ 16 |    no    |
+        | + LOOP_PAD_2    |   1232|   4896|  154 ~ 306  |          -|          -| 8 ~ 16 |    no    |
+        |  ++ LOOP_PAD_3  |    152|    304|           19|          -|          -| 8 ~ 16 |    no    |
+        +-----------------+-------+-------+-------------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 24
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+	4  / (exitcond1)
+3 --> 
+	2  / true
+4 --> 
+	5  / (tmp_2)
+5 --> 
+	6  / (tmp_5)
+	4  / (!tmp_5)
+6 --> 
+	7  / (!exitcond)
+	5  / (exitcond)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	6  / true
+* FSM state operations: 
+
+ <State 1>: 2.76ns
+ST_1: I_read [1/1] 1.04ns
+:0  %I_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %I)
+
+ST_1: M_read [1/1] 1.04ns
+:1  %M_read = call i7 @_ssdm_op_Read.ap_auto.i7(i7 %M)
+
+ST_1: tmp_3 [1/1] 0.00ns
+:2  %tmp_3 = trunc i6 %I_read to i5
+
+ST_1: tmp_s [1/1] 1.72ns
+:3  %tmp_s = add i5 2, %tmp_3
+
+ST_1: tmp_cast5_cast [1/1] 0.00ns
+:4  %tmp_cast5_cast = zext i5 %tmp_s to i13
+
+ST_1: tmp_cast_cast [1/1] 0.00ns
+:5  %tmp_cast_cast = zext i5 %tmp_s to i9
+
+ST_1: stg_31 [1/1] 1.57ns
+:6  br label %1
+
+
+ <State 2>: 2.39ns
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i13 [ 0, %0 ], [ %i_1, %3 ]
+
+ST_2: phi_mul [1/1] 0.00ns
+:1  %phi_mul = phi i27 [ 0, %0 ], [ %next_mul, %3 ]
+
+ST_2: phi_urem [1/1] 0.00ns
+:2  %phi_urem = phi i13 [ 0, %0 ], [ %idx_urem, %3 ]
+
+ST_2: exitcond1 [1/1] 2.18ns
+:3  %exitcond1 = icmp eq i13 %i, -3008
+
+ST_2: empty [1/1] 0.00ns
+:4  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5184, i64 5184, i64 5184)
+
+ST_2: i_1 [1/1] 1.96ns
+:5  %i_1 = add i13 %i, 1
+
+ST_2: stg_38 [1/1] 0.00ns
+:6  br i1 %exitcond1, label %.preheader.preheader, label %2
+
+ST_2: stg_39 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str4) nounwind
+
+ST_2: next_mul [1/1] 2.32ns
+:1  %next_mul = add i27 %phi_mul, 12946
+
+ST_2: tmp_9 [1/1] 0.00ns
+:2  %tmp_9 = call i4 @_ssdm_op_PartSelect.i4.i27.i32.i32(i27 %phi_mul, i32 23, i32 26)
+
+ST_2: newIndex2 [1/1] 0.00ns
+:3  %newIndex2 = zext i13 %phi_urem to i64
+
+ST_2: output_0_addr [1/1] 0.00ns
+:4  %output_0_addr = getelementptr [648 x i1]* %output_0, i64 0, i64 %newIndex2
+
+ST_2: output_1_addr [1/1] 0.00ns
+:5  %output_1_addr = getelementptr [648 x i1]* %output_1, i64 0, i64 %newIndex2
+
+ST_2: output_2_addr [1/1] 0.00ns
+:6  %output_2_addr = getelementptr [648 x i1]* %output_2, i64 0, i64 %newIndex2
+
+ST_2: output_3_addr [1/1] 0.00ns
+:7  %output_3_addr = getelementptr [648 x i1]* %output_3, i64 0, i64 %newIndex2
+
+ST_2: output_4_addr [1/1] 0.00ns
+:8  %output_4_addr = getelementptr [648 x i1]* %output_4, i64 0, i64 %newIndex2
+
+ST_2: output_5_addr [1/1] 0.00ns
+:9  %output_5_addr = getelementptr [648 x i1]* %output_5, i64 0, i64 %newIndex2
+
+ST_2: output_6_addr [1/1] 0.00ns
+:10  %output_6_addr = getelementptr [648 x i1]* %output_6, i64 0, i64 %newIndex2
+
+ST_2: output_7_addr [1/1] 0.00ns
+:11  %output_7_addr = getelementptr [648 x i1]* %output_7, i64 0, i64 %newIndex2
+
+ST_2: stg_51 [1/1] 1.91ns
+:12  switch i4 %tmp_9, label %branch15 [
+    i4 0, label %branch8
+    i4 1, label %branch9
+    i4 2, label %branch10
+    i4 3, label %branch11
+    i4 4, label %branch12
+    i4 5, label %branch13
+    i4 6, label %branch14
+  ]
+
+ST_2: stg_52 [1/1] 2.39ns
+branch14:0  store i1 false, i1* %output_6_addr, align 1
+
+ST_2: stg_53 [1/1] 0.00ns
+branch14:1  br label %3
+
+ST_2: stg_54 [1/1] 2.39ns
+branch13:0  store i1 false, i1* %output_5_addr, align 1
+
+ST_2: stg_55 [1/1] 0.00ns
+branch13:1  br label %3
+
+ST_2: stg_56 [1/1] 2.39ns
+branch12:0  store i1 false, i1* %output_4_addr, align 1
+
+ST_2: stg_57 [1/1] 0.00ns
+branch12:1  br label %3
+
+ST_2: stg_58 [1/1] 2.39ns
+branch11:0  store i1 false, i1* %output_3_addr, align 1
+
+ST_2: stg_59 [1/1] 0.00ns
+branch11:1  br label %3
+
+ST_2: stg_60 [1/1] 2.39ns
+branch10:0  store i1 false, i1* %output_2_addr, align 1
+
+ST_2: stg_61 [1/1] 0.00ns
+branch10:1  br label %3
+
+ST_2: stg_62 [1/1] 2.39ns
+branch9:0  store i1 false, i1* %output_1_addr, align 1
+
+ST_2: stg_63 [1/1] 0.00ns
+branch9:1  br label %3
+
+ST_2: stg_64 [1/1] 2.39ns
+branch8:0  store i1 false, i1* %output_0_addr, align 1
+
+ST_2: stg_65 [1/1] 0.00ns
+branch8:1  br label %3
+
+ST_2: stg_66 [1/1] 2.39ns
+branch15:0  store i1 false, i1* %output_7_addr, align 1
+
+ST_2: stg_67 [1/1] 0.00ns
+branch15:1  br label %3
+
+ST_2: tmp_8 [1/1] 0.00ns
+.preheader.preheader:0  %tmp_8 = trunc i7 %M_read to i6
+
+ST_2: I_cast6 [1/1] 0.00ns
+.preheader.preheader:1  %I_cast6 = zext i6 %I_read to i8
+
+ST_2: I_cast [1/1] 0.00ns
+.preheader.preheader:2  %I_cast = zext i6 %I_read to i12
+
+ST_2: stg_71 [1/1] 1.57ns
+.preheader.preheader:3  br label %.preheader
+
+
+ <State 3>: 5.51ns
+ST_3: next_urem [1/1] 1.96ns
+:0  %next_urem = add i13 %phi_urem, 1
+
+ST_3: tmp_10 [1/1] 2.18ns
+:1  %tmp_10 = icmp ult i13 %next_urem, 648
+
+ST_3: idx_urem [1/1] 1.37ns
+:2  %idx_urem = select i1 %tmp_10, i13 %next_urem, i13 0
+
+ST_3: stg_75 [1/1] 0.00ns
+:3  br label %1
+
+
+ <State 4>: 2.60ns
+ST_4: m [1/1] 0.00ns
+.preheader:0  %m = phi i5 [ %m_1, %11 ], [ 0, %.preheader.preheader ]
+
+ST_4: phi_mul7 [1/1] 0.00ns
+.preheader:1  %phi_mul7 = phi i8 [ %next_mul8, %11 ], [ 0, %.preheader.preheader ]
+
+ST_4: next_mul8 [1/1] 1.72ns
+.preheader:2  %next_mul8 = add i8 %phi_mul7, %I_cast6
+
+ST_4: m_cast4_cast [1/1] 0.00ns
+.preheader:3  %m_cast4_cast = zext i5 %m to i9
+
+ST_4: m_cast [1/1] 0.00ns
+.preheader:4  %m_cast = zext i5 %m to i6
+
+ST_4: tmp_2 [1/1] 1.94ns
+.preheader:5  %tmp_2 = icmp slt i6 %m_cast, %tmp_8
+
+ST_4: empty_16 [1/1] 0.00ns
+.preheader:6  %empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 16, i64 0)
+
+ST_4: m_1 [1/1] 1.72ns
+.preheader:7  %m_1 = add i5 %m, 1
+
+ST_4: stg_84 [1/1] 0.00ns
+.preheader:8  br i1 %tmp_2, label %4, label %12
+
+ST_4: stg_85 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str5) nounwind
+
+ST_4: tmp_1 [1/1] 0.00ns
+:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str5)
+
+ST_4: tmp_4 [1/1] 2.60ns
+:2  %tmp_4 = mul i9 %m_cast4_cast, %tmp_cast_cast
+
+ST_4: stg_88 [1/1] 1.57ns
+:3  br label %5
+
+ST_4: stg_89 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 5>: 1.94ns
+ST_5: x [1/1] 0.00ns
+:0  %x = phi i5 [ 0, %4 ], [ %x_1, %10 ]
+
+ST_5: x_cast2 [1/1] 0.00ns
+:1  %x_cast2 = zext i5 %x to i12
+
+ST_5: x_cast [1/1] 0.00ns
+:2  %x_cast = zext i5 %x to i6
+
+ST_5: tmp_5 [1/1] 1.94ns
+:3  %tmp_5 = icmp slt i6 %x_cast, %I_read
+
+ST_5: empty_17 [1/1] 0.00ns
+:4  %empty_17 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 16, i64 0)
+
+ST_5: x_1 [1/1] 1.72ns
+:5  %x_1 = add i5 %x, 1
+
+ST_5: stg_96 [1/1] 0.00ns
+:6  br i1 %tmp_5, label %6, label %11
+
+ST_5: stg_97 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str6) nounwind
+
+ST_5: tmp_7 [1/1] 0.00ns
+:1  %tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str6)
+
+ST_5: tmp_6_cast [1/1] 0.00ns
+:2  %tmp_6_cast = zext i5 %x_1 to i13
+
+ST_5: stg_100 [1/1] 1.57ns
+:3  br label %7
+
+ST_5: empty_20 [1/1] 0.00ns
+:0  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str5, i32 %tmp_1)
+
+ST_5: stg_102 [1/1] 0.00ns
+:1  br label %.preheader
+
+
+ <State 6>: 8.10ns
+ST_6: y [1/1] 0.00ns
+:0  %y = phi i5 [ 0, %6 ], [ %y_1, %9 ]
+
+ST_6: y_cast1 [1/1] 0.00ns
+:1  %y_cast1 = zext i5 %y to i8
+
+ST_6: y_cast [1/1] 0.00ns
+:2  %y_cast = zext i5 %y to i6
+
+ST_6: exitcond [1/1] 1.94ns
+:3  %exitcond = icmp eq i6 %y_cast, %I_read
+
+ST_6: empty_18 [1/1] 0.00ns
+:4  %empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 16, i64 0)
+
+ST_6: y_1 [1/1] 1.72ns
+:5  %y_1 = add i5 %y, 1
+
+ST_6: stg_109 [1/1] 0.00ns
+:6  br i1 %exitcond, label %10, label %8
+
+ST_6: tmp [1/1] 1.72ns
+:1  %tmp = add i8 %phi_mul7, %y_cast1
+
+ST_6: tmp_cast [1/1] 0.00ns
+:2  %tmp_cast = zext i8 %tmp to i12
+
+ST_6: tmp2 [1/1] 6.38ns
+:3  %tmp2 = mul i12 %I_cast, %tmp_cast
+
+ST_6: y_1_cast [1/1] 0.00ns
+:5  %y_1_cast = zext i5 %y_1 to i9
+
+ST_6: tmp9 [1/1] 1.84ns
+:6  %tmp9 = add i9 %tmp_4, %y_1_cast
+
+ST_6: empty_19 [1/1] 0.00ns
+:0  %empty_19 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str6, i32 %tmp_7)
+
+ST_6: stg_116 [1/1] 0.00ns
+:1  br label %5
+
+
+ <State 7>: 8.34ns
+ST_7: i_index [1/1] 1.84ns
+:4  %i_index = add i12 %x_cast2, %tmp2
+
+ST_7: tmp9_cast_cast [1/1] 0.00ns
+:7  %tmp9_cast_cast = zext i9 %tmp9 to i13
+
+ST_7: tmp1 [1/1] 6.38ns
+:8  %tmp1 = mul i13 %tmp_cast5_cast, %tmp9_cast_cast
+
+ST_7: o_index [1/1] 1.96ns
+:9  %o_index = add i13 %tmp1, %tmp_6_cast
+
+ST_7: zext4_cast [1/1] 0.00ns
+:10  %zext4_cast = zext i12 %i_index to i26
+
+ST_7: mul5 [1/1] 6.38ns
+:11  %mul5 = mul i26 %zext4_cast, 6473
+
+ST_7: tmp_11 [1/1] 0.00ns
+:12  %tmp_11 = call i4 @_ssdm_op_PartSelect.i4.i26.i32.i32(i26 %mul5, i32 22, i32 25)
+
+ST_7: newIndex [16/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+
+ <State 8>: 6.38ns
+ST_8: newIndex [15/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_8: zext1_cast [1/1] 0.00ns
+:34  %zext1_cast = zext i13 %o_index to i28
+
+ST_8: mul2 [1/1] 6.38ns
+:35  %mul2 = mul i28 %zext1_cast, 12946
+
+ST_8: tmp_12 [1/1] 0.00ns
+:36  %tmp_12 = call i5 @_ssdm_op_PartSelect.i5.i28.i32.i32(i28 %mul2, i32 23, i32 27)
+
+ST_8: newIndex4 [17/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 9>: 4.45ns
+ST_9: newIndex [14/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_9: newIndex4 [16/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 10>: 4.45ns
+ST_10: newIndex [13/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_10: newIndex4 [15/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 11>: 4.45ns
+ST_11: newIndex [12/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_11: newIndex4 [14/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 12>: 4.45ns
+ST_12: newIndex [11/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_12: newIndex4 [13/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 13>: 4.45ns
+ST_13: newIndex [10/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_13: newIndex4 [12/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 14>: 4.45ns
+ST_14: newIndex [9/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_14: newIndex4 [11/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 15>: 4.45ns
+ST_15: newIndex [8/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_15: newIndex4 [10/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 16>: 4.45ns
+ST_16: newIndex [7/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_16: newIndex4 [9/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 17>: 4.45ns
+ST_17: newIndex [6/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_17: newIndex4 [8/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 18>: 4.45ns
+ST_18: newIndex [5/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_18: newIndex4 [7/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 19>: 4.45ns
+ST_19: newIndex [4/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_19: newIndex4 [6/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 20>: 4.45ns
+ST_20: newIndex [3/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_20: newIndex4 [5/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 21>: 4.45ns
+ST_21: newIndex [2/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_21: newIndex4 [4/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 22>: 6.77ns
+ST_22: newIndex [1/16] 4.38ns
+:15  %newIndex = urem i12 %i_index, 648
+
+ST_22: newIndex3 [1/1] 0.00ns
+:16  %newIndex3 = zext i12 %newIndex to i64
+
+ST_22: input_0_addr [1/1] 0.00ns
+:17  %input_0_addr = getelementptr [648 x i1]* %input_0, i64 0, i64 %newIndex3
+
+ST_22: input_0_load [2/2] 2.39ns
+:18  %input_0_load = load i1* %input_0_addr, align 1
+
+ST_22: input_1_addr [1/1] 0.00ns
+:19  %input_1_addr = getelementptr [648 x i1]* %input_1, i64 0, i64 %newIndex3
+
+ST_22: input_1_load [2/2] 2.39ns
+:20  %input_1_load = load i1* %input_1_addr, align 1
+
+ST_22: input_2_addr [1/1] 0.00ns
+:21  %input_2_addr = getelementptr [648 x i1]* %input_2, i64 0, i64 %newIndex3
+
+ST_22: input_2_load [2/2] 2.39ns
+:22  %input_2_load = load i1* %input_2_addr, align 1
+
+ST_22: input_3_addr [1/1] 0.00ns
+:23  %input_3_addr = getelementptr [648 x i1]* %input_3, i64 0, i64 %newIndex3
+
+ST_22: input_3_load [2/2] 2.39ns
+:24  %input_3_load = load i1* %input_3_addr, align 1
+
+ST_22: input_4_addr [1/1] 0.00ns
+:25  %input_4_addr = getelementptr [648 x i1]* %input_4, i64 0, i64 %newIndex3
+
+ST_22: input_4_load [2/2] 2.39ns
+:26  %input_4_load = load i1* %input_4_addr, align 1
+
+ST_22: input_5_addr [1/1] 0.00ns
+:27  %input_5_addr = getelementptr [648 x i1]* %input_5, i64 0, i64 %newIndex3
+
+ST_22: input_5_load [2/2] 2.39ns
+:28  %input_5_load = load i1* %input_5_addr, align 1
+
+ST_22: input_6_addr [1/1] 0.00ns
+:29  %input_6_addr = getelementptr [648 x i1]* %input_6, i64 0, i64 %newIndex3
+
+ST_22: input_6_load [2/2] 2.39ns
+:30  %input_6_load = load i1* %input_6_addr, align 1
+
+ST_22: input_7_addr [1/1] 0.00ns
+:31  %input_7_addr = getelementptr [648 x i1]* %input_7, i64 0, i64 %newIndex3
+
+ST_22: input_7_load [2/2] 2.39ns
+:32  %input_7_load = load i1* %input_7_addr, align 1
+
+ST_22: newIndex4 [3/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 23>: 4.45ns
+ST_23: arrayNo [1/1] 0.00ns
+:13  %arrayNo = sext i4 %tmp_11 to i12
+
+ST_23: arrayNo_cast [1/1] 0.00ns
+:14  %arrayNo_cast = zext i12 %arrayNo to i32
+
+ST_23: input_0_load [1/2] 2.39ns
+:18  %input_0_load = load i1* %input_0_addr, align 1
+
+ST_23: input_1_load [1/2] 2.39ns
+:20  %input_1_load = load i1* %input_1_addr, align 1
+
+ST_23: input_2_load [1/2] 2.39ns
+:22  %input_2_load = load i1* %input_2_addr, align 1
+
+ST_23: input_3_load [1/2] 2.39ns
+:24  %input_3_load = load i1* %input_3_addr, align 1
+
+ST_23: input_4_load [1/2] 2.39ns
+:26  %input_4_load = load i1* %input_4_addr, align 1
+
+ST_23: input_5_load [1/2] 2.39ns
+:28  %input_5_load = load i1* %input_5_addr, align 1
+
+ST_23: input_6_load [1/2] 2.39ns
+:30  %input_6_load = load i1* %input_6_addr, align 1
+
+ST_23: input_7_load [1/2] 2.39ns
+:32  %input_7_load = load i1* %input_7_addr, align 1
+
+ST_23: tmp_6 [1/1] 1.94ns
+:33  %tmp_6 = call i1 @_ssdm_op_Mux.ap_auto.8i1.i32(i1 %input_0_load, i1 %input_1_load, i1 %input_2_load, i1 %input_3_load, i1 %input_4_load, i1 %input_5_load, i1 %input_6_load, i1 %input_7_load, i32 %arrayNo_cast)
+
+ST_23: newIndex4 [2/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+
+ <State 24>: 6.84ns
+ST_24: stg_187 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str7) nounwind
+
+ST_24: arrayNo2 [1/1] 0.00ns
+:37  %arrayNo2 = sext i5 %tmp_12 to i13
+
+ST_24: newIndex4 [1/17] 4.45ns
+:38  %newIndex4 = urem i13 %o_index, 648
+
+ST_24: newIndex5 [1/1] 0.00ns
+:39  %newIndex5 = zext i13 %newIndex4 to i64
+
+ST_24: output_0_addr_512 [1/1] 0.00ns
+:40  %output_0_addr_512 = getelementptr [648 x i1]* %output_0, i64 0, i64 %newIndex5
+
+ST_24: output_1_addr_1 [1/1] 0.00ns
+:41  %output_1_addr_1 = getelementptr [648 x i1]* %output_1, i64 0, i64 %newIndex5
+
+ST_24: output_2_addr_1 [1/1] 0.00ns
+:42  %output_2_addr_1 = getelementptr [648 x i1]* %output_2, i64 0, i64 %newIndex5
+
+ST_24: output_3_addr_1 [1/1] 0.00ns
+:43  %output_3_addr_1 = getelementptr [648 x i1]* %output_3, i64 0, i64 %newIndex5
+
+ST_24: output_4_addr_1 [1/1] 0.00ns
+:44  %output_4_addr_1 = getelementptr [648 x i1]* %output_4, i64 0, i64 %newIndex5
+
+ST_24: output_5_addr_1 [1/1] 0.00ns
+:45  %output_5_addr_1 = getelementptr [648 x i1]* %output_5, i64 0, i64 %newIndex5
+
+ST_24: output_6_addr_1 [1/1] 0.00ns
+:46  %output_6_addr_1 = getelementptr [648 x i1]* %output_6, i64 0, i64 %newIndex5
+
+ST_24: output_7_addr_1 [1/1] 0.00ns
+:47  %output_7_addr_1 = getelementptr [648 x i1]* %output_7, i64 0, i64 %newIndex5
+
+ST_24: stg_199 [1/1] 1.91ns
+:48  switch i13 %arrayNo2, label %branch7 [
+    i13 0, label %branch0
+    i13 1, label %branch1
+    i13 2, label %branch2
+    i13 3, label %branch3
+    i13 4, label %branch4
+    i13 5, label %branch5
+    i13 6, label %branch6
+  ]
+
+ST_24: stg_200 [1/1] 2.39ns
+branch6:0  store i1 %tmp_6, i1* %output_6_addr_1, align 1
+
+ST_24: stg_201 [1/1] 0.00ns
+branch6:1  br label %9
+
+ST_24: stg_202 [1/1] 2.39ns
+branch5:0  store i1 %tmp_6, i1* %output_5_addr_1, align 1
+
+ST_24: stg_203 [1/1] 0.00ns
+branch5:1  br label %9
+
+ST_24: stg_204 [1/1] 2.39ns
+branch4:0  store i1 %tmp_6, i1* %output_4_addr_1, align 1
+
+ST_24: stg_205 [1/1] 0.00ns
+branch4:1  br label %9
+
+ST_24: stg_206 [1/1] 2.39ns
+branch3:0  store i1 %tmp_6, i1* %output_3_addr_1, align 1
+
+ST_24: stg_207 [1/1] 0.00ns
+branch3:1  br label %9
+
+ST_24: stg_208 [1/1] 2.39ns
+branch2:0  store i1 %tmp_6, i1* %output_2_addr_1, align 1
+
+ST_24: stg_209 [1/1] 0.00ns
+branch2:1  br label %9
+
+ST_24: stg_210 [1/1] 2.39ns
+branch1:0  store i1 %tmp_6, i1* %output_1_addr_1, align 1
+
+ST_24: stg_211 [1/1] 0.00ns
+branch1:1  br label %9
+
+ST_24: stg_212 [1/1] 2.39ns
+branch0:0  store i1 %tmp_6, i1* %output_0_addr_512, align 1
+
+ST_24: stg_213 [1/1] 0.00ns
+branch0:1  br label %9
+
+ST_24: stg_214 [1/1] 2.39ns
+branch7:0  store i1 %tmp_6, i1* %output_7_addr_1, align 1
+
+ST_24: stg_215 [1/1] 0.00ns
+branch7:1  br label %9
+
+ST_24: stg_216 [1/1] 0.00ns
+:0  br label %7
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
