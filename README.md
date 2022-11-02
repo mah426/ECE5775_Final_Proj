@@ -1,4 +1,4 @@
-# ECE5775_Final_Proj
+# ECE5775 Final Project
 Accelerating Car Classification
 
 ## Steps:
