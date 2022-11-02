@@ -25,7 +25,7 @@ class Timer {
 
     char binName[50];
     unsigned nCalls;
-    struct timespec ts_start;
+    timeval ts_start;
     float totalTime;
     
     public:
@@ -35,7 +35,7 @@ class Timer {
       Timer (const char* Name="", bool On=false) {
         if (On) {
           // record the start time
-          clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts_start);
+          gettimeofday(&ts_start, NULL);
           nCalls = 1;
         }
         else {
@@ -53,7 +53,7 @@ class Timer {
         if (nCalls > 0) {
           printf ("%-20s: ", binName);
           printf ("%6d calls; ", nCalls);
-          printf ("%7.3f msecs total time\n", totalTime);
+          printf ("%7.3f msecs total time\n", 1000*totalTime);
           //printf ("%7.4f msecs average time;\n", 1000*totalTime/nCalls);
         }
       }
@@ -63,7 +63,7 @@ class Timer {
       //------------------------------------------------------------------
       void start() {
         // record start time
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts_start);
+        gettimeofday(&ts_start, NULL);
         nCalls++;
       }
       
@@ -72,12 +72,10 @@ class Timer {
       //------------------------------------------------------------------
       void stop() {
         // get current time, add elapsed time to totalTime
-        struct timespec ts_curr;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts_curr);
-        float diff_sec = float(ts_curr.tv_sec - ts_start.tv_sec);
-        float diff_nsec = float(ts_curr.tv_nsec - ts_start.tv_nsec);
-
-        totalTime += 1e3 * diff_sec + 1e-6 * diff_nsec;
+        timeval ts_curr;
+        gettimeofday(&ts_curr, NULL);
+        totalTime += float(ts_curr.tv_sec - ts_start.tv_sec) +
+                     float(ts_curr.tv_usec)*1e-6 - float(ts_start.tv_usec)*1e-6;
       }
 
   #else
