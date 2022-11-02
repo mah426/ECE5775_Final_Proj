@@ -15,3 +15,18 @@ Data to be collected: classification accuracy with varying training set size dur
 
 
 # Results:
+## Baseline:
+### Accuracy:
+### Hardware Utilization:
+#### BRAM_4K:
+#### DSP48:
+#### FF:
+#### LUTs:
+
+## Optimized:
+### Accuracy:
+### Hardware Utilization:
+#### BRAM_4K:
+#### DSP48:
+#### FF:
+#### LUTs:
