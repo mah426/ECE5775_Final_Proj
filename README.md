@@ -1,5 +1,4 @@
-# ECE5775 Final Project
-Accelerating Car Classification
+# ECE5775 Final Project - Accelerating Car Classification
 
 ## Steps:
 For our final project, we plan on implementing a car classification system to determine types of cars, from sedans, SUVs, buses, semi-trucks, and more. To train, we will need to create a neural network that will take input images of specific car types to test real world images. The first step in this process would be to take an input image and convert to grayscale. With this grayscale image, we can perform the training/testing on said image. Lastly, we will output the classification of the image.
