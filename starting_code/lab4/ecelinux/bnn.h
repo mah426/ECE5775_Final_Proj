@@ -2,7 +2,7 @@
 // bnn.h
 //===========================================================================
 // @brief: This header file defines the interface for the core functions.
-
+//
 #ifndef BNN
 #define BPNN
 #include "layer.h"
