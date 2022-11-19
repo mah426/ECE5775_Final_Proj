@@ -16,7 +16,7 @@ CFLAGS = -g -I${VHLS_INC} -DK_CONST=3
 
 # Compile & run digitrec implementation
 all: matmult.cpp matmult_test.cpp
-	@echo "Compiling & executing the digit recogintion program ..."
+	@echo "Compiling & executing the matrix multiplication program ..."
 	g++ ${CFLAGS} matmult.cpp matmult_test.cpp -o matmult
 	./matmult
 

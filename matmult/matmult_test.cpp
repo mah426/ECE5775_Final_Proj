@@ -65,7 +65,8 @@ int main()
   
 
   if (correct){
-    std::cout << " matrix matches!";
+    std::cout << " matrix matches! \n";
+    std::cout << " 100% accurate \n";
   }
   else{
     std::cout << " matrix does NOT match! \n";

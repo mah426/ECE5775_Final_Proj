@@ -7,44 +7,46 @@ target triple = "x86_64-unknown-linux-gnu"
 @llvm_global_ctors_0 = appending global [1 x i32] [i32 65535]
 
 define void @matmult([10000 x i32]* %a_V, [10000 x i32]* %b_V, [10000 x i32]* %out_V) {
-  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %a_V), !map !35
-  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %b_V), !map !41
-  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %out_V), !map !45
+  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %a_V), !map !40
+  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %b_V), !map !46
+  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %out_V), !map !50
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @matmult_str) nounwind
   br label %.loopexit
 
-.loopexit:                                        ; preds = %.preheader22, %0
-  %i = phi i7 [ 0, %0 ], [ %i_1, %.preheader22 ]
-  %phi_mul1 = phi i14 [ 0, %0 ], [ %next_mul2, %.preheader22 ]
+.loopexit:                                        ; preds = %.preheader, %0
+  %i = phi i7 [ 0, %0 ], [ %i_1, %.preheader ]
+  %phi_mul1 = phi i14 [ 0, %0 ], [ %next_mul2, %.preheader ]
   %next_mul2 = add i14 %phi_mul1, 100
   %exitcond1 = icmp eq i7 %i, -28
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
   %i_1 = add i7 %i, 1
-  br i1 %exitcond1, label %2, label %.preheader22
+  br i1 %exitcond1, label %4, label %.preheader
 
-.preheader22:                                     ; preds = %.preheader, %.loopexit
-  %j = phi i7 [ 0, %.loopexit ], [ %j_1, %.preheader ]
+.preheader:                                       ; preds = %2, %.loopexit
+  %j = phi i7 [ 0, %.loopexit ], [ %j_1, %2 ]
   %exitcond2 = icmp eq i7 %j, -28
   %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
   %j_1 = add i7 %j, 1
-  br i1 %exitcond2, label %.loopexit, label %.preheader.preheader
+  br i1 %exitcond2, label %.loopexit, label %1
 
-.preheader.preheader:                             ; preds = %.preheader22
+; <label>:1                                       ; preds = %.preheader
   %tmp_2_cast = zext i7 %j to i14
   %tmp_3 = add i14 %phi_mul1, %tmp_2_cast
   %tmp_3_cast = zext i14 %tmp_3 to i64
   %out_V_addr = getelementptr [10000 x i32]* %out_V, i64 0, i64 %tmp_3_cast
-  br label %.preheader
+  br label %2
 
-.preheader:                                       ; preds = %1, %.preheader.preheader
-  %k = phi i7 [ %k_1, %1 ], [ 0, %.preheader.preheader ]
-  %phi_mul = phi i14 [ %next_mul, %1 ], [ 0, %.preheader.preheader ]
+; <label>:2                                       ; preds = %3, %1
+  %out_V_load = phi i32 [ 0, %1 ], [ %tmp_5, %3 ]
+  %k = phi i7 [ 0, %1 ], [ %k_1, %3 ]
+  %phi_mul = phi i14 [ 0, %1 ], [ %next_mul, %3 ]
+  store i32 %out_V_load, i32* %out_V_addr, align 4
   %exitcond = icmp eq i7 %k, -28
   %empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
   %k_1 = add i7 %k, 1
-  br i1 %exitcond, label %.preheader22, label %1
+  br i1 %exitcond, label %.preheader, label %3
 
-; <label>:1                                       ; preds = %.preheader
+; <label>:3                                       ; preds = %2
   %tmp_4_cast = zext i7 %k to i14
   %tmp_6 = add i14 %phi_mul1, %tmp_4_cast
   %tmp_6_cast = zext i14 %tmp_6 to i64
@@ -56,12 +58,10 @@ define void @matmult([10000 x i32]* %a_V, [10000 x i32]* %b_V, [10000 x i32]* %o
   %a_V_load = load i32* %a_V_addr, align 4
   %b_V_load = load i32* %b_V_addr, align 4
   %p_s = mul i32 %b_V_load, %a_V_load
-  %out_V_load = load i32* %out_V_addr, align 4
   %tmp_5 = add i32 %p_s, %out_V_load
-  store i32 %tmp_5, i32* %out_V_addr, align 4
-  br label %.preheader
+  br label %2
 
-; <label>:2                                       ; preds = %.loopexit
+; <label>:4                                       ; preds = %.loopexit
   ret void
 }
 
@@ -84,9 +84,9 @@ entry:
 
 declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
-!opencl.kernels = !{!0, !7, !13, !19, !19, !19, !25, !25}
+!opencl.kernels = !{!0, !7, !13, !19, !19, !19, !25, !25, !28, !28, !19, !19, !31}
 !hls.encrypted.func = !{}
-!llvm.map.gv = !{!28}
+!llvm.map.gv = !{!33}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
 !1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1}
@@ -116,24 +116,29 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !25 = metadata !{null, metadata !8, metadata !9, metadata !26, metadata !11, metadata !27, metadata !6}
 !26 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_int_base<32, false> &"}
 !27 = metadata !{metadata !"kernel_arg_name", metadata !"op"}
-!28 = metadata !{metadata !29, [1 x i32]* @llvm_global_ctors_0}
-!29 = metadata !{metadata !30}
-!30 = metadata !{i32 0, i32 31, metadata !31}
-!31 = metadata !{metadata !32}
-!32 = metadata !{metadata !"llvm.global_ctors.0", metadata !33, metadata !"", i32 0, i32 31}
-!33 = metadata !{metadata !34}
-!34 = metadata !{i32 0, i32 0, i32 1}
-!35 = metadata !{metadata !36}
-!36 = metadata !{i32 0, i32 31, metadata !37}
-!37 = metadata !{metadata !38}
-!38 = metadata !{metadata !"a.V", metadata !39, metadata !"uint32", i32 0, i32 31}
-!39 = metadata !{metadata !40, metadata !40}
-!40 = metadata !{i32 0, i32 99, i32 1}
-!41 = metadata !{metadata !42}
-!42 = metadata !{i32 0, i32 31, metadata !43}
-!43 = metadata !{metadata !44}
-!44 = metadata !{metadata !"b.V", metadata !39, metadata !"uint32", i32 0, i32 31}
-!45 = metadata !{metadata !46}
-!46 = metadata !{i32 0, i32 31, metadata !47}
-!47 = metadata !{metadata !48}
-!48 = metadata !{metadata !"out.V", metadata !39, metadata !"uint32", i32 0, i32 31}
+!28 = metadata !{null, metadata !8, metadata !9, metadata !29, metadata !11, metadata !30, metadata !6}
+!29 = metadata !{metadata !"kernel_arg_type", metadata !"int"}
+!30 = metadata !{metadata !"kernel_arg_name", metadata !"val"}
+!31 = metadata !{null, metadata !8, metadata !9, metadata !32, metadata !11, metadata !12, metadata !6}
+!32 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<32> &"}
+!33 = metadata !{metadata !34, [1 x i32]* @llvm_global_ctors_0}
+!34 = metadata !{metadata !35}
+!35 = metadata !{i32 0, i32 31, metadata !36}
+!36 = metadata !{metadata !37}
+!37 = metadata !{metadata !"llvm.global_ctors.0", metadata !38, metadata !"", i32 0, i32 31}
+!38 = metadata !{metadata !39}
+!39 = metadata !{i32 0, i32 0, i32 1}
+!40 = metadata !{metadata !41}
+!41 = metadata !{i32 0, i32 31, metadata !42}
+!42 = metadata !{metadata !43}
+!43 = metadata !{metadata !"a.V", metadata !44, metadata !"uint32", i32 0, i32 31}
+!44 = metadata !{metadata !45, metadata !45}
+!45 = metadata !{i32 0, i32 99, i32 1}
+!46 = metadata !{metadata !47}
+!47 = metadata !{i32 0, i32 31, metadata !48}
+!48 = metadata !{metadata !49}
+!49 = metadata !{metadata !"b.V", metadata !44, metadata !"uint32", i32 0, i32 31}
+!50 = metadata !{metadata !51}
+!51 = metadata !{i32 0, i32 31, metadata !52}
+!52 = metadata !{metadata !53}
+!53 = metadata !{metadata !"out.V", metadata !44, metadata !"uint32", i32 0, i32 31}

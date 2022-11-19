@@ -120,10 +120,10 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     name out_V \
     reset_level 1 \
     sync_rst true \
-    dir IO \
+    dir O \
     corename out_V \
     op interface \
-    ports { out_V_address0 { O 14 vector } out_V_ce0 { O 1 bit } out_V_we0 { O 1 bit } out_V_d0 { O 32 vector } out_V_q0 { I 32 vector } } \
+    ports { out_V_address0 { O 14 vector } out_V_ce0 { O 1 bit } out_V_we0 { O 1 bit } out_V_d0 { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_V'"

@@ -214,7 +214,7 @@ extern "C" {
 #1 "./matmult.h" 1
 //===========================================================================
 // matmult.h
-//===========================================================================
+//===========================================================================//
 // @brief: This header file defines the interface for the matrix multiplication
 
 
@@ -39036,6 +39036,7 @@ void matmult(bit32_t a[100][100],bit32_t b[100][100],bit32_t out[100][100]);
 void matmult(bit32_t a[100][100],bit32_t b[100][100], bit32_t out[100][100]){_ssdm_SpecArrayDimSize(a,100);_ssdm_SpecArrayDimSize(b,100);_ssdm_SpecArrayDimSize(out,100);
    for (int i = 0; i < 100; i++) {
         for (int j = 0; j < 100; j++) {
+            out[i][j] = 0;
             for (int k = 0; k < 100; k++) {
                 out[i][j] += a[i][k] * b[k][j];
             }
