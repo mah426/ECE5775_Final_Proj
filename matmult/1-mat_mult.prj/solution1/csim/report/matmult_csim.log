@@ -1,0 +1,7 @@
+   Compiling ../../../../matmult_test.cpp in debug mode
+   Compiling ../../../../matmult.cpp in debug mode
+   Generating csim.exe
+ matrix does NOT match! 
+757
+ accuracy = 0.9243
+INFO: [SIM 1] CSim done with 0 errors.
