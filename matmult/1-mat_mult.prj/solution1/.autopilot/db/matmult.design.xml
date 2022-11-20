@@ -23,27 +23,27 @@
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<Loop1>
-<Name>Loop 1</Name>
+<LOOP_MAT_MULT_0>
+<Name>LOOP_MAT_MULT_0</Name>
 <TripCount>100</TripCount>
 <Latency>8020200</Latency>
 <IterationLatency>80202</IterationLatency>
 <PipelineDepth>80202</PipelineDepth>
-<Loop1.1>
-<Name>Loop 1.1</Name>
+<LOOP_MAT_MULT_1>
+<Name>LOOP_MAT_MULT_1</Name>
 <TripCount>100</TripCount>
 <Latency>80200</Latency>
 <IterationLatency>802</IterationLatency>
 <PipelineDepth>802</PipelineDepth>
-<Loop1.1.1>
-<Name>Loop 1.1.1</Name>
+<LOOP_MAT_MULT_2>
+<Name>LOOP_MAT_MULT_2</Name>
 <TripCount>100</TripCount>
 <Latency>800</Latency>
 <IterationLatency>8</IterationLatency>
 <PipelineDepth>8</PipelineDepth>
-</Loop1.1.1>
-</Loop1.1>
-</Loop1>
+</LOOP_MAT_MULT_2>
+</LOOP_MAT_MULT_1>
+</LOOP_MAT_MULT_0>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>

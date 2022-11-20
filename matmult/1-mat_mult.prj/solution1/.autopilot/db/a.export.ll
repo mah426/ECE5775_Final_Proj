@@ -5,63 +5,82 @@ target triple = "x86_64-unknown-linux-gnu"
 @matmult_str = internal unnamed_addr constant [8 x i8] c"matmult\00"
 @llvm_global_ctors_1 = appending global [1 x void ()*] [void ()* @_GLOBAL__I_a]
 @llvm_global_ctors_0 = appending global [1 x i32] [i32 65535]
+@p_str2 = private unnamed_addr constant [16 x i8] c"LOOP_MAT_MULT_2\00", align 1
+@p_str1 = private unnamed_addr constant [16 x i8] c"LOOP_MAT_MULT_1\00", align 1
+@p_str = private unnamed_addr constant [16 x i8] c"LOOP_MAT_MULT_0\00", align 1
 
 define void @matmult([10000 x i32]* %a_V, [10000 x i32]* %b_V, [10000 x i32]* %out_V) {
   call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %a_V), !map !40
   call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %b_V), !map !46
   call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %out_V), !map !50
   call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @matmult_str) nounwind
-  br label %.loopexit
+  br label %1
 
-.loopexit:                                        ; preds = %.preheader, %0
-  %i = phi i7 [ 0, %0 ], [ %i_1, %.preheader ]
-  %phi_mul1 = phi i14 [ 0, %0 ], [ %next_mul2, %.preheader ]
+; <label>:1                                       ; preds = %8, %0
+  %i = phi i7 [ 0, %0 ], [ %i_1, %8 ]
+  %phi_mul1 = phi i14 [ 0, %0 ], [ %next_mul2, %8 ]
   %next_mul2 = add i14 %phi_mul1, 100
   %exitcond1 = icmp eq i7 %i, -28
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
   %i_1 = add i7 %i, 1
-  br i1 %exitcond1, label %4, label %.preheader
+  br i1 %exitcond1, label %9, label %2
 
-.preheader:                                       ; preds = %2, %.loopexit
-  %j = phi i7 [ 0, %.loopexit ], [ %j_1, %2 ]
+; <label>:2                                       ; preds = %1
+  call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str) nounwind
+  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str)
+  br label %3
+
+; <label>:3                                       ; preds = %7, %2
+  %j = phi i7 [ 0, %2 ], [ %j_1, %7 ]
   %exitcond2 = icmp eq i7 %j, -28
   %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
   %j_1 = add i7 %j, 1
-  br i1 %exitcond2, label %.loopexit, label %1
+  br i1 %exitcond2, label %8, label %4
 
-; <label>:1                                       ; preds = %.preheader
+; <label>:4                                       ; preds = %3
+  call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str1) nounwind
+  %tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str1)
   %tmp_2_cast = zext i7 %j to i14
-  %tmp_3 = add i14 %phi_mul1, %tmp_2_cast
-  %tmp_3_cast = zext i14 %tmp_3 to i64
-  %out_V_addr = getelementptr [10000 x i32]* %out_V, i64 0, i64 %tmp_3_cast
-  br label %2
+  %tmp_7 = add i14 %phi_mul1, %tmp_2_cast
+  %tmp_7_cast = zext i14 %tmp_7 to i64
+  %out_V_addr = getelementptr [10000 x i32]* %out_V, i64 0, i64 %tmp_7_cast
+  br label %5
 
-; <label>:2                                       ; preds = %3, %1
-  %out_V_load = phi i32 [ 0, %1 ], [ %tmp_5, %3 ]
-  %k = phi i7 [ 0, %1 ], [ %k_1, %3 ]
-  %phi_mul = phi i14 [ 0, %1 ], [ %next_mul, %3 ]
+; <label>:5                                       ; preds = %6, %4
+  %out_V_load = phi i32 [ 0, %4 ], [ %tmp_5, %6 ]
+  %k = phi i7 [ 0, %4 ], [ %k_1, %6 ]
+  %phi_mul = phi i14 [ 0, %4 ], [ %next_mul, %6 ]
   store i32 %out_V_load, i32* %out_V_addr, align 4
   %exitcond = icmp eq i7 %k, -28
   %empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
   %k_1 = add i7 %k, 1
-  br i1 %exitcond, label %.preheader, label %3
+  br i1 %exitcond, label %7, label %6
 
-; <label>:3                                       ; preds = %2
+; <label>:6                                       ; preds = %5
+  call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str2) nounwind
   %tmp_4_cast = zext i7 %k to i14
-  %tmp_6 = add i14 %phi_mul1, %tmp_4_cast
-  %tmp_6_cast = zext i14 %tmp_6 to i64
-  %a_V_addr = getelementptr [10000 x i32]* %a_V, i64 0, i64 %tmp_6_cast
-  %next_mul = add i14 %phi_mul, 100
-  %tmp_8 = add i14 %phi_mul, %tmp_2_cast
+  %tmp_8 = add i14 %phi_mul1, %tmp_4_cast
   %tmp_8_cast = zext i14 %tmp_8 to i64
-  %b_V_addr = getelementptr [10000 x i32]* %b_V, i64 0, i64 %tmp_8_cast
+  %a_V_addr = getelementptr [10000 x i32]* %a_V, i64 0, i64 %tmp_8_cast
+  %next_mul = add i14 %phi_mul, 100
+  %tmp_s = add i14 %phi_mul, %tmp_2_cast
+  %tmp_10_cast = zext i14 %tmp_s to i64
+  %b_V_addr = getelementptr [10000 x i32]* %b_V, i64 0, i64 %tmp_10_cast
   %a_V_load = load i32* %a_V_addr, align 4
   %b_V_load = load i32* %b_V_addr, align 4
   %p_s = mul i32 %b_V_load, %a_V_load
   %tmp_5 = add i32 %p_s, %out_V_load
-  br label %2
+  br label %5
 
-; <label>:4                                       ; preds = %.loopexit
+; <label>:7                                       ; preds = %5
+  %empty_4 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str1, i32 %tmp_3)
+  br label %3
+
+; <label>:8                                       ; preds = %3
+  %empty_5 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str, i32 %tmp_1)
+  br label %1
+
+; <label>:9                                       ; preds = %1
   ret void
 }
 
@@ -72,9 +91,24 @@ entry:
   ret void
 }
 
+define weak i32 @_ssdm_op_SpecRegionEnd(...) {
+entry:
+  ret i32 0
+}
+
+define weak i32 @_ssdm_op_SpecRegionBegin(...) {
+entry:
+  ret i32 0
+}
+
 define weak i32 @_ssdm_op_SpecLoopTripCount(...) {
 entry:
   ret i32 0
+}
+
+define weak void @_ssdm_op_SpecLoopName(...) nounwind {
+entry:
+  ret void
 }
 
 define weak void @_ssdm_op_SpecBitsMap(...) {

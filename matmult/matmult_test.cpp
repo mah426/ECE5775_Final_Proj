@@ -7,7 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <ctime>
 #include "matmult.h"
 
 
@@ -15,6 +15,7 @@
 
 int main() 
 {
+  srand ( time(NULL) );
   std::ofstream outfile;
   outfile.open("out.dat");
   bit32_t i1[100][100];

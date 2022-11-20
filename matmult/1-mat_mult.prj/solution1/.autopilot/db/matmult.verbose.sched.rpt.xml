@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'matmult'" level="0">
-<item name = "Date">Sat Nov 19 03:13:49 2022
+<item name = "Date">Sun Nov 20 02:08:40 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">1-mat_mult.prj</item>
@@ -35,9 +35,9 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">8020200, 8020200, 80202, -, -, 100, no</column>
-<column name=" + Loop 1.1">80200, 80200, 802, -, -, 100, no</column>
-<column name="  ++ Loop 1.1.1">800, 800, 8, -, -, 100, no</column>
+<column name="- LOOP_MAT_MULT_0">8020200, 8020200, 80202, -, -, 100, no</column>
+<column name=" + LOOP_MAT_MULT_1">80200, 80200, 802, -, -, 100, no</column>
+<column name="  ++ LOOP_MAT_MULT_2">800, 800, 8, -, -, 100, no</column>
 </table>
 </item>
 </section>
