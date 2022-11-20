@@ -18,15 +18,17 @@ int main()
   srand ( time(NULL) );
   std::ofstream outfile;
   outfile.open("out.dat");
-  bit32_t i1[100][100];
-  bit32_t i2[100][100];
+  float i1[100][100];
+  float i2[100][100];
+  float LO = 0.0;
+  float HI = 256.0;
   for (int i = 0; i < 100; i++) {
     for (int j = 0; j < 100; j++) {
-      i1[i][j] = rand()%100;
-      i2[i][j] = rand()%100;
+      i1[i][j] = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+      i2[i][j] = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
     }
   }
-  bit32_t expected[100][100];
+  float expected[100][100];
 
   for (int i = 0; i < 100; i++) {
         for (int j = 0; j < 100; j++) {
@@ -35,7 +37,7 @@ int main()
             }
         }
     }
-  bit32_t result[100][100];
+  float result[100][100];
   bool correct = true;
   matmult(i1,i2,result);
   int wrong = 0;

@@ -5,9 +5,9 @@
 // 
 // ==============================================================
 
-#ifndef __matmult_mul_32s_32s_32_6__HH__
-#define __matmult_mul_32s_32s_32_6__HH__
-#include "ACMP_mul_ss.h"
+#ifndef __matmult_fadd_32ns_32ns_32_5_full_dsp__HH__
+#define __matmult_fadd_32ns_32ns_32_5_full_dsp__HH__
+#include "ACMP_fadd.h"
 #include <systemc>
 
 template<
@@ -16,7 +16,7 @@ template<
     int din0_WIDTH,
     int din1_WIDTH,
     int dout_WIDTH>
-SC_MODULE(matmult_mul_32s_32s_32_6) {
+SC_MODULE(matmult_fadd_32ns_32ns_32_5_full_dsp) {
     sc_core::sc_in_clk clk;
     sc_core::sc_in<sc_dt::sc_logic> reset;
     sc_core::sc_in<sc_dt::sc_logic> ce;
@@ -26,15 +26,15 @@ SC_MODULE(matmult_mul_32s_32s_32_6) {
 
 
 
-    ACMP_mul_ss<ID, 6, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_mul_ss_U;
+    ACMP_fadd<ID, 5, din0_WIDTH, din1_WIDTH, dout_WIDTH> ACMP_fadd_U;
 
-    SC_CTOR(matmult_mul_32s_32s_32_6):  ACMP_mul_ss_U ("ACMP_mul_ss_U") {
-        ACMP_mul_ss_U.clk(clk);
-        ACMP_mul_ss_U.reset(reset);
-        ACMP_mul_ss_U.ce(ce);
-        ACMP_mul_ss_U.din0(din0);
-        ACMP_mul_ss_U.din1(din1);
-        ACMP_mul_ss_U.dout(dout);
+    SC_CTOR(matmult_fadd_32ns_32ns_32_5_full_dsp):  ACMP_fadd_U ("ACMP_fadd_U") {
+        ACMP_fadd_U.clk(clk);
+        ACMP_fadd_U.reset(reset);
+        ACMP_fadd_U.ce(ce);
+        ACMP_fadd_U.din0(din0);
+        ACMP_fadd_U.din1(din1);
+        ACMP_fadd_U.dout(dout);
 
     }
 

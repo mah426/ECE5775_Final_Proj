@@ -11,6 +11,6 @@
 
 // Top function for matmult
 
-void matmult(bit32_t a[100][100],bit32_t b[100][100],bit32_t out[100][100]);
+void matmult(float a[100][100],float b[100][100],float out[100][100]);
 
 #endif

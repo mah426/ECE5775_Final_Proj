@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>a_V</name>
+						<name>a</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -24,7 +24,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>a.V</originalName>
+						<originalName>a</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>b_V</name>
+						<name>b</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,7 +52,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>b.V</originalName>
+						<originalName>b</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -71,7 +71,7 @@
 					<Obj>
 						<type>1</type>
 						<id>3</id>
-						<name>out_V</name>
+						<name>out_r</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -80,7 +80,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>out.V</originalName>
+						<originalName>out</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -232,7 +232,7 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>exitcond1</name>
+						<name>exitcond2</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>16</lineNumber>
@@ -430,7 +430,7 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>exitcond2</name>
+						<name>exitcond1</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>17</lineNumber>
@@ -598,7 +598,7 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>tmp_7</name>
+						<name>tmp_9</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -640,7 +640,7 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>tmp_7_cast</name>
+						<name>tmp_9_cast</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -681,7 +681,7 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>out_V_addr</name>
+						<name>out_addr</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>18</lineNumber>
@@ -765,7 +765,7 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>out_V_load</name>
+						<name>storemerge</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1038,7 +1038,7 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>tmp_4_cast</name>
+						<name>tmp_5_cast</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1079,7 +1079,7 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>tmp_8</name>
+						<name>tmp_s</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1121,7 +1121,7 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>tmp_8_cast</name>
+						<name>tmp_10_cast</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1162,7 +1162,7 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>a_V_addr</name>
+						<name>a_addr</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1233,7 +1233,7 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>tmp_s</name>
+						<name>tmp_2</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1275,7 +1275,7 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>tmp_10_cast</name>
+						<name>tmp_12_cast</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1316,7 +1316,7 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>b_V_addr</name>
+						<name>b_addr</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1359,7 +1359,7 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>a_V_load</name>
+						<name>a_load</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1400,7 +1400,7 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>b_V_load</name>
+						<name>b_load</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1441,7 +1441,7 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>p_s</name>
+						<name>tmp_6</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1476,14 +1476,14 @@
 					<item>151</item>
 					<item>152</item>
 				</oprand_edges>
-				<opcode>mul</opcode>
+				<opcode>fmul</opcode>
 			</item>
 			<item class_id_reference="9" object_id="_39">
 				<Value>
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>tmp_5</name>
+						<name>tmp_7</name>
 						<fileName>matmult.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/matmult</fileDirectory>
 						<lineNumber>20</lineNumber>
@@ -1518,7 +1518,7 @@
 					<item>153</item>
 					<item>154</item>
 				</oprand_edges>
-				<opcode>add</opcode>
+				<opcode>fadd</opcode>
 			</item>
 			<item class_id_reference="9" object_id="_40">
 				<Value>
@@ -1845,7 +1845,7 @@
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
-				<const_type>0</const_type>
+				<const_type>1</const_type>
 				<content>0</content>
 			</item>
 		</consts>
@@ -2575,25 +2575,25 @@
 			<item class_id_reference="20" object_id="_137">
 				<id>151</id>
 				<edge_type>1</edge_type>
-				<source_obj>55</source_obj>
+				<source_obj>54</source_obj>
 				<sink_obj>56</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_138">
 				<id>152</id>
 				<edge_type>1</edge_type>
-				<source_obj>54</source_obj>
+				<source_obj>55</source_obj>
 				<sink_obj>56</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_139">
 				<id>153</id>
 				<edge_type>1</edge_type>
-				<source_obj>56</source_obj>
+				<source_obj>36</source_obj>
 				<sink_obj>57</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_140">
 				<id>154</id>
 				<edge_type>1</edge_type>
-				<source_obj>36</source_obj>
+				<source_obj>56</source_obj>
 				<sink_obj>57</sink_obj>
 			</item>
 			<item class_id_reference="20" object_id="_141">
@@ -2710,7 +2710,7 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>8020201</mMinLatency>
+			<mMinLatency>10020201</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -2756,7 +2756,7 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>100</mMinTripCount>
 			<mMaxTripCount>100</mMaxTripCount>
-			<mMinLatency>8020200</mMinLatency>
+			<mMinLatency>10020200</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -2803,7 +2803,7 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>100</mMinTripCount>
 			<mMaxTripCount>100</mMaxTripCount>
-			<mMinLatency>80200</mMinLatency>
+			<mMinLatency>100200</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -2849,7 +2849,7 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>100</mMinTripCount>
 			<mMaxTripCount>100</mMaxTripCount>
-			<mMinLatency>800</mMinLatency>
+			<mMinLatency>1000</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -3167,21 +3167,21 @@
 		<item>
 			<first>56</first>
 			<second>
-				<first>5</first>
-				<second>5</second>
+				<first>4</first>
+				<second>3</second>
 			</second>
 		</item>
 		<item>
 			<first>57</first>
 			<second>
-				<first>10</first>
-				<second>0</second>
+				<first>8</first>
+				<second>4</second>
 			</second>
 		</item>
 		<item>
 			<first>58</first>
 			<second>
-				<first>10</first>
+				<first>12</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -3256,7 +3256,7 @@
 			<first>59</first>
 			<second>
 				<first>3</first>
-				<second>10</second>
+				<second>12</second>
 			</second>
 		</item>
 		<item>
