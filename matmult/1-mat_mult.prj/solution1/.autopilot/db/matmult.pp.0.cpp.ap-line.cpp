@@ -39003,7 +39003,7 @@ typedef ap_uint<32> bit32_t;
 #pragma empty_line
 // Top function for matmult
 #pragma empty_line
-void matmult(float a[100][100],float b[100][100],float out[100][100]);
+void matmult(float a[100][100],float b[100][100],float out[100]);
 #pragma line 7 "matmult.cpp" 2
 #pragma empty_line
 //----------------------------------------------------------
@@ -39013,13 +39013,11 @@ void matmult(float a[100][100],float b[100][100],float out[100][100]);
 // @param[b] : input - second matrix
 // @param[c] : input - output matrix
 #pragma empty_line
-void matmult(float a[100][100],float b[100][100], float out[100][100]){
+void matmult(float a[100][100],float b[100][100], float out[100]){
    LOOP_MAT_MULT_0: for (int i = 0; i < 100; i++) {
+    out[i] = 0;
         LOOP_MAT_MULT_1: for (int j = 0; j < 100; j++) {
-            out[i][j] = 0;
-            LOOP_MAT_MULT_2: for (int k = 0; k < 100; k++) {
-                out[i][j] += a[i][k] * b[k][j];
-            }
+            out[i] += a[i][j] * b[i][j];
         }
     }
 }

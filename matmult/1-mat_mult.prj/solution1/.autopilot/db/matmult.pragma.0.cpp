@@ -39023,7 +39023,7 @@ typedef ap_uint<32> bit32_t;
 
 // Top function for matmult
 
-void matmult(float a[100][100],float b[100][100],float out[100][100]);
+void matmult(float a[100][100],float b[100][100],float out[100]);
 #7 "matmult.cpp" 2
 
 //----------------------------------------------------------
@@ -39033,13 +39033,17 @@ void matmult(float a[100][100],float b[100][100],float out[100][100]);
 // @param[b] : input - second matrix
 // @param[c] : input - output matrix
 
-void matmult(float a[100][100],float b[100][100], float out[100][100]){_ssdm_SpecArrayDimSize(a,100);_ssdm_SpecArrayDimSize(b,100);_ssdm_SpecArrayDimSize(out,100);
+void matmult(float a[100][100],float b[100][100], float out[100]){_ssdm_SpecArrayDimSize(a,100);_ssdm_SpecArrayDimSize(b,100);_ssdm_SpecArrayDimSize(out,100);
    LOOP_MAT_MULT_0: for (int i = 0; i < 100; i++) {
+#pragma HLS PIPELINE
+#16 "matmult.cpp"
+
+    out[i] = 0;
         LOOP_MAT_MULT_1: for (int j = 0; j < 100; j++) {
-            out[i][j] = 0;
-            LOOP_MAT_MULT_2: for (int k = 0; k < 100; k++) {
-                out[i][j] += a[i][k] * b[k][j];
-            }
+#pragma HLS LOOP_UNROLL
+#18 "matmult.cpp"
+
+            out[i] += a[i][j] * b[i][j];
         }
     }
 }

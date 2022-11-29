@@ -11,6 +11,6 @@
 
 // Top function for matmult
 
-void matmult(float a[100][100],float b[100][100],float out[100][100]);
+void matmult(float a[100][100],float b[100][100],float out[100]);
 
 #endif

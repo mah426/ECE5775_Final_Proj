@@ -12,7 +12,9 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [HLS-111] Elapsed time: 2.34 seconds; current memory usage: 63.4 MB.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'LOOP_MAT_MULT_0' (matmult.cpp:16) in function 'matmult' for pipelining.
+@I [XFORM-501] Unrolling loop 'LOOP_MAT_MULT_1' (matmult.cpp:18) in function 'matmult' completely.
+@I [HLS-111] Elapsed time: 3.29 seconds; current memory usage: 68.2 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'matmult' ...
 @W [SYN-107] Renaming port name 'matmult/out' to 'matmult/out_r' to avoid the conflict with HDL keywords or other object names.
@@ -20,8 +22,11 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] -- Scheduling module 'matmult' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'LOOP_MAT_MULT_0'.
+@W [SCHED-69] Unable to schedule 'load' operation ('a_load_2', matmult.cpp:19) on array 'a' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 50, Depth: 510.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 64 MB.
+@I [HLS-111] Elapsed time: 2.45 seconds; current memory usage: 73.1 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'matmult' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -29,8 +34,12 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Performing variable lifetime analysis.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
+@I [BIND-100] After resource sharing, estimated clock period (10.5ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+@I [BIND-100] The critical path consists of the following:
+	'load' operation ('a_load', matmult.cpp:19) on array 'a' (2.71 ns)
+	'fmul' operation ('tmp_4', matmult.cpp:19) (7.81 ns)
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 64.3 MB.
+@I [HLS-111] Elapsed time: 1.09 seconds; current memory usage: 79 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'matmult' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -38,12 +47,12 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [RTGEN-500] Setting interface mode on port 'matmult/b' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on port 'matmult/out_r' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on function 'matmult' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Generating core module 'matmult_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-@I [RTGEN-100] Generating core module 'matmult_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+@I [RTGEN-100] Generating core module 'matmult_fadd_32ns_32ns_32_5_full_dsp': 2 instance(s).
+@I [RTGEN-100] Generating core module 'matmult_fmul_32ns_32ns_32_4_max_dsp': 2 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'matmult'.
-@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 64.6 MB.
+@I [HLS-111] Elapsed time: 0.9 seconds; current memory usage: 83.3 MB.
 @I [HLS-10] Finished generating all RTL models.
 @I [SYSC-301] Generating SystemC RTL for matmult.
 @I [VHDL-304] Generating VHDL RTL for matmult.
 @I [VLOG-307] Generating Verilog RTL for matmult.
-@I [HLS-112] Total elapsed time: 14.730 seconds; peak memory usage: 64.6 MB.
+@I [HLS-112] Total elapsed time: 20.987 seconds; peak memory usage: 83.3 MB.
