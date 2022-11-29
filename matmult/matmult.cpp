@@ -12,11 +12,13 @@
 // @param[b] : input - second matrix
 // @param[c] : input - output matrix
 
-void matmult(float a[100][100],float b[100][100], float out[100]){
+void matmult(float a[100][100],float b[100][100], float out[100][100]){
    LOOP_MAT_MULT_0: for (int i = 0; i < 100; i++) {
-    out[i] = 0;
         LOOP_MAT_MULT_1: for (int j = 0; j < 100; j++) {
-            out[i] += a[i][j] * b[i][j];
+            out[i][j] = 0;
+            LOOP_MAT_MULT_2: for (int k = 0; k < 100; k++) {
+                out[i][j] += a[i][k] * b[k][j];
+            }
         }
     }
 }

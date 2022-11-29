@@ -5,13 +5,13 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'nrb74' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Tue Nov 29 05:43:36 EST 2022
+INFO: [HLS 200-10] For user 'nrb74' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Sun Nov 20 02:47:29 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
 INFO: [HLS 200-10] In directory '/home/nrb74/ece5775/ECE5775_Final_Proj/matmult'
 INFO: [HLS 200-10] Opening and resetting project '/home/nrb74/ece5775/ECE5775_Final_Proj/matmult/1-mat_mult.prj'.
 INFO: [HLS 200-10] Adding design file 'matmult.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'matmult_test.cpp' to the project
-INFO: [HLS 200-10] Creating and opening solution '/home/nrb74/ece5775/ECE5775_Final_Proj/matmult/1-mat_mult.prj/solution1'.
+INFO: [HLS 200-10] Opening and resetting solution '/home/nrb74/ece5775/ECE5775_Final_Proj/matmult/1-mat_mult.prj/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
@@ -25,9 +25,7 @@ INFO: [HLS 200-10] Analyzing design file 'matmult.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LOOP_MAT_MULT_0' (matmult.cpp:16) in function 'matmult' for pipelining.
-INFO: [XFORM 203-501] Unrolling loop 'LOOP_MAT_MULT_1' (matmult.cpp:18) in function 'matmult' completely.
-INFO: [HLS 200-111] Elapsed time: 3.29 seconds; current memory usage: 68.2 MB.
+INFO: [HLS 200-111] Elapsed time: 2.34 seconds; current memory usage: 63.4 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'matmult' ...
 WARNING: [SYN 201-107] Renaming port name 'matmult/out' to 'matmult/out_r' to avoid the conflict with HDL keywords or other object names.
@@ -35,11 +33,8 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'matmult' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'LOOP_MAT_MULT_0'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('a_load_2', matmult.cpp:19) on array 'a' due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 50, Depth: 510.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 2.45 seconds; current memory usage: 73.1 MB.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 64 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'matmult' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -47,12 +42,8 @@ INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] After resource sharing, estimated clock period (10.5ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
-INFO: [BIND 205-100] The critical path consists of the following:
-	'load' operation ('a_load', matmult.cpp:19) on array 'a' (2.71 ns)
-	'fmul' operation ('tmp_4', matmult.cpp:19) (7.81 ns)
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 1.09 seconds; current memory usage: 79 MB.
+INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 64.3 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmult' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -60,12 +51,12 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'matmult/a' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'matmult/b' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'matmult/out_r' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'matmult' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'matmult_fadd_32ns_32ns_32_5_full_dsp': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'matmult_fmul_32ns_32ns_32_4_max_dsp': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'matmult_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'matmult_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmult'.
-INFO: [HLS 200-111] Elapsed time: 0.9 seconds; current memory usage: 83.3 MB.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 64.6 MB.
 INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for matmult.
 INFO: [VHDL 208-304] Generating VHDL RTL for matmult.
 INFO: [VLOG 209-307] Generating Verilog RTL for matmult.
-INFO: [HLS 200-112] Total elapsed time: 20.987 seconds; peak memory usage: 83.3 MB.
+INFO: [HLS 200-112] Total elapsed time: 14.730 seconds; peak memory usage: 64.6 MB.

@@ -1,2 +1,0 @@
-lappend pragmaStatus0 {pragma "PIPELINE" source "/home/nrb74/ece5775/ECE5775_Final_Proj/matmult/matmult.cpp" location "matmult/LOOP_MAT_MULT_0" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
-lappend pragmaStatus1 {pragma "LOOP_UNROLL" source "/home/nrb74/ece5775/ECE5775_Final_Proj/matmult/matmult.cpp" location "matmult/LOOP_MAT_MULT_1" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

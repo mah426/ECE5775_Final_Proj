@@ -53,17 +53,6 @@ create_clock -period 10
 #set_directive_inline -off knn_vote
 ### You can add your own directives here ###
 
-# Pipeline the main loop!
-set_directive_pipeline matmult/LOOP_MAT_MULT_0
-
-#array partitions
-#set_directive_array_partition -type complete matmult a
-#set_directive_array_partition -type complete matmult b
-#set_directive_array_partition -type complete matmult out
-
-#loop unrolls
-set_directive_loop_unroll matmult/LOOP_MAT_MULT_1
-
 
 # Simulate the C++ design
 csim_design

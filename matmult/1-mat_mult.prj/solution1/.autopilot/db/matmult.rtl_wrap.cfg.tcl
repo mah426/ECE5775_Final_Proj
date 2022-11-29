@@ -35,7 +35,7 @@ set Const2 "0"
 set Volatile2 "0"
 set Pointer2 "0"
 set Reference2 "0"
-set Dims2 [list 100]
+set Dims2 [list 100 100]
 set Interface2 "wire"
 set DataType2 "float"
 set Port2 [list $PortName2 $Interface2 $DataType2 $Pointer2 $Dims2 $Const2 $Volatile2 $ArrayOpt2]
