@@ -58,7 +58,7 @@ set NewPortList {[
  	{ "name": "out_r_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "out_r", "role": "d0" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"], "CDFG" : "matmult", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
+	{"Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5"], "CDFG" : "matmult", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
 		"Port" : [
 		{"Name" : "a", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
 		{"Name" : "b", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
@@ -66,11 +66,14 @@ set RtlHierarchyInfo {[
 		"WaitState" : [],
 		"SubBlockPort" : []},
 	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matmult_fadd_32ns_32ns_32_5_full_dsp_U1", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matmult_fmul_32ns_32ns_32_4_max_dsp_U2", "Parent" : "0", "Child" : []}]}
+	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matmult_fmul_32ns_32ns_32_4_max_dsp_U2", "Parent" : "0", "Child" : []},
+	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matmult_mux_100to1_sel7_32_1_U3", "Parent" : "0", "Child" : []},
+	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matmult_mux_100to1_sel7_32_1_U4", "Parent" : "0", "Child" : []},
+	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matmult_mac_muladd_7ns_8ns_7ns_14_1_U5", "Parent" : "0", "Child" : []}]}
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "10020201", "Max" : "10020201"}
-	, {"Name" : "Interval", "Min" : "10020202", "Max" : "10020202"}
+	{"Name" : "Latency", "Min" : "4021001", "Max" : "4021001"}
+	, {"Name" : "Interval", "Min" : "4021002", "Max" : "4021002"}
 ]}
 
 set Spec2ImplPortList { 

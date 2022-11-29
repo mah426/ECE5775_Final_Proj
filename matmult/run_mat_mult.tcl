@@ -54,6 +54,16 @@ create_clock -period 10
 ### You can add your own directives here ###
 
 
+# Pipeline the main loop!
+set_directive_pipeline matmult/LOOP_MAT_MULT_3
+
+#array partitions
+set_directive_array_partition -type complete  matmult out_vec
+
+#loop unrolls
+#set_directive_loop_unroll matmult/LOOP_MAT_MULT_1
+#set_directive_loop_unroll matmult/LOOP_MAT_MULT_2
+
 # Simulate the C++ design
 csim_design
 # Synthesize the design
