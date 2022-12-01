@@ -69,21 +69,19 @@ bit mlp_xcel(float input[MAX_FMAP])
   /* Dense Layers */
 
   /* First Conv Layer */
-  pad(input, mem_conv1, 1, I_WIDTH1);
   conv(mem_conv1, mem_conv2, threshold1, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
   max_pool(mem_conv2, mem_conv1, N_CHANNEL1, I_WIDTH1);
 
   /* Second Conv Layer */
-  pad(mem_conv1, mem_conv2, N_CHANNEL1, I_WIDTH2);
   conv(mem_conv2, mem_conv1, threshold2, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
   max_pool(mem_conv1, mem_conv2, N_CHANNEL2, I_WIDTH2);
 
   reshape(mem_conv2, mem_conv1);
 
   /* Dense Layers */
-  dense_mlp(mem_conv2, mem_conv1, w_fc1, b_fc1, 16 * 5 * 5, 120);
-  dense_mlp(mem_conv1, mem_conv2, w_fc2, b_fc2, 120, 84);
-  dense_mlp(mem_conv2, mem_conv1, w_fc3, b_fc3, 84, 2);
+  dense_mlp(mem_conv1, mem_conv2, w_fc1, b_fc1, 16 * 5 * 5, 120);
+  dense_mlp(mem_conv2, mem_conv1, w_fc2, b_fc2, 120, 84);
+  dense_mlp(mem_conv1, mem_conv2, w_fc3, b_fc3, 84, 2);
 
   // predict car or truck
   if (mem_conv1[0] > mem_con1[1])
