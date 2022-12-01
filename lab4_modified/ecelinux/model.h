@@ -22,7 +22,7 @@ const float conv2_weight[2400] = {
 #include "data/conv2_weight"
 };
 
-const float conv1_bias[6] = {
+const float conv2_bias[16] = {
 #include "data/conv2_bias"
 };
 

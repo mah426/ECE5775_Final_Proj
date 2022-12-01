@@ -10,6 +10,14 @@
 
 using namespace std;
 
+// helper function to neglect padding pixels
+inline bool if_mac(int x, int y, int I)
+{
+        if (x < PADDING / 2 || x >= (I - PADDING / 2) || y < PADDING / 2 || y >= (I - PADDING / 2))
+                return false;
+        return true;
+}
+
 //----------------------------------------------------------
 // Perform Dense Layer
 //----------------------------------------------------------
@@ -21,7 +29,7 @@ using namespace std;
 //              use_relu - enable relu or not
 // @param[out] : output - output fmaps
 
-void dense(bit input[MAX_FMAP], bit output[MAX_FMAP], const bit* weight, const float* bias, int M, int N, bool use_relu){
+void dense(float input[MAX_FMAP], float output[MAX_FMAP], const float* weight, const float* bias, int M, int N, bool use_relu){
   float var_w = 2. / M;
   float c = sqrt(var_w);
   float max = -100;
@@ -77,7 +85,7 @@ void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float* weigh
 //              I - width of input fmaps
 // @param[out] : output - output fmaps
 
-void max_pool(bit input[MAX_FMAP], bit output[MAX_FMAP], int M, int I){
+void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I){
   int O = I / 2;
   int ifmap_size = I * I;
   int ofmap_size = O * O;
@@ -88,11 +96,11 @@ void max_pool(bit input[MAX_FMAP], bit output[MAX_FMAP], int M, int I){
     LOOP_MAX_POOL_2: for (int x = 0; x < O; x++){
       LOOP_MAX_POOL_3: for (int y = 0; y < O; y++){
         int o_index = x + y * O + m * ofmap_size;
-        bit max = 0;
+        float max = 0;
         LOOP_MAX_POOL_4:for (int c = 0; c < 2; c++){
           LOOP_MAX_POOL_5:for (int r = 0; r < 2; r++){
             int i_index = 2 * x + c + (2 * y + r) * I + m * ifmap_size;
-            if (input[i_index]) max = 1; //this is because bit 1 is represented as 0xff memory
+            if (input[i_index]) max = 1; //this is because float 1 is represented as 0xff memory
           }
         }
         output[o_index] = max;
@@ -108,7 +116,7 @@ void max_pool(bit input[MAX_FMAP], bit output[MAX_FMAP], int M, int I){
 // @param[in] : input - output fmaps from the last conv layer
 // @param[out] : output - input famps of the first dense layer
 
-void reshape(bit* input, bit* output) {
+void reshape(float* input, float* output) {
   LOOP_RESHAPE_0:for (int c = 0; c < N_CHANNEL2; c++) {
     LOOP_RESHAPE_1:for (int y = 0; y < O_WIDTH; y++) {
       LOOP_RESHAPE_2:for (int x = 0; x < O_WIDTH; x++) {
@@ -132,7 +140,7 @@ void reshape(bit* input, bit* output) {
 //              L - id for conv layers: 0 means conv1, 1 means conv2
 // @param[out] : output - output fmaps
 
-void conv(bit input[MAX_FMAP], bit output[MAX_FMAP], const bit8_t threshold[MAX_FMAP], int M, int N, int I, int L)
+void conv(float input[MAX_FMAP], float output[MAX_FMAP], const float threshold[MAX_FMAP], int M, int N, int I, int L)
 {
   int O = I - F + 1;
   int ifmap_size = I * I;
@@ -152,8 +160,8 @@ void conv(bit input[MAX_FMAP], bit output[MAX_FMAP], const bit8_t threshold[MAX_
               if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
                 int i_index = x + c + (y + r) * I + m * ifmap_size;
                 int w_index = c + r * F + (n + m * N) * FILTER_SIZE;
-                if (L == 0) one_out += input[i_index] == w_conv1[w_index]; //XNOR
-                else        one_out += input[i_index] == w_conv2[w_index];
+                if (L == 0) one_out += input[i_index] == conv1_weight[w_index]; //XNOR
+                else        one_out += input[i_index] == conv2_weight[w_index];
                 mac_num++;
               }
             }
@@ -175,7 +183,7 @@ void conv(bit input[MAX_FMAP], bit output[MAX_FMAP], const bit8_t threshold[MAX_
 //              I - width of input fmaps
 // @param[out] : output - output fmaps
 
-void pad(bit input[MAX_FMAP], bit output[MAX_FMAP], int M, int I) {
+void pad(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I) {
   int ifmap_size = I * I;
   int ofmap_size = (I+PADDING) * (I+PADDING);
 

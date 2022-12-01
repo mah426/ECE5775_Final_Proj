@@ -17,12 +17,12 @@ using namespace std;
 //----------------------------------------------------------
 
 void dut(
-    hls::stream<bit32_t> &strm_in,
-    hls::stream<bit32_t> &strm_out)
+    hls::stream<float> &strm_in,
+    hls::stream<float> &strm_out)
 {
   float input[MAX_FMAP];
   float input_l;
-  bit output;
+  float output;
 
   // read one test image into digit
   for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++)
@@ -46,7 +46,7 @@ void dut(
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-bit mlp_xcel(float input[MAX_FMAP])
+bit32_t mlp_xcel(float input[MAX_FMAP])
 {
   float mem_conv1[MAX_FMAP];
   float mem_conv2[MAX_FMAP];
@@ -79,12 +79,12 @@ bit mlp_xcel(float input[MAX_FMAP])
   reshape(mem_conv2, mem_conv1);
 
   /* Dense Layers */
-  dense_mlp(mem_conv1, mem_conv2, w_fc1, b_fc1, 16 * 5 * 5, 120);
-  dense_mlp(mem_conv2, mem_conv1, w_fc2, b_fc2, 120, 84);
-  dense_mlp(mem_conv1, mem_conv2, w_fc3, b_fc3, 84, 2);
+  dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 16 * 5 * 5, 120);
+  dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84);
+  dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2);
 
   // predict car or truck
-  if (mem_conv1[0] > mem_con1[1])
+  if (mem_conv1[0] > mem_conv1[1])
   {
     return 0;
   }
