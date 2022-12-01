@@ -20,9 +20,9 @@ void dut(
     hls::stream<bit32_t> &strm_in,
     hls::stream<bit32_t> &strm_out)
 {
-  bit input[MAX_FMAP];
-  bit32_t input_l;
-  bit32_t output;
+  float input[MAX_FMAP];
+  float input_l;
+  bit output;
 
   // read one test image into digit
   for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++)
@@ -46,7 +46,7 @@ void dut(
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-bit32_t mlp_xcel(float input[MAX_FMAP])
+bit mlp_xcel(float input[MAX_FMAP])
 {
   float mem_conv1[MAX_FMAP];
   float mem_conv2[MAX_FMAP];
@@ -70,9 +70,9 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   dense_mlp(mem_conv2, mem_conv1, w_fc8, b_fc8, 10, 2);
 
   // find predicted digit
-  bit32_t max_id = 0;
-  for (int i = 1; i < 10; i++)
-    if (mem_conv1[i])
-      max_id = i;
-  return max_id;
+  if (mem_conv1[0] > mem_con1[1])
+  {
+    return 0;
+  }
+  return 1;
 }
