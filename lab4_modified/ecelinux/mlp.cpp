@@ -46,10 +46,10 @@ void dut(
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-bit32_t mlp_xcel(bit input[MAX_FMAP])
+bit32_t mlp_xcel(float input[MAX_FMAP])
 {
-  bit mem_conv1[MAX_FMAP];
-  bit mem_conv2[MAX_FMAP];
+  float mem_conv1[MAX_FMAP];
+  float mem_conv2[MAX_FMAP];
   //   self.fc1 = torch.nn.Linear(3072, 2000)
   //   self.fc2 = torch.nn.Linear(2000, 1500)
   //   self.fc3 = torch.nn.Linear(1500, 1000)
