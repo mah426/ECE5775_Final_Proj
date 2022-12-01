@@ -13,18 +13,18 @@ CFLAGS = -I${INC_PATH} -DHLS_NO_XIL_FPO_LIB
 
 all: sw
 
-sw: bnn.cpp bnn_test.cpp layer.cpp
+sw: mlp.cpp mlp_test.cpp layer.cpp
 	@echo "Compiling & executing cnn software program on ARM ..."
-	g++ ${CFLAGS} $^ -o bnn-arm
-	./bnn-arm
+	g++ ${CFLAGS} $^ -o mlp-arm
+	./mlp-arm
 
 fpga: host.cpp 
 	@echo "Compiling host program & running cnn accelerator ..."
-	g++ ${CFLAGS} $^ -o bnn-fpga
-	./bnn-fpga
+	g++ ${CFLAGS} $^ -o mlp-fpga
+	./mlp-fpga
 
 # Clean up the directory before submission
 clean:
 	@echo "Clean up output files"
-	rm -rf bnn-arm vivado_hls.log *.prj result out.dat *~
-	rm -rf bnn-fpga
+	rm -rf mlp-arm vivado_hls.log *.prj result out.dat *~
+	rm -rf mlp-fpga

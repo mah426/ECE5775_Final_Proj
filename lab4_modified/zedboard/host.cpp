@@ -11,7 +11,7 @@
 #include "typedefs.h"
 #include "timer.h"
 #include "model.h"
-#include "bnn.h"
+#include "mlp.h"
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -65,7 +65,7 @@ int main(int argc, char** argv)
   int    test_labels[TEST_SIZE];
 
   // Timer
-  Timer timer("digitrec bnn on FPGA");
+  Timer timer("digitrec mlp on FPGA");
   // intermediate results
   int nbytes;
   int error = 0;

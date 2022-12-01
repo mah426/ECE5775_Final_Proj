@@ -1,11 +1,11 @@
 //=========================================================================
-// bnn_test.cpp
+// mlp_test.cpp
 //=========================================================================
-// @brief: testbench for Binarized Neural Betwork(BNN) digit recongnition application
+// @brief: testbench for Binarized Neural Betwork(mlp) digit recongnition application
 
 #include <iostream>
 #include <fstream>
-#include "bnn.h"
+#include "mlp.h"
 #include "timer.h"
 
 using namespace std;
@@ -60,7 +60,7 @@ int main(){
   float correct = 0.0;
   
   // Timer
-  Timer timer("digirec BNN");
+  Timer timer("digirec mlp");
   timer.start();
   
   // pack images to 32-bit and transmit to dut function 

@@ -4,7 +4,7 @@
 # @brief: A Tcl script for synthesizing the baseline digit recongnition design.
 
 # Project name
-set hls_prj bnn.prj
+set hls_prj mlp.prj
 
 # Open/reset the project
 open_project ${hls_prj} -reset
@@ -13,8 +13,8 @@ open_project ${hls_prj} -reset
 set_top dut
 
 # Add design and testbench files
-add_files bnn.cpp
-add_files -tb bnn_test.cpp
+add_files mlp.cpp
+add_files -tb mlp_test.cpp
 add_files layer.cpp
 add_files -tb data
 

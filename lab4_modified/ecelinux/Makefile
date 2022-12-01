@@ -16,10 +16,10 @@ CFLAGS = -g -I${VHLS_INC} -DHLS_NO_XIL_FPO_LIB
 
 all: csim
 
-csim: bnn.cpp layer.cpp bnn_test.cpp
+csim: mlp.cpp layer.cpp mlp_test.cpp
 	@echo "Compiling & simulating cnn on amdpool ..."
-	g++ ${CFLAGS} $^ -o bnn -lrt
-	./bnn
+	g++ ${CFLAGS} $^ -o mlp -lrt
+	./mlp
 
 bitstream: 
 	@echo "Synthesizing cnn and creating bitstream on amdpool ..."
@@ -31,5 +31,5 @@ vivado:
 	vivado_hls -f run.tcl
 
 clean:
-	rm -rf bnn *.dat *.prj *.log
+	rm -rf mlp *.dat *.prj *.log
 	rm -rf zedboard_project* xillydemo.bit

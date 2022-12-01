@@ -1,5 +1,5 @@
 //===========================================================================
-// bnn.h
+// mlp.h
 //===========================================================================
 // @brief: This header file defines the interface for the core functions.
 
@@ -15,7 +15,7 @@ void dut (
   hls::stream<bit32_t> &strm_out
 );
 
-// Top function for bnn accelerator
+// Top function for mlp accelerator
 bit32_t mlp_xcel(bit input[MAX_FMAP]);
 
 #endif
