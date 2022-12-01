@@ -59,17 +59,26 @@ bit mlp_xcel(float input[MAX_FMAP])
   //   self.fc7 = torch.nn.Linear(200, 100)
   //   self.fc8 = torch.nn.Linear(100, 10)
   //   self.out = torch.nn.Linear(10, 2)
-  /* Dense Layers */
-  dense_mlp(mem_conv1, mem_conv2, w_fc1, b_fc1, 3072, 2000);
-  dense_mlp(mem_conv2, mem_conv1, w_fc2, b_fc2, 2000, 1500);
-  dense_mlp(mem_conv1, mem_conv2, w_fc3, b_fc3, 1500, 1000);
-  dense_mlp(mem_conv2, mem_conv1, w_fc4, b_fc4, 1000, 800);
-  dense_mlp(mem_conv1, mem_conv2, w_fc5, b_fc5, 800, 400);
-  dense_mlp(mem_conv2, mem_conv1, w_fc6, b_fc6, 200, 100);
-  dense_mlp(mem_conv1, mem_conv2, w_fc7, b_fc7, 100, 10);
-  dense_mlp(mem_conv2, mem_conv1, w_fc8, b_fc8, 10, 2);
 
-  // find predicted digit
+        //   self.conv1 = nn.Conv2d(3, 6, 5)
+        // self.pool = nn.MaxPool2d(2, 2)
+        // self.conv2 = nn.Conv2d(6, 16, 5)
+        // self.fc1 = nn.Linear(16 * 5 * 5, 120)
+        // self.fc2 = nn.Linear(120, 84)
+        // self.fc3 = nn.Linear(84, 2)
+  /* Dense Layers */
+
+  conv(mem_conv1, mem_conv2, threshold1, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
+  max_pool(mem_conv2, mem_conv1, N_CHANNEL1, I_WIDTH1);
+  conv(mem_conv1, mem_conv2, threshold2, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
+
+  reshape(mem_conv2, mem_conv1);
+
+  dense_mlp(mem_conv1, mem_conv2, w_fc1, b_fc1, 16 * 5 * 5, 120);
+  dense_mlp(mem_conv2, mem_conv1, w_fc2, b_fc2, 120, 84);
+  dense_mlp(mem_conv1, mem_conv2, w_fc3, b_fc3, 84, 2);
+
+  // predict car or truck
   if (mem_conv1[0] > mem_con1[1])
   {
     return 0;

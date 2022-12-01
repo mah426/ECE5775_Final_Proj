@@ -68,3 +68,54 @@ void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float* weigh
     output[n] = (biased > 0) ? 1 : 0;
   }
 }
+
+//----------------------------------------------------------
+// Max pooling
+//----------------------------------------------------------
+// @param[in] : input - input fmaps
+//              M - number of input fmaps
+//              I - width of input fmaps
+// @param[out] : output - output fmaps
+
+void max_pool(bit input[MAX_FMAP], bit output[MAX_FMAP], int M, int I){
+  int O = I / 2;
+  int ifmap_size = I * I;
+  int ofmap_size = O * O;
+
+  LOOP_MAX_POOL_0:for (int i = 0; i < MAX_FMAP; i++) output[i] = 0;
+
+  LOOP_MAX_POOL_1: for (int m = 0; m < M; m++){
+    LOOP_MAX_POOL_2: for (int x = 0; x < O; x++){
+      LOOP_MAX_POOL_3: for (int y = 0; y < O; y++){
+        int o_index = x + y * O + m * ofmap_size;
+        bit max = 0;
+        LOOP_MAX_POOL_4:for (int c = 0; c < 2; c++){
+          LOOP_MAX_POOL_5:for (int r = 0; r < 2; r++){
+            int i_index = 2 * x + c + (2 * y + r) * I + m * ifmap_size;
+            if (input[i_index]) max = 1; //this is because bit 1 is represented as 0xff memory
+          }
+        }
+        output[o_index] = max;
+      }
+    }
+  }
+}
+
+
+//----------------------------------------------------------
+// Reshpae the Output from Conv Layer
+//----------------------------------------------------------
+// @param[in] : input - output fmaps from the last conv layer
+// @param[out] : output - input famps of the first dense layer
+
+void reshape(bit* input, bit* output) {
+  LOOP_RESHAPE_0:for (int c = 0; c < N_CHANNEL2; c++) {
+    LOOP_RESHAPE_1:for (int y = 0; y < O_WIDTH; y++) {
+      LOOP_RESHAPE_2:for (int x = 0; x < O_WIDTH; x++) {
+        int o_index = c + (x + y * O_WIDTH ) * N_CHANNEL2;
+        int i_index = x + y * O_WIDTH + c * O_WIDTH*O_WIDTH;
+        output[o_index] = input[i_index];
+      }
+    }
+  }
+}
