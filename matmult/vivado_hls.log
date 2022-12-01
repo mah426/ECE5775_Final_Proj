@@ -5,7 +5,7 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'nrb74' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Tue Nov 29 15:20:00 EST 2022
+INFO: [HLS 200-10] For user 'nrb74' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Wed Nov 30 21:39:11 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
 INFO: [HLS 200-10] In directory '/home/nrb74/ece5775/ECE5775_Final_Proj/matmult'
 INFO: [HLS 200-10] Creating and opening project '/home/nrb74/ece5775/ECE5775_Final_Proj/matmult/1-mat_mult.prj'.
@@ -25,12 +25,13 @@ INFO: [HLS 200-10] Analyzing design file 'matmult.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LOOP_MAT_MULT_2' (matmult.cpp:32) in function 'matmult' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_MAT_MULT_3' (matmult.cpp:33) in function 'matmult' completely.
 WARNING: [XFORM 203-104] Completely partitioning array 'out_vec' (matmult.cpp:28) accessed through non-constant indices on dimension 1 (matmult.cpp:38:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
 INFO: [XFORM 203-101] Partitioning array 'out_vec' (matmult.cpp:28) in dimension 1 completely.
-INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_MAT_MULT_2' (matmult.cpp:32:57) in function 'matmult'.
 WARNING: [XFORM 203-542] Cannot flatten a loop nest 'LOOP_MAT_MULT_0' (matmult.cpp:27:53) in function 'matmult' : 
 WARNING: [XFORM 203-542] more than one sub loop.
-INFO: [HLS 200-111] Elapsed time: 5.58 seconds; current memory usage: 124 MB.
+INFO: [HLS 200-111] Elapsed time: 5.45 seconds; current memory usage: 118 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'matmult' ...
 WARNING: [SYN 201-107] Renaming port name 'matmult/out' to 'matmult/out_r' to avoid the conflict with HDL keywords or other object names.
@@ -38,22 +39,20 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'matmult' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'LOOP_MAT_MULT_2_LOOP_MAT_MULT_3'.
-WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
-   between 'phi' operation ('out_vec[99]') with incoming values : ('out_vec[0]', matmult.cpp:34) and 'phi' operation ('out_vec_99_4', matmult.cpp:34) with incoming values : ('out_vec[0]', matmult.cpp:34).
-WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
-   between 'phi' operation ('out_vec[99]') with incoming values : ('out_vec[0]', matmult.cpp:34) and 'phi' operation ('out_vec_99_4', matmult.cpp:34) with incoming values : ('out_vec[0]', matmult.cpp:34).
-WARNING: [SCHED 204-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
-   between 'phi' operation ('out_vec[99]') with incoming values : ('out_vec[0]', matmult.cpp:34) and 'phi' operation ('out_vec_99_4', matmult.cpp:34) with incoming values : ('out_vec[0]', matmult.cpp:34).
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 4, Depth: 11.
-WARNING: [SCHED 204-21] Estimated clock period (11ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
-WARNING: [SCHED 204-21] The critical path consists of the following:
-	'phi' operation ('out_vec_99_4', matmult.cpp:34) with incoming values : ('out_vec[0]', matmult.cpp:34) (0 ns)
-	'mux' operation ('tmp_6', matmult.cpp:34) (3.74 ns)
-	'fadd' operation ('out_vec[0]', matmult.cpp:34) (7.26 ns)
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_MAT_MULT_2'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('out_vec[99]', matmult.cpp:34) and 'fadd' operation ('out_vec[99]', matmult.cpp:34).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('out_vec[99]', matmult.cpp:34) and 'fadd' operation ('out_vec[99]', matmult.cpp:34).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('out_vec[99]', matmult.cpp:34) and 'fadd' operation ('out_vec[99]', matmult.cpp:34).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('out_vec[99]', matmult.cpp:34) and 'fadd' operation ('out_vec[99]', matmult.cpp:34).
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('b_load_70', matmult.cpp:34) on array 'b' due to limited memory ports.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 50, Depth: 59.
 WARNING: [SCHED 204-104] State 3 has incomplete outgoing transitions.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 29.46 seconds; current memory usage: 131 MB.
+INFO: [HLS 200-111] Elapsed time: 2.52 seconds; current memory usage: 128 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'matmult' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -61,8 +60,12 @@ INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] After resource sharing, estimated clock period (10.5ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+INFO: [BIND 205-100] The critical path consists of the following:
+	'load' operation ('a_load', matmult.cpp:34) on array 'a' (2.71 ns)
+	'fmul' operation ('tmp_9', matmult.cpp:34) (7.81 ns)
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 3.24 seconds; current memory usage: 180 MB.
+INFO: [HLS 200-111] Elapsed time: 1.84 seconds; current memory usage: 182 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'matmult' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -70,14 +73,13 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'matmult/a' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'matmult/b' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'matmult/out_r' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'matmult' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'matmult_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'matmult_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'matmult_mac_muladd_7ns_8ns_7ns_14_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'matmult_mux_100to1_sel7_32_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'matmult_fadd_32ns_32ns_32_5_full_dsp': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'matmult_fmul_32ns_32ns_32_4_max_dsp': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'matmult_mux_100to1_sel7_32_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'matmult'.
-INFO: [HLS 200-111] Elapsed time: 10.75 seconds; current memory usage: 227 MB.
+INFO: [HLS 200-111] Elapsed time: 9.27 seconds; current memory usage: 209 MB.
 INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for matmult.
 INFO: [VHDL 208-304] Generating VHDL RTL for matmult.
 INFO: [VLOG 209-307] Generating Verilog RTL for matmult.
-INFO: [HLS 200-112] Total elapsed time: 72.221 seconds; peak memory usage: 227 MB.
+INFO: [HLS 200-112] Total elapsed time: 39.296 seconds; peak memory usage: 209 MB.
