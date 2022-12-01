@@ -12,9 +12,9 @@
 const int MAX_FMAP = 3072; // 32*32*3
 const int OUT = 2;
 
-const int I_WIDTH1 = 5; //conv1 input width
+const int I_WIDTH1 = 3072 * 2000; //conv1 input width
 const int N_CHANNEL1 = 6; // conv1 output channels
-const int I_WIDTH2 = 5; //conv2 input width
+const int I_WIDTH2 = 2000 * 1500; //conv2 input width
 const int N_CHANNEL2 = 16; // conv2 output channels
 const int O_WIDTH = 4; //conv output width
 const int F = 5; //filter width
