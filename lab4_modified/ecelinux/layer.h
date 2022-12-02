@@ -45,6 +45,6 @@ void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I);
 void reshape(float* input, float* output);
 
 // Perform convolutional kernel
-void conv(float input[MAX_FMAP], float output[MAX_FMAP], const float threshold[MAX_FMAP], int M, int N, int I, int L);
+void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L);
 
 #endif

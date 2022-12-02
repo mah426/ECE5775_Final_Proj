@@ -140,7 +140,7 @@ void reshape(float* input, float* output) {
 //              L - id for conv layers: 0 means conv1, 1 means conv2
 // @param[out] : output - output fmaps
 
-void conv(float input[MAX_FMAP], float output[MAX_FMAP], const float threshold[MAX_FMAP], int M, int N, int I, int L)
+void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L)
 {
   int O = I - F + 1;
   int ifmap_size = I * I;
@@ -168,7 +168,8 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], const float threshold[M
           }
           sum += (one_out << 1) - mac_num;
         }
-        output[o_index] = sum > threshold[o_index] ? 1 : 0;
+        //output[o_index] = sum > threshold[o_index] ? 1 : 0;
+        output[o_index] = sum;
       }
     }
   }

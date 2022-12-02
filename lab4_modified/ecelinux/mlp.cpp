@@ -69,11 +69,13 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   /* Dense Layers */
 
   /* First Conv Layer */
-  conv(mem_conv1, mem_conv2, threshold1, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
+  //conv(mem_conv1, mem_conv2, threshold1, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
+  conv(mem_conv1, mem_conv2, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
   max_pool(mem_conv2, mem_conv1, N_CHANNEL1, I_WIDTH1);
 
   /* Second Conv Layer */
-  conv(mem_conv2, mem_conv1, threshold2, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
+  //conv(mem_conv2, mem_conv1, threshold2, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
+  conv(mem_conv2, mem_conv1, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
   max_pool(mem_conv1, mem_conv2, N_CHANNEL2, I_WIDTH2);
 
   reshape(mem_conv2, mem_conv1);
