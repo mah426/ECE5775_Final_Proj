@@ -31,7 +31,7 @@ void dut(
 
     input_l = strm_in.read();
     //std::cout << "i " << (I_WIDTH1 * I_WIDTH1 / BUS_WIDTH)<<" \n";
-    std::cout << "i " <<i <<" \n";
+    //std::cout << "i " <<i <<" \n";
     for (int j = 0; j < BUS_WIDTH; j++)
     {
       union { float fval; int ival;} input_union;
@@ -42,6 +42,7 @@ void dut(
   }
   std::cout << "1 " <<" \n";
   // call mlp
+  std::cout << "mlp "<< mlp_xcel(input) <<" \n";
   output = mlp_xcel(input);
   std::cout << "2 " <<" \n";
 
@@ -57,7 +58,8 @@ void dut(
 // @return : the predicted digit
 
 bit32_t mlp_xcel(float input[MAX_FMAP])
-{
+{ 
+  bit32_t output = 0;
   float mem_conv1[MAX_FMAP];
   float mem_conv2[MAX_FMAP];
   //   self.fc1 = torch.nn.Linear(3072, 2000)
@@ -101,14 +103,11 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   std::cout << "B " <<" \n";
   std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
   std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  float mem_conv1_0 = mem_conv1[0];
-  float mem_conv1_1 = mem_conv1[1];
-  std::cout << "B " <<" \n";
-  if (mem_conv1[0] > mem_conv1[1])
+  if (mem_conv1[0] < mem_conv1[1])
   {
-    std::cout << "D " <<" \n";
-    return 0;
+    std::cout << "C " <<" \n";
+    output = 1;
   }
-  return 1;
-  std::cout << "C " <<" \n";
+  std::cout << "D " <<" \n";
+  return output;
 }
