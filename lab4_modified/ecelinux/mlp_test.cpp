@@ -8,6 +8,7 @@
 #include "mlp.h"
 #include "timer.h"
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -33,17 +34,23 @@ void read_test_images(int8_t test_images[TEST_SIZE][256]) {
 }
 
 void read_cars(float test_images[60][3072]) {
-  for (int k = 0; k < 60; k++){
+  for (int k = 1; k < 61; k++){
     string a = "data/testing_data/normalized_cars_32/";
     string b =  ".png.dat";
-    string file = a + std::to_string(k) + b;
-    //string file = "data/testing_data/normalized_cars_32/" + k + ".png.dat";
-    std::ifstream infile(file);
+    stringstream ss;
+    ss << k;
+    string str = ss.str();
+    string file = string(a) + str + b;
+    std::ifstream infile(file.c_str());
     if (infile.is_open()) {
-      for (int pixel = 0; pixel < 3072; pixel++) {
-        int i;
+      for (int pixel = 1; pixel < 3072*2; pixel = pixel +2) {
+        float i;
         infile >> i;
         test_images[k][pixel] = i;
+        if(pixel == 15  && k ==1){
+        std::cout << file <<" \n";
+        std::cout << pixel  << " " << test_images[k][pixel] <<" \n";
+        }
       }
       infile.close();
     }
@@ -51,12 +58,17 @@ void read_cars(float test_images[60][3072]) {
 }
 
 void read_trucks(float test_images[60][3072]) {
-  for (int k = 0; k < 60; k++){
-    string file = "data/testing_data/normalized_truck_32/" + k + ".png.dat";
-    std::ifstream infile(file);
+  for (int k = 1; k < 61; k++){
+    string a = "data/testing_data/normalized_trucks_32/";
+    string b =  ".png.dat";
+    stringstream ss;
+    ss << k;
+    string str = ss.str();
+    string file = string(a) + str + b;
+    std::ifstream infile(file.c_str());
     if (infile.is_open()) {
-      for (int pixel = 0; pixel < 3072; pixel++) {
-        int i;
+      for (int pixel = 1; pixel < 3072*2; pixel = pixel +2) {
+        float i;
         infile >> i;
         test_images[k][pixel] = i;
       }
@@ -100,12 +112,14 @@ int main(){
   // read test images and labels
   read_cars(cars);
   read_trucks(trucks);
-  for (int i=0; i<120; i++){
-    if(i<60){
-      test_images[i] = cars[i];
-    }
-    else{
-      test_images[i] = trucks[i-60];
+  for (int j = 0; j<3072; j++){
+    for (int i=0; i<120; i++){
+      if(i<60){
+        test_images[i][j] = cars[i][j];
+      }
+      else{
+        test_images[i][j] = trucks[i-60][j];
+      }
     }
   }
   //read_test_labels(test_labels);
