@@ -40,15 +40,15 @@ void dut(
       input[i * BUS_WIDTH + j] = f;
     }
   }
-  std::cout << "1 " <<" \n";
+  //std::cout << "1 " <<" \n";
   // call mlp
-  std::cout << "mlp "<< mlp_xcel(input) <<" \n";
+  //std::cout << "mlp "<< mlp_xcel(input) <<" \n";
   output = mlp_xcel(input);
-  std::cout << "2 " <<" \n";
+  //std::cout << "2 " <<" \n";
 
   // write out the result
   strm_out.write(output);
-  std::cout << "3 "  <<" \n";
+  //std::cout << "3 "  <<" \n";
 }
 
 //----------------------------------------------------------
@@ -62,15 +62,6 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   bit32_t output = 0;
   float mem_conv1[MAX_FMAP];
   float mem_conv2[MAX_FMAP];
-  //   self.fc1 = torch.nn.Linear(3072, 2000)
-  //   self.fc2 = torch.nn.Linear(2000, 1500)
-  //   self.fc3 = torch.nn.Linear(1500, 1000)
-  //   self.fc4 = torch.nn.Linear(1000, 800)
-  //   self.fc5 = torch.nn.Linear(800, 400)
-  //   self.fc6 = torch.nn.Linear(400, 200)
-  //   self.fc7 = torch.nn.Linear(200, 100)
-  //   self.fc8 = torch.nn.Linear(100, 10)
-  //   self.out = torch.nn.Linear(10, 2)
 
         //   self.conv1 = nn.Conv2d(3, 6, 5)
         // self.pool = nn.MaxPool2d(2, 2)
@@ -81,33 +72,33 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   /* Dense Layers */
 
   /* First Conv Layer */
-  //conv(mem_conv1, mem_conv2, threshold1, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
-  std::cout << "A " <<" \n";
+  
+  //std::cout << "A " <<" \n";
   conv(mem_conv1, mem_conv2, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
  
-  max_pool(mem_conv2, mem_conv1, N_CHANNEL1, I_WIDTH1);
+  max_pool(mem_conv2, mem_conv1, 2, 2);
 
-  /* Second Conv Layer */
-  //conv(mem_conv2, mem_conv1, threshold2, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
+  // /* Second Conv Layer */
+  
   conv(mem_conv2, mem_conv1, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
-  max_pool(mem_conv1, mem_conv2, N_CHANNEL2, I_WIDTH2);
+  max_pool(mem_conv1, mem_conv2, 2, 2);
 
   reshape(mem_conv2, mem_conv1);
 
-  /* Dense Layers */
-  dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 16 * 5 * 5, 120);
-  dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84);
-  dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2);
+  // /* Dense Layers */
+   dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 16 * 5 * 5, 120);
+   dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84);
+   dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2);
  
   // predict car or truck
-  std::cout << "B " <<" \n";
-  std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
-  std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
+  //std::cout << "B " <<" \n";
+  //std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
+  //std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
   if (mem_conv1[0] < mem_conv1[1])
   {
-    std::cout << "C " <<" \n";
+    //std::cout << "C " <<" \n";
     output = 1;
   }
-  std::cout << "D " <<" \n";
+  //std::cout << "D " <<" \n";
   return output;
 }
