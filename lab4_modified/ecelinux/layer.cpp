@@ -178,6 +178,40 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, in
   }
 }
 
+void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L)
+{
+  int O = I - F + 1;
+  int ifmap_size = I * I;
+  int ofmap_size = O * O;
+  
+  // MAC and batchnorm
+  LOOP_N: for (int n = 0; n < N; n++){
+    LOOP_X: for (int x = 0; x < O; x++){
+      LOOP_Y: for (int y = 0; y < O; y++){
+        int sum = 0;
+        int o_index = x + y * O + n * ofmap_size;
+        LOOP_M: for (int m = 0; m < M; m++){
+          int filter_sum=0;
+          LOOP_C: for (int c = 0; c < F; c++){
+            LOOP_R: for (int r = 0; r < F; r++){
+              if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
+                int i_index = x + c + (y + r) * I + m * ifmap_size;
+                int w_index = c + r * F + (n + m * N) * FILTER_SIZE;
+                if (L == 0) filter_sum += input[i_index] * conv1_weight[w_index];
+                else        filter_sum += input[i_index] * conv2_weight[w_index];
+              }
+            }
+          }
+          sum += filter_sum;
+        }
+        //output[o_index] = sum > threshold[o_index] ? 1 : 0;
+        output[o_index] = sum;
+      }
+    }
+  }
+}
+
+
 
 //----------------------------------------------------------
 // Padding
