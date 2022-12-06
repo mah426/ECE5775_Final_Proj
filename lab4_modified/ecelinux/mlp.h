@@ -11,8 +11,8 @@
 
 // Top function for synthesis
 void dut (
-  hls::stream<bit32_t> &strm_in,
-  hls::stream<bit32_t> &strm_out
+  hls::stream<float> &strm_in,
+  hls::stream<float> &strm_out
 );
 
 // Top function for mlp accelerator

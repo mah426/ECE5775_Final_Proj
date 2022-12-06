@@ -16,31 +16,43 @@ using namespace std;
 // Top function
 //----------------------------------------------------------
 void dut(
-    hls::stream<bit32_t> &strm_in,
-    hls::stream<bit32_t> &strm_out)
+    hls::stream<float> &strm_in,
+    hls::stream<float> &strm_out)
 {
   float input[MAX_FMAP];
-  bit32_t input_l;
-  bit32_t output;
-  union { float fval; int ival;} input_union;
+  float input_l;
+  float output;
+  //union { float fval; int ival;} input_union;
   //union { float fval; int ival;} output_union;
   // read one test image into digit
-  for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++)
+  // for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++)
+  // {
+    
+
+  //   input_l = strm_in.read();
+  //   //std::cout << "i " << (I_WIDTH1 * I_WIDTH1 / BUS_WIDTH)<<" \n";
+  //   //std::cout << "i " <<i <<" \n";
+  //   for (int j = 0; j < BUS_WIDTH; j++)
+  //   {
+  //     union { float fval; int ival;} input_union;
+  //     float f =  input_union.fval;
+  //     //input[i * BUS_WIDTH + j] = input_l(j, j);
+  //     input[i * BUS_WIDTH + j] = f;
+  //   }
+  // }
+  for (int i = 0; i < 3072; i++)
   {
     
 
     input_l = strm_in.read();
     //std::cout << "i " << (I_WIDTH1 * I_WIDTH1 / BUS_WIDTH)<<" \n";
     //std::cout << "i " <<i <<" \n";
-    for (int j = 0; j < BUS_WIDTH; j++)
-    {
-      union { float fval; int ival;} input_union;
-      float f =  input_union.fval;
-      //input[i * BUS_WIDTH + j] = input_l(j, j);
-      input[i * BUS_WIDTH + j] = f;
-    }
+    //if(i == 3){
+    //std::cout << "QAZ"<<input_l<< "\n";
+    //}
+    input[i] = input_l;
   }
-  //std::cout << "1 " <<" \n";
+      //std::cout << "1 " <<" \n";
   // call mlp
   //std::cout << "mlp "<< mlp_xcel(input) <<" \n";
   output = mlp_xcel(input);
@@ -59,9 +71,14 @@ void dut(
 
 bit32_t mlp_xcel(float input[MAX_FMAP])
 { 
-  bit32_t output = 0;
+  bit32_t final_out = 0;
   float mem_conv1[MAX_FMAP];
   float mem_conv2[MAX_FMAP];
+  for (int i = 0; i < MAX_FMAP; i++){
+    mem_conv1[i] = 0;
+    mem_conv2[i] = 0;
+
+  }
 
         //   self.conv1 = nn.Conv2d(3, 6, 5)
         // self.pool = nn.MaxPool2d(2, 2)
@@ -74,7 +91,11 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   /* First Conv Layer */
   
   //std::cout << "A " <<" \n";
+  // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
+  // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
   conv(mem_conv1, mem_conv2, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
+   std::cout << "mem_conv0: " << mem_conv2[0]<<" \n";
+   std::cout << "mem_conv1: " << mem_conv2[1]<<" \n";
  
   max_pool(mem_conv2, mem_conv1, 2, 2);
 
@@ -92,13 +113,13 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
  
   // predict car or truck
   //std::cout << "B " <<" \n";
-  //std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
-  //std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
+  // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
+  // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
   if (mem_conv1[0] < mem_conv1[1])
   {
     //std::cout << "C " <<" \n";
-    output = 1;
+    final_out = 1;
   }
   //std::cout << "D " <<" \n";
-  return output;
+  return final_out;
 }

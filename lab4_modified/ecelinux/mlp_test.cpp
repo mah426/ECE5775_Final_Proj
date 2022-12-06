@@ -74,8 +74,8 @@ void read_test_labels(int test_labels[TEST_SIZE]) {
 
 int main(){
   // HLS streams for communicating with the cordic block
-  hls::stream<bit32_t> digitrec_in;
-  hls::stream<bit32_t> digitrec_out;
+  hls::stream<float> digitrec_in;
+  hls::stream<float> digitrec_out;
   
   float cars[60][3072];
   float trucks[60][3072];
@@ -105,23 +105,31 @@ int main(){
   }
   //read_test_labels(test_labels);
   
-  bit32_t test_image;
+  float test_image;
   float correct = 0.0;
   
   // Timer
   Timer timer("digirec mlp");
   timer.start();
-  
+
   // pack images to 32-bit and transmit to dut function 
   for (int test = 0; test < TEST_SIZE; test++) {
-    for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
-      for (int j = 0; j < BUS_WIDTH; j++) {
-        test_image(j,j) = test_images[test][i*BUS_WIDTH+j];
-      }
+    //for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
+    for (int i = 0; i <3072; i++) {
+      //std::cout << "A" << "\n";
+
+      //for (int j = 0; j < BUS_WIDTH; j++) {
+        test_image = test_images[test][i];
+        //if (i == 1 ){
+        //std::cout << test_images[test][i] <<" \n";
+        //std::cout << test_image <<" \n";
+       // }
+      //}
       digitrec_in.write(test_image);
     }
     
     // perform prediction
+    //std::cout << test<< "\n";
     dut(digitrec_in, digitrec_out);
    
     // check results

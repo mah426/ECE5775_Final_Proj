@@ -142,19 +142,19 @@ void reshape(float* input, float* output) {
 
 void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L)
 {
-  int O = I - F + 1;
-  int ifmap_size = I * I;
-  int ofmap_size = O * O;
+  float O = I - F + 1;
+  float ifmap_size = I * I;
+  float ofmap_size = O * O;
   
   // MAC and batchnorm
   LOOP_N: for (int n = 0; n < N; n++){
     LOOP_X: for (int x = 0; x < O; x++){
       LOOP_Y: for (int y = 0; y < O; y++){
-        int sum = 0;
+        float sum = 0;
         int o_index = x + y * O + n * ofmap_size;
         LOOP_M: for (int m = 0; m < M; m++){
-          int one_out = 0;
-          int mac_num = 0;
+          float one_out = 0;
+          float mac_num = 0;
           LOOP_C: for (int c = 0; c < F; c++){
             LOOP_R: for (int r = 0; r < F; r++){
               if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
@@ -166,9 +166,12 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, in
               }
             }
           }
-          sum += (one_out << 1) - mac_num;
+          //sum += (one_out << 1) - mac_num
+          sum += (one_out * 2) - mac_num;
+          
         }
         //output[o_index] = sum > threshold[o_index] ? 1 : 0;
+        std::cout << "sum: " << sum <<" \n";
         output[o_index] = sum;
       }
     }
