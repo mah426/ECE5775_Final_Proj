@@ -33,44 +33,25 @@ void read_test_images(int8_t test_images[TEST_SIZE][256]) {
   }
 }
 
-void read_cars(float test_images[60][3072]) {
+void read_any(float test_images[60][3072], string item) {
   for (int k = 1; k < 61; k++){
-    string a = "data/testing_data/normalized_cars_32/";
+    string e = "data/testing_data/normalized_";
+    string f = "_32/";
     string b =  ".png.dat";
     stringstream ss;
     ss << k;
     string str = ss.str();
-    string file = string(a) + str + b;
+    string file = string(e) + item  + f + str + b;
     std::ifstream infile(file.c_str());
     if (infile.is_open()) {
-      for (int pixel = 1; pixel < 3072*2; pixel = pixel +2) {
+      for (int pixel = 0; pixel < 3072; pixel++) {
         float i;
         infile >> i;
         test_images[k][pixel] = i;
-        if(pixel == 15  && k ==1){
-        std::cout << file <<" \n";
-        std::cout << pixel  << " " << test_images[k][pixel] <<" \n";
+        if(pixel == 3071  && k ==1){
+        //std::cout << file <<" \n";
+        //std::cout << pixel  << " " << test_images[k][pixel] <<" \n";
         }
-      }
-      infile.close();
-    }
-  }
-}
-
-void read_trucks(float test_images[60][3072]) {
-  for (int k = 1; k < 61; k++){
-    string a = "data/testing_data/normalized_trucks_32/";
-    string b =  ".png.dat";
-    stringstream ss;
-    ss << k;
-    string str = ss.str();
-    string file = string(a) + str + b;
-    std::ifstream infile(file.c_str());
-    if (infile.is_open()) {
-      for (int pixel = 1; pixel < 3072*2; pixel = pixel +2) {
-        float i;
-        infile >> i;
-        test_images[k][pixel] = i;
       }
       infile.close();
     }
@@ -110,8 +91,8 @@ int main(){
   }
   
   // read test images and labels
-  read_cars(cars);
-  read_trucks(trucks);
+  read_any(cars,"cars");
+  read_any(trucks,"trucks");
   for (int j = 0; j<3072; j++){
     for (int i=0; i<120; i++){
       if(i<60){
