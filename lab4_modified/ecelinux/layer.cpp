@@ -171,7 +171,7 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, in
           
         }
         //output[o_index] = sum > threshold[o_index] ? 1 : 0;
-        std::cout << "sum: " << sum <<" \n";
+        //std::cout << "sum: " << sum <<" \n";
         output[o_index] = sum;
       }
     }
@@ -183,10 +183,12 @@ void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, i
   int O = I - F + 1;
   int ifmap_size = I * I;
   int ofmap_size = O * O;
-  
+  std::cout << "O: " <<O <<" \n";
   // MAC and batchnorm
   LOOP_N: for (int n = 0; n < N; n++){
     LOOP_X: for (int x = 0; x < O; x++){
+          //std::cout << x <<" \n";
+
       LOOP_Y: for (int y = 0; y < O; y++){
         int sum = 0;
         int o_index = x + y * O + n * ofmap_size;
@@ -194,6 +196,7 @@ void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, i
           int filter_sum=0;
           LOOP_C: for (int c = 0; c < F; c++){
             LOOP_R: for (int r = 0; r < F; r++){
+              //std::cout<<if_mac(x + c, y + r, I);
               if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
                 int i_index = x + c + (y + r) * I + m * ifmap_size;
                 int w_index = c + r * F + (n + m * N) * FILTER_SIZE;
@@ -205,6 +208,7 @@ void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, i
           sum += filter_sum;
         }
         //output[o_index] = sum > threshold[o_index] ? 1 : 0;
+        //std::cout << "sum: " << sum <<" \n";
         output[o_index] = sum;
       }
     }

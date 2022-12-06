@@ -12,9 +12,9 @@
 const int MAX_FMAP = 3072; // 32*32*3
 const int OUT = 2;
 
-const int I_WIDTH1 = 3; //conv1 input width
+const int I_WIDTH1 = 3072; //conv1 input width
 const int N_CHANNEL1 = 6; // conv1 output channels
-const int I_WIDTH2 = 6; //conv2 input width
+const int I_WIDTH2 = 3072; //conv2 input width
 const int N_CHANNEL2 = 16; // conv2 output channels
 const int O_WIDTH = 4; //conv output width
 const int F = 5; //filter width
@@ -47,5 +47,6 @@ void reshape(float* input, float* output);
 
 // Perform convolutional kernel
 void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L);
+void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L);
 
 #endif

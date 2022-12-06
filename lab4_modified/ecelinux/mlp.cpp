@@ -93,7 +93,7 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   //std::cout << "A " <<" \n";
   // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
   // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  conv(mem_conv1, mem_conv2, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
+  conv1(mem_conv1, mem_conv2, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
    std::cout << "mem_conv0: " << mem_conv2[0]<<" \n";
    std::cout << "mem_conv1: " << mem_conv2[1]<<" \n";
  
