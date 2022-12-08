@@ -4,7 +4,7 @@
 # @brief: A Tcl script for synthesizing the baseline digit recongnition design.
 
 # Project name
-set hls_prj mlp.prj
+set hls_prj mlp_base.prj
 
 # Open/reset the project
 open_project ${hls_prj} -reset

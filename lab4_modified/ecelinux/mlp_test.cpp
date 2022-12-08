@@ -115,18 +115,23 @@ int main(){
   // pack images to 32-bit and transmit to dut function 
   for (int test = 0; test < TEST_SIZE; test++) {
     //for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
-    for (int i = 0; i <3072; i++) {
+    //std::cout << "test number: " <<test <<" \n";
+      for (int i = 0; i <3072; i++) {
       //std::cout << "A" << "\n";
 
       //for (int j = 0; j < BUS_WIDTH; j++) {
+        
         test_image = test_images[test][i];
+        
         //if (i == 1 ){
         //std::cout << test_images[test][i] <<" \n";
         //std::cout << test_image <<" \n";
        // }
       //}
+        
       digitrec_in.write(test_image);
-    }
+     
+  }
     
     // perform prediction
     //std::cout << test<< "\n";

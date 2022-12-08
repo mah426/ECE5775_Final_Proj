@@ -40,6 +40,7 @@ void dut(
   //     input[i * BUS_WIDTH + j] = f;
   //   }
   // }
+  //std::cout << "i " <<i <<" \n";
   for (int i = 0; i < 3072; i++)
   {
     
@@ -72,8 +73,9 @@ void dut(
 bit32_t mlp_xcel(float input[MAX_FMAP])
 { 
   bit32_t final_out = 0;
-  float mem_conv1[MAX_FMAP];
-  float mem_conv2[MAX_FMAP];
+  float mem_conv1[4704];
+  float mem_conv2[4704];
+
   for (int i = 0; i < MAX_FMAP; i++){
     mem_conv1[i] = 0;
     mem_conv2[i] = 0;
@@ -93,28 +95,30 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   //std::cout << "A " <<" \n";
   // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
   // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  conv1(mem_conv1, mem_conv2, 1, N_CHANNEL1, I_WIDTH1+PADDING, 0);
-   std::cout << "mem_conv0: " << mem_conv2[0]<<" \n";
-   std::cout << "mem_conv1: " << mem_conv2[1]<<" \n";
+  conv1(mem_conv1, mem_conv2, 3, 6, 32, 0);
+
+
+   //std::cout << "mem_conv0: " << mem_conv2[0]<<" \n";
+   //std::cout << "mem_conv1: " << mem_conv2[1]<<" \n";
  
   max_pool(mem_conv2, mem_conv1, 2, 2);
 
   // /* Second Conv Layer */
   
-  conv(mem_conv2, mem_conv1, N_CHANNEL1, N_CHANNEL2, I_WIDTH2+PADDING, 1);
+  conv1(mem_conv2, mem_conv1, 6, 16, 14, 1);
   max_pool(mem_conv1, mem_conv2, 2, 2);
 
   reshape(mem_conv2, mem_conv1);
 
   // /* Dense Layers */
    dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 16 * 5 * 5, 120);
-   dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84);
-   dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2);
+  dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84);
+  dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2);
  
   // predict car or truck
   //std::cout << "B " <<" \n";
-  // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
-  // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
+   std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
+   std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
   if (mem_conv1[0] < mem_conv1[1])
   {
     //std::cout << "C " <<" \n";
