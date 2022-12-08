@@ -70,32 +70,26 @@ void dut(
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-bit32_t mlp_xcel(float input[MAX_FMAP])
+bit32_t mlp_xcel(float input[3072])
 { 
   bit32_t final_out = 0;
   float mem_conv1[4704];
   float mem_conv2[4704];
 
-  for (int i = 0; i < MAX_FMAP; i++){
+  for (int i = 0; i < 4704; i++){
     mem_conv1[i] = 0;
     mem_conv2[i] = 0;
 
   }
-
-        //   self.conv1 = nn.Conv2d(3, 6, 5)
+          //   self.conv1 = nn.Conv2d(3, 6, 5)
         // self.pool = nn.MaxPool2d(2, 2)
         // self.conv2 = nn.Conv2d(6, 16, 5)
         // self.fc1 = nn.Linear(16 * 5 * 5, 120)
         // self.fc2 = nn.Linear(120, 84)
         // self.fc3 = nn.Linear(84, 2)
-  /* Dense Layers */
 
   /* First Conv Layer */
-  
-  //std::cout << "A " <<" \n";
-  // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
-  // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  conv1(mem_conv1, mem_conv2, 3, 6, 32, 0);
+  conv1(input, mem_conv2, 3, 6, 32, 0);
 
 
    //std::cout << "mem_conv0: " << mem_conv2[0]<<" \n";
@@ -111,7 +105,7 @@ bit32_t mlp_xcel(float input[MAX_FMAP])
   reshape(mem_conv2, mem_conv1);
 
   // /* Dense Layers */
-   dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 16 * 5 * 5, 120);
+  dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 16 * 5 * 5, 120);
   dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84);
   dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2);
  

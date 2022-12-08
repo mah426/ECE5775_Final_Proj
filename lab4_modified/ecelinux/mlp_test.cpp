@@ -13,7 +13,8 @@
 using namespace std;
 
 // Number of test instances
-const int TEST_SIZE = 120;
+const int TEST_SIZE = 2000;
+const int TEST_SIZE_HALF = 1000;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -33,11 +34,11 @@ void read_test_images(int8_t test_images[TEST_SIZE][256]) {
   }
 }
 
-void read_any(float test_images[60][3072], string item) {
-  for (int k = 1; k < 61; k++){
+void read_any(float test_images[TEST_SIZE_HALF][3072], string item) {
+  for (int k = 0; k <TEST_SIZE_HALF; k++){
     string e = "data/testing_data/normalized_";
     string f = "_32/";
-    string b =  ".png.dat";
+    string b =  ".jpg.dat";
     stringstream ss;
     ss << k;
     string str = ss.str();
@@ -77,12 +78,12 @@ int main(){
   hls::stream<float> digitrec_in;
   hls::stream<float> digitrec_out;
   
-  float cars[60][3072];
-  float trucks[60][3072];
+  float cars[TEST_SIZE_HALF][3072];
+  float trucks[TEST_SIZE_HALF][3072];
   float test_images[TEST_SIZE][3072];
-  int test_labels[120];
-  for (int  i = 0; i<120; i++){
-    if(i<60){
+  int test_labels[TEST_SIZE];
+  for (int  i = 0; i<TEST_SIZE; i++){
+    if(i<TEST_SIZE_HALF){
       test_labels[i] = 0;
     }
     else{
@@ -94,12 +95,12 @@ int main(){
   read_any(cars,"cars");
   read_any(trucks,"trucks");
   for (int j = 0; j<3072; j++){
-    for (int i=0; i<120; i++){
-      if(i<60){
+    for (int i=0; i<TEST_SIZE; i++){
+      if(i<TEST_SIZE_HALF){
         test_images[i][j] = cars[i][j];
       }
       else{
-        test_images[i][j] = trucks[i-60][j];
+        test_images[i][j] = trucks[i-TEST_SIZE_HALF][j];
       }
     }
   }
