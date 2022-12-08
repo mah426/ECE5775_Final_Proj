@@ -65,15 +65,30 @@ void dense(float input[MAX_FMAP], float output[MAX_FMAP], const float* weight, c
 //              use_relu - enable relu or not
 // @param[out] : output - output fmaps
 
-void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float* weight, const float* bias, int M, int N){
+void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float* weight, const float* bias, int M, int N, bool relu){
+  //float max = -100;
   LOOP_DENSE_MLP_0: for (int n = 0; n < N; n++){
     float sum = 0;
     LOOP_DENSE_MLP_1: for (int m = 0; m < M; m++) {
-      int w_index = m * N + n;
+    //  int w_index = m * N + n;
+      int w_index = n * M + m;
       sum += input[m] *weight[w_index]; 
     }
     float biased = sum + bias[n];
-    output[n] = (biased > 0) ? 1 : 0;
+    if (relu) {
+      output[n] = (biased > 0) ? 1 : 0;
+    }
+    else{
+      output[n] = biased;
+    }
+    // else {
+    //   if (biased > max) {
+    //     max = biased;
+    //     output[n] = 1;
+    //   } else {
+    //     output[n] = 0;
+    //   }
+    // }
   }
 }
 

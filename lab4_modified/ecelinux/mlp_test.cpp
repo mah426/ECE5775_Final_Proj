@@ -13,8 +13,10 @@
 using namespace std;
 
 // Number of test instances
-const int TEST_SIZE = 2000;
-const int TEST_SIZE_HALF = 1000;
+ //const int TEST_SIZE = 2000;
+ //const int TEST_SIZE_HALF = 1000;
+const int TEST_SIZE = 1;
+const int TEST_SIZE_HALF = 1;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -115,6 +117,7 @@ int main(){
 
   // pack images to 32-bit and transmit to dut function 
   for (int test = 0; test < TEST_SIZE; test++) {
+    std::cout << test <<" \n";
     //for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
     //std::cout << "test number: " <<test <<" \n";
       for (int i = 0; i <3072; i++) {

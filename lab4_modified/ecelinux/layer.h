@@ -37,7 +37,7 @@ void pad(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I);
 void dense(float *input, float *output, const float *weight, const float *bias, int M, int N, bool use_relu);
 
 // Perform dense layer for MLP
-void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float *weight, const float *bias, int M, int N);
+void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float *weight, const float *bias, int M, int N, bool relu);
 
 // Reduce the size of feature map
 void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I);
