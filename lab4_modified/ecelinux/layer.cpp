@@ -7,6 +7,7 @@
 #include "model.h"
 #include <cmath>
 #include <iostream>
+#include <cfloat>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ inline bool if_mac(int x, int y, int I)
 void dense(float input[MAX_FMAP], float output[MAX_FMAP], const float* weight, const float* bias, int M, int N, bool use_relu){
   float var_w = 2. / M;
   float c = sqrt(var_w);
-  float max = -100;
+  float max = FLT_MIN;
 
   for (int n = 0; n < N; n++){
     float one_out = 0;
@@ -42,7 +43,7 @@ void dense(float input[MAX_FMAP], float output[MAX_FMAP], const float* weight, c
     }
     one_out = (2 * one_out - M)*c;
     float biased = one_out + bias[n];
-    if (use_relu) output[n] = (biased > 0) ? 1 : 0;
+    if (use_relu) output[n] = (biased > 0) ? biased : 0;
     else { // last layer
       if (biased > max) {
         max = biased;
@@ -76,7 +77,7 @@ void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float* weigh
     }
     float biased = sum + bias[n];
     if (relu) {
-      output[n] = (biased > 0) ? 1 : 0;
+      output[n] = (biased > 0) ? biased : 0;
     }
     else{
       output[n] = biased;
@@ -111,11 +112,12 @@ void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I){
     LOOP_MAX_POOL_2: for (int x = 0; x < O; x++){
       LOOP_MAX_POOL_3: for (int y = 0; y < O; y++){
         int o_index = x + y * O + m * ofmap_size;
-        float max = 0;
+        float max = FLT_MIN;
         LOOP_MAX_POOL_4:for (int c = 0; c < 2; c++){
           LOOP_MAX_POOL_5:for (int r = 0; r < 2; r++){
             int i_index = 2 * x + c + (2 * y + r) * I + m * ifmap_size;
-            if (input[i_index]) max = 1; //this is because float 1 is represented as 0xff memory
+            // if (input[i_index]) max = max; 
+            max = input[i_index] > max ? input[i_index] : max;//this is because float 1 is represented as 0xff memory
           }
         }
         output[o_index] = max;
@@ -133,11 +135,13 @@ void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I){
 
 void reshape(float* input, float* output) {
   LOOP_RESHAPE_0:for (int c = 0; c < N_CHANNEL2; c++) {
-    LOOP_RESHAPE_1:for (int y = 0; y < O_WIDTH; y++) {
-      LOOP_RESHAPE_2:for (int x = 0; x < O_WIDTH; x++) {
+    LOOP_RESHAPE_1:for (int y = 0; y < 5; y++) {
+      LOOP_RESHAPE_2:for (int x = 0; x < 5; x++) {
         int o_index = c + (x + y * O_WIDTH ) * N_CHANNEL2;
         int i_index = x + y * O_WIDTH + c * O_WIDTH*O_WIDTH;
-        output[o_index] = input[i_index];
+        if (o_index < 4704) {
+          output[o_index] = input[i_index];
+        } 
       }
     }
   }
@@ -160,6 +164,7 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, in
   float O = I - F + 1;
   float ifmap_size = I * I;
   float ofmap_size = O * O;
+  // float sum = 0.0;
   
   // MAC and batchnorm
   LOOP_N: for (int n = 0; n < N; n++){
@@ -172,13 +177,13 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, in
           float mac_num = 0;
           LOOP_C: for (int c = 0; c < F; c++){
             LOOP_R: for (int r = 0; r < F; r++){
-              if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
+              // if (if_mac(x + c, y + r, I)) { //neglect padding pixels in mac
                 int i_index = x + c + (y + r) * I + m * ifmap_size;
                 int w_index = c + r * F + (n + m * N) * FILTER_SIZE;
                 if (L == 0) one_out += input[i_index] == conv1_weight[w_index]; //XNOR
                 else        one_out += input[i_index] == conv2_weight[w_index];
                 mac_num++;
-              }
+              // }
             }
           }
           //sum += (one_out << 1) - mac_num
@@ -205,14 +210,15 @@ void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, i
           //std::cout << x <<" \n";
       LOOP_Y: for (int y = 0; y < O; y++){
         float sum = 0;
-        int o_index = x + y * O + n * ofmap_size;
+        int o_index = y + x * O + n * ofmap_size;
         //std::cout << "o_index: " << o_index <<" \n";
         LOOP_M: for (int m = 0; m < M; m++){
           float filter_sum=0;
           LOOP_C: for (int c = 0; c < F; c++){
             LOOP_R: for (int r = 0; r < F; r++){
-                int i_index = x + c + (y + r) * I + m * ifmap_size;
-                int w_index = c + r * F + (n + m * N) * FILTER_SIZE;
+                int i_index = y + c + (x + r) * I + m * ifmap_size;
+                // int w_index = c + r * F + (n + m * N) * FILTER_SIZE; // M*N*F*F ?
+                int w_index = c + r * F + (n * M + m) * FILTER_SIZE; // N*M*F*F
                 //std::cout << "w_index: " << w_index <<" \n";
                 if (L == 0) filter_sum += input[i_index] * conv1_weight[w_index];
                 else        filter_sum += input[i_index] * conv2_weight[w_index];
