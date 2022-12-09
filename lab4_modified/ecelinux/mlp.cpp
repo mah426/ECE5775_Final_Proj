@@ -79,10 +79,8 @@ bit32_t mlp_xcel(float input[3072])
     mem_conv1[i] = 0;
     mem_conv2[i] = 0;
   }
-  // std::ofstream outfile;
-  // outfile.open("testing.dat");
-  /* First Conv Layer */
 
+  /* First Conv Layer */
   for (int i = 0; i < 100; i++)
   {
     cout << input[i] << ",";
@@ -97,22 +95,22 @@ bit32_t mlp_xcel(float input[3072])
   cout << endl;
   max_pool(mem_conv2, mem_conv1, 2, 2);
 
-  // /* Second Conv Layer */
-  conv1(mem_conv2, mem_conv1, 6, 16, 14, 1);
-  max_pool(mem_conv1, mem_conv2, 2, 2);
+  /* Second Conv Layer */
+  conv1(mem_conv1, mem_conv2, 6, 16, 14, 1);
+  max_pool(mem_conv2, mem_conv1, 2, 2);
 
-  reshape(mem_conv2, mem_conv1);
+  reshape(mem_conv1, mem_conv2);
 
-  // /* Dense Layers */
-  dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 400, 120, true);
-  dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84, true);
-  dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2, false);
+  /* Dense Layers */
+  dense_mlp(mem_conv2, mem_conv1, fc1_weight, fc1_bias, 400, 120, true);
+  dense_mlp(mem_conv1, mem_conv2, fc2_weight, fc2_bias, 120, 84, true);
+  dense_mlp(mem_conv2, mem_conv1, fc3_weight, fc3_bias, 84, 2, false);
 
   // predict car or truck
   // std::cout << "B " <<" \n";
   // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
   // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  if (mem_conv2[0] < mem_conv2[1])
+  if (mem_conv1[0] < mem_conv1[1])
   {
     // std::cout << "C " <<" \n";
     final_out = 1;

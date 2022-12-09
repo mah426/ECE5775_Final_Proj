@@ -162,16 +162,16 @@ LOOP_MAX_POOL_1:
 void reshape(float *input, float *output)
 {
 LOOP_RESHAPE_0:
-  for (int c = 0; c < N_CHANNEL2; c++)
+  for (int c = 0; c < POOL2_OUT_N_CHANNEL; c++)
   {
   LOOP_RESHAPE_1:
-    for (int y = 0; y < O_WIDTH; y++)
+    for (int y = 0; y < POOL2_OUT_WIDTH; y++)
     {
     LOOP_RESHAPE_2:
-      for (int x = 0; x < O_WIDTH; x++)
+      for (int x = 0; x < POOL2_OUT_WIDTH; x++)
       {
-        int o_index = c + (x + y * O_WIDTH) * N_CHANNEL2;
-        int i_index = x + y * O_WIDTH + c * O_WIDTH * O_WIDTH;
+        int o_index = c + (x + y * POOL2_OUT_WIDTH) *POOL2_OUT_N_CHANNEL;
+        int i_index = x + y * POOL2_OUT_WIDTH + c * POOL2_OUT_WIDTH * POOL2_OUT_WIDTH;
         output[o_index] = input[i_index];
       }
     }
