@@ -56,11 +56,10 @@ void dut(
       //std::cout << "1 " <<" \n";
   // call mlp
   //std::cout << "mlp "<< mlp_xcel(input) <<" \n";
-  float mlp_result = 0;
   std::cout << "Starting Output Function: " << endl;
-  mlp_xcel(input, mlp_result);
+  float mlp_result = 0;
+  mlp_xcel(input, &mlp_result);
   output = mlp_result;
-  // output = mlp_xcel(input, final_out);
   //std::cout << "2 " <<" \n";
   std::cout << "output: " << output << endl;
   // write out the result
@@ -75,7 +74,7 @@ void dut(
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-void mlp_xcel(float input[3072], float final_out)
+float mlp_xcel(float input[3072], float final_out)
 { 
   float mem_conv1[4704];
   float mem_conv2[4704];
@@ -147,7 +146,7 @@ void mlp_xcel(float input[3072], float final_out)
   std::cout << "After third linear" << endl;
   std::cout << "mem_conv1[0]: " << mem_conv1[0]<<" \n";
   std::cout << "mem_conv1[1]: " << mem_conv1[1]<<" \n";
-  // float final_out = 0;
+  final_out = 0;
   std::cout << "A" << endl;
   if (mem_conv1[0] < mem_conv1[1])
   {
@@ -159,6 +158,6 @@ void mlp_xcel(float input[3072], float final_out)
   std::cout << "B" << endl;
   //std::cout << "D " <<" \n";
   std::cout << "test if not segfaulted" << endl;
-  std::cout << "final_out: " << final_out<< endl;
-  // return final_out;
+  std::cout << "final_out: " << final_out << endl;
+  outfile.close();
 }
