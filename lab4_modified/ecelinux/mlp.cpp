@@ -62,6 +62,15 @@ void dut(
   // std::cout << "3 "  <<" \n";
 }
 
+inline void print_array(float *input, int size)
+{
+  cout << endl;
+  for (int i = 0; i < size; i++)
+  {
+    cout << input[i] << ",";
+  }
+  cout << endl;
+}
 //----------------------------------------------------------
 // mlp Accelerator
 //----------------------------------------------------------
@@ -80,20 +89,31 @@ bit32_t mlp_xcel(float input[3072])
     mem_conv2[i] = 0;
   }
 
-  /* First Conv Layer */
-  for (int i = 0; i < 100; i++)
-  {
-    cout << input[i] << ",";
-  }
-  cout << endl;
+  print_array(input, 100);
+
+  /*
+    conv1
+    M=3 N=6 I=32 F=5 FILTER_SIZE=25
+    input: 3*32*32
+    weight: 6*3*5*5 (N*M*F*F)
+    bias: 6
+    output: 6*28*28
+  */
   conv1(input, mem_conv2, 3, 6, 32, 0);
+
   cout << "conv1 done \n";
-  for (int i = 0; i < 100; i++)
-  {
-    cout << mem_conv2[i] << ",";
-  }
-  cout << endl;
-  max_pool(mem_conv2, mem_conv1, 2, 2);
+  print_array(mem_conv2, 100);
+
+  /*
+    pool1
+    M=6 I=28
+    input: 6*28*28
+    output: 6*14*14
+  */
+  max_pool(mem_conv2, mem_conv1, 6, 28);
+
+  cout << "conv1 and pool1 done \n";
+  print_array(mem_conv1, 100);
 
   /* Second Conv Layer */
   conv1(mem_conv1, mem_conv2, 6, 16, 14, 1);

@@ -7,6 +7,7 @@
 #include "model.h"
 #include <cmath>
 #include <iostream>
+#include <cfloat>
 
 using namespace std;
 
@@ -134,23 +135,26 @@ LOOP_MAX_POOL_1:
     LOOP_MAX_POOL_3:
       for (int y = 0; y < O; y++)
       {
-        int o_index = x + y * O + m * ofmap_size;
-        float max = 0;
+        int o_index = x + y * O + m * ofmap_size; // output[m][y][x]
+        float max = -FLT_MAX;
       LOOP_MAX_POOL_4:
         for (int c = 0; c < 2; c++)
         {
         LOOP_MAX_POOL_5:
           for (int r = 0; r < 2; r++)
           {
-            int i_index = 2 * x + c + (2 * y + r) * I + m * ifmap_size;
-            if (input[i_index])
-              max = 1; // this is because float 1 is represented as 0xff memory
+            int i_index = 2 * x + c + (2 * y + r) * I + m * ifmap_size; // input[m][2y+r][2x+c]
+            // if (input[i_index])
+            //   max = 1; // this is because float 1 is represented as 0xff memory
+            // cout << "input[i_index]" << input[i_index] << endl;
+            max = input[i_index] > max ? input[i_index] : max;
           }
         }
         output[o_index] = max;
       }
     }
   }
+  // cout << "max float" << -FLT_MAX << endl;
 }
 
 //----------------------------------------------------------
@@ -170,7 +174,7 @@ LOOP_RESHAPE_0:
     LOOP_RESHAPE_2:
       for (int x = 0; x < POOL2_OUT_WIDTH; x++)
       {
-        int o_index = c + (x + y * POOL2_OUT_WIDTH) *POOL2_OUT_N_CHANNEL;
+        int o_index = c + (x + y * POOL2_OUT_WIDTH) * POOL2_OUT_N_CHANNEL;
         int i_index = x + y * POOL2_OUT_WIDTH + c * POOL2_OUT_WIDTH * POOL2_OUT_WIDTH;
         output[o_index] = input[i_index];
       }
@@ -246,7 +250,7 @@ void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, i
   int O = I - F + 1;
   int ifmap_size = I * I;
   int ofmap_size = O * O;
-// std::cout << "O: " <<O <<" \n";
+  std::cout << "O: " << O << " \n";
 //  MAC and batchnorm
 LOOP_N:
   for (int n = 0; n < N; n++)
@@ -259,30 +263,29 @@ LOOP_N:
       for (int y = 0; y < O; y++)
       {
         float sum = 0;
-        int o_index = x + y * O + n * ofmap_size;
+        int o_index = y + x * O + n * ofmap_size; // N*O*O output[n][x][y]
       // std::cout << "o_index: " << o_index <<" \n";
       LOOP_M:
         for (int m = 0; m < M; m++)
         {
-          float filter_sum = 0;
         LOOP_C:
           for (int c = 0; c < F; c++)
           {
           LOOP_R:
             for (int r = 0; r < F; r++)
             {
-              int i_index = x + c + (y + r) * I + m * ifmap_size;
-              int w_index = c + r * F + (n + m * N) * FILTER_SIZE;
+              int i_index = y + c + (x + r) * I + m * ifmap_size; // M*I*I input[m][x+r][y+c]
+              // int w_index = c + r * F + (n + m * N) * FILTER_SIZE; // M*N*F*F ?
+              int w_index = c + r * F + (n * M + m) * FILTER_SIZE; // N*M*F*F weight[n][m][r][c]
               // std::cout << "w_index: " << w_index <<" \n";
               if (L == 0)
-                filter_sum += input[i_index] * conv1_weight[w_index];
+                sum += input[i_index] * conv1_weight[w_index];
               else
-                filter_sum += input[i_index] * conv2_weight[w_index];
+                sum += input[i_index] * conv2_weight[w_index];
             }
           }
-          sum += filter_sum;
         }
-        output[o_index] = sum;
+        output[o_index] = sum; // N*O*O output[n][x][y]
       }
     }
   }
