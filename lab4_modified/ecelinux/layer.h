@@ -20,7 +20,6 @@ const int O_WIDTH = 4; //conv output width
 const int F = 5; //filter width
 const int FILTER_SIZE = F*F;
 //const int PADDING = F - 1;
-const int PADDING = 0;
 // const int MAX_FMAP = 5184; //18*18*16
 const int MAX_F = 32; //{16, 32} num of conv2 output fmaps
 const int MAX_W_CONV = 2400;// num of conv2 weights
@@ -29,6 +28,10 @@ const int FC2_UNITS = 256;
 const int MAX_W_FC = FC1_UNITS*FC2_UNITS;
 // const int OUT = 10;
 const int BUS_WIDTH = 32;
+
+const int PADDING = 0;
+const int POOL2_OUT_N_CHANNEL = 16;
+const int POOL2_OUT_WIDTH = 5;
 
 // Padding the input feature map
 void pad(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I);
@@ -50,3 +53,4 @@ void conv(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, in
 void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L);
 
 #endif
+
