@@ -16,6 +16,6 @@ void dut (
 );
 
 // Top function for mlp accelerator
-bit32_t mlp_xcel(float input[MAX_FMAP]);
+void mlp_xcel(float input[MAX_FMAP], float final_out);
 
 #endif

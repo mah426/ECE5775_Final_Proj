@@ -13,10 +13,10 @@
 using namespace std;
 
 // Number of test instances
- //const int TEST_SIZE = 2000;
- //const int TEST_SIZE_HALF = 1000;
-const int TEST_SIZE = 1;
-const int TEST_SIZE_HALF = 1;
+ const int TEST_SIZE = 2000;
+ const int TEST_SIZE_HALF = 1000;
+// const int TEST_SIZE = 1;
+// const int TEST_SIZE_HALF = 1;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -27,7 +27,7 @@ void read_test_images(int8_t test_images[TEST_SIZE][256]) {
   if (infile.is_open()) {
     for (int index = 0; index < TEST_SIZE; index++) {
       for (int pixel = 0; pixel < 256; pixel++) {
-        int i;
+        int i; 
         infile >> i;
         test_images[index][pixel] = i;
       }

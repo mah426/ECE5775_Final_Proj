@@ -56,11 +56,16 @@ void dut(
       //std::cout << "1 " <<" \n";
   // call mlp
   //std::cout << "mlp "<< mlp_xcel(input) <<" \n";
-  output = mlp_xcel(input);
+  float mlp_result = 0;
+  std::cout << "Starting Output Function: " << endl;
+  mlp_xcel(input, mlp_result);
+  output = mlp_result;
+  // output = mlp_xcel(input, final_out);
   //std::cout << "2 " <<" \n";
-
+  std::cout << "output: " << output << endl;
   // write out the result
   strm_out.write(output);
+  std::cout << "D" << endl;
   //std::cout << "3 "  <<" \n";
 }
 
@@ -70,9 +75,8 @@ void dut(
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-bit32_t mlp_xcel(float input[3072])
+void mlp_xcel(float input[3072], float final_out)
 { 
-  bit32_t final_out = 0;
   float mem_conv1[4704];
   float mem_conv2[4704];
 
@@ -85,32 +89,76 @@ bit32_t mlp_xcel(float input[3072])
    outfile.open("testing.dat");
   /* First Conv Layer */
   conv1(input, mem_conv2, 3, 6, 32, 0);
-   outfile << "conv1 output \n";
-  for (int i = 0; i < 4704; i++) {    
-    outfile << i << ": " << mem_conv2[i]<< "\n";
-  }
+  // outfile << "conv1 output \n";
+  // for (int i = 0; i < 4704; i++) {    
+  //   outfile << i << ": " << mem_conv2[i]<< "\n";
+  // }
+  
+  // ! erase
+  // std::cout << "After first conv " << endl;
+  // std::cout << "mem_conv2[0]: " << mem_conv2[0]<<" \n";
+  // std::cout << "mem_conv2[1]: " << mem_conv2[1]<<" \n";
+
   max_pool(mem_conv2, mem_conv1, 2, 2);
+  // ! erase
+  // std::cout << "After first MaxPool " << endl;
+  // std::cout << "mem_conv1[0]: " << mem_conv1[0]<<" \n";
+  // std::cout << "mem_conv1[1]: " << mem_conv1[1]<<" \n";
 
   // /* Second Conv Layer */
-  conv1(mem_conv2, mem_conv1, 6, 16, 14, 1);
-  max_pool(mem_conv1, mem_conv2, 2, 2);
+  conv1(mem_conv1, mem_conv2, 6, 16, 14, 1);
+  // ! erase
+  // std::cout << "After second conv " << endl;
+  // std::cout << "mem_conv2[0]: " << mem_conv2[0]<<" \n";
+  // std::cout << "mem_conv2[1]: " << mem_conv2[1]<<" \n";
 
-  reshape(mem_conv2, mem_conv1);
+  
+  max_pool(mem_conv2, mem_conv1, 2, 2);
+  // ! erase
+  // std::cout << "After second MaxPool " << endl;
+  // std::cout << "mem_conv1[0]: " << mem_conv1[0]<<" \n";
+  // std::cout << "mem_conv1[1]: " << mem_conv1[1]<<" \n";
+
+
+  reshape(mem_conv1, mem_conv2);
+  // ! erase
+  // std::cout << "After reshape" << endl;
+  // std::cout << "mem_conv2[0]: " << mem_conv2[0]<<" \n";
+  // std::cout << "mem_conv2[1]: " << mem_conv2[1]<<" \n";
+
 
   // /* Dense Layers */
-  dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 400, 120, true);
-  dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84, true);
-  dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2, false);
+  dense_mlp(mem_conv2, mem_conv1, fc1_weight, fc1_bias, 400, 120, true);
+  // ! erase
+  // std::cout << "After first linear" << endl;
+  // std::cout << "mem_conv1[0]: " << mem_conv1[0]<<" \n";
+  // std::cout << "mem_conv1[1]: " << mem_conv1[1]<<" \n";
+
+  dense_mlp(mem_conv1, mem_conv2, fc2_weight, fc2_bias, 120, 84, true);
+    // ! erase
+  // std::cout << "After Second linear" << endl;
+  // std::cout << "mem_conv2[0]: " << mem_conv2[0]<<" \n";
+  // std::cout << "mem_conv2[1]: " << mem_conv2[1]<<" \n";
+
+  dense_mlp(mem_conv2, mem_conv1, fc3_weight, fc3_bias, 84, 2, false);
  
   // predict car or truck
   //std::cout << "B " <<" \n";
-   //std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
-   //std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  if (mem_conv2[0] < mem_conv2[1])
+  std::cout << "After third linear" << endl;
+  std::cout << "mem_conv1[0]: " << mem_conv1[0]<<" \n";
+  std::cout << "mem_conv1[1]: " << mem_conv1[1]<<" \n";
+  // float final_out = 0;
+  std::cout << "A" << endl;
+  if (mem_conv1[0] < mem_conv1[1])
   {
     //std::cout << "C " <<" \n";
     final_out = 1;
+  } else {
+    final_out = 0;
   }
+  std::cout << "B" << endl;
   //std::cout << "D " <<" \n";
-  return final_out;
+  std::cout << "test if not segfaulted" << endl;
+  std::cout << "final_out: " << final_out<< endl;
+  // return final_out;
 }
