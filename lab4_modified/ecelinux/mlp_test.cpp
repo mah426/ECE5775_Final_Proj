@@ -51,10 +51,6 @@ void read_any(float test_images[TEST_SIZE_HALF][3072], string item) {
         float i;
         infile >> i;
         test_images[k][pixel] = i;
-        if(pixel == 3071  && k ==1){
-        //std::cout << file <<" \n";
-        //std::cout << pixel  << " " << test_images[k][pixel] <<" \n";
-        }
       }
       infile.close();
     }

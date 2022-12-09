@@ -56,12 +56,12 @@ void dut(
       //std::cout << "1 " <<" \n";
   // call mlp
   //std::cout << "mlp "<< mlp_xcel(input) <<" \n";
-  std::cout << "Starting Output Function: " << endl;
+  //std::cout << "Starting Output Function: " << endl;
   float mlp_result = 0;
   mlp_xcel(input, mlp_result);
   output = mlp_result;
   //std::cout << "2 " <<" \n";
-  std::cout << "output: " << output << endl;
+  //std::cout << "output: " << output << endl;
   // write out the result
   strm_out.write(output);
   // std::cout << "D" << endl;
@@ -143,9 +143,9 @@ void mlp_xcel(float input[3072], float &final_out)
  
   // predict car or truck
   //std::cout << "B " <<" \n";
-  std::cout << "After third linear" << endl;
-  std::cout << "mem_conv1[0]: " << mem_conv2[0]<<" \n";
-  std::cout << "mem_conv1[1]: " << mem_conv2[1]<<" \n";
+  //std::cout << "After third linear" << endl;
+ // std::cout << "mem_conv1[0]: " << mem_conv2[0]<<" \n";
+ // std::cout << "mem_conv1[1]: " << mem_conv2[1]<<" \n";
   final_out = 0;
   // std::cout << "A" << endl;
   if (mem_conv2[0] < mem_conv2[1])
