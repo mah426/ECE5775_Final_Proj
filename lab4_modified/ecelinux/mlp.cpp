@@ -83,7 +83,7 @@ bit32_t mlp_xcel(float input[3072])
   float mem_conv1[4704];
   float mem_conv2[4704];
 
-  print_array(input, 400);
+  print_array(input, 100);
 
   /*
     conv1
@@ -94,10 +94,10 @@ bit32_t mlp_xcel(float input[3072])
     bias: 6
     output: 6*28*28
   */
-  // conv1(input, mem_conv2, 3, 6, 32, 0);
+  conv1(input, mem_conv2, 3, 6, 32, 0);
 
-  // cout << "conv1 done \n";
-  // print_array(mem_conv2, 100);
+  cout << "conv1 done \n";
+  print_array(mem_conv2, 100);
 
   /*
     pool1
@@ -105,10 +105,10 @@ bit32_t mlp_xcel(float input[3072])
     input: 6*28*28
     output: 6*14*14
   */
-  // max_pool(mem_conv2, mem_conv1, 6, 28);
+  max_pool(mem_conv2, mem_conv1, 6, 28);
 
-  // cout << "conv1 and pool1 done \n";
-  // print_array(mem_conv1, 100);
+  cout << "pool1 done \n";
+  print_array(mem_conv1, 100);
 
   /*
    conv2
@@ -148,7 +148,7 @@ bit32_t mlp_xcel(float input[3072])
   bias:120
   output: 120
   */
-  dense_mlp(input, mem_conv2, fc1_weight, fc1_bias, 400, 120, true);
+  dense_mlp(mem_conv1, mem_conv2, fc1_weight, fc1_bias, 400, 120, true);
 
   dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84, true);
   dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2, false);

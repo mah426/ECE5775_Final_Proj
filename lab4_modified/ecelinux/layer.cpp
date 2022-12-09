@@ -70,9 +70,9 @@ void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I)
   int ifmap_size = I * I;
   int ofmap_size = O * O;
 
-LOOP_MAX_POOL_0:
-  for (int i = 0; i < MAX_FMAP; i++)
-    output[i] = 0;
+  // LOOP_MAX_POOL_0:
+  //   for (int i = 0; i < MAX_FMAP; i++)
+  //     output[i] = -FLT_MAX;
 
 LOOP_MAX_POOL_1:
   for (int m = 0; m < M; m++)
@@ -84,7 +84,7 @@ LOOP_MAX_POOL_1:
       for (int y = 0; y < O; y++)
       {
         int o_index = x + y * O + m * ofmap_size; // output[m][y][x]
-        float max = -FLT_MAX;
+        float max = FLT_MIN;
       LOOP_MAX_POOL_4:
         for (int c = 0; c < 2; c++)
         {
@@ -134,8 +134,6 @@ void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, i
   int O = I - F + 1;
   int ifmap_size = I * I;
   int ofmap_size = O * O;
-  std::cout << "O: " << O << " \n";
-//  MAC and batchnorm
 LOOP_N:
   for (int n = 0; n < N; n++)
   {

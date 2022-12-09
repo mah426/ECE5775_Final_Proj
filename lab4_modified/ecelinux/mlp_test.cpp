@@ -14,8 +14,8 @@
 using namespace std;
 
 // Number of test instances
-//  const int TEST_SIZE = 2000;
-//  const int TEST_SIZE_HALF = 1000;
+// const int TEST_SIZE = 2000;
+// const int TEST_SIZE_HALF = 1000;
 const int TEST_SIZE = 0;
 const int TEST_SIZE_HALF = 0;
 
