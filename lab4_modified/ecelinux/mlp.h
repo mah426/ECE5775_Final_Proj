@@ -19,3 +19,4 @@ void dut (
 void mlp_xcel(float input[MAX_FMAP], float &final_out);
 
 #endif
+
