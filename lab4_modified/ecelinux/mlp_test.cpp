@@ -14,10 +14,10 @@
 using namespace std;
 
 // Number of test instances
-//  const int TEST_SIZE = 2000;
-//  const int TEST_SIZE_HALF = 1000;
-const int TEST_SIZE = 0;
-const int TEST_SIZE_HALF = 0;
+ const int TEST_SIZE = 2000;
+ const int TEST_SIZE_HALF = 1000;
+// const int TEST_SIZE = 0;
+// const int TEST_SIZE_HALF = 0;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -136,61 +136,61 @@ int main()
   Timer timer("digirec mlp");
   timer.start();
 
-  // // pack images to 32-bit and transmit to dut function
-  // for (int test = 0; test < TEST_SIZE; test++)
-  // {
-  //   std::cout << test << " \n";
-  //   // for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
-  //   // std::cout << "test number: " <<test <<" \n";
-  //   for (int i = 0; i < 3072; i++)
-  //   {
-  //     // std::cout << "A" << "\n";
-
-  //     // for (int j = 0; j < BUS_WIDTH; j++) {
-
-  //     test_image = test_images[test][i];
-
-  //     // if (i == 1 ){
-  //     // std::cout << test_images[test][i] <<" \n";
-  //     // std::cout << test_image <<" \n";
-  //     // }
-  //     //}
-
-  //     digitrec_in.write(test_image);
-  //   }
-  //   // perform prediction
-  //   // std::cout << test<< "\n";
-  //   dut(digitrec_in, digitrec_out);
-
-  //   // check results
-  //   if (digitrec_out.read() == test_labels[test])
-  //     correct += 1.0;
-  // }
-
-  if (TEST_SIZE == 0)
+  // pack images to 32-bit and transmit to dut function
+  for (int test = 0; test < TEST_SIZE; test++)
   {
+    std::cout << test << " \n";
+    // for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
+    // std::cout << "test number: " <<test <<" \n";
     for (int i = 0; i < 3072; i++)
     {
-      test_image = first_img[i];
-      if (i < 100)
-      {
-        cout << test_image << ",";
-      }
+      // std::cout << "A" << "\n";
+
+      // for (int j = 0; j < BUS_WIDTH; j++) {
+
+      test_image = test_images[test][i];
+
+      // if (i == 1 ){
+      // std::cout << test_images[test][i] <<" \n";
+      // std::cout << test_image <<" \n";
+      // }
+      //}
 
       digitrec_in.write(test_image);
     }
-    cout << endl;
-    cout << "print from mlp_test" << endl;
+    // perform prediction
+    // std::cout << test<< "\n";
     dut(digitrec_in, digitrec_out);
+
+    // check results
+    if (digitrec_out.read() == test_labels[test])
+      correct += 1.0;
   }
-  if (digitrec_out.read() == 1)
-    correct += 1.0;
+
+  // if (TEST_SIZE == 0)
+  // {
+  //   for (int i = 0; i < 3072; i++)
+  //   {
+  //     test_image = first_img[i];
+  //     if (i < 100)
+  //     {
+  //       cout << test_image << ",";
+  //     }
+
+  //     digitrec_in.write(test_image);
+  //   }
+  //   cout << endl;
+  //   cout << "print from mlp_test" << endl;
+  //   dut(digitrec_in, digitrec_out);
+  // }
+  // if (digitrec_out.read() == 1)
+  //   correct += 1.0;
+  // std::cout << "Accuracy: " << correct << std::endl;
 
   timer.stop();
 
   // Calculate accuracy
-  // std::cout << "Accuracy: " << correct / TEST_SIZE << std::endl;
+  std::cout << "Accuracy: " << correct / TEST_SIZE << std::endl;
 
-  std::cout << "Accuracy: " << correct << std::endl;
   return 0;
 }

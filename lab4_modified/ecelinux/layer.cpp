@@ -174,8 +174,8 @@ LOOP_RESHAPE_0:
     LOOP_RESHAPE_2:
       for (int x = 0; x < POOL2_OUT_WIDTH; x++)
       {
-        int o_index = c + (x + y * POOL2_OUT_WIDTH) * POOL2_OUT_N_CHANNEL;
-        int i_index = x + y * POOL2_OUT_WIDTH + c * POOL2_OUT_WIDTH * POOL2_OUT_WIDTH;
+        int o_index = c + (x + y * POOL2_OUT_WIDTH) * POOL2_OUT_N_CHANNEL;             // y*x*c
+        int i_index = x + y * POOL2_OUT_WIDTH + c * POOL2_OUT_WIDTH * POOL2_OUT_WIDTH; // c*y*x
         output[o_index] = input[i_index];
       }
     }

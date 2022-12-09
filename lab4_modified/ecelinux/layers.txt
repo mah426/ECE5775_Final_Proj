@@ -13,3 +13,27 @@
   84
   (fc3): Linear(in_features=84, out_features=2, bias=True)
   2
+
+
+model
+<class 'collections.OrderedDict'>
+conv1_weight
+torch.Size([6, 3, 5, 5])
+conv1_bias
+torch.Size([6])
+conv2_weight
+torch.Size([16, 6, 5, 5])
+conv2_bias
+torch.Size([16])
+fc1_weight
+torch.Size([120, 400])
+fc1_bias
+torch.Size([120])
+fc2_weight
+torch.Size([84, 120])
+fc2_bias
+torch.Size([84])
+fc3_weight
+torch.Size([2, 84])
+fc3_bias
+torch.Size([2])

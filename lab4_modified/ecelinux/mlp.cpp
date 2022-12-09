@@ -93,7 +93,8 @@ bit32_t mlp_xcel(float input[3072])
 
   /*
     conv1
-    M=3 N=6 I=32 F=5 FILTER_SIZE=25
+    M=3 N=6 I=32
+    F=5
     input: 3*32*32
     weight: 6*3*5*5 (N*M*F*F)
     bias: 6
@@ -101,8 +102,8 @@ bit32_t mlp_xcel(float input[3072])
   */
   conv1(input, mem_conv2, 3, 6, 32, 0);
 
-  cout << "conv1 done \n";
-  print_array(mem_conv2, 100);
+  // cout << "conv1 done \n";
+  // print_array(mem_conv2, 100);
 
   /*
     pool1
@@ -112,12 +113,27 @@ bit32_t mlp_xcel(float input[3072])
   */
   max_pool(mem_conv2, mem_conv1, 6, 28);
 
-  cout << "conv1 and pool1 done \n";
-  print_array(mem_conv1, 100);
+  // cout << "conv1 and pool1 done \n";
+  // print_array(mem_conv1, 100);
 
-  /* Second Conv Layer */
+  /*
+   conv2
+   M=6 N=16 I=14
+   F=5
+   input: 6*14*14
+   weight: 16*6*5*5 (N*M*F*F)
+   bias: 16
+   output: 6*10*10
+ */
   conv1(mem_conv1, mem_conv2, 6, 16, 14, 1);
-  max_pool(mem_conv2, mem_conv1, 2, 2);
+
+  /*
+  pool2
+  M=16 I=10
+  input: 16*10*10
+  output: 16*5*5
+  */
+  max_pool(mem_conv2, mem_conv1, 16, 10);
 
   reshape(mem_conv1, mem_conv2);
 
