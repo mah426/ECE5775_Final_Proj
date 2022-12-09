@@ -83,13 +83,7 @@ bit32_t mlp_xcel(float input[3072])
   float mem_conv1[4704];
   float mem_conv2[4704];
 
-  for (int i = 0; i < 4704; i++)
-  {
-    mem_conv1[i] = 0;
-    mem_conv2[i] = 0;
-  }
-
-  print_array(input, 100);
+  print_array(input, 400);
 
   /*
     conv1
@@ -100,7 +94,7 @@ bit32_t mlp_xcel(float input[3072])
     bias: 6
     output: 6*28*28
   */
-  conv1(input, mem_conv2, 3, 6, 32, 0);
+  // conv1(input, mem_conv2, 3, 6, 32, 0);
 
   // cout << "conv1 done \n";
   // print_array(mem_conv2, 100);
@@ -111,7 +105,7 @@ bit32_t mlp_xcel(float input[3072])
     input: 6*28*28
     output: 6*14*14
   */
-  max_pool(mem_conv2, mem_conv1, 6, 28);
+  // max_pool(mem_conv2, mem_conv1, 6, 28);
 
   // cout << "conv1 and pool1 done \n";
   // print_array(mem_conv1, 100);
@@ -135,18 +129,35 @@ bit32_t mlp_xcel(float input[3072])
   */
   max_pool(mem_conv2, mem_conv1, 16, 10);
 
-  reshape(mem_conv1, mem_conv2);
+  /*
+  reshape
+  input: 16*5*5
+  output: 400
+  */
+  // reshape(mem_conv1, mem_conv2);
 
-  /* Dense Layers */
-  dense_mlp(mem_conv2, mem_conv1, fc1_weight, fc1_bias, 400, 120, true);
-  dense_mlp(mem_conv1, mem_conv2, fc2_weight, fc2_bias, 120, 84, true);
-  dense_mlp(mem_conv2, mem_conv1, fc3_weight, fc3_bias, 84, 2, false);
+  // dense_mlp(mem_conv2, mem_conv1, fc1_weight, fc1_bias, 400, 120, true);
+  // dense_mlp(mem_conv1, mem_conv2, fc2_weight, fc2_bias, 120, 84, true);
+  // dense_mlp(mem_conv2, mem_conv1, fc3_weight, fc3_bias, 84, 2, false);
+
+  /*
+  fc1
+  N=120 M=400
+  input: 400
+  weight: 120*400(N*M)
+  bias:120
+  output: 120
+  */
+  dense_mlp(input, mem_conv2, fc1_weight, fc1_bias, 400, 120, true);
+
+  dense_mlp(mem_conv2, mem_conv1, fc2_weight, fc2_bias, 120, 84, true);
+  dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2, false);
 
   // predict car or truck
   // std::cout << "B " <<" \n";
-  // std::cout << "mem_conv0: " << mem_conv1[0]<<" \n";
-  // std::cout << "mem_conv1: " << mem_conv1[1]<<" \n";
-  if (mem_conv1[0] < mem_conv1[1])
+  std::cout << "mem_conv0: " << mem_conv2[0] << " \n";
+  std::cout << "mem_conv1: " << mem_conv2[1] << " \n";
+  if (mem_conv2[0] < mem_conv2[1])
   {
     // std::cout << "C " <<" \n";
     final_out = 1;

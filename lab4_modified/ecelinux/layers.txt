@@ -37,3 +37,17 @@ fc3_weight
 torch.Size([2, 84])
 fc3_bias
 torch.Size([2])
+
+torch.Size([1, 3, 32, 32])
+conv1 done
+torch.Size([1, 6, 14, 14])
+conv2 done
+torch.Size([1, 16, 5, 5])
+flatten done
+torch.Size([1, 400])
+fc1 done
+torch.Size([1, 120])
+fc2 done
+torch.Size([1, 84])
+fc3 done
+torch.Size([1, 2])
