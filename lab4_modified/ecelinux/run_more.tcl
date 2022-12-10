@@ -1,5 +1,5 @@
 #=============================================================================
-# run_alt.tcl 
+# run_more.tcl 
 #=============================================================================
 # @brief: A Tcl script for synthesizing the baseline digit recongnition design.
 
@@ -57,6 +57,53 @@ set_directive_loop_unroll conv/LOOP_R
 #Pipeline
 # -------------------------------------------------
 set_directive_pipeline conv/LOOP_N
+
+# -------------------------------------------------
+# Array Reshape
+# -------------------------------------------------
+# CONV
+set_directive_array_reshape -type block -factor 4 conv1 input
+set_directive_array_reshape -type block -factor 4 conv1 output
+#DENSE_MLP
+set_directive_array_reshape -type block -factor 4 dense_mlp input
+set_directive_array_reshape -type block -factor 4 dense_mlp output
+#MAX_POOL
+set_directive_array_reshape -type block -factor 4 max_pool input
+set_directive_array_reshape -type block -factor 4 max_pool output
+
+# -------------------------------------------------
+# LOOP MERGE
+# -------------------------------------------------
+set_directive_loop_merge conv
+set_directive_loop_merge dense_mlp
+
+# -------------------------------------------------
+# EXPRESSION BALANCE
+# -------------------------------------------------
+set_directive_expression_balance conv
+set_directive_expression_balance dense_mlp
+set_directive_expression_balance max_pool
+
+# -------------------------------------------------
+# LATENCY
+# -------------------------------------------------
+set_directive_latency -max=10 conv/LOOP_N
+set_directive_latency -max=10 conv/LOOP_X
+set_directive_latency -max=10 conv/LOOP_Y
+set_directive_latency -max=10 conv/LOOP_M
+set_directive_latency -max=10 conv/LOOP_C
+set_directive_latency -max=10 conv/LOOP_R
+
+# -------------------------------------------------
+# INLINE
+# -------------------------------------------------
+set_directive_inline -recursive conv
+set_directive_inline -recursive dense_mlp
+set_directive_inline -recursive max_pool
+
+
+
+
 
 # Simulate the C++ design
 csim_design -O
