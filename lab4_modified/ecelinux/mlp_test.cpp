@@ -25,51 +25,86 @@ using namespace std;
 // Helper function for reading images and labels
 //------------------------------------------------------------------------
 
-void read_test_images(float test_images[100][3072])
+// void read_test_images(float test_images[100][3072])
+// {
+//   // std::ifstream infile("test_data2/test_data.dat");
+//   // if (infile.is_open())
+//   // {
+//   //   for (int index = 0; index < 100; index++)
+//   //   {
+//   //     for (int pixel = 0; pixel < 3072; pixel++)
+//   //     {
+//   //       float i;
+//   //       infile >> i;
+//   //       test_images[index][pixel] = i;
+//   //       if (index == 0)
+//   //       {
+//   //         cout << i << endl;
+//   //       }
+//   //     }
+//   //   }
+//   //   infile.close();
+//   // }
+//   string line, word;
+//   string fname = "test_data2/test_data.dat";
+//   fstream file(fname, ios::in);
+//   if (file.is_open())
+//   {
+//     int i = 0;
+//     while (getline(file, line))
+//     {
+//       stringstream str(line);
+//       int j = 0;
+//       // cout << endl;
+//       while (getline(str, word, ','))
+//       {
+//         test_images[i][j] = stof(word);
+//         // cout << word << ",";
+//         j++;
+//       }
+//       // cout << "last j:" << j << endl;
+//       // cout << endl;
+//       i++;
+//     }
+//     // cout << "last i:" << i << endl;
+//   }
+//   else
+//     cout << "Could not open the file\n";
+
+//   // cout << "test_images[0][0]:" << endl;
+//   // printf("%.6f \n", test_images[0][0]);
+//   // cout << "test_images[99][3071]:" << endl;
+//   // printf("%.6f \n", test_images[99][3071]);
+//   // exit(0);
+// }
+
+void read_test_images1(float test_images[100][3072])
 {
-  // std::ifstream infile("test_data2/test_data.dat");
-  // if (infile.is_open())
-  // {
-  //   for (int index = 0; index < 100; index++)
-  //   {
-  //     for (int pixel = 0; pixel < 3072; pixel++)
-  //     {
-  //       float i;
-  //       infile >> i;
-  //       test_images[index][pixel] = i;
-  //       if (index == 0)
-  //       {
-  //         cout << i << endl;
-  //       }
-  //     }
-  //   }
-  //   infile.close();
-  // }
-  string line, word;
-  string fname = "test_data2/test_data.dat";
-  fstream file(fname, ios::in);
-  if (file.is_open())
+  char fname[25] = "test_data2/test_data.dat";
+  FILE *file = fopen(fname, "r");
+  if (!file)
   {
-    int i = 0;
-    while (getline(file, line))
-    {
-      stringstream str(line);
-      int j = 0;
-      // cout << endl;
-      while (getline(str, word, ','))
-      {
-        test_images[i][j] = stof(word);
-        // cout << word << ",";
-        j++;
-      }
-      // cout << "last j:" << j << endl;
-      // cout << endl;
-      i++;
-    }
-    // cout << "last i:" << i << endl;
+    printf("Could not open the file\n");
+    exit(0);
   }
-  else
-    cout << "Could not open the file\n";
+
+  char content[3072 * 30];
+  int i = 0;
+  while (fgets(content, 3072 * 30, file))
+  {
+    const char *v = strtok(content, ",");
+    int j = 0;
+    while (v)
+    {
+      // printf("%s ", v);
+      test_images[i][j] = atof(v);
+      j++;
+      v = strtok(NULL, ",");
+    }
+    // printf("\n");
+    i++;
+  }
+  fclose(file);
 
   // cout << "test_images[0][0]:" << endl;
   // printf("%.6f \n", test_images[0][0]);
@@ -77,6 +112,7 @@ void read_test_images(float test_images[100][3072])
   // printf("%.6f \n", test_images[99][3071]);
   // exit(0);
 }
+
 
 void read_any(float test_images[TEST_SIZE_HALF][3072], string item)
 {
@@ -132,7 +168,7 @@ int main()
   hls::stream<bit32_t> digitrec_out;
 
   float test_images[100][3072];
-  read_test_images(test_images);
+  read_test_images1(test_images);
   // float trucks[TEST_SIZE_HALF][3072];
   // float test_images[TEST_SIZE][3072];
   // int test_labels[TEST_SIZE];

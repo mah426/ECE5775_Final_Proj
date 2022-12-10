@@ -5,15 +5,15 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'qs73' on host 'en-ec-ecelinux-15.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Fri Dec 09 15:02:32 EST 2022
+INFO: [HLS 200-10] For user 'nrb74' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Fri Dec 09 22:55:06 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
-INFO: [HLS 200-10] In directory '/home/qs73/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux'
-INFO: [HLS 200-10] Creating and opening project '/home/qs73/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_base.prj'.
+INFO: [HLS 200-10] In directory '/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux'
+INFO: [HLS 200-10] Opening and resetting project '/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_base.prj'.
 INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
 INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'data' to the project
-INFO: [HLS 200-10] Creating and opening solution '/home/qs73/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_base.prj/solution1'.
+INFO: [HLS 200-10] Opening and resetting solution '/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_base.prj/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
@@ -21,38 +21,22 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
    Compiling ../../../../layer.cpp in release mode
    Compiling ../../../../mlp.cpp in release mode
    Generating csim.exe
-0.672521,1.15714,1.62238,1.77746,2.02946,2.33962,2.39778,2.33962,2.37839,2.28147,2.02946,1.855,1.79685,1.855,1.75808,1.42853,1.2153,1.19591,1.13776,1.06022,0.788831,0.362362,-0.083491,0.265438,-0.374265,-0.451804,-0.451804,-0.897657,-0.606884,-0.471189,-0.665038,-0.606884,1.93254,2.20393,2.26208,2.02946,2.06823,2.32024,2.28147,2.12639,2.16516,2.02946,1.75808,1.54484,1.4673,1.50607,1.44792,1.17653,0.963295,0.885755,0.691906,0.032819,0.323593,0.304208,-0.064106,0.187898,-0.141646,-0.839503,-1.71182,-1.42105,-0.587499,-0.35488,-0.548729,-0.490574,2.45593,2.39778,2.2427,1.83562,1.77746,1.95193,1.89377,1.71931,1.69992,1.58361,1.35099,1.13776,1.04083,1.09899,1.04083,0.808215,0.653136,0.517442,0.439902,0.071589,0.052204,0.284823,0.052204,-0.219185,-0.742578,-1.65367,-2.35153,-1.69244,-0.509959,-0.1998,-0.393649,-0.393649,2.08762,1.93254,1.87439,1.66115,
-print from mlp_test
-
-0.672521,1.15714,1.62238,1.77746,2.02946,2.33962,2.39778,2.33962,2.37839,2.28147,2.02946,1.855,1.79685,1.855,1.75808,1.42853,1.2153,1.19591,1.13776,1.06022,0.788831,0.362362,-0.083491,0.265438,-0.374265,-0.451804,-0.451804,-0.897657,-0.606884,-0.471189,-0.665038,-0.606884,1.93254,2.20393,2.26208,2.02946,2.06823,2.32024,2.28147,2.12639,2.16516,2.02946,1.75808,1.54484,1.4673,1.50607,1.44792,1.17653,0.963295,0.885755,0.691906,0.032819,0.323593,0.304208,-0.064106,0.187898,-0.141646,-0.839503,-1.71182,-1.42105,-0.587499,-0.35488,-0.548729,-0.490574,2.45593,2.39778,2.2427,1.83562,1.77746,1.95193,1.89377,1.71931,1.69992,1.58361,1.35099,1.13776,1.04083,1.09899,1.04083,0.808215,0.653136,0.517442,0.439902,0.071589,0.052204,0.284823,0.052204,-0.219185,-0.742578,-1.65367,-2.35153,-1.69244,-0.509959,-0.1998,-0.393649,-0.393649,2.08762,1.93254,1.87439,1.66115,
-O: 28 
-conv1 done 
-
-0.252423,0.334178,0.138515,-0.376085,-0.60617,-0.557701,-0.66429,-0.613585,-0.380811,-0.347987,-0.460378,-0.628081,-0.569479,-0.307669,-0.0915827,-0.147999,-1.48115,-1.11583,0.42415,0.147891,-0.0815699,0.295512,-0.6225,-2.15427,-1.57844,-0.00219103,0.502229,0.661939,0.00677055,0.592719,0.258535,-0.566598,-0.682577,-0.70992,-0.83583,-0.733627,-0.57058,-0.464119,-0.448764,-0.60135,-0.547842,-0.223636,-0.1192,-0.156174,0.123363,-0.0221116,-0.0652259,0.653816,0.995662,0.0930013,-1.30662,-0.711302,1.04459,1.31028,0.933516,0.674696,-0.0346183,-0.407705,-0.97709,-1.09599,-0.648722,-0.697426,-0.820428,-0.771583,-0.595574,-0.333156,-0.271361,-0.417647,-0.288823,-0.0167302,0.123086,0.235702,0.337004,-0.115904,0.169841,1.65338,1.88638,0.220096,-0.102684,1.18944,2.06621,1.77611,1.11529,0.938662,-1.68891,-2.15374,-1.65768,-0.884997,-0.6499,-0.653803,-0.636473,-0.499169,-0.150702,0.193954,0.22731,0.104224,0.233852,0.443606,0.564774,0.675224,
-pool1 done 
-
-0.592719,0.258535,1.17549e-38,1.17549e-38,1.17549e-38,1.17549e-38,1.17549e-38,1.17549e-38,0.123363,0.653816,0.995662,1.17549e-38,1.31028,0.933516,1.17549e-38,1.17549e-38,1.17549e-38,1.17549e-38,0.193954,0.22731,0.443606,0.675224,0.354027,1.65338,1.88638,1.82666,2.33032,1.11529,0.327278,0.390045,0.503045,0.715204,0.755049,1.14625,1.3621,1.37263,1.57306,1.2087,1.17549e-38,1.92986,2.18884,0.0124947,0.742019,0.64202,0.790074,0.822309,0.898389,1.49698,1.3671,1.18861,3.06594,2.61534,3.09637,1.33399,0.208027,0.375336,0.695194,0.584538,0.450484,0.259724,0.446652,3.86671,3.62329,5.38118,6.2213,7.35781,5.98821,1.17549e-38,0.666627,0.47562,0.647139,0.626939,0.290025,1.95321,2.39144,1.63764,1.17549e-38,1.17549e-38,1.17549e-38,2.85637,6.07006,4.32257,1.17549e-38,1.17549e-38,0.575759,0.268992,2.02802,1.47689,0.260194,1.17549e-38,4.45586,7.27004,11.0435,3.76531,4.5643,5.09091,0.705146,4.25183,0.585633,0.856921,
-O: 10 
-mem_conv0: 0.961596 
-mem_conv1: -0.710592 
-Accuracy: 0
-digirec mlp         :      1 calls;  11.431 msecs total time
+Could not open the file
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
 INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
 INFO: [HLS 200-10] Validating synthesis directives ...
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:57) automatically.
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:62) automatically.
 INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
 INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
-INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:151) automatically.
-INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:153) automatically.
-INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:154) automatically.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (mlp.cpp:68:17) to (mlp.cpp:73:1) in function 'print_array'... converting 2 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:160:14) to (layer.cpp:159:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:156) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:158) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:159) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:158:14) to (layer.cpp:157:36) in function 'conv1'... converting 4 basic blocks.
 INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:132)...3 expression(s) balanced.
-INFO: [HLS 200-111] Elapsed time: 5.51 seconds; current memory usage: 110 MB.
+INFO: [HLS 200-111] Elapsed time: 5.72 seconds; current memory usage: 110 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dut' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -60,7 +44,7 @@ INFO: [HLS 200-10] -- Scheduling module 'dut_conv1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 111 MB.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 111 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -69,13 +53,13 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 111 MB.
+INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 111 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 112 MB.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 112 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -90,7 +74,7 @@ INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 113 MB.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 113 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -99,13 +83,13 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.07 seconds; current memory usage: 113 MB.
+INFO: [HLS 200-111] Elapsed time: 0.18 seconds; current memory usage: 114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'dut' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 114 MB.
+INFO: [HLS 200-111] Elapsed time: 0.21 seconds; current memory usage: 114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -114,7 +98,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 114 MB.
+INFO: [HLS 200-111] Elapsed time: 0.06 seconds; current memory usage: 114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -127,7 +111,7 @@ INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
-INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 117 MB.
+INFO: [HLS 200-111] Elapsed time: 0.24 seconds; current memory usage: 117 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -135,16 +119,15 @@ INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp':
 INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
-INFO: [HLS 200-111] Elapsed time: 0.31 seconds; current memory usage: 129 MB.
+INFO: [HLS 200-111] Elapsed time: 0.39 seconds; current memory usage: 129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V' to 'ap_fifo'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'dut_uitofp_32ns_32_6': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
-INFO: [HLS 200-111] Elapsed time: 0.28 seconds; current memory usage: 132 MB.
+INFO: [HLS 200-111] Elapsed time: 0.4 seconds; current memory usage: 132 MB.
 INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
@@ -158,4 +141,4 @@ INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for dut.
 INFO: [VHDL 208-304] Generating VHDL RTL for dut.
 INFO: [VLOG 209-307] Generating Verilog RTL for dut.
-INFO: [HLS 200-112] Total elapsed time: 42.560 seconds; peak memory usage: 132 MB.
+INFO: [HLS 200-112] Total elapsed time: 45.575 seconds; peak memory usage: 132 MB.
