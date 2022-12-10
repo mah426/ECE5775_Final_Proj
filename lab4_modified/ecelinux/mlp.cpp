@@ -16,12 +16,13 @@ using namespace std;
 // Top function
 //----------------------------------------------------------
 void dut(
-    hls::stream<float> &strm_in,
-    hls::stream<float> &strm_out)
+    hls::stream<bit32_t> &strm_in,
+    hls::stream<bit32_t> &strm_out)
 {
   float input[MAX_FMAP];
-  float input_l;
-  float output;
+  bit32_t input_l;
+  bit32_t output;
+  
   // union { float fval; int ival;} input_union;
   // union { float fval; int ival;} output_union;
   //  read one test image into digit
@@ -40,16 +41,20 @@ void dut(
   //   }
   // }
   // std::cout << "i " <<i <<" \n";
-  for (int i = 0; i < 3072; i++)
+    for (int i = 0; i < 3072; i++)
   {
+    
 
     input_l = strm_in.read();
-    // std::cout << "i " << (I_WIDTH1 * I_WIDTH1 / BUS_WIDTH)<<" \n";
-    // std::cout << "i " <<i <<" \n";
-    // if(i == 3){
-    // std::cout << "QAZ"<<input_l<< "\n";
-    // }
-    input[i] = input_l;
+    union { float fval; int ival; } u;
+    u.ival = input_l;
+    float fv = u.fval;
+    //std::cout << "i " << (I_WIDTH1 * I_WIDTH1 / BUS_WIDTH)<<" \n";
+    //std::cout << "i " <<i <<" \n";
+    //if(i == 3){
+    //std::cout << "QAZ"<<input_l<< "\n";
+    //}
+    input[i] = fv;
   }
   // std::cout << "1 " <<" \n";
   // call mlp
@@ -83,7 +88,7 @@ bit32_t mlp_xcel(float input[3072])
   float mem_conv1[4704];
   float mem_conv2[4704];
 
-  print_array(input, 100);
+  //print_array(input, 100);
 
   /*
     conv1
@@ -96,8 +101,8 @@ bit32_t mlp_xcel(float input[3072])
   */
   conv1(input, mem_conv2, 3, 6, 32, 0);
 
-  cout << "conv1 done \n";
-  print_array(mem_conv2, 100);
+  //cout << "conv1 done \n";
+  //print_array(mem_conv2, 100);
 
   /*
     pool1
@@ -107,8 +112,8 @@ bit32_t mlp_xcel(float input[3072])
   */
   max_pool(mem_conv2, mem_conv1, 6, 28);
 
-  cout << "pool1 done \n";
-  print_array(mem_conv1, 100);
+  //cout << "pool1 done \n";
+  //print_array(mem_conv1, 100);
 
   /*
    conv2
@@ -155,8 +160,8 @@ bit32_t mlp_xcel(float input[3072])
 
   // predict car or truck
   // std::cout << "B " <<" \n";
-  std::cout << "mem_conv0: " << mem_conv2[0] << " \n";
-  std::cout << "mem_conv1: " << mem_conv2[1] << " \n";
+  //std::cout << "mem_conv0: " << mem_conv2[0] << " \n";
+  //std::cout << "mem_conv1: " << mem_conv2[1] << " \n";
   if (mem_conv2[0] < mem_conv2[1])
   {
     // std::cout << "C " <<" \n";

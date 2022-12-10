@@ -16,10 +16,10 @@
 using namespace std;
 
 // Number of test instances
-// const int TEST_SIZE = 2000;
-// const int TEST_SIZE_HALF = 1000;
-const int TEST_SIZE = 0;
-const int TEST_SIZE_HALF = 0;
+ const int TEST_SIZE = 2000;
+ const int TEST_SIZE_HALF = 1000;
+//const int TEST_SIZE = 0;
+//const int TEST_SIZE_HALF = 0;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -128,8 +128,8 @@ void read_test_labels(int test_labels[TEST_SIZE])
 int main()
 {
   // HLS streams for communicating with the cordic block
-  hls::stream<float> digitrec_in;
-  hls::stream<float> digitrec_out;
+  hls::stream<bit32_t> digitrec_in;
+  hls::stream<bit32_t> digitrec_out;
 
   float test_images[100][3072];
   read_test_images(test_images);
@@ -186,15 +186,11 @@ int main()
 
       // for (int j = 0; j < BUS_WIDTH; j++) {
 
-      test_image = test_images[test][i];
-
-      // if (i == 1 ){
-      // std::cout << test_images[test][i] <<" \n";
-      // std::cout << test_image <<" \n";
-      // }
-      //}
-
-      digitrec_in.write(test_image);
+      union { float fval; int ival; } u;
+        u.fval = test_images[test][i];
+        int iv = u.ival;
+        test_image = iv;
+        digitrec_in.write(test_image);
     }
     // perform prediction
     // std::cout << test<< "\n";
