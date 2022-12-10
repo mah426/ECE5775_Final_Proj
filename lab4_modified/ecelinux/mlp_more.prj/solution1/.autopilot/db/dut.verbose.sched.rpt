@@ -1,0 +1,520 @@
+
+
+================================================================
+== Vivado HLS Report for 'dut'
+================================================================
+* Date:           Fri Dec  9 22:57:37 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        mlp_more.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.73|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +----------+----------+----------+----------+---------+
+    |       Latency       |       Interval      | Pipeline|
+    |    min   |    max   |    min   |    max   |   Type  |
+    +----------+----------+----------+----------+---------+
+    |  20187331|  21322827|  20187332|  21322828|   none  |
+    +----------+----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  6144|  6144|         2|          -|          -|  3072|    no    |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 20
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond)
+	4  / (exitcond)
+3 --> 
+	2  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str)
+
+ST_1: empty_31 [1/1] 0.00ns
+:1  %empty_31 = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str)
+
+ST_1: mem_conv1_0 [1/1] 0.00ns
+:2  %mem_conv1_0 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_1 [1/1] 0.00ns
+:3  %mem_conv1_1 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_2 [1/1] 0.00ns
+:4  %mem_conv1_2 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_3 [1/1] 0.00ns
+:5  %mem_conv1_3 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_4 [1/1] 0.00ns
+:6  %mem_conv1_4 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_5 [1/1] 0.00ns
+:7  %mem_conv1_5 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_6 [1/1] 0.00ns
+:8  %mem_conv1_6 = alloca [147 x i128], align 8
+
+ST_1: mem_conv1_7 [1/1] 0.00ns
+:9  %mem_conv1_7 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_0 [1/1] 0.00ns
+:10  %mem_conv2_0 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_1 [1/1] 0.00ns
+:11  %mem_conv2_1 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_2 [1/1] 0.00ns
+:12  %mem_conv2_2 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_3 [1/1] 0.00ns
+:13  %mem_conv2_3 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_4 [1/1] 0.00ns
+:14  %mem_conv2_4 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_5 [1/1] 0.00ns
+:15  %mem_conv2_5 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_6 [1/1] 0.00ns
+:16  %mem_conv2_6 = alloca [147 x i128], align 8
+
+ST_1: mem_conv2_7 [1/1] 0.00ns
+:17  %mem_conv2_7 = alloca [147 x i128], align 8
+
+ST_1: stg_39 [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_in_V_V), !map !58
+
+ST_1: stg_40 [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_out_V_V), !map !64
+
+ST_1: stg_41 [1/1] 0.00ns
+:20  call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @dut_str) nounwind
+
+ST_1: input [1/1] 0.00ns
+:21  %input = alloca [1176 x i128], align 8
+
+ST_1: stg_43 [1/1] 1.57ns
+:22  br label %1
+
+
+ <State 2>: 5.35ns
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i12 [ 0, %0 ], [ %i_1, %2 ]
+
+ST_2: phi_mul [1/1] 0.00ns
+:1  %phi_mul = phi i25 [ 0, %0 ], [ %next_mul, %2 ]
+
+ST_2: phi_urem [1/1] 0.00ns
+:2  %phi_urem = phi i12 [ 0, %0 ], [ %idx_urem, %2 ]
+
+ST_2: exitcond [1/1] 2.14ns
+:3  %exitcond = icmp eq i12 %i, -1024
+
+ST_2: empty_32 [1/1] 0.00ns
+:4  %empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3072, i64 3072, i64 3072)
+
+ST_2: i_1 [1/1] 1.84ns
+:5  %i_1 = add i12 %i, 1
+
+ST_2: stg_50 [1/1] 0.00ns
+:6  br i1 %exitcond, label %3, label %2
+
+ST_2: next_urem [1/1] 1.84ns
+:0  %next_urem = add i12 %phi_urem, 1
+
+ST_2: tmp_76 [1/1] 2.14ns
+:1  %tmp_76 = icmp ult i12 %next_urem, 1176
+
+ST_2: idx_urem [1/1] 1.37ns
+:2  %idx_urem = select i1 %tmp_76, i12 %next_urem, i12 0
+
+ST_2: tmp_V_2 [1/1] 4.38ns
+:3  %tmp_V_2 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %strm_in_V_V)
+
+ST_2: next_mul [1/1] 2.32ns
+:4  %next_mul = add i25 %phi_mul, 7134
+
+ST_2: tmp_26 [1/1] 0.00ns
+:5  %tmp_26 = zext i12 %phi_urem to i64
+
+ST_2: input_addr [1/1] 0.00ns
+:6  %input_addr = getelementptr [1176 x i128]* %input, i64 0, i64 %tmp_26
+
+ST_2: input_load [2/2] 2.71ns
+:7  %input_load = load i128* %input_addr, align 8
+
+ST_2: tmp_19 [1/1] 0.00ns
+:8  %tmp_19 = call i2 @_ssdm_op_PartSelect.i2.i25.i32.i32(i25 %phi_mul, i32 23, i32 24)
+
+ST_2: tmp_27 [1/1] 0.00ns
+:9  %tmp_27 = call i7 @_ssdm_op_BitConcatenate.i7.i2.i5(i2 %tmp_19, i5 0)
+
+ST_2: tmp_28 [1/1] 0.00ns
+:10  %tmp_28 = or i7 %tmp_27, 31
+
+ST_2: tmp_77 [1/1] 1.97ns
+:11  %tmp_77 = icmp ugt i7 %tmp_27, %tmp_28
+
+ST_2: stg_63 [2/2] 0.00ns
+:1  call fastcc void @dut_conv1.1([1176 x i128]* %input, [147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7)
+
+
+ <State 3>: 6.88ns
+ST_3: input_load [1/2] 2.71ns
+:7  %input_load = load i128* %input_addr, align 8
+
+ST_3: tmp_78 [1/1] 0.00ns
+:12  %tmp_78 = zext i7 %tmp_27 to i8
+
+ST_3: tmp_79 [1/1] 0.00ns
+:13  %tmp_79 = zext i7 %tmp_28 to i8
+
+ST_3: tmp_80 [1/1] 0.00ns (grouped into LUT with out node tmp_89)
+:14  %tmp_80 = zext i32 %tmp_V_2 to i128
+
+ST_3: tmp_81 [1/1] 0.00ns (grouped into LUT with out node tmp_89)
+:15  %tmp_81 = xor i8 %tmp_78, 127
+
+ST_3: tmp_82 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:16  %tmp_82 = select i1 %tmp_77, i8 %tmp_78, i8 %tmp_79
+
+ST_3: tmp_83 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:17  %tmp_83 = select i1 %tmp_77, i8 %tmp_79, i8 %tmp_78
+
+ST_3: tmp_84 [1/1] 0.00ns (grouped into LUT with out node tmp_89)
+:18  %tmp_84 = select i1 %tmp_77, i8 %tmp_81, i8 %tmp_78
+
+ST_3: tmp_85 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:19  %tmp_85 = xor i8 %tmp_82, 127
+
+ST_3: tmp_86 [1/1] 0.00ns (grouped into LUT with out node tmp_89)
+:20  %tmp_86 = zext i8 %tmp_84 to i128
+
+ST_3: tmp_87 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:21  %tmp_87 = zext i8 %tmp_83 to i128
+
+ST_3: tmp_88 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:22  %tmp_88 = zext i8 %tmp_85 to i128
+
+ST_3: tmp_89 [1/1] 2.80ns (out node of the LUT)
+:23  %tmp_89 = shl i128 %tmp_80, %tmp_86
+
+ST_3: tmp_90 [1/1] 0.00ns (grouped into LUT with out node tmp_97)
+:24  %tmp_90 = call i128 @llvm.part.select.i128(i128 %tmp_89, i32 127, i32 0)
+
+ST_3: tmp_91 [1/1] 0.00ns (grouped into LUT with out node tmp_97)
+:25  %tmp_91 = select i1 %tmp_77, i128 %tmp_90, i128 %tmp_89
+
+ST_3: tmp_92 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:26  %tmp_92 = shl i128 -1, %tmp_87
+
+ST_3: tmp_93 [1/1] 0.00ns (grouped into LUT with out node p_demorgan)
+:27  %tmp_93 = lshr i128 -1, %tmp_88
+
+ST_3: p_demorgan [1/1] 1.37ns (out node of the LUT)
+:28  %p_demorgan = and i128 %tmp_92, %tmp_93
+
+ST_3: tmp_94 [1/1] 0.00ns (grouped into LUT with out node tmp_97)
+:29  %tmp_94 = xor i128 %p_demorgan, -1
+
+ST_3: tmp_95 [1/1] 0.00ns (grouped into LUT with out node tmp_97)
+:30  %tmp_95 = and i128 %input_load, %tmp_94
+
+ST_3: tmp_96 [1/1] 0.00ns (grouped into LUT with out node tmp_97)
+:31  %tmp_96 = and i128 %tmp_91, %p_demorgan
+
+ST_3: tmp_97 [1/1] 1.37ns (out node of the LUT)
+:32  %tmp_97 = or i128 %tmp_95, %tmp_96
+
+ST_3: stg_86 [1/1] 2.71ns
+:33  store i128 %tmp_97, i128* %input_addr, align 8
+
+ST_3: stg_87 [1/1] 0.00ns
+:34  br label %1
+
+
+ <State 4>: 0.00ns
+ST_4: stg_88 [1/2] 0.00ns
+:1  call fastcc void @dut_conv1.1([1176 x i128]* %input, [147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7)
+
+
+ <State 5>: 1.04ns
+ST_5: stg_89 [2/2] 1.04ns
+:2  call fastcc void @dut_max_pool([147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7, [147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, i6 6, i6 28)
+
+
+ <State 6>: 0.00ns
+ST_6: stg_90 [1/2] 0.00ns
+:2  call fastcc void @dut_max_pool([147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7, [147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, i6 6, i6 28)
+
+
+ <State 7>: 0.00ns
+ST_7: stg_91 [2/2] 0.00ns
+:3  call fastcc void @dut_conv1([147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, [147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7)
+
+
+ <State 8>: 0.00ns
+ST_8: stg_92 [1/2] 0.00ns
+:3  call fastcc void @dut_conv1([147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, [147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7)
+
+
+ <State 9>: 1.04ns
+ST_9: stg_93 [2/2] 1.04ns
+:4  call fastcc void @dut_max_pool([147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7, [147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, i6 16, i6 10)
+
+
+ <State 10>: 0.00ns
+ST_10: stg_94 [1/2] 0.00ns
+:4  call fastcc void @dut_max_pool([147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv2_1, [147 x i128]* %mem_conv2_2, [147 x i128]* %mem_conv2_3, [147 x i128]* %mem_conv2_4, [147 x i128]* %mem_conv2_5, [147 x i128]* %mem_conv2_6, [147 x i128]* %mem_conv2_7, [147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, i6 16, i6 10)
+
+
+ <State 11>: 0.00ns
+ST_11: stg_95 [2/2] 0.00ns
+:5  call fastcc void @dut_dense_mlp.2([147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, [147 x i128]* %mem_conv2_0)
+
+
+ <State 12>: 0.00ns
+ST_12: stg_96 [1/2] 0.00ns
+:5  call fastcc void @dut_dense_mlp.2([147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv1_1, [147 x i128]* %mem_conv1_2, [147 x i128]* %mem_conv1_3, [147 x i128]* %mem_conv1_4, [147 x i128]* %mem_conv1_5, [147 x i128]* %mem_conv1_6, [147 x i128]* %mem_conv1_7, [147 x i128]* %mem_conv2_0)
+
+
+ <State 13>: 0.00ns
+ST_13: stg_97 [2/2] 0.00ns
+:6  call fastcc void @dut_dense_mlp.1([147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv1_0)
+
+
+ <State 14>: 0.00ns
+ST_14: stg_98 [1/2] 0.00ns
+:6  call fastcc void @dut_dense_mlp.1([147 x i128]* %mem_conv2_0, [147 x i128]* %mem_conv1_0)
+
+
+ <State 15>: 0.00ns
+ST_15: stg_99 [2/2] 0.00ns
+:7  call fastcc void @dut_dense_mlp([147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv2_0)
+
+
+ <State 16>: 0.00ns
+ST_16: stg_100 [1/2] 0.00ns
+:7  call fastcc void @dut_dense_mlp([147 x i128]* %mem_conv1_0, [147 x i128]* %mem_conv2_0)
+
+
+ <State 17>: 2.71ns
+ST_17: mem_conv2_0_addr [1/1] 0.00ns
+:0  %mem_conv2_0_addr = getelementptr [147 x i128]* %mem_conv2_0, i64 0, i64 0
+
+ST_17: mem_conv2_0_load [2/2] 2.71ns
+:8  %mem_conv2_0_load = load i128* %mem_conv2_0_addr, align 8
+
+ST_17: mem_conv2_0_addr_1 [1/1] 0.00ns
+:11  %mem_conv2_0_addr_1 = getelementptr [147 x i128]* %mem_conv2_0, i64 0, i64 1
+
+ST_17: mem_conv2_0_load_1 [2/2] 2.71ns
+:12  %mem_conv2_0_load_1 = load i128* %mem_conv2_0_addr_1, align 8
+
+
+ <State 18>: 5.10ns
+ST_18: mem_conv2_0_load [1/2] 2.71ns
+:8  %mem_conv2_0_load = load i128* %mem_conv2_0_addr, align 8
+
+ST_18: tmp_72 [1/1] 0.00ns
+:9  %tmp_72 = trunc i128 %mem_conv2_0_load to i32
+
+ST_18: mem_conv2_0_load_1 [1/2] 2.71ns
+:12  %mem_conv2_0_load_1 = load i128* %mem_conv2_0_addr_1, align 8
+
+ST_18: tmp_73 [1/1] 0.00ns
+:13  %tmp_73 = trunc i128 %mem_conv2_0_load_1 to i32
+
+ST_18: tmp [1/1] 0.00ns
+:15  %tmp = call i8 @_ssdm_op_PartSelect.i8.i128.i32.i32(i128 %mem_conv2_0_load, i32 23, i32 30)
+
+ST_18: tmp_74 [1/1] 0.00ns
+:16  %tmp_74 = trunc i128 %mem_conv2_0_load to i23
+
+ST_18: tmp_s [1/1] 0.00ns
+:17  %tmp_s = call i8 @_ssdm_op_PartSelect.i8.i128.i32.i32(i128 %mem_conv2_0_load_1, i32 23, i32 30)
+
+ST_18: tmp_75 [1/1] 0.00ns
+:18  %tmp_75 = trunc i128 %mem_conv2_0_load_1 to i23
+
+ST_18: notlhs [1/1] 2.00ns
+:19  %notlhs = icmp ne i8 %tmp, -1
+
+ST_18: notrhs [1/1] 2.39ns
+:20  %notrhs = icmp eq i23 %tmp_74, 0
+
+ST_18: notlhs5 [1/1] 2.00ns
+:22  %notlhs5 = icmp ne i8 %tmp_s, -1
+
+ST_18: notrhs6 [1/1] 2.39ns
+:23  %notrhs6 = icmp eq i23 %tmp_75, 0
+
+
+ <State 19>: 8.16ns
+ST_19: tmp_2_i [1/1] 0.00ns
+:10  %tmp_2_i = bitcast i32 %tmp_72 to float
+
+ST_19: tmp_4_i [1/1] 0.00ns
+:14  %tmp_4_i = bitcast i32 %tmp_73 to float
+
+ST_19: tmp_32 [1/1] 0.00ns (grouped into LUT with out node tmp_36)
+:21  %tmp_32 = or i1 %notrhs, %notlhs
+
+ST_19: tmp_33 [1/1] 0.00ns (grouped into LUT with out node tmp_36)
+:24  %tmp_33 = or i1 %notrhs6, %notlhs5
+
+ST_19: tmp_34 [1/1] 0.00ns (grouped into LUT with out node tmp_36)
+:25  %tmp_34 = and i1 %tmp_32, %tmp_33
+
+ST_19: tmp_35 [1/1] 6.79ns
+:26  %tmp_35 = fcmp olt float %tmp_2_i, %tmp_4_i
+
+ST_19: tmp_36 [1/1] 1.37ns (out node of the LUT)
+:27  %tmp_36 = and i1 %tmp_34, %tmp_35
+
+
+ <State 20>: 4.38ns
+ST_20: output_V [1/1] 0.00ns
+:28  %output_V = zext i1 %tmp_36 to i32
+
+ST_20: stg_125 [1/1] 4.38ns
+:29  call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %strm_out_V_V, i32 %output_V)
+
+ST_20: stg_126 [1/1] 0.00ns
+:30  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

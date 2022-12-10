@@ -1,0 +1,360 @@
+
+
+================================================================
+== Vivado HLS Report for 'dut_dense_mlp'
+================================================================
+* Date:           Fri Dec  9 22:57:37 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        mlp_more.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.63|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1695|  1695|  1695|  1695|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+------+------+----------+-----------+-----------+------+----------+
+        |                     |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+------+------+----------+-----------+-----------+------+----------+
+        |- LOOP_DENSE_MLP_0   |  1694|  1694|       847|          -|          -|     2|    no    |
+        | + LOOP_DENSE_MLP_1  |   840|   840|        10|          -|          -|    84|    no    |
+        +---------------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 17
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	4  / (!exitcond)
+	13  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	3  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	2  / true
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: stg_18 [1/1] 1.57ns
+:0  br label %1
+
+
+ <State 2>: 1.72ns
+ST_2: n [1/1] 0.00ns
+:0  %n = phi i2 [ 0, %0 ], [ %n_1, %branch0 ]
+
+ST_2: phi_mul [1/1] 0.00ns
+:1  %phi_mul = phi i8 [ 0, %0 ], [ %next_mul, %branch0 ]
+
+ST_2: next_mul [1/1] 1.72ns
+:2  %next_mul = add i8 %phi_mul, 84
+
+ST_2: empty [1/1] 0.00ns
+:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
+
+ST_2: exitcond1 [1/1] 1.36ns
+:4  %exitcond1 = icmp eq i2 %n, -2
+
+ST_2: n_1 [1/1] 0.80ns
+:5  %n_1 = add i2 %n, 1
+
+ST_2: stg_25 [1/1] 0.00ns
+:6  br i1 %exitcond1, label %5, label %2
+
+ST_2: stg_26 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str2) nounwind
+
+ST_2: tmp_46 [1/1] 0.00ns
+:1  %tmp_46 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str2)
+
+ST_2: stg_28 [1/1] 1.57ns
+:2  br label %3
+
+ST_2: stg_29 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 3>: 8.63ns
+ST_3: sum [1/1] 0.00ns
+:0  %sum = phi float [ 0.000000e+00, %2 ], [ %sum_1, %4 ]
+
+ST_3: m [1/1] 0.00ns
+:1  %m = phi i7 [ 0, %2 ], [ %m_2, %4 ]
+
+ST_3: m_cast [1/1] 0.00ns
+:2  %m_cast = zext i7 %m to i8
+
+ST_3: empty_37 [1/1] 0.00ns
+:3  %empty_37 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 84, i64 84, i64 84)
+
+ST_3: exitcond [1/1] 1.97ns
+:4  %exitcond = icmp eq i7 %m, -44
+
+ST_3: m_2 [1/1] 1.72ns
+:5  %m_2 = add i7 %m, 1
+
+ST_3: stg_36 [1/1] 0.00ns
+:6  br i1 %exitcond, label %branch0, label %4
+
+ST_3: w_index [1/1] 1.72ns
+:1  %w_index = add i8 %phi_mul, %m_cast
+
+ST_3: newIndex3 [1/1] 0.00ns
+:2  %newIndex3 = zext i7 %m to i64
+
+ST_3: input_0_addr [1/1] 0.00ns
+:3  %input_0_addr = getelementptr [147 x i128]* %input_0, i64 0, i64 %newIndex3
+
+ST_3: input_0_load [2/2] 2.71ns
+:4  %input_0_load = load i128* %input_0_addr, align 8
+
+ST_3: tmp_13 [1/1] 0.00ns
+:7  %tmp_13 = zext i8 %w_index to i64
+
+ST_3: fc3_weight_addr [1/1] 0.00ns
+:8  %fc3_weight_addr = getelementptr [168 x float]* @fc3_weight, i64 0, i64 %tmp_13
+
+ST_3: fc3_weight_load [2/2] 2.39ns
+:9  %fc3_weight_load = load float* %fc3_weight_addr, align 4
+
+ST_3: tmp [1/1] 0.00ns
+branch0:0  %tmp = trunc i2 %n to i1
+
+ST_3: bias_load_phi [1/1] 1.37ns
+branch0:1  %bias_load_phi = select i1 %tmp, float 0x3FCEB24800000000, float 0xBFD067CE80000000
+
+ST_3: biased [5/5] 7.26ns
+branch0:2  %biased = fadd float %sum, %bias_load_phi
+
+
+ <State 4>: 8.41ns
+ST_4: input_0_load [1/2] 2.71ns
+:4  %input_0_load = load i128* %input_0_addr, align 8
+
+ST_4: tmp_104 [1/1] 0.00ns
+:5  %tmp_104 = trunc i128 %input_0_load to i32
+
+ST_4: tmp_48 [1/1] 0.00ns
+:6  %tmp_48 = bitcast i32 %tmp_104 to float
+
+ST_4: fc3_weight_load [1/2] 2.39ns
+:9  %fc3_weight_load = load float* %fc3_weight_addr, align 4
+
+ST_4: tmp_14 [4/4] 5.70ns
+:10  %tmp_14 = fmul float %tmp_48, %fc3_weight_load
+
+
+ <State 5>: 5.70ns
+ST_5: tmp_14 [3/4] 5.70ns
+:10  %tmp_14 = fmul float %tmp_48, %fc3_weight_load
+
+
+ <State 6>: 5.70ns
+ST_6: tmp_14 [2/4] 5.70ns
+:10  %tmp_14 = fmul float %tmp_48, %fc3_weight_load
+
+
+ <State 7>: 5.70ns
+ST_7: tmp_14 [1/4] 5.70ns
+:10  %tmp_14 = fmul float %tmp_48, %fc3_weight_load
+
+
+ <State 8>: 7.26ns
+ST_8: sum_1 [5/5] 7.26ns
+:11  %sum_1 = fadd float %sum, %tmp_14
+
+
+ <State 9>: 7.26ns
+ST_9: sum_1 [4/5] 7.26ns
+:11  %sum_1 = fadd float %sum, %tmp_14
+
+
+ <State 10>: 7.26ns
+ST_10: sum_1 [3/5] 7.26ns
+:11  %sum_1 = fadd float %sum, %tmp_14
+
+
+ <State 11>: 7.26ns
+ST_11: sum_1 [2/5] 7.26ns
+:11  %sum_1 = fadd float %sum, %tmp_14
+
+
+ <State 12>: 7.26ns
+ST_12: stg_59 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str3) nounwind
+
+ST_12: sum_1 [1/5] 7.26ns
+:11  %sum_1 = fadd float %sum, %tmp_14
+
+ST_12: stg_61 [1/1] 0.00ns
+:12  br label %3
+
+
+ <State 13>: 7.26ns
+ST_13: biased [4/5] 7.26ns
+branch0:2  %biased = fadd float %sum, %bias_load_phi
+
+
+ <State 14>: 7.26ns
+ST_14: biased [3/5] 7.26ns
+branch0:2  %biased = fadd float %sum, %bias_load_phi
+
+
+ <State 15>: 7.26ns
+ST_15: biased [2/5] 7.26ns
+branch0:2  %biased = fadd float %sum, %bias_load_phi
+
+
+ <State 16>: 7.26ns
+ST_16: biased [1/5] 7.26ns
+branch0:2  %biased = fadd float %sum, %bias_load_phi
+
+ST_16: newIndex2 [1/1] 0.00ns
+branch0:3  %newIndex2 = zext i2 %n to i64
+
+ST_16: output_0_addr [1/1] 0.00ns
+branch0:4  %output_0_addr = getelementptr [147 x i128]* %output_0, i64 0, i64 %newIndex2
+
+ST_16: output_0_load [2/2] 2.71ns
+branch0:6  %output_0_load = load i128* %output_0_addr, align 8
+
+
+ <State 17>: 5.42ns
+ST_17: tmp_s [1/1] 0.00ns
+branch0:5  %tmp_s = bitcast float %biased to i32
+
+ST_17: output_0_load [1/2] 2.71ns
+branch0:6  %output_0_load = load i128* %output_0_addr, align 8
+
+ST_17: tmp_47 [1/1] 0.00ns
+branch0:7  %tmp_47 = call i128 @_ssdm_op_PartSet.i128.i128.i32.i9.i9(i128 %output_0_load, i32 %tmp_s, i9 0, i9 31)
+
+ST_17: stg_72 [1/1] 2.71ns
+branch0:8  store i128 %tmp_47, i128* %output_0_addr, align 8
+
+ST_17: empty_38 [1/1] 0.00ns
+branch0:9  %empty_38 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str2, i32 %tmp_46)
+
+ST_17: stg_74 [1/1] 0.00ns
+branch0:10  br label %1
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
