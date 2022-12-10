@@ -16,14 +16,15 @@
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
 //------------------------------------------------------------------------
-const int TEST_SIZE = 100;  // number of test instances
+const int TEST_SIZE = 2000;  // number of test instances
+const int TEST_SIZE_HALF = 1000;  // number of test instances
 
 void read_test_images(int8_t test_images[TEST_SIZE][256]) {
   std::ifstream infile("data/test_b.dat");
   if (infile.is_open()) {
     for (int index = 0; index < TEST_SIZE; index++) {
       for (int pixel = 0; pixel < 256; pixel++) {
-        int i;
+        int i; 
         infile >> i;
         test_images[index][pixel] = i;
       }
@@ -42,6 +43,26 @@ void read_test_labels(int test_labels[TEST_SIZE]) {
   }
 }
 
+void read_any(float test_images[TEST_SIZE_HALF][3072], string item) {
+  for (int k = 0; k <TEST_SIZE_HALF; k++){
+    string e = "data/testing_data/normalized_";
+    string f = "_32/";
+    string b =  ".jpg.dat";
+    stringstream ss;
+    ss << k;
+    string str = ss.str();
+    string file = string(e) + item  + f + str + b;
+    std::ifstream infile(file.c_str());
+    if (infile.is_open()) {
+      for (int pixel = 0; pixel < 3072; pixel++) {
+        float i;
+        infile >> i;
+        test_images[k][pixel] = i;
+      }
+      infile.close();
+    }
+  }
+}
 
 //--------------------------------------
 // main function
@@ -60,9 +81,9 @@ int main(int argc, char** argv)
   }
   
   // Arrays to store test data and expected results (labels)
-  int8_t test_images[TEST_SIZE][256];
+  float test_images[TEST_SIZE][3072];
   bit32_t test_image;
-  int    test_labels[TEST_SIZE];
+  int test_labels[TEST_SIZE];
 
   // Timer
   Timer timer("digitrec mlp on FPGA");
@@ -75,8 +96,19 @@ int main(int argc, char** argv)
   //--------------------------------------------------------------------
   // Read data from the input file into two arrays
   //--------------------------------------------------------------------
-  read_test_images(test_images);
-  read_test_labels(test_labels); 
+  float cars[TEST_SIZE_HALF][3072];
+  float trucks[TEST_SIZE_HALF][3072];
+
+  for (int  i = 0; i<TEST_SIZE; i++){
+    if(i<TEST_SIZE_HALF){
+      test_labels[i] = 0;
+    }
+    else{
+      test_labels[i] = 1;
+    }
+  }
+  read_any(cars,"cars");
+  read_any(trucks,"trucks");
 
   timer.start();
   //--------------------------------------------------------------------
@@ -84,7 +116,7 @@ int main(int argc, char** argv)
   //--------------------------------------------------------------------
   for (int i = 0; i < TEST_SIZE; ++i) {
     // Send 32-bit value through the write channel
-    for (int j = 0; j < 8; j++) {
+    for (int j = 0; j < 96; j++) {
       for (int k = 0; k < 32; k++) {
         test_image(k,k) = test_images[i][j*32+k];
       }

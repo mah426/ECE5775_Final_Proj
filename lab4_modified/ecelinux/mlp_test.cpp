@@ -114,31 +114,16 @@ int main(){
   // pack images to 32-bit and transmit to dut function 
   for (int test = 0; test < TEST_SIZE; test++) {
     std::cout << test <<" \n";
-    //for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
-    //std::cout << "test number: " <<test <<" \n";
       for (int i = 0; i <3072; i++) {
-      //std::cout << "A" << "\n";
-
-      //for (int j = 0; j < BUS_WIDTH; j++) {
         union { float fval; int ival; } u;
         u.fval = test_images[test][i];
         int iv = u.ival;
         test_image = iv;
-        
-        //if (i == 1 ){
-        //std::cout << test_images[test][i] <<" \n";
-        //std::cout << test_image <<" \n";
-       // }
-      //}
-        
-      digitrec_in.write(test_image);
-     
-  }
-    
+        digitrec_in.write(test_image);
+      }
     // perform prediction
     //std::cout << test<< "\n";
     dut(digitrec_in, digitrec_out);
-   
     // check results
     if (digitrec_out.read() == test_labels[test]) correct += 1.0;
   }
