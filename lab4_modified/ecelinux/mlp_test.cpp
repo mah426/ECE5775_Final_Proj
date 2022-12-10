@@ -10,6 +10,8 @@
 #include <string>
 #include <sstream>
 #include "model.h"
+#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -23,22 +25,57 @@ const int TEST_SIZE_HALF = 0;
 // Helper function for reading images and labels
 //------------------------------------------------------------------------
 
-void read_test_images(int8_t test_images[TEST_SIZE][256])
+void read_test_images(float test_images[100][3072])
 {
-  std::ifstream infile("data/test_b.dat");
-  if (infile.is_open())
+  // std::ifstream infile("test_data2/test_data.dat");
+  // if (infile.is_open())
+  // {
+  //   for (int index = 0; index < 100; index++)
+  //   {
+  //     for (int pixel = 0; pixel < 3072; pixel++)
+  //     {
+  //       float i;
+  //       infile >> i;
+  //       test_images[index][pixel] = i;
+  //       if (index == 0)
+  //       {
+  //         cout << i << endl;
+  //       }
+  //     }
+  //   }
+  //   infile.close();
+  // }
+  string line, word;
+  string fname = "test_data2/test_data.dat";
+  fstream file(fname, ios::in);
+  if (file.is_open())
   {
-    for (int index = 0; index < TEST_SIZE; index++)
+    int i = 0;
+    while (getline(file, line))
     {
-      for (int pixel = 0; pixel < 256; pixel++)
+      stringstream str(line);
+      int j = 0;
+      // cout << endl;
+      while (getline(str, word, ','))
       {
-        int i;
-        infile >> i;
-        test_images[index][pixel] = i;
+        test_images[i][j] = stof(word);
+        // cout << word << ",";
+        j++;
       }
+      // cout << "last j:" << j << endl;
+      // cout << endl;
+      i++;
     }
-    infile.close();
+    // cout << "last i:" << i << endl;
   }
+  else
+    cout << "Could not open the file\n";
+
+  // cout << "test_images[0][0]:" << endl;
+  // printf("%.6f \n", test_images[0][0]);
+  // cout << "test_images[99][3071]:" << endl;
+  // printf("%.6f \n", test_images[99][3071]);
+  // exit(0);
 }
 
 void read_any(float test_images[TEST_SIZE_HALF][3072], string item)
@@ -94,39 +131,40 @@ int main()
   hls::stream<float> digitrec_in;
   hls::stream<float> digitrec_out;
 
-  float cars[TEST_SIZE_HALF][3072];
-  float trucks[TEST_SIZE_HALF][3072];
-  float test_images[TEST_SIZE][3072];
-  int test_labels[TEST_SIZE];
-  for (int i = 0; i < TEST_SIZE; i++)
-  {
-    if (i < TEST_SIZE_HALF)
-    {
-      test_labels[i] = 0;
-    }
-    else
-    {
-      test_labels[i] = 1;
-    }
-  }
+  float test_images[100][3072];
+  read_test_images(test_images);
+  // float trucks[TEST_SIZE_HALF][3072];
+  // float test_images[TEST_SIZE][3072];
+  // int test_labels[TEST_SIZE];
+  // for (int i = 0; i < TEST_SIZE; i++)
+  // {
+  //   if (i < TEST_SIZE_HALF)
+  //   {
+  //     test_labels[i] = 0;
+  //   }
+  //   else
+  //   {
+  //     test_labels[i] = 1;
+  //   }
+  // }
 
-  // read test images and labels
-  read_any(cars, "cars");
-  read_any(trucks, "trucks");
-  for (int j = 0; j < 3072; j++)
-  {
-    for (int i = 0; i < TEST_SIZE; i++)
-    {
-      if (i < TEST_SIZE_HALF)
-      {
-        test_images[i][j] = cars[i][j];
-      }
-      else
-      {
-        test_images[i][j] = trucks[i - TEST_SIZE_HALF][j];
-      }
-    }
-  }
+  // // read test images and labels
+  // read_any(cars, "cars");
+  // read_any(trucks, "trucks");
+  // for (int j = 0; j < 3072; j++)
+  // {
+  //   for (int i = 0; i < TEST_SIZE; i++)
+  //   {
+  //     if (i < TEST_SIZE_HALF)
+  //     {
+  //       test_images[i][j] = cars[i][j];
+  //     }
+  //     else
+  //     {
+  //       test_images[i][j] = trucks[i - TEST_SIZE_HALF][j];
+  //     }
+  //   }
+  // }
   // read_test_labels(test_labels);
 
   float test_image;
@@ -136,61 +174,61 @@ int main()
   Timer timer("digirec mlp");
   timer.start();
 
-  // // pack images to 32-bit and transmit to dut function
-  // for (int test = 0; test < TEST_SIZE; test++)
-  // {
-  //   std::cout << test << " \n";
-  //   // for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
-  //   // std::cout << "test number: " <<test <<" \n";
-  //   for (int i = 0; i < 3072; i++)
-  //   {
-  //     // std::cout << "A" << "\n";
-
-  //     // for (int j = 0; j < BUS_WIDTH; j++) {
-
-  //     test_image = test_images[test][i];
-
-  //     // if (i == 1 ){
-  //     // std::cout << test_images[test][i] <<" \n";
-  //     // std::cout << test_image <<" \n";
-  //     // }
-  //     //}
-
-  //     digitrec_in.write(test_image);
-  //   }
-  //   // perform prediction
-  //   // std::cout << test<< "\n";
-  //   dut(digitrec_in, digitrec_out);
-
-  //   // check results
-  //   if (digitrec_out.read() == test_labels[test])
-  //     correct += 1.0;
-  // }
-
-  if (TEST_SIZE == 0)
+  // pack images to 32-bit and transmit to dut function
+  for (int test = 0; test < 100; test++)
   {
+    std::cout << test << " \n";
+    // for (int i = 0; i < I_WIDTH1 * I_WIDTH1 / BUS_WIDTH; i++) {
+    // std::cout << "test number: " <<test <<" \n";
     for (int i = 0; i < 3072; i++)
     {
-      test_image = first_img[i];
-      if (i < 100)
-      {
-        cout << test_image << ",";
-      }
+      // std::cout << "A" << "\n";
+
+      // for (int j = 0; j < BUS_WIDTH; j++) {
+
+      test_image = test_images[test][i];
+
+      // if (i == 1 ){
+      // std::cout << test_images[test][i] <<" \n";
+      // std::cout << test_image <<" \n";
+      // }
+      //}
 
       digitrec_in.write(test_image);
     }
-    cout << endl;
-    cout << "print from mlp_test" << endl;
+    // perform prediction
+    // std::cout << test<< "\n";
     dut(digitrec_in, digitrec_out);
+
+    // check results
+    if (digitrec_out.read() == 0)
+      correct += 1.0;
   }
-  if (digitrec_out.read() == 1)
-    correct += 1.0;
-  std::cout << "Accuracy: " << correct << std::endl;
+
+  // // if (TEST_SIZE == 0)
+  // // {
+  // //   for (int i = 0; i < 3072; i++)
+  // //   {
+  // //     test_image = first_img[i];
+  // //     if (i < 100)
+  // //     {
+  // //       cout << test_image << ",";
+  // //     }
+
+  // //     digitrec_in.write(test_image);
+  // //   }
+  // //   cout << endl;
+  // //   cout << "print from mlp_test" << endl;
+  // //   dut(digitrec_in, digitrec_out);
+  // // }
+  // // if (digitrec_out.read() == 1)
+  // //   correct += 1.0;
+  // // std::cout << "Accuracy: " << correct << std::endl;
 
   timer.stop();
 
   // Calculate accuracy
-  // std::cout << "Accuracy: " << correct / TEST_SIZE << std::endl;
+  std::cout << "Accuracy: " << correct / 100 << std::endl;
 
   return 0;
 }
