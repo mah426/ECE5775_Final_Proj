@@ -2408,7 +2408,7 @@
 					<Obj>
 						<type>0</type>
 						<id>91</id>
-						<name>tmp1</name>
+						<name>tmp6</name>
 						<fileName>layer.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
 						<lineNumber>209</lineNumber>
@@ -2450,7 +2450,7 @@
 					<Obj>
 						<type>0</type>
 						<id>92</id>
-						<name>tmp2</name>
+						<name>tmp7</name>
 						<fileName>layer.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
 						<lineNumber>219</lineNumber>

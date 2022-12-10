@@ -1023,10 +1023,10 @@
 
 <node id="43" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1  %tmp_19_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+:1  %tmp_18_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ]]></node>
-<StgValue><ssdm name="tmp_19_i"/></StgValue>
+<StgValue><ssdm name="tmp_18_i"/></StgValue>
 </operation>
 
 <operation id="103" st_id="12" stage="1" lat="1">
@@ -1823,7 +1823,7 @@
 
 <node id="81" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-:15  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_19_i)
+:15  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_18_i)
 
 ]]></node>
 <StgValue><ssdm name="empty_14"/></StgValue>
@@ -1948,10 +1948,10 @@ dense_mlp.2.exit:4  br i1 %exitcond2, label %dense_mlp.1.exit, label %9
 
 <node id="91" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1  %tmp_21_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+:1  %tmp_20_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ]]></node>
-<StgValue><ssdm name="tmp_21_i"/></StgValue>
+<StgValue><ssdm name="tmp_20_i"/></StgValue>
 </operation>
 
 <operation id="160" st_id="31" stage="1" lat="1">
@@ -2844,7 +2844,7 @@ dense_mlp.2.exit:4  br i1 %exitcond2, label %dense_mlp.1.exit, label %9
 
 <node id="135" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-:15  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_21_i)
+:15  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_20_i)
 
 ]]></node>
 <StgValue><ssdm name="empty_17"/></StgValue>
@@ -2999,10 +2999,10 @@ dense_mlp.1.exit:6  br i1 %exitcond4, label %dense_mlp.exit, label %13
 
 <node id="147" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1  %tmp_23_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+:1  %tmp_22_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ]]></node>
-<StgValue><ssdm name="tmp_23_i"/></StgValue>
+<StgValue><ssdm name="tmp_22_i"/></StgValue>
 </operation>
 
 <operation id="225" st_id="50" stage="1" lat="1">
@@ -3688,7 +3688,7 @@ dense_mlp.exit:2  %mem_conv2_load_1 = load float* %mem_conv2_addr_1, align 4
 
 <node id="176" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-:6  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_23_i)
+:6  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_22_i)
 
 ]]></node>
 <StgValue><ssdm name="empty_20"/></StgValue>

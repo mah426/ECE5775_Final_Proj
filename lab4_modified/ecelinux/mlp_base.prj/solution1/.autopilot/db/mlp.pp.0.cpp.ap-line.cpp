@@ -39459,8 +39459,8 @@ class stream
 #pragma empty_line
 // Top function for synthesis
 void dut (
-  hls::stream<float> &strm_in,
-  hls::stream<float> &strm_out
+  hls::stream<bit32_t> &strm_in,
+  hls::stream<bit32_t> &strm_out
 );
 #pragma empty_line
 // Top function for mlp accelerator
@@ -43495,12 +43495,13 @@ using namespace std;
 // Top function
 //----------------------------------------------------------
 void dut(
-    hls::stream<float> &strm_in,
-    hls::stream<float> &strm_out)
+    hls::stream<bit32_t> &strm_in,
+    hls::stream<bit32_t> &strm_out)
 {
   float input[MAX_FMAP];
-  float input_l;
-  float output;
+  bit32_t input_l;
+  bit32_t output;
+#pragma empty_line
   //union { float fval; int ival;} input_union;
   //union { float fval; int ival;} output_union;
   // read one test image into digit
@@ -43525,12 +43526,15 @@ void dut(
 #pragma empty_line
 #pragma empty_line
     input_l = strm_in.read();
+    union { float fval; int ival; } u;
+    u.ival = input_l;
+    float fv = u.fval;
     //std::cout << "i " << (I_WIDTH1 * I_WIDTH1 / BUS_WIDTH)<<" \n";
     //std::cout << "i " <<i <<" \n";
     //if(i == 3){
     //std::cout << "QAZ"<<input_l<< "\n";
     //}
-    input[i] = input_l;
+    input[i] = fv;
   }
       //std::cout << "1 " <<" \n";
   // call mlp
@@ -43538,7 +43542,13 @@ void dut(
   //std::cout << "Starting Output Function: " << endl;
   float mlp_result = 0;
   mlp_xcel(input, mlp_result);
-  output = mlp_result;
+ // output = mlp_result;
+  if (mlp_result == 1){
+    output = 1;
+  }
+  else{
+    output = 0;
+  }
   //std::cout << "2 " <<" \n";
   //std::cout << "output: " << output << endl;
   // write out the result

@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>strm_in_V</name>
+						<name>strm_in_V_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -24,7 +24,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>strm_in.V</originalName>
+						<originalName>strm_in.V.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>strm_out_V</name>
+						<name>strm_out_V_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,7 +52,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>strm_out.V</originalName>
+						<originalName>strm_out.V.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -68,7 +68,7 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>14</count>
+			<count>24</count>
 			<item_version>0</item_version>
 			<item class_id="9" tracking_level="1" version="0" object_id="_3">
 				<Value>
@@ -107,7 +107,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>35</item>
+					<item>45</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 			</item>
@@ -119,7 +119,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>45</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -134,7 +134,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>44</second>
+										<second>45</second>
 									</item>
 								</second>
 							</item>
@@ -148,7 +148,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>36</item>
+					<item>46</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 			</item>
@@ -175,10 +175,10 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>38</item>
-					<item>39</item>
-					<item>40</item>
-					<item>41</item>
+					<item>48</item>
+					<item>49</item>
+					<item>50</item>
+					<item>51</item>
 				</oprand_edges>
 				<opcode>phi</opcode>
 			</item>
@@ -190,7 +190,7 @@
 						<name>exitcond</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>45</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -205,7 +205,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>44</second>
+										<second>45</second>
 									</item>
 								</second>
 							</item>
@@ -219,8 +219,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>42</item>
-					<item>44</item>
+					<item>52</item>
+					<item>54</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
 			</item>
@@ -232,7 +232,7 @@
 						<name>i_3</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>45</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -247,7 +247,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>44</second>
+										<second>45</second>
 									</item>
 								</second>
 							</item>
@@ -261,8 +261,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>45</item>
-					<item>47</item>
+					<item>55</item>
+					<item>57</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 			</item>
@@ -274,7 +274,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>45</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -289,7 +289,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>44</second>
+										<second>45</second>
 									</item>
 								</second>
 							</item>
@@ -303,9 +303,9 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>48</item>
-					<item>49</item>
-					<item>50</item>
+					<item>58</item>
+					<item>59</item>
+					<item>60</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 			</item>
@@ -314,10 +314,10 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>tmp_24</name>
+						<name>tmp_V_2</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>49</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -332,12 +332,12 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>48</second>
+										<second>49</second>
 									</item>
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>tmp</originalName>
+						<originalName>tmp.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -346,8 +346,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>52</item>
-					<item>53</item>
+					<item>62</item>
+					<item>63</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 			</item>
@@ -356,10 +356,10 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>tmp_s</name>
+						<name>fv</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>54</lineNumber>
+						<lineNumber>51</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -374,7 +374,48 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>54</second>
+										<second>51</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>fv</originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>64</item>
+				</oprand_edges>
+				<opcode>bitcast</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_11">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>26</id>
+						<name>tmp_s</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>58</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -388,19 +429,19 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>54</item>
+					<item>65</item>
 				</oprand_edges>
 				<opcode>zext</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_11">
+			<item class_id_reference="9" object_id="_12">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>26</id>
+						<id>27</id>
 						<name>input_addr</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>54</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -415,7 +456,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>54</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -429,21 +470,21 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>55</item>
-					<item>57</item>
-					<item>58</item>
+					<item>66</item>
+					<item>68</item>
+					<item>69</item>
 				</oprand_edges>
 				<opcode>getelementptr</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_12">
+			<item class_id_reference="9" object_id="_13">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>27</id>
+						<id>28</id>
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>54</lineNumber>
+						<lineNumber>58</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -458,7 +499,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>54</second>
+										<second>58</second>
 									</item>
 								</second>
 							</item>
@@ -472,20 +513,20 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>59</item>
-					<item>60</item>
+					<item>70</item>
+					<item>71</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_13">
+			<item class_id_reference="9" object_id="_14">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>28</id>
+						<id>29</id>
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>44</lineNumber>
+						<lineNumber>45</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -500,7 +541,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>44</second>
+										<second>45</second>
 									</item>
 								</second>
 							</item>
@@ -514,19 +555,19 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>61</item>
+					<item>72</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_14">
+			<item class_id_reference="9" object_id="_15">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>30</id>
+						<id>31</id>
 						<name>mlp_result</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>61</lineNumber>
+						<lineNumber>65</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -541,7 +582,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>61</second>
+										<second>65</second>
 									</item>
 								</second>
 							</item>
@@ -555,27 +596,27 @@
 				<oprand_edges>
 					<count>9</count>
 					<item_version>0</item_version>
-					<item>63</item>
-					<item>64</item>
-					<item>69</item>
-					<item>70</item>
-					<item>71</item>
-					<item>72</item>
-					<item>73</item>
 					<item>74</item>
 					<item>75</item>
+					<item>103</item>
+					<item>104</item>
+					<item>105</item>
+					<item>106</item>
+					<item>107</item>
+					<item>108</item>
+					<item>109</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_15">
+			<item class_id_reference="9" object_id="_16">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>31</id>
-						<name></name>
+						<id>32</id>
+						<name>mlp_result_to_int</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>66</lineNumber>
+						<lineNumber>65</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -590,7 +631,384 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>66</second>
+										<second>65</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>76</item>
+				</oprand_edges>
+				<opcode>bitcast</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_17">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>33</id>
+						<name>tmp</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>65</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>65</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>78</item>
+					<item>79</item>
+					<item>81</item>
+					<item>83</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_18">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>34</id>
+						<name>tmp_23</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>65</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>65</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>23</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>84</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_19">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>35</id>
+						<name>notlhs</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>65</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>65</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>85</item>
+					<item>87</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_20">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>36</id>
+						<name>notrhs</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>65</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>65</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>88</item>
+					<item>90</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_21">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>37</id>
+						<name>tmp_28</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>65</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>65</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>91</item>
+					<item>92</item>
+				</oprand_edges>
+				<opcode>or</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_22">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>38</id>
+						<name>tmp_29</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>67</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>67</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>93</item>
+					<item>95</item>
+				</oprand_edges>
+				<opcode>fcmp</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_23">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>39</id>
+						<name>tmp_30</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>67</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>67</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>96</item>
+					<item>97</item>
+				</oprand_edges>
+				<opcode>and</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_24">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>40</id>
+						<name>tmp_V</name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>67</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>67</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>tmp.V</originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>98</item>
+				</oprand_edges>
+				<opcode>zext</opcode>
+			</item>
+			<item class_id_reference="9" object_id="_25">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>41</id>
+						<name></name>
+						<fileName>mlp.cpp</fileName>
+						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
+						<lineNumber>76</lineNumber>
+						<contextFuncName>dut</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>mlp.cpp</first>
+											<second>dut</second>
+										</first>
+										<second>76</second>
 									</item>
 								</second>
 							</item>
@@ -604,21 +1022,21 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>66</item>
-					<item>67</item>
-					<item>68</item>
+					<item>100</item>
+					<item>101</item>
+					<item>102</item>
 				</oprand_edges>
 				<opcode>write</opcode>
 			</item>
-			<item class_id_reference="9" object_id="_16">
+			<item class_id_reference="9" object_id="_26">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>32</id>
+						<id>42</id>
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>69</lineNumber>
+						<lineNumber>79</lineNumber>
 						<contextFuncName>dut</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -633,7 +1051,7 @@
 											<first>mlp.cpp</first>
 											<second>dut</second>
 										</first>
-										<second>69</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -652,13 +1070,13 @@
 			</item>
 		</nodes>
 		<consts class_id="15" tracking_level="0" version="0">
-			<count>6</count>
+			<count>11</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_17">
+			<item class_id="16" tracking_level="1" version="0" object_id="_27">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>34</id>
+						<id>44</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -677,11 +1095,11 @@
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_18">
+			<item class_id_reference="16" object_id="_28">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>37</id>
+						<id>47</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -700,11 +1118,11 @@
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_19">
+			<item class_id_reference="16" object_id="_29">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>43</id>
+						<id>53</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -723,11 +1141,11 @@
 				<const_type>0</const_type>
 				<content>3072</content>
 			</item>
-			<item class_id_reference="16" object_id="_20">
+			<item class_id_reference="16" object_id="_30">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>46</id>
+						<id>56</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -746,11 +1164,11 @@
 				<const_type>0</const_type>
 				<content>1</content>
 			</item>
-			<item class_id_reference="16" object_id="_21">
+			<item class_id_reference="16" object_id="_31">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>56</id>
+						<id>67</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -769,11 +1187,11 @@
 				<const_type>0</const_type>
 				<content>0</content>
 			</item>
-			<item class_id_reference="16" object_id="_22">
+			<item class_id_reference="16" object_id="_32">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>62</id>
+						<id>73</id>
 						<name>dut_mlp_xcel</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -792,11 +1210,126 @@
 				<const_type>6</const_type>
 				<content>&lt;constant:dut_mlp_xcel&gt;</content>
 			</item>
+			<item class_id_reference="16" object_id="_33">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>80</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>23</content>
+			</item>
+			<item class_id_reference="16" object_id="_34">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>82</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>30</content>
+			</item>
+			<item class_id_reference="16" object_id="_35">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>86</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>255</content>
+			</item>
+			<item class_id_reference="16" object_id="_36">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>89</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>23</bitwidth>
+				</Value>
+				<const_type>0</const_type>
+				<content>0</content>
+			</item>
+			<item class_id_reference="16" object_id="_37">
+				<Value>
+					<Obj>
+						<type>2</type>
+						<id>94</id>
+						<name>empty</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<const_type>1</const_type>
+				<content>1</content>
+			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
 			<count>4</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_23">
+			<item class_id="18" tracking_level="1" version="0" object_id="_38">
 				<Obj>
 					<type>3</type>
 					<id>17</id>
@@ -820,7 +1353,7 @@
 					<item>16</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_24">
+			<item class_id_reference="18" object_id="_39">
 				<Obj>
 					<type>3</type>
 					<id>23</id>
@@ -846,10 +1379,10 @@
 					<item>22</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_25">
+			<item class_id_reference="18" object_id="_40">
 				<Obj>
 					<type>3</type>
-					<id>29</id>
+					<id>30</id>
 					<name></name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -864,19 +1397,20 @@
 					<coreName></coreName>
 				</Obj>
 				<node_objs>
-					<count>5</count>
+					<count>6</count>
 					<item_version>0</item_version>
 					<item>24</item>
 					<item>25</item>
 					<item>26</item>
 					<item>27</item>
 					<item>28</item>
+					<item>29</item>
 				</node_objs>
 			</item>
-			<item class_id_reference="18" object_id="_26">
+			<item class_id_reference="18" object_id="_41">
 				<Obj>
 					<type>3</type>
-					<id>33</id>
+					<id>43</id>
 					<name></name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -891,231 +1425,342 @@
 					<coreName></coreName>
 				</Obj>
 				<node_objs>
-					<count>3</count>
+					<count>12</count>
 					<item_version>0</item_version>
-					<item>30</item>
 					<item>31</item>
 					<item>32</item>
+					<item>33</item>
+					<item>34</item>
+					<item>35</item>
+					<item>36</item>
+					<item>37</item>
+					<item>38</item>
+					<item>39</item>
+					<item>40</item>
+					<item>41</item>
+					<item>42</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>36</count>
+			<count>53</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_27">
-				<id>35</id>
+			<item class_id="20" tracking_level="1" version="0" object_id="_42">
+				<id>45</id>
 				<edge_type>1</edge_type>
-				<source_obj>34</source_obj>
+				<source_obj>44</source_obj>
 				<sink_obj>15</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_28">
-				<id>36</id>
+			<item class_id_reference="20" object_id="_43">
+				<id>46</id>
 				<edge_type>2</edge_type>
 				<source_obj>23</source_obj>
 				<sink_obj>16</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_29">
-				<id>38</id>
+			<item class_id_reference="20" object_id="_44">
+				<id>48</id>
 				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
+				<source_obj>47</source_obj>
 				<sink_obj>18</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_30">
-				<id>39</id>
+			<item class_id_reference="20" object_id="_45">
+				<id>49</id>
 				<edge_type>2</edge_type>
 				<source_obj>17</source_obj>
 				<sink_obj>18</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_31">
-				<id>40</id>
+			<item class_id_reference="20" object_id="_46">
+				<id>50</id>
 				<edge_type>1</edge_type>
 				<source_obj>21</source_obj>
 				<sink_obj>18</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_32">
-				<id>41</id>
+			<item class_id_reference="20" object_id="_47">
+				<id>51</id>
 				<edge_type>2</edge_type>
-				<source_obj>29</source_obj>
+				<source_obj>30</source_obj>
 				<sink_obj>18</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_33">
-				<id>42</id>
+			<item class_id_reference="20" object_id="_48">
+				<id>52</id>
 				<edge_type>1</edge_type>
 				<source_obj>18</source_obj>
 				<sink_obj>19</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_34">
-				<id>44</id>
+			<item class_id_reference="20" object_id="_49">
+				<id>54</id>
 				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
+				<source_obj>53</source_obj>
 				<sink_obj>19</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_35">
-				<id>45</id>
+			<item class_id_reference="20" object_id="_50">
+				<id>55</id>
 				<edge_type>1</edge_type>
 				<source_obj>18</source_obj>
 				<sink_obj>21</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_36">
-				<id>47</id>
+			<item class_id_reference="20" object_id="_51">
+				<id>57</id>
 				<edge_type>1</edge_type>
-				<source_obj>46</source_obj>
+				<source_obj>56</source_obj>
 				<sink_obj>21</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_37">
-				<id>48</id>
+			<item class_id_reference="20" object_id="_52">
+				<id>58</id>
 				<edge_type>1</edge_type>
 				<source_obj>19</source_obj>
 				<sink_obj>22</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_38">
-				<id>49</id>
+			<item class_id_reference="20" object_id="_53">
+				<id>59</id>
 				<edge_type>2</edge_type>
-				<source_obj>29</source_obj>
+				<source_obj>30</source_obj>
 				<sink_obj>22</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_39">
-				<id>50</id>
+			<item class_id_reference="20" object_id="_54">
+				<id>60</id>
 				<edge_type>2</edge_type>
-				<source_obj>33</source_obj>
+				<source_obj>43</source_obj>
 				<sink_obj>22</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_40">
-				<id>53</id>
+			<item class_id_reference="20" object_id="_55">
+				<id>63</id>
 				<edge_type>1</edge_type>
 				<source_obj>1</source_obj>
 				<sink_obj>24</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_41">
-				<id>54</id>
-				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
-				<sink_obj>25</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_42">
-				<id>55</id>
-				<edge_type>1</edge_type>
-				<source_obj>15</source_obj>
-				<sink_obj>26</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_43">
-				<id>57</id>
-				<edge_type>1</edge_type>
-				<source_obj>56</source_obj>
-				<sink_obj>26</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_44">
-				<id>58</id>
-				<edge_type>1</edge_type>
-				<source_obj>25</source_obj>
-				<sink_obj>26</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_45">
-				<id>59</id>
+			<item class_id_reference="20" object_id="_56">
+				<id>64</id>
 				<edge_type>1</edge_type>
 				<source_obj>24</source_obj>
+				<sink_obj>25</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_57">
+				<id>65</id>
+				<edge_type>1</edge_type>
+				<source_obj>18</source_obj>
+				<sink_obj>26</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_58">
+				<id>66</id>
+				<edge_type>1</edge_type>
+				<source_obj>15</source_obj>
 				<sink_obj>27</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_46">
-				<id>60</id>
+			<item class_id_reference="20" object_id="_59">
+				<id>68</id>
+				<edge_type>1</edge_type>
+				<source_obj>67</source_obj>
+				<sink_obj>27</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_60">
+				<id>69</id>
 				<edge_type>1</edge_type>
 				<source_obj>26</source_obj>
 				<sink_obj>27</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_47">
-				<id>61</id>
-				<edge_type>2</edge_type>
-				<source_obj>23</source_obj>
-				<sink_obj>28</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_48">
-				<id>63</id>
-				<edge_type>1</edge_type>
-				<source_obj>62</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_49">
-				<id>64</id>
-				<edge_type>1</edge_type>
-				<source_obj>15</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_50">
-				<id>67</id>
-				<edge_type>1</edge_type>
-				<source_obj>2</source_obj>
-				<sink_obj>31</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_51">
-				<id>68</id>
-				<edge_type>1</edge_type>
-				<source_obj>30</source_obj>
-				<sink_obj>31</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_52">
-				<id>69</id>
-				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_53">
+			<item class_id_reference="20" object_id="_61">
 				<id>70</id>
 				<edge_type>1</edge_type>
-				<source_obj>4</source_obj>
-				<sink_obj>30</sink_obj>
+				<source_obj>25</source_obj>
+				<sink_obj>28</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_54">
+			<item class_id_reference="20" object_id="_62">
 				<id>71</id>
 				<edge_type>1</edge_type>
-				<source_obj>5</source_obj>
-				<sink_obj>30</sink_obj>
+				<source_obj>27</source_obj>
+				<sink_obj>28</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_55">
+			<item class_id_reference="20" object_id="_63">
 				<id>72</id>
-				<edge_type>1</edge_type>
-				<source_obj>6</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_56">
-				<id>73</id>
-				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_57">
-				<id>74</id>
-				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_58">
-				<id>75</id>
-				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>30</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_59">
-				<id>134</id>
-				<edge_type>2</edge_type>
-				<source_obj>17</source_obj>
-				<sink_obj>23</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_60">
-				<id>135</id>
-				<edge_type>2</edge_type>
-				<source_obj>23</source_obj>
-				<sink_obj>33</sink_obj>
-			</item>
-			<item class_id_reference="20" object_id="_61">
-				<id>136</id>
 				<edge_type>2</edge_type>
 				<source_obj>23</source_obj>
 				<sink_obj>29</sink_obj>
 			</item>
-			<item class_id_reference="20" object_id="_62">
-				<id>137</id>
+			<item class_id_reference="20" object_id="_64">
+				<id>74</id>
+				<edge_type>1</edge_type>
+				<source_obj>73</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_65">
+				<id>75</id>
+				<edge_type>1</edge_type>
+				<source_obj>15</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_66">
+				<id>76</id>
+				<edge_type>1</edge_type>
+				<source_obj>31</source_obj>
+				<sink_obj>32</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_67">
+				<id>79</id>
+				<edge_type>1</edge_type>
+				<source_obj>32</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_68">
+				<id>81</id>
+				<edge_type>1</edge_type>
+				<source_obj>80</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_69">
+				<id>83</id>
+				<edge_type>1</edge_type>
+				<source_obj>82</source_obj>
+				<sink_obj>33</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_70">
+				<id>84</id>
+				<edge_type>1</edge_type>
+				<source_obj>32</source_obj>
+				<sink_obj>34</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_71">
+				<id>85</id>
+				<edge_type>1</edge_type>
+				<source_obj>33</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_72">
+				<id>87</id>
+				<edge_type>1</edge_type>
+				<source_obj>86</source_obj>
+				<sink_obj>35</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_73">
+				<id>88</id>
+				<edge_type>1</edge_type>
+				<source_obj>34</source_obj>
+				<sink_obj>36</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_74">
+				<id>90</id>
+				<edge_type>1</edge_type>
+				<source_obj>89</source_obj>
+				<sink_obj>36</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_75">
+				<id>91</id>
+				<edge_type>1</edge_type>
+				<source_obj>36</source_obj>
+				<sink_obj>37</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_76">
+				<id>92</id>
+				<edge_type>1</edge_type>
+				<source_obj>35</source_obj>
+				<sink_obj>37</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_77">
+				<id>93</id>
+				<edge_type>1</edge_type>
+				<source_obj>31</source_obj>
+				<sink_obj>38</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_78">
+				<id>95</id>
+				<edge_type>1</edge_type>
+				<source_obj>94</source_obj>
+				<sink_obj>38</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_79">
+				<id>96</id>
+				<edge_type>1</edge_type>
+				<source_obj>37</source_obj>
+				<sink_obj>39</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_80">
+				<id>97</id>
+				<edge_type>1</edge_type>
+				<source_obj>38</source_obj>
+				<sink_obj>39</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_81">
+				<id>98</id>
+				<edge_type>1</edge_type>
+				<source_obj>39</source_obj>
+				<sink_obj>40</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_82">
+				<id>101</id>
+				<edge_type>1</edge_type>
+				<source_obj>2</source_obj>
+				<sink_obj>41</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_83">
+				<id>102</id>
+				<edge_type>1</edge_type>
+				<source_obj>40</source_obj>
+				<sink_obj>41</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_84">
+				<id>103</id>
+				<edge_type>1</edge_type>
+				<source_obj>3</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_85">
+				<id>104</id>
+				<edge_type>1</edge_type>
+				<source_obj>4</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_86">
+				<id>105</id>
+				<edge_type>1</edge_type>
+				<source_obj>5</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_87">
+				<id>106</id>
+				<edge_type>1</edge_type>
+				<source_obj>6</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_88">
+				<id>107</id>
+				<edge_type>1</edge_type>
+				<source_obj>7</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_89">
+				<id>108</id>
+				<edge_type>1</edge_type>
+				<source_obj>8</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_90">
+				<id>109</id>
+				<edge_type>1</edge_type>
+				<source_obj>9</source_obj>
+				<sink_obj>31</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_91">
+				<id>168</id>
 				<edge_type>2</edge_type>
-				<source_obj>29</source_obj>
+				<source_obj>17</source_obj>
+				<sink_obj>23</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_92">
+				<id>169</id>
+				<edge_type>2</edge_type>
+				<source_obj>23</source_obj>
+				<sink_obj>43</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_93">
+				<id>170</id>
+				<edge_type>2</edge_type>
+				<source_obj>23</source_obj>
+				<sink_obj>30</sink_obj>
+			</item>
+			<item class_id_reference="20" object_id="_94">
+				<id>171</id>
+				<edge_type>2</edge_type>
+				<source_obj>30</source_obj>
 				<sink_obj>23</sink_obj>
 			</item>
 		</edges>
@@ -1123,7 +1768,7 @@
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>4</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_63">
+		<item class_id="22" tracking_level="1" version="0" object_id="_95">
 			<mId>1</mId>
 			<mTag>dut</mTag>
 			<mType>0</mType>
@@ -1142,12 +1787,12 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>7267251</mMinLatency>
+			<mMinLatency>7267252</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
-		<item class_id_reference="22" object_id="_64">
+		<item class_id_reference="22" object_id="_96">
 			<mId>2</mId>
 			<mTag>Entry</mTag>
 			<mType>0</mType>
@@ -1169,7 +1814,7 @@
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
-		<item class_id_reference="22" object_id="_65">
+		<item class_id_reference="22" object_id="_97">
 			<mId>3</mId>
 			<mTag>Loop 1</mTag>
 			<mType>1</mType>
@@ -1181,7 +1826,7 @@
 				<count>2</count>
 				<item_version>0</item_version>
 				<item>23</item>
-				<item>29</item>
+				<item>30</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
@@ -1192,7 +1837,7 @@
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
-		<item class_id_reference="22" object_id="_66">
+		<item class_id_reference="22" object_id="_98">
 			<mId>4</mId>
 			<mTag>Return</mTag>
 			<mType>0</mType>
@@ -1203,13 +1848,13 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>33</item>
+				<item>43</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>7264178</mMinLatency>
+			<mMinLatency>7264179</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
@@ -1218,7 +1863,7 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>14</count>
+		<count>24</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
 			<first>15</first>
@@ -1298,23 +1943,93 @@
 			</second>
 		</item>
 		<item>
-			<first>30</first>
+			<first>29</first>
+			<second>
+				<first>1</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>31</first>
 			<second>
 				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>31</first>
+			<first>32</first>
 			<second>
 				<first>3</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
-			<first>32</first>
+			<first>33</first>
 			<second>
 				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>34</first>
+			<second>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>35</first>
+			<second>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>36</first>
+			<second>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>37</first>
+			<second>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>38</first>
+			<second>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>39</first>
+			<second>
+				<first>3</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>40</first>
+			<second>
+				<first>4</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>41</first>
+			<second>
+				<first>4</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>42</first>
+			<second>
+				<first>4</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -1337,17 +2052,17 @@
 			</second>
 		</item>
 		<item>
-			<first>29</first>
+			<first>30</first>
 			<second>
 				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>33</first>
+			<first>43</first>
 			<second>
 				<first>1</first>
-				<second>3</second>
+				<second>4</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

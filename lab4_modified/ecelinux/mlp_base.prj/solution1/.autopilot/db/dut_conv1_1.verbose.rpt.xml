@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dut_conv1_1'" level="0">
-<item name = "Date">Fri Dec  9 16:58:23 2022
+<item name = "Date">Fri Dec  9 19:43:14 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">mlp_base.prj</item>
@@ -93,7 +93,7 @@
 <column name="n_2_fu_235_p2">+, 0, 0, 3, 3, 1</column>
 <column name="o_index_fu_344_p2">+, 0, 0, 14, 14, 14</column>
 <column name="r_2_fu_423_p2">+, 0, 0, 3, 3, 1</column>
-<column name="tmp1_fu_429_p2">+, 0, 0, 5, 5, 5</column>
+<column name="tmp6_fu_429_p2">+, 0, 0, 5, 5, 5</column>
 <column name="tmp8_fu_408_p2">+, 0, 0, 11, 11, 11</column>
 <column name="tmp9_fu_458_p2">+, 0, 0, 5, 5, 5</column>
 <column name="tmp_18_fu_369_p2">+, 0, 0, 6, 6, 6</column>

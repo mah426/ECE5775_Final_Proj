@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dut'
 ================================================================
-* Date:           Fri Dec  9 16:58:23 2022
+* Date:           Fri Dec  9 19:43:14 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        mlp_base.prj
@@ -29,7 +29,7 @@
     |      Latency      |      Interval     | Pipeline|
     |   min   |   max   |   min   |   max   |   Type  |
     +---------+---------+---------+---------+---------+
-    |  7203423|  7267251|  7203424|  7267252|   none  |
+    |  7203424|  7267252|  7203425|  7267253|   none  |
     +---------+---------+---------+---------+---------+
 
     + Detail: 
@@ -70,7 +70,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 4
+* Number of FSM states: 5
 * Pipeline: 0
 * Dataflow Pipeline: 0
 
@@ -83,28 +83,30 @@ IsGatedGlobalClock: 0
 3 --> 
 	4  / true
 4 --> 
+	5  / true
+5 --> 
 * FSM state operations: 
 
  <State 1>: 1.57ns
 ST_1: empty [1/1] 0.00ns
-:0  %empty = call i32 (...)* @_ssdm_op_SpecInterface(float* %strm_out_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str21, [1 x i8]* @p_str22, [1 x i8]* @p_str23, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str24)
+:0  %empty = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str29, [1 x i8]* @p_str30, [1 x i8]* @p_str31, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str32)
 
 ST_1: empty_30 [1/1] 0.00ns
-:1  %empty_30 = call i32 (...)* @_ssdm_op_SpecInterface(float* %strm_in_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str17, [1 x i8]* @p_str18, [1 x i8]* @p_str19, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str20)
-
-ST_1: stg_7 [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecBitsMap(float* %strm_in_V), !map !57
+:1  %empty_30 = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str25, [1 x i8]* @p_str26, [1 x i8]* @p_str27, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str28)
 
 ST_1: stg_8 [1/1] 0.00ns
-:3  call void (...)* @_ssdm_op_SpecBitsMap(float* %strm_out_V), !map !63
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_in_V_V), !map !63
 
 ST_1: stg_9 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_out_V_V), !map !69
+
+ST_1: stg_10 [1/1] 0.00ns
 :4  call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @dut_str) nounwind
 
 ST_1: input [1/1] 0.00ns
 :5  %input = alloca [3072 x float], align 16
 
-ST_1: stg_11 [1/1] 1.57ns
+ST_1: stg_12 [1/1] 1.57ns
 :6  br label %1
 
 
@@ -121,23 +123,26 @@ ST_2: empty_31 [1/1] 0.00ns
 ST_2: i_3 [1/1] 1.84ns
 :3  %i_3 = add i12 %i, 1
 
-ST_2: stg_16 [1/1] 0.00ns
+ST_2: stg_17 [1/1] 0.00ns
 :4  br i1 %exitcond, label %3, label %2
 
-ST_2: tmp_24 [1/1] 4.38ns
-:0  %tmp_24 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %strm_in_V)
+ST_2: tmp_V_2 [1/1] 4.38ns
+:0  %tmp_V_2 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %strm_in_V_V)
+
+ST_2: fv [1/1] 0.00ns
+:1  %fv = bitcast i32 %tmp_V_2 to float
 
 ST_2: tmp_s [1/1] 0.00ns
-:1  %tmp_s = zext i12 %i to i64
+:2  %tmp_s = zext i12 %i to i64
 
 ST_2: input_addr [1/1] 0.00ns
-:2  %input_addr = getelementptr inbounds [3072 x float]* %input, i64 0, i64 %tmp_s
+:3  %input_addr = getelementptr inbounds [3072 x float]* %input, i64 0, i64 %tmp_s
 
-ST_2: stg_20 [1/1] 2.71ns
-:3  store float %tmp_24, float* %input_addr, align 4
+ST_2: stg_22 [1/1] 2.71ns
+:4  store float %fv, float* %input_addr, align 4
 
-ST_2: stg_21 [1/1] 0.00ns
-:4  br label %1
+ST_2: stg_23 [1/1] 0.00ns
+:5  br label %1
 
 ST_2: mlp_result [2/2] 0.00ns
 :0  %mlp_result = call fastcc float @dut_mlp_xcel([3072 x float]* %input)
@@ -148,12 +153,41 @@ ST_3: mlp_result [1/2] 8.16ns
 :0  %mlp_result = call fastcc float @dut_mlp_xcel([3072 x float]* %input)
 
 
- <State 4>: 4.38ns
-ST_4: stg_24 [1/1] 4.38ns
-:1  call void @_ssdm_op_Write.ap_fifo.volatile.floatP(float* %strm_out_V, float %mlp_result)
+ <State 4>: 8.16ns
+ST_4: mlp_result_to_int [1/1] 0.00ns
+:1  %mlp_result_to_int = bitcast float %mlp_result to i32
 
-ST_4: stg_25 [1/1] 0.00ns
-:2  ret void
+ST_4: tmp [1/1] 0.00ns
+:2  %tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %mlp_result_to_int, i32 23, i32 30)
+
+ST_4: tmp_23 [1/1] 0.00ns
+:3  %tmp_23 = trunc i32 %mlp_result_to_int to i23
+
+ST_4: notlhs [1/1] 2.00ns
+:4  %notlhs = icmp ne i8 %tmp, -1
+
+ST_4: notrhs [1/1] 2.39ns
+:5  %notrhs = icmp eq i23 %tmp_23, 0
+
+ST_4: tmp_28 [1/1] 0.00ns (grouped into LUT with out node tmp_30)
+:6  %tmp_28 = or i1 %notrhs, %notlhs
+
+ST_4: tmp_29 [1/1] 6.79ns
+:7  %tmp_29 = fcmp oeq float %mlp_result, 1.000000e+00
+
+ST_4: tmp_30 [1/1] 1.37ns (out node of the LUT)
+:8  %tmp_30 = and i1 %tmp_28, %tmp_29
+
+
+ <State 5>: 4.38ns
+ST_5: tmp_V [1/1] 0.00ns
+:9  %tmp_V = zext i1 %tmp_30 to i32
+
+ST_5: stg_35 [1/1] 4.38ns
+:10  call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %strm_out_V_V, i32 %tmp_V)
+
+ST_5: stg_36 [1/1] 0.00ns
+:11  ret void
 
 
 
@@ -177,6 +211,7 @@ N/A
 	State 2
 	State 3
 	State 4
+	State 5
 
 
 ============================================================

@@ -1518,10 +1518,10 @@
 
 <node id="91" bw="5" op_0_bw="5" op_1_bw="5">
 <![CDATA[
-:1  %tmp1 = add i5 %x, %r_cast
+:1  %tmp6 = add i5 %x, %r_cast
 
 ]]></node>
-<StgValue><ssdm name="tmp1"/></StgValue>
+<StgValue><ssdm name="tmp6"/></StgValue>
 </operation>
 
 <operation id="107" st_id="7" stage="1" lat="1">
@@ -1534,10 +1534,10 @@
 
 <node id="92" bw="12" op_0_bw="12" op_1_bw="2" op_2_bw="5" op_3_bw="5">
 <![CDATA[
-:2  %tmp2 = call i12 @_ssdm_op_BitConcatenate.i12.i2.i5.i5(i2 %m, i5 %tmp1, i5 %y)
+:2  %tmp7 = call i12 @_ssdm_op_BitConcatenate.i12.i2.i5.i5(i2 %m, i5 %tmp6, i5 %y)
 
 ]]></node>
-<StgValue><ssdm name="tmp2"/></StgValue>
+<StgValue><ssdm name="tmp7"/></StgValue>
 </operation>
 
 <operation id="108" st_id="7" stage="1" lat="1">
@@ -1550,7 +1550,7 @@
 
 <node id="93" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-:3  %i_index = add i12 %tmp2, %c_cast1
+:3  %i_index = add i12 %tmp7, %c_cast1
 
 ]]></node>
 <StgValue><ssdm name="i_index"/></StgValue>

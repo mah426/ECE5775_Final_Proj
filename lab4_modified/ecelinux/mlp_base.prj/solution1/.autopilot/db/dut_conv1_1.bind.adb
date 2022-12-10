@@ -2408,7 +2408,7 @@
 					<Obj>
 						<type>0</type>
 						<id>91</id>
-						<name>tmp1</name>
+						<name>tmp6</name>
 						<fileName>layer.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
 						<lineNumber>209</lineNumber>
@@ -2450,7 +2450,7 @@
 					<Obj>
 						<type>0</type>
 						<id>92</id>
-						<name>tmp2</name>
+						<name>tmp7</name>
 						<fileName>layer.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
 						<lineNumber>219</lineNumber>
@@ -8693,7 +8693,15 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp1_fu_429</first>
+			<first>tmp3_fu_322</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>37</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp6_fu_429</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8701,19 +8709,11 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp2_fu_435</first>
+			<first>tmp7_fu_435</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>92</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp3_fu_322</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>37</item>
 			</second>
 		</item>
 		<item>

@@ -141,8 +141,8 @@ struct dut_conv1_1 : public sc_module {
     sc_signal< sc_lv<6> > tmp_19_fu_378_p0;
     sc_signal< sc_lv<11> > c_cast_fu_388_p1;
     sc_signal< sc_lv<5> > r_cast_fu_413_p1;
-    sc_signal< sc_lv<5> > tmp1_fu_429_p2;
-    sc_signal< sc_lv<12> > tmp2_fu_435_p4;
+    sc_signal< sc_lv<5> > tmp6_fu_429_p2;
+    sc_signal< sc_lv<12> > tmp7_fu_435_p4;
     sc_signal< sc_lv<5> > p_shl_fu_450_p3;
     sc_signal< sc_lv<5> > tmp9_fu_458_p2;
     sc_signal< sc_lv<11> > tmp9_cast_fu_464_p1;
@@ -264,9 +264,9 @@ struct dut_conv1_1 : public sc_module {
     void thread_p_shl_fu_450_p3();
     void thread_r_2_fu_423_p2();
     void thread_r_cast_fu_413_p1();
-    void thread_tmp1_fu_429_p2();
-    void thread_tmp2_fu_435_p4();
     void thread_tmp3_fu_322_p2();
+    void thread_tmp6_fu_429_p2();
+    void thread_tmp7_fu_435_p4();
     void thread_tmp8_fu_408_p2();
     void thread_tmp9_cast_fu_464_p1();
     void thread_tmp9_fu_458_p2();

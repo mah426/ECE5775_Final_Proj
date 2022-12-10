@@ -2408,7 +2408,7 @@
             <Obj>
               <type>0</type>
               <id>91</id>
-              <name>tmp1</name>
+              <name>tmp6</name>
               <fileName>layer.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>209</lineNumber>
@@ -2432,7 +2432,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp1_fu_429_p2</rtlName>
+              <rtlName>tmp6_fu_429_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>5</bitwidth>
@@ -2450,7 +2450,7 @@
             <Obj>
               <type>0</type>
               <id>92</id>
-              <name>tmp2</name>
+              <name>tmp7</name>
               <fileName>layer.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>219</lineNumber>
@@ -2474,7 +2474,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp2_fu_435_p4</rtlName>
+              <rtlName>tmp7_fu_435_p4</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>12</bitwidth>
@@ -7437,29 +7437,6 @@
           </second>
         </item>
         <item>
-          <first>tmp1_fu_429_p2 ( + ) </first>
-          <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0P0)</first>
-              <second>5</second>
-            </item>
-            <item>
-              <first>(1P1)</first>
-              <second>5</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>5</second>
-            </item>
-          </second>
-        </item>
-        <item>
           <first>tmp3_fu_322_p2 ( - ) </first>
           <second>
             <count>4</count>
@@ -7479,6 +7456,29 @@
             <item>
               <first>LUT</first>
               <second>14</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>tmp6_fu_429_p2 ( + ) </first>
+          <second>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(0P0)</first>
+              <second>5</second>
+            </item>
+            <item>
+              <first>(1P1)</first>
+              <second>5</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>5</second>
             </item>
           </second>
         </item>
@@ -8621,19 +8621,19 @@
           </second>
         </item>
         <item>
-          <first>tmp1_fu_429_p2 ( + ) </first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>91</item>
-          </second>
-        </item>
-        <item>
           <first>tmp3_fu_322_p2 ( - ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
             <item>37</item>
+          </second>
+        </item>
+        <item>
+          <first>tmp6_fu_429_p2 ( + ) </first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>91</item>
           </second>
         </item>
         <item>
@@ -10312,7 +10312,15 @@
         </second>
       </item>
       <item>
-        <first>tmp1_fu_429</first>
+        <first>tmp3_fu_322</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>37</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp6_fu_429</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10320,19 +10328,11 @@
         </second>
       </item>
       <item>
-        <first>tmp2_fu_435</first>
+        <first>tmp7_fu_435</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
           <item>92</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp3_fu_322</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>37</item>
         </second>
       </item>
       <item>

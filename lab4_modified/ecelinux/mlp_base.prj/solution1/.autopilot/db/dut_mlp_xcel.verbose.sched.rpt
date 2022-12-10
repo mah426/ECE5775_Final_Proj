@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dut_mlp_xcel'
 ================================================================
-* Date:           Fri Dec  9 16:58:22 2022
+* Date:           Fri Dec  9 19:43:13 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        mlp_base.prj
@@ -348,8 +348,8 @@ ST_12: stg_100 [1/1] 1.57ns
 ST_12: stg_101 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_12: tmp_19_i [1/1] 0.00ns
-:1  %tmp_19_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_12: tmp_18_i [1/1] 0.00ns
+:1  %tmp_18_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_12: stg_103 [1/1] 1.57ns
 :2  br label %6
@@ -532,7 +532,7 @@ ST_30: stg_150 [1/1] 2.71ns
 :14  store float %biased_1, float* %mem_conv2_addr_3, align 4
 
 ST_30: empty_14 [1/1] 0.00ns
-:15  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_19_i)
+:15  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_18_i)
 
 ST_30: stg_152 [1/1] 0.00ns
 :16  br label %4
@@ -557,8 +557,8 @@ dense_mlp.2.exit:4  br i1 %exitcond2, label %dense_mlp.1.exit, label %9
 ST_31: stg_158 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_31: tmp_21_i [1/1] 0.00ns
-:1  %tmp_21_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_31: tmp_20_i [1/1] 0.00ns
+:1  %tmp_20_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_31: p_shl_i [1/1] 0.00ns
 :2  %p_shl_i = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %n_i1, i7 0)
@@ -759,7 +759,7 @@ ST_49: stg_213 [1/1] 2.71ns
 :14  store float %biased_3, float* %mem_conv1_addr_2, align 4
 
 ST_49: empty_17 [1/1] 0.00ns
-:15  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_21_i)
+:15  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_20_i)
 
 ST_49: stg_215 [1/1] 0.00ns
 :16  br label %dense_mlp.2.exit
@@ -790,8 +790,8 @@ dense_mlp.1.exit:6  br i1 %exitcond4, label %dense_mlp.exit, label %13
 ST_50: stg_223 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_50: tmp_23_i [1/1] 0.00ns
-:1  %tmp_23_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_50: tmp_22_i [1/1] 0.00ns
+:1  %tmp_22_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_50: stg_225 [1/1] 1.57ns
 :2  br label %14
@@ -947,7 +947,7 @@ ST_65: stg_265 [1/1] 2.71ns
 :5  store float %biased_4, float* %mem_conv2_addr_5, align 4
 
 ST_65: empty_20 [1/1] 0.00ns
-:6  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_23_i)
+:6  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_22_i)
 
 ST_65: stg_267 [1/1] 0.00ns
 :7  br label %dense_mlp.1.exit

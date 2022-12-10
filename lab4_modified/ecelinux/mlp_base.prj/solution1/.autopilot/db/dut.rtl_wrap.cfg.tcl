@@ -13,7 +13,7 @@ set Pointer0 "2"
 set Reference0 "1"
 set Dims0 [list 0]
 set Interface0 [list AP_STREAM 0] 
-set DataType0 "float"
+set DataType0 "[list ap_uint 32 ]"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
 lappend PortList $Port0
 set PortName1 "strm_out"
@@ -25,12 +25,12 @@ set Pointer1 "2"
 set Reference1 "1"
 set Dims1 [list 0]
 set Interface1 [list AP_STREAM 0] 
-set DataType1 "float"
+set DataType1 "[list ap_uint 32 ]"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
 lappend PortList $Port1
 set globalAPint "" 
 set returnAPInt "" 
-set hasCPPAPInt 0 
+set hasCPPAPInt 1 
 set argAPInt "" 
 set hasCPPAPFix 0 
 set hasSCFix 0 

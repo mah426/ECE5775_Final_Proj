@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dut_conv1_1'
 ================================================================
-* Date:           Fri Dec  9 16:58:21 2022
+* Date:           Fri Dec  9 19:43:11 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        mlp_base.prj
@@ -395,14 +395,14 @@ ST_7: r_2 [1/1] 0.80ns
 ST_7: stg_105 [1/1] 0.00ns
 :6  br i1 %exitcond, label %13, label %12
 
-ST_7: tmp1 [1/1] 1.72ns
-:1  %tmp1 = add i5 %x, %r_cast
+ST_7: tmp6 [1/1] 1.72ns
+:1  %tmp6 = add i5 %x, %r_cast
 
-ST_7: tmp2 [1/1] 0.00ns
-:2  %tmp2 = call i12 @_ssdm_op_BitConcatenate.i12.i2.i5.i5(i2 %m, i5 %tmp1, i5 %y)
+ST_7: tmp7 [1/1] 0.00ns
+:2  %tmp7 = call i12 @_ssdm_op_BitConcatenate.i12.i2.i5.i5(i2 %m, i5 %tmp6, i5 %y)
 
 ST_7: i_index [1/1] 1.84ns
-:3  %i_index = add i12 %tmp2, %c_cast1
+:3  %i_index = add i12 %tmp7, %c_cast1
 
 ST_7: p_shl [1/1] 0.00ns
 :4  %p_shl = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %r, i2 0)
@@ -633,8 +633,8 @@ exitcond          (icmp             ) [ 001111111111111111111]
 empty_36          (speclooptripcount) [ 000000000000000000000]
 r_2               (add              ) [ 001111111111111111111]
 stg_105           (br               ) [ 000000000000000000000]
-tmp1              (add              ) [ 000000000000000000000]
-tmp2              (bitconcatenate   ) [ 000000000000000000000]
+tmp6              (add              ) [ 000000000000000000000]
+tmp7              (bitconcatenate   ) [ 000000000000000000000]
 i_index           (add              ) [ 000000000000000000000]
 p_shl             (bitconcatenate   ) [ 000000000000000000000]
 tmp9              (add              ) [ 000000000000000000000]
@@ -1740,7 +1740,7 @@ stg_140           (br               ) [ 001111111111111111111]
 </bind>
 </comp>
 
-<comp id="429" class="1004" name="tmp1_fu_429">
+<comp id="429" class="1004" name="tmp6_fu_429">
 <pin_list>
 <pin id="430" dir="0" index="0" bw="5" slack="4"/>
 <pin id="431" dir="0" index="1" bw="3" slack="0"/>
@@ -1748,11 +1748,11 @@ stg_140           (br               ) [ 001111111111111111111]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="tmp1/7 "/>
+<opset="tmp6/7 "/>
 </bind>
 </comp>
 
-<comp id="435" class="1004" name="tmp2_fu_435">
+<comp id="435" class="1004" name="tmp7_fu_435">
 <pin_list>
 <pin id="436" dir="0" index="0" bw="12" slack="0"/>
 <pin id="437" dir="0" index="1" bw="2" slack="2"/>
@@ -1762,7 +1762,7 @@ stg_140           (br               ) [ 001111111111111111111]
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp2/7 "/>
+<opset="tmp7/7 "/>
 </bind>
 </comp>
 
@@ -2447,8 +2447,8 @@ stg_140           (br               ) [ 001111111111111111111]
 		exitcond : 1
 		r_2 : 1
 		stg_105 : 2
-		tmp1 : 2
-		tmp2 : 3
+		tmp6 : 2
+		tmp7 : 3
 		i_index : 4
 		p_shl : 1
 		tmp9 : 2
@@ -2499,7 +2499,7 @@ stg_140           (br               ) [ 001111111111111111111]
 |          |        c_3_fu_402       |    0    |    0    |    3    |
 |          |       tmp8_fu_408       |    0    |    0    |    11   |
 |          |        r_2_fu_423       |    0    |    0    |    3    |
-|          |       tmp1_fu_429       |    0    |    0    |    5    |
+|          |       tmp6_fu_429       |    0    |    0    |    5    |
 |          |      i_index_fu_445     |    0    |    0    |    12   |
 |          |       tmp9_fu_458       |    0    |    0    |    5    |
 |          |      w_index_fu_468     |    0    |    0    |    11   |
@@ -2536,7 +2536,7 @@ stg_140           (br               ) [ 001111111111111111111]
 |          |      p_shl3_fu_253      |    0    |    0    |    0    |
 |bitconcatenate|      p_shl4_fu_302      |    0    |    0    |    0    |
 |          |      p_shl5_fu_310      |    0    |    0    |    0    |
-|          |       tmp2_fu_435       |    0    |    0    |    0    |
+|          |       tmp7_fu_435       |    0    |    0    |    0    |
 |          |       p_shl_fu_450      |    0    |    0    |    0    |
 |----------|-------------------------|---------|---------|---------|
 |          |    p_shl5_cast_fu_318   |    0    |    0    |    0    |

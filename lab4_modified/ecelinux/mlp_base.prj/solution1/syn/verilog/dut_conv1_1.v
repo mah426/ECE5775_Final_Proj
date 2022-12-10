@@ -183,8 +183,8 @@ wire   [5:0] tmp_18_fu_369_p2;
 wire  signed [5:0] tmp_19_fu_378_p0;
 wire   [10:0] c_cast_fu_388_p1;
 wire   [4:0] r_cast_fu_413_p1;
-wire   [4:0] tmp1_fu_429_p2;
-wire   [11:0] tmp2_fu_435_p4;
+wire   [4:0] tmp6_fu_429_p2;
+wire   [11:0] tmp7_fu_435_p4;
 wire   [4:0] p_shl_fu_450_p3;
 wire   [4:0] tmp9_fu_458_p2;
 wire   [10:0] tmp9_cast_fu_464_p1;
@@ -730,7 +730,7 @@ assign exitcond9_fu_285_p2 = ((x_reg_117 == ap_const_lv5_1C) ? 1'b1 : 1'b0);
 
 assign exitcond_fu_417_p2 = ((r_reg_201 == ap_const_lv3_5) ? 1'b1 : 1'b0);
 
-assign i_index_fu_445_p2 = (tmp2_fu_435_p4 + c_cast1_reg_544);
+assign i_index_fu_445_p2 = (tmp7_fu_435_p4 + c_cast1_reg_544);
 
 assign input_r_address0 = tmp_21_fu_477_p1;
 
@@ -772,11 +772,11 @@ assign r_2_fu_423_p2 = (r_reg_201 + ap_const_lv3_1);
 
 assign r_cast_fu_413_p1 = r_reg_201;
 
-assign tmp1_fu_429_p2 = (x_reg_117 + r_cast_fu_413_p1);
-
-assign tmp2_fu_435_p4 = {{{m_reg_154}, {tmp1_fu_429_p2}}, {y_reg_129}};
-
 assign tmp3_fu_322_p2 = ($signed(p_shl4_fu_302_p3) - $signed(p_shl5_cast_fu_318_p1));
+
+assign tmp6_fu_429_p2 = (x_reg_117 + r_cast_fu_413_p1);
+
+assign tmp7_fu_435_p4 = {{{m_reg_154}, {tmp6_fu_429_p2}}, {y_reg_129}};
 
 assign tmp8_fu_408_p2 = (tmp_19_reg_539 + c_cast_fu_388_p1);
 

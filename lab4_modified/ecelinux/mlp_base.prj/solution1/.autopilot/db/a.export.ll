@@ -19,16 +19,16 @@ target triple = "x86_64-unknown-linux-gnu"
 @p_str6 = private unnamed_addr constant [16 x i8] c"LOOP_MAX_POOL_4\00", align 1
 @p_str5 = private unnamed_addr constant [16 x i8] c"LOOP_MAX_POOL_3\00", align 1
 @p_str4 = private unnamed_addr constant [16 x i8] c"LOOP_MAX_POOL_2\00", align 1
+@p_str32 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str31 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str30 = internal unnamed_addr constant [1 x i8] zeroinitializer
 @p_str3 = private unnamed_addr constant [16 x i8] c"LOOP_MAX_POOL_1\00", align 1
-@p_str24 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str23 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str22 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str21 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str20 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str29 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str28 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str27 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str26 = internal unnamed_addr constant [1 x i8] zeroinitializer
+@p_str25 = internal unnamed_addr constant [1 x i8] zeroinitializer
 @p_str2 = private unnamed_addr constant [16 x i8] c"LOOP_MAX_POOL_0\00", align 1
-@p_str19 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str18 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str17 = internal unnamed_addr constant [1 x i8] zeroinitializer
 @p_str16 = private unnamed_addr constant [7 x i8] c"LOOP_R\00", align 1
 @p_str15 = private unnamed_addr constant [7 x i8] c"LOOP_C\00", align 1
 @p_str14 = private unnamed_addr constant [7 x i8] c"LOOP_M\00", align 1
@@ -152,7 +152,7 @@ define internal fastcc float @dut_mlp_xcel([3072 x float]* nocapture %input_r) {
 
 ; <label>:5                                       ; preds = %4
   call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
-  %tmp_19_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+  %tmp_18_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
   br label %6
 
 ; <label>:6                                       ; preds = %7, %5
@@ -193,7 +193,7 @@ define internal fastcc float @dut_mlp_xcel([3072 x float]* nocapture %input_r) {
   %biased_1 = select i1 %tmp_4, float %biased, float 0.000000e+00
   %mem_conv2_addr_3 = getelementptr [4704 x float]* %mem_conv2, i64 0, i64 %tmp_15_i
   store float %biased_1, float* %mem_conv2_addr_3, align 4
-  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_19_i)
+  %empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_18_i)
   br label %4
 
 dense_mlp.2.exit:                                 ; preds = %4, %12
@@ -205,7 +205,7 @@ dense_mlp.2.exit:                                 ; preds = %4, %12
 
 ; <label>:9                                       ; preds = %dense_mlp.2.exit
   call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
-  %tmp_21_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+  %tmp_20_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
   %p_shl_i = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %n_i1, i7 0)
   %p_shl_i_cast = zext i14 %p_shl_i to i15
   %p_shl1_i = call i10 @_ssdm_op_BitConcatenate.i10.i7.i3(i7 %n_i1, i3 0)
@@ -252,7 +252,7 @@ dense_mlp.2.exit:                                 ; preds = %4, %12
   %biased_3 = select i1 %tmp_18, float %biased_2, float 0.000000e+00
   %mem_conv1_addr_2 = getelementptr [4704 x float]* %mem_conv1, i64 0, i64 %tmp_16_i1
   store float %biased_3, float* %mem_conv1_addr_2, align 4
-  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_21_i)
+  %empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_20_i)
   br label %dense_mlp.2.exit
 
 dense_mlp.1.exit:                                 ; preds = %dense_mlp.2.exit, %16
@@ -266,7 +266,7 @@ dense_mlp.1.exit:                                 ; preds = %dense_mlp.2.exit, %
 
 ; <label>:13                                      ; preds = %dense_mlp.1.exit
   call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
-  %tmp_23_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+  %tmp_22_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
   br label %14
 
 ; <label>:14                                      ; preds = %15, %13
@@ -298,7 +298,7 @@ dense_mlp.1.exit:                                 ; preds = %dense_mlp.2.exit, %
   %biased_4 = fadd float %sum_i1, %bias_load_phi_i
   %mem_conv2_addr_5 = getelementptr [4704 x float]* %mem_conv2, i64 0, i64 %tmp_16_i2
   store float %biased_4, float* %mem_conv2_addr_5, align 4
-  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_23_i)
+  %empty_20 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_22_i)
   br label %dense_mlp.1.exit
 
 dense_mlp.exit:                                   ; preds = %dense_mlp.1.exit
@@ -483,11 +483,11 @@ declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 declare void @llvm.dbg.declare(metadata, metadata) nounwind readnone
 
-define void @dut(float* %strm_in_V, float* %strm_out_V) {
-  %empty = call i32 (...)* @_ssdm_op_SpecInterface(float* %strm_out_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str21, [1 x i8]* @p_str22, [1 x i8]* @p_str23, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str24)
-  %empty_30 = call i32 (...)* @_ssdm_op_SpecInterface(float* %strm_in_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str17, [1 x i8]* @p_str18, [1 x i8]* @p_str19, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str20)
-  call void (...)* @_ssdm_op_SpecBitsMap(float* %strm_in_V), !map !57
-  call void (...)* @_ssdm_op_SpecBitsMap(float* %strm_out_V), !map !63
+define void @dut(i32* %strm_in_V_V, i32* %strm_out_V_V) {
+  %empty = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str29, [1 x i8]* @p_str30, [1 x i8]* @p_str31, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str32)
+  %empty_30 = call i32 (...)* @_ssdm_op_SpecInterface(i32* %strm_in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str25, [1 x i8]* @p_str26, [1 x i8]* @p_str27, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str28)
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_in_V_V), !map !63
+  call void (...)* @_ssdm_op_SpecBitsMap(i32* %strm_out_V_V), !map !69
   call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @dut_str) nounwind
   %input = alloca [3072 x float], align 16
   br label %1
@@ -500,15 +500,25 @@ define void @dut(float* %strm_in_V, float* %strm_out_V) {
   br i1 %exitcond, label %3, label %2
 
 ; <label>:2                                       ; preds = %1
-  %tmp_24 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %strm_in_V)
+  %tmp_V_2 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %strm_in_V_V)
+  %fv = bitcast i32 %tmp_V_2 to float
   %tmp_s = zext i12 %i to i64
   %input_addr = getelementptr inbounds [3072 x float]* %input, i64 0, i64 %tmp_s
-  store float %tmp_24, float* %input_addr, align 4
+  store float %fv, float* %input_addr, align 4
   br label %1
 
 ; <label>:3                                       ; preds = %1
   %mlp_result = call fastcc float @dut_mlp_xcel([3072 x float]* %input)
-  call void @_ssdm_op_Write.ap_fifo.volatile.floatP(float* %strm_out_V, float %mlp_result)
+  %mlp_result_to_int = bitcast float %mlp_result to i32
+  %tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %mlp_result_to_int, i32 23, i32 30)
+  %tmp_23 = trunc i32 %mlp_result_to_int to i23
+  %notlhs = icmp ne i8 %tmp, -1
+  %notrhs = icmp eq i23 %tmp_23, 0
+  %tmp_28 = or i1 %notrhs, %notlhs
+  %tmp_29 = fcmp oeq float %mlp_result, 1.000000e+00
+  %tmp_30 = and i1 %tmp_28, %tmp_29
+  %tmp_V = zext i1 %tmp_30 to i32
+  call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %strm_out_V_V, i32 %tmp_V)
   ret void
 }
 
@@ -612,9 +622,9 @@ define internal fastcc void @dut_conv1.1([3072 x float]* nocapture %input_r, [47
 
 ; <label>:12                                      ; preds = %11
   call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str16) nounwind
-  %tmp1 = add i5 %x, %r_cast
-  %tmp2 = call i12 @_ssdm_op_BitConcatenate.i12.i2.i5.i5(i2 %m, i5 %tmp1, i5 %y)
-  %i_index = add i12 %tmp2, %c_cast1
+  %tmp6 = add i5 %x, %r_cast
+  %tmp7 = call i12 @_ssdm_op_BitConcatenate.i12.i2.i5.i5(i2 %m, i5 %tmp6, i5 %y)
+  %i_index = add i12 %tmp7, %c_cast1
   %p_shl = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %r, i2 0)
   %tmp9 = add i5 %p_shl, %r_cast
   %tmp9_cast = zext i5 %tmp9 to i11
@@ -818,9 +828,9 @@ define internal fastcc void @dut_conv1([4704 x float]* nocapture %input_r, [4704
   ret void
 }
 
-define weak void @_ssdm_op_Write.ap_fifo.volatile.floatP(float*, float) {
+define weak void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32*, i32) {
 entry:
-  %empty = call float @_autotb_FifoWrite_float(float* %0, float %1)
+  %empty = call i32 @_autotb_FifoWrite_i32(i32* %0, i32 %1)
   ret void
 }
 
@@ -859,10 +869,10 @@ entry:
   ret void
 }
 
-define weak float @_ssdm_op_Read.ap_fifo.volatile.floatP(float*) {
+define weak i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32*) {
 entry:
-  %empty = call float @_autotb_FifoRead_float(float* %0)
-  ret float %empty
+  %empty = call i32 @_autotb_FifoRead_i32(i32* %0)
+  ret i32 %empty
 }
 
 define weak i6 @_ssdm_op_Read.ap_auto.i6(i6) {
@@ -1033,9 +1043,9 @@ entry:
   ret i10 %empty_106
 }
 
-declare float @_autotb_FifoWrite_float(float*, float)
+declare i32 @_autotb_FifoWrite_i32(i32*, i32)
 
-declare float @_autotb_FifoRead_float(float*)
+declare i32 @_autotb_FifoRead_i32(i32*)
 
 declare void @_GLOBAL__I_a57() nounwind section ".text.startup"
 
@@ -1043,9 +1053,9 @@ declare void @_GLOBAL__I_a34() nounwind section ".text.startup"
 
 declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
-!opencl.kernels = !{!0, !7, !9, !15, !21, !21, !9, !27, !27, !33, !39, !43, !47, !27, !27, !27}
+!opencl.kernels = !{!0, !7, !9, !15, !21, !21, !9, !27, !27, !33, !39, !43, !47, !50, !50, !27, !27, !27, !53, !27, !27, !27, !27, !27}
 !hls.encrypted.func = !{}
-!llvm.map.gv = !{!50}
+!llvm.map.gv = !{!56}
 
 !0 = metadata !{null, metadata !1, metadata !2, metadata !3, metadata !4, metadata !5, metadata !6}
 !1 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 1, i32 1, i32 1, i32 0, i32 0, i32 0}
@@ -1088,29 +1098,35 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !38 = metadata !{metadata !"kernel_arg_name", metadata !"__x"}
 !39 = metadata !{null, metadata !40, metadata !17, metadata !41, metadata !19, metadata !42, metadata !6}
 !40 = metadata !{metadata !"kernel_arg_addr_space", i32 0, i32 0}
-!41 = metadata !{metadata !"kernel_arg_type", metadata !"hls::stream<float> &", metadata !"hls::stream<float> &"}
+!41 = metadata !{metadata !"kernel_arg_type", metadata !"hls::stream<bit32_t> &", metadata !"hls::stream<bit32_t> &"}
 !42 = metadata !{metadata !"kernel_arg_name", metadata !"strm_in", metadata !"strm_out"}
 !43 = metadata !{null, metadata !44, metadata !17, metadata !45, metadata !19, metadata !46, metadata !6}
 !44 = metadata !{metadata !"kernel_arg_addr_space", i32 1, i32 0}
 !45 = metadata !{metadata !"kernel_arg_type", metadata !"float*", metadata !"float &"}
 !46 = metadata !{metadata !"kernel_arg_name", metadata !"input", metadata !"final_out"}
 !47 = metadata !{null, metadata !34, metadata !35, metadata !48, metadata !37, metadata !49, metadata !6}
-!48 = metadata !{metadata !"kernel_arg_type", metadata !"const float &"}
+!48 = metadata !{metadata !"kernel_arg_type", metadata !"const struct ap_uint<32> &"}
 !49 = metadata !{metadata !"kernel_arg_name", metadata !"din"}
-!50 = metadata !{metadata !51, [3 x i32]* @llvm_global_ctors_0}
-!51 = metadata !{metadata !52}
-!52 = metadata !{i32 0, i32 31, metadata !53}
-!53 = metadata !{metadata !54}
-!54 = metadata !{metadata !"llvm.global_ctors.0", metadata !55, metadata !"", i32 0, i32 31}
-!55 = metadata !{metadata !56}
-!56 = metadata !{i32 0, i32 2, i32 1}
+!50 = metadata !{null, metadata !34, metadata !35, metadata !51, metadata !37, metadata !52, metadata !6}
+!51 = metadata !{metadata !"kernel_arg_type", metadata !"int"}
+!52 = metadata !{metadata !"kernel_arg_name", metadata !"val"}
+!53 = metadata !{null, metadata !34, metadata !35, metadata !54, metadata !37, metadata !55, metadata !6}
+!54 = metadata !{metadata !"kernel_arg_type", metadata !"const ap_uint<32> &"}
+!55 = metadata !{metadata !"kernel_arg_name", metadata !"op2"}
+!56 = metadata !{metadata !57, [3 x i32]* @llvm_global_ctors_0}
 !57 = metadata !{metadata !58}
 !58 = metadata !{i32 0, i32 31, metadata !59}
 !59 = metadata !{metadata !60}
-!60 = metadata !{metadata !"strm_in.V", metadata !61, metadata !"float", i32 0, i32 31}
+!60 = metadata !{metadata !"llvm.global_ctors.0", metadata !61, metadata !"", i32 0, i32 31}
 !61 = metadata !{metadata !62}
-!62 = metadata !{i32 0, i32 0, i32 1}
+!62 = metadata !{i32 0, i32 2, i32 1}
 !63 = metadata !{metadata !64}
 !64 = metadata !{i32 0, i32 31, metadata !65}
 !65 = metadata !{metadata !66}
-!66 = metadata !{metadata !"strm_out.V", metadata !61, metadata !"float", i32 0, i32 31}
+!66 = metadata !{metadata !"strm_in.V.V", metadata !67, metadata !"uint32", i32 0, i32 31}
+!67 = metadata !{metadata !68}
+!68 = metadata !{i32 0, i32 0, i32 1}
+!69 = metadata !{metadata !70}
+!70 = metadata !{i32 0, i32 31, metadata !71}
+!71 = metadata !{metadata !72}
+!72 = metadata !{metadata !"strm_out.V.V", metadata !67, metadata !"uint32", i32 0, i32 31}

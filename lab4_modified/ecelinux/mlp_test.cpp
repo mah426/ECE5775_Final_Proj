@@ -73,8 +73,8 @@ void read_test_labels(int test_labels[TEST_SIZE]) {
 
 int main(){
   // HLS streams for communicating with the cordic block
-  hls::stream<float> digitrec_in;
-  hls::stream<float> digitrec_out;
+  hls::stream<bit32_t> digitrec_in;
+  hls::stream<bit32_t> digitrec_out;
   
   float cars[TEST_SIZE_HALF][3072];
   float trucks[TEST_SIZE_HALF][3072];
@@ -104,7 +104,7 @@ int main(){
   }
   //read_test_labels(test_labels);
   
-  float test_image;
+  bit32_t test_image;
   float correct = 0.0;
   
   // Timer
@@ -120,8 +120,10 @@ int main(){
       //std::cout << "A" << "\n";
 
       //for (int j = 0; j < BUS_WIDTH; j++) {
-        
-        test_image = test_images[test][i];
+        union { float fval; int ival; } u;
+        u.fval = test_images[test][i];
+        int iv = u.ival;
+        test_image = iv;
         
         //if (i == 1 ){
         //std::cout << test_images[test][i] <<" \n";

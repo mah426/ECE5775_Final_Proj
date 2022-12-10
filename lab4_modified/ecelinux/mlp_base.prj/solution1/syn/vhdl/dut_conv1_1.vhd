@@ -173,8 +173,8 @@ architecture behav of dut_conv1_1 is
     signal tmp_19_fu_378_p0 : STD_LOGIC_VECTOR (5 downto 0);
     signal c_cast_fu_388_p1 : STD_LOGIC_VECTOR (10 downto 0);
     signal r_cast_fu_413_p1 : STD_LOGIC_VECTOR (4 downto 0);
-    signal tmp1_fu_429_p2 : STD_LOGIC_VECTOR (4 downto 0);
-    signal tmp2_fu_435_p4 : STD_LOGIC_VECTOR (11 downto 0);
+    signal tmp6_fu_429_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal tmp7_fu_435_p4 : STD_LOGIC_VECTOR (11 downto 0);
     signal p_shl_fu_450_p3 : STD_LOGIC_VECTOR (4 downto 0);
     signal tmp9_fu_458_p2 : STD_LOGIC_VECTOR (4 downto 0);
     signal tmp9_cast_fu_464_p1 : STD_LOGIC_VECTOR (10 downto 0);
@@ -832,7 +832,7 @@ begin
         end if; 
     end process;
 
-    i_index_fu_445_p2 <= std_logic_vector(unsigned(tmp2_fu_435_p4) + unsigned(c_cast1_reg_544));
+    i_index_fu_445_p2 <= std_logic_vector(unsigned(tmp7_fu_435_p4) + unsigned(c_cast1_reg_544));
     input_r_address0 <= tmp_21_fu_477_p1(12 - 1 downto 0);
 
     input_r_ce0_assign_proc : process(ap_sig_cseq_ST_st7_fsm_6)
@@ -885,9 +885,9 @@ begin
     p_shl_fu_450_p3 <= (r_reg_201 & ap_const_lv2_0);
     r_2_fu_423_p2 <= std_logic_vector(unsigned(r_reg_201) + unsigned(ap_const_lv3_1));
     r_cast_fu_413_p1 <= std_logic_vector(resize(unsigned(r_reg_201),5));
-    tmp1_fu_429_p2 <= std_logic_vector(unsigned(x_reg_117) + unsigned(r_cast_fu_413_p1));
-    tmp2_fu_435_p4 <= ((m_reg_154 & tmp1_fu_429_p2) & y_reg_129);
     tmp3_fu_322_p2 <= std_logic_vector(unsigned(p_shl4_fu_302_p3) - unsigned(p_shl5_cast_fu_318_p1));
+    tmp6_fu_429_p2 <= std_logic_vector(unsigned(x_reg_117) + unsigned(r_cast_fu_413_p1));
+    tmp7_fu_435_p4 <= ((m_reg_154 & tmp6_fu_429_p2) & y_reg_129);
     tmp8_fu_408_p2 <= std_logic_vector(unsigned(tmp_19_reg_539) + unsigned(c_cast_fu_388_p1));
     tmp9_cast_fu_464_p1 <= std_logic_vector(resize(unsigned(tmp9_fu_458_p2),11));
     tmp9_fu_458_p2 <= std_logic_vector(unsigned(p_shl_fu_450_p3) + unsigned(r_cast_fu_413_p1));

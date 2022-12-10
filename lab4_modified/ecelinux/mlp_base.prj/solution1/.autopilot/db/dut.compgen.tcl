@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 28
+set ID 29
 set MemName dut_input
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -92,30 +92,30 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 29 \
-    name strm_in_V \
+    id 30 \
+    name strm_in_V_V \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_strm_in_V \
+    corename dc_strm_in_V_V \
     op interface \
-    ports { strm_in_V_dout { I 32 vector } strm_in_V_empty_n { I 1 bit } strm_in_V_read { O 1 bit } } \
+    ports { strm_in_V_V_dout { I 32 vector } strm_in_V_V_empty_n { I 1 bit } strm_in_V_V_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 30 \
-    name strm_out_V \
+    id 31 \
+    name strm_out_V_V \
     type fifo \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_strm_out_V \
+    corename dc_strm_out_V_V \
     op interface \
-    ports { strm_out_V_din { O 32 vector } strm_out_V_full_n { I 1 bit } strm_out_V_write { O 1 bit } } \
+    ports { strm_out_V_V_din { O 32 vector } strm_out_V_V_full_n { I 1 bit } strm_out_V_V_write { O 1 bit } } \
 } "
 }
 

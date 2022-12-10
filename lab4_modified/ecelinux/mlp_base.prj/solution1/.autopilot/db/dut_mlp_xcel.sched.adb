@@ -50,7 +50,7 @@
 						<name>mem_conv1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>79</lineNumber>
+						<lineNumber>89</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -65,7 +65,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>79</second>
+										<second>89</second>
 									</item>
 								</second>
 							</item>
@@ -91,7 +91,7 @@
 						<name>mem_conv2</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>80</lineNumber>
+						<lineNumber>90</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -106,7 +106,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>80</second>
+										<second>90</second>
 									</item>
 								</second>
 							</item>
@@ -132,7 +132,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>82</lineNumber>
+						<lineNumber>92</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -147,7 +147,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>82</second>
+										<second>92</second>
 									</item>
 								</second>
 							</item>
@@ -203,7 +203,7 @@
 						<name>exitcond</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>82</lineNumber>
+						<lineNumber>92</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -218,7 +218,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>82</second>
+										<second>92</second>
 									</item>
 								</second>
 							</item>
@@ -245,7 +245,7 @@
 						<name>i_1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>82</lineNumber>
+						<lineNumber>92</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -260,7 +260,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>82</second>
+										<second>92</second>
 									</item>
 								</second>
 							</item>
@@ -287,7 +287,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>82</lineNumber>
+						<lineNumber>92</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -302,7 +302,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>82</second>
+										<second>92</second>
 									</item>
 								</second>
 							</item>
@@ -330,7 +330,7 @@
 						<name>tmp_s</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>83</lineNumber>
+						<lineNumber>93</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -345,7 +345,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>83</second>
+										<second>93</second>
 									</item>
 								</second>
 							</item>
@@ -371,7 +371,7 @@
 						<name>mem_conv1_addr</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>83</lineNumber>
+						<lineNumber>93</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -386,7 +386,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>83</second>
+										<second>93</second>
 									</item>
 								</second>
 							</item>
@@ -414,7 +414,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>83</lineNumber>
+						<lineNumber>93</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -429,7 +429,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>83</second>
+										<second>93</second>
 									</item>
 								</second>
 							</item>
@@ -456,7 +456,7 @@
 						<name>mem_conv2_addr_2</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>84</lineNumber>
+						<lineNumber>94</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -471,7 +471,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>84</second>
+										<second>94</second>
 									</item>
 								</second>
 							</item>
@@ -499,7 +499,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>84</lineNumber>
+						<lineNumber>94</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -514,7 +514,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>84</second>
+										<second>94</second>
 									</item>
 								</second>
 							</item>
@@ -541,7 +541,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>82</lineNumber>
+						<lineNumber>92</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -556,7 +556,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>82</second>
+										<second>92</second>
 									</item>
 								</second>
 							</item>
@@ -582,7 +582,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>90</lineNumber>
+						<lineNumber>100</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -597,7 +597,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>90</second>
+										<second>100</second>
 									</item>
 								</second>
 							</item>
@@ -626,7 +626,7 @@
 						<name>mem_conv2_addr</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>111</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -641,7 +641,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>101</second>
+										<second>111</second>
 									</item>
 								</second>
 							</item>
@@ -669,7 +669,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>101</lineNumber>
+						<lineNumber>111</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -684,7 +684,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>101</second>
+										<second>111</second>
 									</item>
 								</second>
 							</item>
@@ -715,7 +715,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>108</lineNumber>
+						<lineNumber>118</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -730,7 +730,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>108</second>
+										<second>118</second>
 									</item>
 								</second>
 							</item>
@@ -761,7 +761,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>115</lineNumber>
+						<lineNumber>125</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -776,7 +776,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>115</second>
+										<second>125</second>
 									</item>
 								</second>
 							</item>
@@ -807,7 +807,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>122</lineNumber>
+						<lineNumber>132</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -822,7 +822,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>122</second>
+										<second>132</second>
 									</item>
 								</second>
 							</item>
@@ -874,7 +874,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1010,7 +1010,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1059,7 +1059,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1108,7 +1108,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1158,7 +1158,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1266,7 +1266,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1314,7 +1314,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1363,7 +1363,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1412,7 +1412,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1462,7 +1462,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1511,7 +1511,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1559,7 +1559,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1609,7 +1609,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1657,7 +1657,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1705,7 +1705,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1755,7 +1755,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1803,7 +1803,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1852,7 +1852,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1901,7 +1901,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1949,7 +1949,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -1997,7 +1997,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2047,7 +2047,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2095,7 +2095,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2144,7 +2144,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2192,7 +2192,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2243,7 +2243,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2291,7 +2291,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2340,7 +2340,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2389,7 +2389,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2438,7 +2438,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2487,7 +2487,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2536,7 +2536,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2586,7 +2586,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2636,7 +2636,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2685,7 +2685,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>130</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2763,7 +2763,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -2812,7 +2812,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -2861,7 +2861,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -2911,7 +2911,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -2961,7 +2961,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3009,7 +3009,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3059,7 +3059,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3107,7 +3107,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3156,7 +3156,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3264,7 +3264,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3312,7 +3312,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3361,7 +3361,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3410,7 +3410,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3460,7 +3460,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3509,7 +3509,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3557,7 +3557,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3605,7 +3605,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3655,7 +3655,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3703,7 +3703,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3751,7 +3751,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3801,7 +3801,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3849,7 +3849,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3898,7 +3898,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3947,7 +3947,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -3995,7 +3995,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4043,7 +4043,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4093,7 +4093,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4141,7 +4141,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4190,7 +4190,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4238,7 +4238,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4289,7 +4289,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4337,7 +4337,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4386,7 +4386,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4435,7 +4435,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4484,7 +4484,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4533,7 +4533,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4582,7 +4582,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4632,7 +4632,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4682,7 +4682,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4731,7 +4731,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>136</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -4867,7 +4867,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -4916,7 +4916,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -4965,7 +4965,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5015,7 +5015,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5123,7 +5123,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5171,7 +5171,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5220,7 +5220,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5269,7 +5269,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5319,7 +5319,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5368,7 +5368,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5416,7 +5416,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5466,7 +5466,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5514,7 +5514,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5562,7 +5562,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5612,7 +5612,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5660,7 +5660,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5709,7 +5709,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5758,7 +5758,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5806,7 +5806,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5854,7 +5854,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5902,7 +5902,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -5952,7 +5952,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -6001,7 +6001,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -6051,7 +6051,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -6100,7 +6100,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>142</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -6126,7 +6126,7 @@
 						<name>mem_conv2_load</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6141,7 +6141,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6167,7 +6167,7 @@
 						<name>mem_conv2_addr_1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6182,7 +6182,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6210,7 +6210,7 @@
 						<name>mem_conv2_load_1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6225,7 +6225,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6251,7 +6251,7 @@
 						<name>mem_conv2_load_to_int</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6266,7 +6266,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6292,7 +6292,7 @@
 						<name>tmp_5</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6307,7 +6307,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6336,7 +6336,7 @@
 						<name>tmp_1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6351,7 +6351,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6377,7 +6377,7 @@
 						<name>mem_conv2_load_1_to_int</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6392,7 +6392,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6418,7 +6418,7 @@
 						<name>tmp_7</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6433,7 +6433,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6462,7 +6462,7 @@
 						<name>tmp_6</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6477,7 +6477,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6503,7 +6503,7 @@
 						<name>notlhs1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6518,7 +6518,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6545,7 +6545,7 @@
 						<name>notrhs1</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6560,7 +6560,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6587,7 +6587,7 @@
 						<name>tmp_9</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6602,7 +6602,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6629,7 +6629,7 @@
 						<name>notlhs2</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6644,7 +6644,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6671,7 +6671,7 @@
 						<name>notrhs2</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6686,7 +6686,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6713,7 +6713,7 @@
 						<name>tmp_8</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6728,7 +6728,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6755,7 +6755,7 @@
 						<name>tmp_10</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6770,7 +6770,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6797,7 +6797,7 @@
 						<name>tmp_11</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6812,7 +6812,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6839,7 +6839,7 @@
 						<name>tmp_12</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6854,7 +6854,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6881,7 +6881,7 @@
 						<name>final_out_write_assign</name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6896,7 +6896,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>151</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -6924,7 +6924,7 @@
 						<name></name>
 						<fileName>mlp.cpp</fileName>
 						<fileDirectory>/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>173</lineNumber>
 						<contextFuncName>mlp_xcel</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -6939,7 +6939,7 @@
 											<first>mlp.cpp</first>
 											<second>mlp_xcel</second>
 										</first>
-										<second>163</second>
+										<second>173</second>
 									</item>
 								</second>
 							</item>
