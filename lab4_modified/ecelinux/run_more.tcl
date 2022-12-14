@@ -33,8 +33,8 @@ create_clock -period 10
 # -------------------------------------------------
 set_directive_array_partition -type block -factor 8 max_pool input
 set_directive_array_partition -type block -factor 8 max_pool output
-set_directive_array_partition -type block -factor 8 conv input
-set_directive_array_partition -type block -factor 8 conv output
+set_directive_array_partition -type block -factor 8 conv1 input
+set_directive_array_partition -type block -factor 8 conv1 output
 
 # Unrolling DENSE function ------------------------
 # set_directive_loop_unroll dense_mlp/LOOP_DENSE_MLP_1
@@ -46,12 +46,12 @@ set_directive_loop_unroll reshape/LOOP_RESHAPE_1
 set_directive_loop_unroll reshape/LOOP_RESHAPE_2
 
 # Unrolling CONV function --------------------------
-set_directive_loop_unroll conv/LOOP_N
-set_directive_loop_unroll conv/LOOP_X
-set_directive_loop_unroll conv/LOOP_Y
-set_directive_loop_unroll conv/LOOP_M
-set_directive_loop_unroll conv/LOOP_C
-set_directive_loop_unroll conv/LOOP_R
+set_directive_loop_unroll conv1/LOOP_N
+set_directive_loop_unroll conv1/LOOP_X
+set_directive_loop_unroll conv1/LOOP_Y
+set_directive_loop_unroll conv1/LOOP_M
+set_directive_loop_unroll conv1/LOOP_C
+set_directive_loop_unroll conv1/LOOP_R
 
 # -------------------------------------------------
 #Pipeline
@@ -74,30 +74,30 @@ set_directive_array_reshape -type block -factor 4 max_pool output
 # -------------------------------------------------
 # LOOP MERGE
 # -------------------------------------------------
-set_directive_loop_merge conv
+set_directive_loop_merge conv1
 set_directive_loop_merge dense_mlp
 
 # -------------------------------------------------
 # EXPRESSION BALANCE
 # -------------------------------------------------
-set_directive_expression_balance conv
+set_directive_expression_balance conv1
 set_directive_expression_balance dense_mlp
 set_directive_expression_balance max_pool
 
 # -------------------------------------------------
 # LATENCY
 # -------------------------------------------------
-set_directive_latency -max=10 conv/LOOP_N
-set_directive_latency -max=10 conv/LOOP_X
-set_directive_latency -max=10 conv/LOOP_Y
-set_directive_latency -max=10 conv/LOOP_M
-set_directive_latency -max=10 conv/LOOP_C
-set_directive_latency -max=10 conv/LOOP_R
+set_directive_latency -max=10 conv1/LOOP_N
+set_directive_latency -max=10 conv1/LOOP_X
+set_directive_latency -max=10 conv1/LOOP_Y
+set_directive_latency -max=10 conv1/LOOP_M
+set_directive_latency -max=10 conv1/LOOP_C
+set_directive_latency -max=10 conv1/LOOP_R
 
 # -------------------------------------------------
 # INLINE
 # -------------------------------------------------
-set_directive_inline -recursive conv
+set_directive_inline -recursive conv1
 set_directive_inline -recursive dense_mlp
 set_directive_inline -recursive max_pool
 
