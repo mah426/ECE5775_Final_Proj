@@ -16,8 +16,8 @@
 using namespace std;
 
 // Number of test instances
- const int TEST_SIZE = 2000;
- const int TEST_SIZE_HALF = 1000;
+const int TEST_SIZE = 2000;
+const int TEST_SIZE_HALF = 1000;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -51,7 +51,6 @@ void read_test_images1(float test_images[100][3072])
   }
   fclose(file);
 }
-
 
 void read_any(float test_images[TEST_SIZE_HALF][3072], string item)
 {
@@ -106,10 +105,10 @@ int main()
   hls::stream<bit32_t> digitrec_in;
   hls::stream<bit32_t> digitrec_out;
 
-  dtype test_images[100][3072];
+  float test_images[100][3072];
   read_test_images1(test_images);
 
-  dtype test_image;
+  float test_image;
   int correct = 0;
 
   // Timer
@@ -139,7 +138,7 @@ int main()
   timer.stop();
 
   // Calculate accuracy
-  std::cout << "Accuracy: " << (float) correct / 100.0 << std::endl;
+  std::cout << "Accuracy: " << (float)correct / 100.0 << std::endl;
 
   return 0;
 }

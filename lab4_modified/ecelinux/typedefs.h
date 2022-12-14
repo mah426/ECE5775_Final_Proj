@@ -17,10 +17,11 @@ typedef ap_uint<32> bit32_t;
 
 typedef ap_fixed<32, 16, AP_TRN> dtype;
 
-typedef union
+typedef union utype_
 {
-    dtype fval;
+    float fval;
     int ival;
+    // dtype dval;
 } utype;
 
 #endif

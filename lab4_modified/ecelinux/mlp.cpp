@@ -30,6 +30,7 @@ void dut(
     utype u;
     u.ival = input_l;
     dtype fv = u.fval;
+    // dtype fv = u.dval;
 
     input[i] = fv;
   }
