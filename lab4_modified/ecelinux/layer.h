@@ -19,15 +19,15 @@ const int POOL2_OUT_N_CHANNEL = 16;
 const int POOL2_OUT_WIDTH = 5;
 
 // Perform dense layer for MLP
-void dense_mlp(float input[MAX_FMAP], float output[MAX_FMAP], const float *weight, const float *bias, int M, int N, bool relu);
+void dense_mlp(dtype input[MAX_FMAP], dtype output[MAX_FMAP], const dtype *weight, const dtype *bias, int M, int N, bool relu);
 
 // Reduce the size of feature map
-void max_pool(float input[MAX_FMAP], float output[MAX_FMAP], int M, int I);
+void max_pool(dtype input[MAX_FMAP], dtype output[MAX_FMAP], int M, int I);
 
 // Reshape the conv laper output to dense layer input
-void reshape(float *input, float *output);
+void reshape(dtype *input, dtype *output);
 
 // Perform convolutional kernel
-void conv1(float input[MAX_FMAP], float output[MAX_FMAP], int M, int N, int I, int L);
+void conv1(dtype input[MAX_FMAP], dtype output[MAX_FMAP], int M, int N, int I, int L);
 
 #endif

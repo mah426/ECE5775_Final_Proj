@@ -8,10 +8,6 @@
 
 #include "layer.h"
 
-float const first_img[3072] = {
-#include "data/first_img"
-};
-
 // 6*3*5*5 = 450
 const float conv1_weight[450] = {
 #include "data2/conv1_weight"

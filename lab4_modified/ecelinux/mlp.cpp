@@ -19,27 +19,27 @@ void dut(
     hls::stream<bit32_t> &strm_in,
     hls::stream<bit32_t> &strm_out)
 {
-  float input[MAX_FMAP];
+  dtype input[MAX_FMAP];
   bit32_t input_l;
   bit32_t output;
-  
+
   for (int i = 0; i < 3072; i++)
   {
     input_l = strm_in.read();
-    union { float fval; int ival; } u;
+
+    utype u;
     u.ival = input_l;
-    float fv = u.fval;
-  
+    dtype fv = u.fval;
+
     input[i] = fv;
   }
 
   output = mlp_xcel(input);
 
   strm_out.write(output);
- 
 }
 
-inline void print_array(float *input, int size)
+inline void print_array(dtype *input, int size)
 {
   cout << endl;
   for (int i = 0; i < size; i++)
@@ -54,13 +54,13 @@ inline void print_array(float *input, int size)
 // @param[in] : input - the testing instance
 // @return : the predicted digit
 
-bit32_t mlp_xcel(float input[3072])
+bit32_t mlp_xcel(dtype input[3072])
 {
   bit32_t final_out = 0;
-  float mem_conv1[4704];
-  float mem_conv2[4704];
+  dtype mem_conv1[4704];
+  dtype mem_conv2[4704];
 
-  //print_array(input, 100);
+  // print_array(input, 100);
 
   /*
     conv1
@@ -73,8 +73,8 @@ bit32_t mlp_xcel(float input[3072])
   */
   conv1(input, mem_conv2, 3, 6, 32, 0);
 
-  //cout << "conv1 done \n";
-  //print_array(mem_conv2, 100);
+  // cout << "conv1 done \n";
+  // print_array(mem_conv2, 100);
 
   /*
     pool1
@@ -84,8 +84,8 @@ bit32_t mlp_xcel(float input[3072])
   */
   max_pool(mem_conv2, mem_conv1, 6, 28);
 
-  //cout << "pool1 done \n";
-  //print_array(mem_conv1, 100);
+  // cout << "pool1 done \n";
+  // print_array(mem_conv1, 100);
 
   /*
    conv2
@@ -107,17 +107,6 @@ bit32_t mlp_xcel(float input[3072])
   max_pool(mem_conv2, mem_conv1, 16, 10);
 
   /*
-  reshape
-  input: 16*5*5
-  output: 400
-  */
-  // reshape(mem_conv1, mem_conv2);
-
-  // dense_mlp(mem_conv2, mem_conv1, fc1_weight, fc1_bias, 400, 120, true);
-  // dense_mlp(mem_conv1, mem_conv2, fc2_weight, fc2_bias, 120, 84, true);
-  // dense_mlp(mem_conv2, mem_conv1, fc3_weight, fc3_bias, 84, 2, false);
-
-  /*
   fc1
   N=120 M=400
   input: 400
@@ -131,8 +120,8 @@ bit32_t mlp_xcel(float input[3072])
   dense_mlp(mem_conv1, mem_conv2, fc3_weight, fc3_bias, 84, 2, false);
 
   // predict car or truck
-  //std::cout << "mem_conv0: " << mem_conv2[0] << " \n";
-  //std::cout << "mem_conv1: " << mem_conv2[1] << " \n";
+  // std::cout << "mem_conv0: " << mem_conv2[0] << " \n";
+  // std::cout << "mem_conv1: " << mem_conv2[1] << " \n";
   if (mem_conv2[0] < mem_conv2[1])
   {
     final_out = 1;

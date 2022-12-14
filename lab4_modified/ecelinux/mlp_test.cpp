@@ -18,8 +18,6 @@ using namespace std;
 // Number of test instances
  const int TEST_SIZE = 2000;
  const int TEST_SIZE_HALF = 1000;
-//const int TEST_SIZE = 0;
-//const int TEST_SIZE_HALF = 0;
 
 //------------------------------------------------------------------------
 // Helper function for reading images and labels
@@ -108,11 +106,11 @@ int main()
   hls::stream<bit32_t> digitrec_in;
   hls::stream<bit32_t> digitrec_out;
 
-  float test_images[100][3072];
+  dtype test_images[100][3072];
   read_test_images1(test_images);
 
-  float test_image;
-  float correct = 0.0;
+  dtype test_image;
+  int correct = 0;
 
   // Timer
   Timer timer("digirec mlp");
@@ -124,24 +122,24 @@ int main()
     std::cout << test << " \n";
     for (int i = 0; i < 3072; i++)
     {
-      union { float fval; int ival; } u;
-        u.fval = test_images[test][i];
-        int iv = u.ival;
-        test_image = iv;
-        digitrec_in.write(test_image);
+      utype u;
+      u.fval = test_images[test][i];
+      int iv = u.ival;
+      test_image = iv;
+      digitrec_in.write(test_image);
     }
     // perform prediction
     dut(digitrec_in, digitrec_out);
 
     // check results
     if (digitrec_out.read() == 0)
-      correct += 1.0;
+      correct += 1;
   }
 
   timer.stop();
 
   // Calculate accuracy
-  std::cout << "Accuracy: " << correct / 100 << std::endl;
+  std::cout << "Accuracy: " << (float) correct / 100.0 << std::endl;
 
   return 0;
 }
