@@ -42,12 +42,48 @@ void read_test_labels(int test_labels[TEST_SIZE]) {
   }
 }
 
+void read_test_images1(float test_images[100][3072])
+{
+  char fname[25] = "test_data2/test_data.dat";
+  FILE *file = fopen(fname, "r");
+  if (!file)
+  {
+    printf("Could not open the file\n");
+    exit(0);
+  }
+
+  char content[3072 * 30];
+  int i = 0;
+  while (fgets(content, 3072 * 30, file))
+  {
+    const char *v = strtok(content, ",");
+    int j = 0;
+    while (v)
+    {
+      // printf("%s ", v);
+      test_images[i][j] = atof(v);
+      j++;
+      v = strtok(NULL, ",");
+    }
+    // printf("\n");
+    i++;
+  }
+  fclose(file);
+
+  // cout << "test_images[0][0]:" << endl;
+  // printf("%.6f \n", test_images[0][0]);
+  // cout << "test_images[99][3071]:" << endl;
+  // printf("%.6f \n", test_images[99][3071]);
+  // exit(0);
+}
+
 
 //--------------------------------------
 // main function
 //--------------------------------------
 int main(int argc, char** argv)
 {
+  std::cout << "starting host.cpp"<< std::endl;
   // Open channels to the FPGA board.
   // These channels appear as files to the Linux OS
   int fdr = open("/dev/xillybus_read_32", O_RDONLY);
@@ -60,7 +96,7 @@ int main(int argc, char** argv)
   }
   
   // Arrays to store test data and expected results (labels)
-  int8_t test_images[TEST_SIZE][256];
+  float test_images[TEST_SIZE][3072];
   bit32_t test_image;
   int    test_labels[TEST_SIZE];
 
@@ -75,8 +111,8 @@ int main(int argc, char** argv)
   //--------------------------------------------------------------------
   // Read data from the input file into two arrays
   //--------------------------------------------------------------------
-  read_test_images(test_images);
-  read_test_labels(test_labels); 
+  read_test_images1(test_images);
+
 
   timer.start();
   //--------------------------------------------------------------------
@@ -84,25 +120,39 @@ int main(int argc, char** argv)
   //--------------------------------------------------------------------
   for (int i = 0; i < TEST_SIZE; ++i) {
     // Send 32-bit value through the write channel
-    for (int j = 0; j < 8; j++) {
-      for (int k = 0; k < 32; k++) {
-        test_image(k,k) = test_images[i][j*32+k];
-      }
-      nbytes = write (fdw, (void*)&test_image, sizeof(test_image));
-      assert (nbytes == sizeof(test_image));
+    std::cout << "inputting images" << i << std::endl;
+    for (int j = 0; j < 3072; j++) {
+      union { float fval; int ival; } u;
+      u.fval = test_images[i][j];
+      int iv = u.ival;
+      test_image = iv;
+      //test_image(k,k) = test_images[i][j*32+k];
+     nbytes = write (fdw, (void*)&test_image, sizeof(test_image));
+     assert (nbytes == sizeof(test_image));
     }
   }
+  //std::cout << "done inputting images" << std::endl;
 
   //--------------------------------------------------------------------
   // Receive data from the accelerator
   //--------------------------------------------------------------------
   for (int i = 0; i < TEST_SIZE; ++i) {
+    std::cout << "outputing answer" << i << std::endl;
     bit32_t output;
+    //std::cout << "sending data" << i << std::endl;
     nbytes = read (fdr, (void*)&output, sizeof(output));
+  //  std::cout << "read complete" << i << std::endl;
     assert (nbytes == sizeof(output));
+    //std::cout << "asserted" << i << std::endl;
+
     // verify results
-    if (output == test_labels[i]) correct += 1.0;
+    //if (output == test_labels[i]) correct += 1.0;
+    if(output == 0)
+      correct += 1.0;
+   //std::cout << "updated correct" << i << std::endl;
   }
+  //std::cout << "done outputting" << std::endl;
+
   timer.stop();
 
   //--------------------------------------------------------------------
