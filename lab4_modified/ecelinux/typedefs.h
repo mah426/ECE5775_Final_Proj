@@ -13,4 +13,6 @@ typedef ap_int<8> bit8_t;
 typedef ap_uint<2> bit2_t;
 typedef ap_uint<32> bit32_t;
 
+typedef float dtype;
+
 #endif
