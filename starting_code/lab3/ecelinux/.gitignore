@@ -1,8 +1,0 @@
-*
-!.gitignore
-!digitrec.cpp
-!digitrec.h
-!run_base.tcl
-!run_pipeline.tcl
-!run_unroll.tcl
-!digitrec_test.cpp
