@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dut_mlp_xcel'" level="0">
-<item name = "Date">Fri Dec  9 22:55:43 2022
+<item name = "Date">Wed Dec 14 19:58:48 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">mlp_base.prj</item>
@@ -132,8 +132,8 @@
 <column name="tmp_9_fu_818_p2">or, 0, 0, 1, 1, 1</column>
 <column name="tmp_s_fu_836_p2">or, 0, 0, 1, 1, 1</column>
 <column name="bias_load_phi_i_fu_757_p3">select, 0, 0, 32, 1, 30</column>
-<column name="biased_1_fu_563_p3">select, 0, 0, 32, 1, 32</column>
-<column name="biased_3_fu_695_p3">select, 0, 0, 32, 1, 32</column>
+<column name="tmp_17_i1_fu_695_p3">select, 0, 0, 32, 1, 32</column>
+<column name="tmp_17_i_fu_563_p3">select, 0, 0, 32, 1, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -180,8 +180,6 @@
 <column name="ap_CS_fsm">64, 0, 64, 0</column>
 <column name="ap_reg_grp_dut_conv1_fu_379_ap_start">1, 0, 1, 0</column>
 <column name="ap_reg_grp_dut_max_pool_fu_403_ap_start">1, 0, 1, 0</column>
-<column name="biased_1_reg_910">32, 0, 32, 0</column>
-<column name="biased_3_reg_966">32, 0, 32, 0</column>
 <column name="fc1_bias_load_reg_905">32, 0, 32, 0</column>
 <column name="fc2_bias_load_reg_961">32, 0, 32, 0</column>
 <column name="m_1_reg_931">7, 0, 7, 0</column>
@@ -209,6 +207,8 @@
 <column name="sum_i_reg_274">32, 0, 32, 0</column>
 <column name="tmp_15_i1_reg_946">7, 0, 64, 57</column>
 <column name="tmp_15_i_reg_890">7, 0, 64, 57</column>
+<column name="tmp_17_i1_reg_966">32, 0, 32, 0</column>
+<column name="tmp_17_i_reg_910">32, 0, 32, 0</column>
 <column name="tmp_i4_reg_923">12, 0, 15, 3</column>
 </table>
 </item>

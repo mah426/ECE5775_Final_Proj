@@ -118,7 +118,7 @@ int main()
   // pack images to 32-bit and transmit to dut function
   for (int test = 0; test < 100; test++)
   {
-    std::cout << test << " \n";
+    // std::cout << test << " \n";
     for (int i = 0; i < 3072; i++)
     {
       utype u;
@@ -138,7 +138,22 @@ int main()
   timer.stop();
 
   // Calculate accuracy
-  std::cout << "Accuracy: " << (float)correct / 100.0 << std::endl;
+  float acc = (float)correct / 100.0;
+  std::cout << "Accuracy: " << acc << std::endl;
 
+
+//   // Output file stream
+//   std::ofstream fp;
+//   fp.open ("out.dat","a");
+//   fp << "#---------------------------------\n"
+//   << "Accuracy = " << acc << "\n";
+// #ifdef FIXED_TYPE // fixed type
+// fp << "fixed:   "<<"TOT_WIDTH = "<<TOT_WIDTH<<"  INT_WIDTH = "<<INT_WIDTH<<"\n";
+// #endif
+
+//   fp<< "#--------------------------------\n";    
+
+//         // Clean up
+  // fp.close();
   return 0;
 }

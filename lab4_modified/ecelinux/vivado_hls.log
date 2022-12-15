@@ -5,15 +5,16 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'nrb74' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Fri Dec 09 22:56:55 EST 2022
+INFO: [HLS 200-10] For user 'qs73' on host 'en-ec-ecelinux-12.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Wed Dec 14 19:59:18 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
-INFO: [HLS 200-10] In directory '/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux'
-INFO: [HLS 200-10] Creating and opening project '/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_more.prj'.
+INFO: [HLS 200-10] In directory '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux'
+INFO: [HLS 200-10] Opening and resetting project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_16_20.prj'.
 INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
 INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
-INFO: [HLS 200-10] Adding test bench file 'data' to the project
-INFO: [HLS 200-10] Creating and opening solution '/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_more.prj/solution1'.
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_16_20.prj/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
@@ -21,86 +22,31 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
    Compiling ../../../../layer.cpp in release mode
    Compiling ../../../../mlp.cpp in release mode
    Generating csim.exe
-Could not open the file
+Accuracy: 0.92
+digirec mlp         :      1 calls; 535.150 msecs total time
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
 INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
 INFO: [HLS 200-10] Validating synthesis directives ...
-WARNING: [HLS 200-40] Directive 'ARRAY_PARTITION' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'ARRAY_PARTITION' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_UNROLL' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_UNROLL' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_UNROLL' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_UNROLL' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_UNROLL' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_UNROLL' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'PIPELINE' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LOOP_MERGE' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'EXPRESSION_BALANCE' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LATENCY' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LATENCY' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LATENCY' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LATENCY' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LATENCY' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'LATENCY' cannot be applied: Function 'conv' does not exist in any synthesis source file.
-WARNING: [HLS 200-40] Directive 'INLINE' cannot be applied: Function 'conv' does not exist in any synthesis source file.
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:62) automatically.
-WARNING: [XFORM 203-180] Applying partition directive (layer.cpp:69:1) and reshape directive (layer.cpp:27:1) on the same variable 'mem_conv1' (mlp.cpp:88) may lead to unexpected synthesis behaviors.
-WARNING: [XFORM 203-180] Applying partition directive (layer.cpp:69:1) and reshape directive (layer.cpp:27:1) on the same variable 'mem_conv2' (mlp.cpp:89) may lead to unexpected synthesis behaviors.
-INFO: [XFORM 203-131] Reshaping array 'mem_conv2' (mlp.cpp:89) in dimension 1 with a block factor of 4.
-INFO: [XFORM 203-131] Reshaping array 'mem_conv1' (mlp.cpp:88) in dimension 1 with a block factor of 4.
-INFO: [XFORM 203-131] Reshaping array 'input' (mlp.cpp:22) in dimension 1 with a block factor of 4.
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
 INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'mem_conv1' (mlp.cpp:88) in dimension 1 with a block factor 8.
-INFO: [XFORM 203-101] Partitioning array 'mem_conv2' (mlp.cpp:89) in dimension 1 with a block factor 8.
 INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
-INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' automatically.
-INFO: [XFORM 203-11] Balancing expressions in function 'conv1.1' (layer.cpp:138:36)...3 expression(s) balanced.
-INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:132)...3 expression(s) balanced.
-INFO: [HLS 200-111] Elapsed time: 7.25 seconds; current memory usage: 144 MB.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 5.07 seconds; current memory usage: 110 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dut' ...
-WARNING: [SYN 201-103] Legalizing function name 'dut_conv1.1' to 'dut_conv1_1'.
-WARNING: [SYN 201-103] Legalizing function name 'dut_dense_mlp.2' to 'dut_dense_mlp_2'.
-WARNING: [SYN 201-103] Legalizing function name 'dut_dense_mlp.1' to 'dut_dense_mlp_1'.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'dut_conv1_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 145 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.19 seconds; current memory usage: 146 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.31 seconds; current memory usage: 147 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.21 seconds; current memory usage: 148 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.35 seconds; current memory usage: 149 MB.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 111 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -109,58 +55,43 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.19 seconds; current memory usage: 150 MB.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 111 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'dut_dense_mlp_2' 
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.26 seconds; current memory usage: 150 MB.
+INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 112 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_dense_mlp_2' 
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.07 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 112 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'dut_dense_mlp_1' 
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 113 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_dense_mlp_1' 
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 151 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'dut_dense_mlp' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 151 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_dense_mlp' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 152 MB.
+INFO: [HLS 200-111] Elapsed time: 0.07 seconds; current memory usage: 114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'dut' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 152 MB.
+INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -169,97 +100,1119 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.34 seconds; current memory usage: 153 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_11ns_13ns_24_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_14ns_12ns_26_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_14ns_16ns_30_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mux_8to1_sel14_128_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_11ns_9ns_11_15_seq': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_12ns_12ns_12_16_seq': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_14ns_12ns_11_18_seq': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1_1'.
-INFO: [HLS 200-111] Elapsed time: 0.35 seconds; current memory usage: 154 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_11ns_13ns_24_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_13ns_11ns_24_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_14ns_12ns_26_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_14ns_16ns_30_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mux_8to1_sel14_128_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_11ns_9ns_11_15_seq': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_12ns_12ns_11_16_seq': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_14ns_12ns_11_18_seq': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
-INFO: [HLS 200-111] Elapsed time: 0.48 seconds; current memory usage: 159 MB.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 114 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_11ns_13ns_24_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_13ns_11ns_24_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mul_mul_14ns_16ns_30_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mux_8to1_sel14_128_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_11ns_9ns_11_15_seq': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_urem_12ns_12ns_11_16_seq': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
-INFO: [HLS 200-111] Elapsed time: 0.5 seconds; current memory usage: 164 MB.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 115 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dut_dense_mlp_2' 
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 117 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_mux_8to1_sel14_128_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_dense_mlp_2'.
-INFO: [HLS 200-111] Elapsed time: 0.64 seconds; current memory usage: 176 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dut_dense_mlp_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_dense_mlp_1'.
-INFO: [HLS 200-111] Elapsed time: 0.24 seconds; current memory usage: 178 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dut_dense_mlp' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_dense_mlp'.
-INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 180 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.3 seconds; current memory usage: 129 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
-INFO: [HLS 200-111] Elapsed time: 0.18 seconds; current memory usage: 182 MB.
-INFO: [RTMG 210-282] Generating pipelined core: 'dut_urem_14ns_12ns_11_18_seq_div'
-INFO: [RTMG 210-282] Generating pipelined core: 'dut_urem_12ns_12ns_12_16_seq_div'
-INFO: [RTMG 210-282] Generating pipelined core: 'dut_urem_11ns_9ns_11_15_seq_div'
-INFO: [RTMG 210-279] Implementing memory 'dut_conv1_1_conv1_weight_rom' using auto ROMs.
-INFO: [RTMG 210-282] Generating pipelined core: 'dut_urem_12ns_12ns_11_16_seq_div'
+INFO: [HLS 200-111] Elapsed time: 0.28 seconds; current memory usage: 132 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dut_dense_mlp_2_fc1_weight_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dut_dense_mlp_2_fc1_bias_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dut_dense_mlp_1_fc2_weight_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dut_dense_mlp_1_fc2_bias_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dut_dense_mlp_fc3_weight_rom' using auto ROMs.
-INFO: [RTMG 210-278] Implementing memory 'dut_mem_conv1_0_ram' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'dut_mem_conv2_0_ram' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'dut_input_ram' using block RAMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
 INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for dut.
 INFO: [VHDL 208-304] Generating VHDL RTL for dut.
 INFO: [VLOG 209-307] Generating Verilog RTL for dut.
-INFO: [HLS 200-112] Total elapsed time: 58.13 seconds; peak memory usage: 182 MB.
+INFO: [HLS 200-10] Opening and resetting project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_8_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_8_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 519.524 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 9.77 seconds; current memory usage: 158 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 159 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 159 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 160 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 160 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 161 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 161 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 161 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 161 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 162 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 164 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.27 seconds; current memory usage: 167 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.25 seconds; current memory usage: 169 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Opening and resetting project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_4_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_4_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 554.598 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 9.91 seconds; current memory usage: 186 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 188 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 188 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 189 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.17 seconds; current memory usage: 189 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 189 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 190 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.22 seconds; current memory usage: 192 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.27 seconds; current memory usage: 195 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.3 seconds; current memory usage: 197 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Opening and resetting project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_2_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_32_2_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 533.782 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 10.29 seconds; current memory usage: 212 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 213 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 213 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 214 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 214 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 215 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 215 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.19 seconds; current memory usage: 215 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.07 seconds; current memory usage: 216 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 216 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 218 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.25 seconds; current memory usage: 221 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.27 seconds; current memory usage: 223 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Opening and resetting project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_32_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_32_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 535.751 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 10.26 seconds; current memory usage: 242 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 243 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 243 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 243 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 244 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 244 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 245 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 245 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 245 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 246 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 248 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.25 seconds; current memory usage: 251 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.27 seconds; current memory usage: 253 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Opening and resetting project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_16_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_16_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 518.754 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 10.23 seconds; current memory usage: 268 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 268 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 269 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 269 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 271 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.21 seconds; current memory usage: 271 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 271 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 272 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.17 seconds; current memory usage: 274 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.3 seconds; current memory usage: 276 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.29 seconds; current memory usage: 279 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Creating and opening project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_8_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_8_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 531.923 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 10.64 seconds; current memory usage: 295 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 295 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 296 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 296 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 296 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 297 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 298 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.16 seconds; current memory usage: 298 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.06 seconds; current memory usage: 298 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 299 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.22 seconds; current memory usage: 301 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.32 seconds; current memory usage: 303 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.28 seconds; current memory usage: 306 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Creating and opening project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_4_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_4_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 518.493 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 10.56 seconds; current memory usage: 320 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 321 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.06 seconds; current memory usage: 321 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.13 seconds; current memory usage: 322 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 322 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 323 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 323 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.18 seconds; current memory usage: 323 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 324 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 324 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.18 seconds; current memory usage: 326 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.33 seconds; current memory usage: 329 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.32 seconds; current memory usage: 331 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-10] Creating and opening project '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_2_20.prj'.
+INFO: [HLS 200-10] Adding design file 'mlp.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'mlp_test.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'layer.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data2' to the project
+INFO: [HLS 200-10] Adding test bench file 'test_data2' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/fixed_64_2_20.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 521.188 msecs total time
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'layer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'mlp.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'fc3_bias' in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+INFO: [HLS 200-111] Elapsed time: 10.8 seconds; current memory usage: 346 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.17 seconds; current memory usage: 347 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 347 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 347 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 348 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 348 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 349 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.19 seconds; current memory usage: 349 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 349 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_conv1'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 350 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_max_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_max_pool'.
+INFO: [HLS 200-111] Elapsed time: 0.21 seconds; current memory usage: 352 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_mlp_xcel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_mlp_xcel'.
+INFO: [HLS 200-111] Elapsed time: 0.34 seconds; current memory usage: 355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.29 seconds; current memory usage: 357 MB.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc1_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_weight_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc2_bias_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_mlp_xcel_fc3_weight_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv1_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_mlp_xcel_mem_conv2_ram' using block RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-112] Total elapsed time: 342.582 seconds; peak memory usage: 357 MB.

@@ -16,7 +16,8 @@ set_top dut
 add_files mlp.cpp
 add_files -tb mlp_test.cpp
 add_files layer.cpp
-add_files -tb data
+add_files -tb data2
+add_files -tb test_data2
 
 open_solution "solution1"
 # Use Zynq device

@@ -12,13 +12,19 @@
 VHLS_PATH := $(dir $(shell which vivado_hls))/..
 VHLS_INC ?= ${VHLS_PATH}/include
 
-CFLAGS = -g -I${VHLS_INC} -DHLS_NO_XIL_FPO_LIB -std=c++11
+CFLAGS = -g -I${VHLS_INC} -DHLS_NO_XIL_FPO_LIB 
+CFLAGS_FIXED = ${CFLAGS} -DFIXED_TYPE
 
 all: csim
 
 csim: mlp.cpp layer.cpp mlp_test.cpp
 	@echo "Compiling & simulating cnn on amdpool ..."
 	g++ ${CFLAGS} $^ -o mlp -lrt
+	./mlp
+
+fixed: mlp.cpp layer.cpp mlp_test.cpp
+	@echo "Compiling & simulating cnn on amdpool ..."
+	g++ ${CFLAGS_FIXED} $^ -o mlp -lrt
 	./mlp
 
 bitstream: 

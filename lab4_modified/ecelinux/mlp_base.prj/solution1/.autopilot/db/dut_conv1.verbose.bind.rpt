@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dut_conv1'
 ================================================================
-* Date:           Fri Dec  9 22:55:39 2022
+* Date:           Wed Dec 14 19:58:46 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        mlp_base.prj
@@ -339,11 +339,11 @@ ST_5: tmp_19 [1/1] 0.00ns
 ST_5: tmp_21 [1/1] 1.72ns
 :2  %tmp_21 = add i7 %phi_mul2, %m_cast1
 
-ST_5: tmp_23_cast_cast [1/1] 0.00ns
-:3  %tmp_23_cast_cast = zext i7 %tmp_21 to i12
+ST_5: tmp_24_cast_cast [1/1] 0.00ns
+:3  %tmp_24_cast_cast = zext i7 %tmp_21 to i12
 
 ST_5: tmp_22 [1/1] 6.38ns
-:4  %tmp_22 = mul i12 %tmp_23_cast_cast, 25
+:4  %tmp_22 = mul i12 %tmp_24_cast_cast, 25
 
 ST_5: stg_90 [1/1] 1.57ns
 :5  br label %9
@@ -657,7 +657,7 @@ stg_84            (br               ) [ 0000000000000000000]
 stg_85            (specloopname     ) [ 0000000000000000000]
 tmp_19            (specregionbegin  ) [ 0000001111111111111]
 tmp_21            (add              ) [ 0000000000000000000]
-tmp_23_cast_cast  (zext             ) [ 0000000000000000000]
+tmp_24_cast_cast  (zext             ) [ 0000000000000000000]
 tmp_22            (mul              ) [ 0000001111111111111]
 stg_90            (br               ) [ 0011111111111111111]
 tmp_23            (zext             ) [ 0000000000000000000]
@@ -1905,14 +1905,14 @@ stg_152           (br               ) [ 0011111111111111111]
 </bind>
 </comp>
 
-<comp id="445" class="1004" name="tmp_23_cast_cast_fu_445">
+<comp id="445" class="1004" name="tmp_24_cast_cast_fu_445">
 <pin_list>
 <pin id="446" dir="0" index="0" bw="7" slack="0"/>
 <pin id="447" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="tmp_23_cast_cast/5 "/>
+<opset="tmp_24_cast_cast/5 "/>
 </bind>
 </comp>
 
@@ -2995,7 +2995,7 @@ stg_152           (br               ) [ 0011111111111111111]
 		m_3 : 1
 		stg_84 : 3
 		tmp_21 : 2
-		tmp_23_cast_cast : 3
+		tmp_24_cast_cast : 3
 		tmp_22 : 4
 		output_addr : 1
 		stg_93 : 2
@@ -3111,7 +3111,7 @@ stg_152           (br               ) [ 0011111111111111111]
 |          |      y_cast_fu_395      |    0    |    0    |    0    |
 |          |      m_cast1_fu_420     |    0    |    0    |    0    |
 |          |      m_cast_fu_424      |    0    |    0    |    0    |
-|          | tmp_23_cast_cast_fu_445 |    0    |    0    |    0    |
+|          | tmp_24_cast_cast_fu_445 |    0    |    0    |    0    |
 |          |      tmp_23_fu_455      |    0    |    0    |    0    |
 |          |      c_cast_fu_459      |    0    |    0    |    0    |
 |          |      c_cast1_fu_463     |    0    |    0    |    0    |

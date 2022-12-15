@@ -5,7 +5,8 @@
     <includePaths/>
     <libraryFlag/>
     <files>
-        <file name="../../data" sc="0" tb="1" cflags=" "/>
+        <file name="../../test_data2" sc="0" tb="1" cflags=" "/>
+        <file name="../../data2" sc="0" tb="1" cflags=" "/>
         <file name="layer.cpp" sc="0" tb="false" cflags=""/>
         <file name="../../mlp_test.cpp" sc="0" tb="1" cflags=" "/>
         <file name="mlp.cpp" sc="0" tb="false" cflags=""/>

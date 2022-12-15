@@ -1238,10 +1238,10 @@
 
 <node id="81" bw="12" op_0_bw="7">
 <![CDATA[
-:3  %tmp_23_cast_cast = zext i7 %tmp_21 to i12
+:3  %tmp_24_cast_cast = zext i7 %tmp_21 to i12
 
 ]]></node>
-<StgValue><ssdm name="tmp_23_cast_cast"/></StgValue>
+<StgValue><ssdm name="tmp_24_cast_cast"/></StgValue>
 </operation>
 
 <operation id="89" st_id="5" stage="1" lat="1">
@@ -1254,7 +1254,7 @@
 
 <node id="82" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-:4  %tmp_22 = mul i12 %tmp_23_cast_cast, 25
+:4  %tmp_22 = mul i12 %tmp_24_cast_cast, 25
 
 ]]></node>
 <StgValue><ssdm name="tmp_22"/></StgValue>
@@ -2628,9 +2628,9 @@ _ifconv:22  br label %11
 </dataflow>
 <dataflow id="337" from="m_cast1" to="tmp_21" fromId="79" toId="87">
 </dataflow>
-<dataflow id="338" from="tmp_21" to="tmp_23_cast_cast" fromId="87" toId="88">
+<dataflow id="338" from="tmp_21" to="tmp_24_cast_cast" fromId="87" toId="88">
 </dataflow>
-<dataflow id="339" from="tmp_23_cast_cast" to="tmp_22" fromId="88" toId="89">
+<dataflow id="339" from="tmp_24_cast_cast" to="tmp_22" fromId="88" toId="89">
 </dataflow>
 <dataflow id="341" from="stg_340" to="tmp_22" fromId="340" toId="89">
 </dataflow>

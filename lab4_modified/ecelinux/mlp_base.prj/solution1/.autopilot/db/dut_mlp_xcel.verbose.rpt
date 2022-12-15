@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dut_mlp_xcel'
 ================================================================
-* Date:           Fri Dec  9 22:55:43 2022
+* Date:           Wed Dec 14 19:58:48 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        mlp_base.prj
@@ -153,8 +153,8 @@
     |tmp_9_fu_818_p2            |    or    |      0|  0|   1|           1|           1|
     |tmp_s_fu_836_p2            |    or    |      0|  0|   1|           1|           1|
     |bias_load_phi_i_fu_757_p3  |  select  |      0|  0|  32|           1|          30|
-    |biased_1_fu_563_p3         |  select  |      0|  0|  32|           1|          32|
-    |biased_3_fu_695_p3         |  select  |      0|  0|  32|           1|          32|
+    |tmp_17_i1_fu_695_p3        |  select  |      0|  0|  32|           1|          32|
+    |tmp_17_i_fu_563_p3         |  select  |      0|  0|  32|           1|          32|
     +---------------------------+----------+-------+---+----+------------+------------+
     |Total                      |          |      0|  0| 282|         291|         225|
     +---------------------------+----------+-------+---+----+------------+------------+
@@ -209,8 +209,6 @@
     |ap_CS_fsm                                |  64|   0|   64|          0|
     |ap_reg_grp_dut_conv1_fu_379_ap_start     |   1|   0|    1|          0|
     |ap_reg_grp_dut_max_pool_fu_403_ap_start  |   1|   0|    1|          0|
-    |biased_1_reg_910                         |  32|   0|   32|          0|
-    |biased_3_reg_966                         |  32|   0|   32|          0|
     |fc1_bias_load_reg_905                    |  32|   0|   32|          0|
     |fc2_bias_load_reg_961                    |  32|   0|   32|          0|
     |m_1_reg_931                              |   7|   0|    7|          0|
@@ -238,6 +236,8 @@
     |sum_i_reg_274                            |  32|   0|   32|          0|
     |tmp_15_i1_reg_946                        |   7|   0|   64|         57|
     |tmp_15_i_reg_890                         |   7|   0|   64|         57|
+    |tmp_17_i1_reg_966                        |  32|   0|   32|          0|
+    |tmp_17_i_reg_910                         |  32|   0|   32|          0|
     |tmp_i4_reg_923                           |  12|   0|   15|          3|
     +-----------------------------------------+----+----+-----+-----------+
     |Total                                    | 570|   0|  687|        117|
@@ -507,8 +507,8 @@ ST_9: stg_83 [1/1] 1.57ns
 ST_9: stg_84 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_9: tmp_17_i [1/1] 0.00ns
-:1  %tmp_17_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_9: tmp_18_i [1/1] 0.00ns
+:1  %tmp_18_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_9: stg_86 [1/1] 1.57ns
 :2  br label %2
@@ -670,17 +670,17 @@ ST_26: notlhs [1/1] 2.00ns
 ST_26: notrhs [1/1] 2.39ns
 :8  %notrhs = icmp eq i23 %tmp_12, 0
 
-ST_26: tmp_2 [1/1] 0.00ns (grouped into LUT with out node biased_1)
+ST_26: tmp_2 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i)
 :9  %tmp_2 = or i1 %notrhs, %notlhs
 
 ST_26: tmp_3 [1/1] 6.79ns
 :10  %tmp_3 = fcmp ogt float %biased, 0.000000e+00
 
-ST_26: tmp_4 [1/1] 0.00ns (grouped into LUT with out node biased_1)
+ST_26: tmp_4 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i)
 :11  %tmp_4 = and i1 %tmp_2, %tmp_3
 
-ST_26: biased_1 [1/1] 1.37ns (out node of the LUT)
-:12  %biased_1 = select i1 %tmp_4, float %biased, float 0.000000e+00
+ST_26: tmp_17_i [1/1] 1.37ns (out node of the LUT)
+:12  %tmp_17_i = select i1 %tmp_4, float %biased, float 0.000000e+00
 
 
  <State 27>: 2.71ns
@@ -688,10 +688,10 @@ ST_27: mem_conv2_addr_2 [1/1] 0.00ns
 :13  %mem_conv2_addr_2 = getelementptr [4704 x float]* %mem_conv2, i64 0, i64 %tmp_15_i
 
 ST_27: stg_133 [1/1] 2.71ns
-:14  store float %biased_1, float* %mem_conv2_addr_2, align 4
+:14  store float %tmp_17_i, float* %mem_conv2_addr_2, align 4
 
 ST_27: empty_9 [1/1] 0.00ns
-:15  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_17_i)
+:15  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_18_i)
 
 ST_27: stg_135 [1/1] 0.00ns
 :16  br label %0
@@ -716,8 +716,8 @@ dense_mlp.2.exit:4  br i1 %exitcond2, label %dense_mlp.1.exit, label %5
 ST_28: stg_141 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_28: tmp_19_i [1/1] 0.00ns
-:1  %tmp_19_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_28: tmp_20_i [1/1] 0.00ns
+:1  %tmp_20_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_28: p_shl_i [1/1] 0.00ns
 :2  %p_shl_i = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %n_i2, i7 0)
@@ -857,39 +857,39 @@ ST_39: fc2_bias_load [1/2] 2.39ns
 
 
  <State 40>: 8.42ns
-ST_40: biased_2 [5/5] 8.42ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_40: biased_1 [5/5] 8.42ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 41>: 7.26ns
-ST_41: biased_2 [4/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_41: biased_1 [4/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 42>: 7.26ns
-ST_42: biased_2 [3/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_42: biased_1 [3/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 43>: 7.26ns
-ST_43: biased_2 [2/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_43: biased_1 [2/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 44>: 7.26ns
-ST_44: biased_2 [1/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_44: biased_1 [1/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 45>: 8.16ns
-ST_45: biased_2_to_int [1/1] 0.00ns
-:4  %biased_2_to_int = bitcast float %biased_2 to i32
+ST_45: biased_1_to_int [1/1] 0.00ns
+:4  %biased_1_to_int = bitcast float %biased_1 to i32
 
 ST_45: tmp_13 [1/1] 0.00ns
-:5  %tmp_13 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %biased_2_to_int, i32 23, i32 30)
+:5  %tmp_13 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %biased_1_to_int, i32 23, i32 30)
 
 ST_45: tmp_14 [1/1] 0.00ns
-:6  %tmp_14 = trunc i32 %biased_2_to_int to i23
+:6  %tmp_14 = trunc i32 %biased_1_to_int to i23
 
 ST_45: notlhs3 [1/1] 2.00ns
 :7  %notlhs3 = icmp ne i8 %tmp_13, -1
@@ -897,17 +897,17 @@ ST_45: notlhs3 [1/1] 2.00ns
 ST_45: notrhs3 [1/1] 2.39ns
 :8  %notrhs3 = icmp eq i23 %tmp_14, 0
 
-ST_45: tmp_15 [1/1] 0.00ns (grouped into LUT with out node biased_3)
+ST_45: tmp_15 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i1)
 :9  %tmp_15 = or i1 %notrhs3, %notlhs3
 
 ST_45: tmp_16 [1/1] 6.79ns
-:10  %tmp_16 = fcmp ogt float %biased_2, 0.000000e+00
+:10  %tmp_16 = fcmp ogt float %biased_1, 0.000000e+00
 
-ST_45: tmp_17 [1/1] 0.00ns (grouped into LUT with out node biased_3)
+ST_45: tmp_17 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i1)
 :11  %tmp_17 = and i1 %tmp_15, %tmp_16
 
-ST_45: biased_3 [1/1] 1.37ns (out node of the LUT)
-:12  %biased_3 = select i1 %tmp_17, float %biased_2, float 0.000000e+00
+ST_45: tmp_17_i1 [1/1] 1.37ns (out node of the LUT)
+:12  %tmp_17_i1 = select i1 %tmp_17, float %biased_1, float 0.000000e+00
 
 
  <State 46>: 2.71ns
@@ -915,10 +915,10 @@ ST_46: mem_conv1_addr_1 [1/1] 0.00ns
 :13  %mem_conv1_addr_1 = getelementptr [4704 x float]* %mem_conv1, i64 0, i64 %tmp_15_i1
 
 ST_46: stg_196 [1/1] 2.71ns
-:14  store float %biased_3, float* %mem_conv1_addr_1, align 4
+:14  store float %tmp_17_i1, float* %mem_conv1_addr_1, align 4
 
 ST_46: empty_12 [1/1] 0.00ns
-:15  %empty_12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_19_i)
+:15  %empty_12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_20_i)
 
 ST_46: stg_198 [1/1] 0.00ns
 :16  br label %dense_mlp.2.exit
@@ -949,8 +949,8 @@ dense_mlp.1.exit:6  br i1 %exitcond4, label %dense_mlp.exit, label %9
 ST_47: stg_206 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_47: tmp_21_i [1/1] 0.00ns
-:1  %tmp_21_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_47: tmp_22_i [1/1] 0.00ns
+:1  %tmp_22_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_47: stg_208 [1/1] 1.57ns
 :2  br label %10
@@ -1014,8 +1014,8 @@ ST_48: tmp_18 [1/1] 0.00ns
 ST_48: bias_load_phi_i [1/1] 1.37ns
 :2  %bias_load_phi_i = select i1 %tmp_18, float 0x3FCEB24800000000, float 0xBFD067CE80000000
 
-ST_48: biased_4 [5/5] 8.42ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_48: biased_2 [5/5] 8.42ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 49>: 8.41ns
@@ -1076,23 +1076,23 @@ ST_57: stg_241 [1/1] 0.00ns
 
 
  <State 58>: 7.26ns
-ST_58: biased_4 [4/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_58: biased_2 [4/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 59>: 7.26ns
-ST_59: biased_4 [3/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_59: biased_2 [3/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 60>: 7.26ns
-ST_60: biased_4 [2/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_60: biased_2 [2/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 61>: 7.26ns
-ST_61: biased_4 [1/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_61: biased_2 [1/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 62>: 2.71ns
@@ -1103,10 +1103,10 @@ ST_62: mem_conv2_addr_4 [1/1] 0.00ns
 :4  %mem_conv2_addr_4 = getelementptr [4704 x float]* %mem_conv2, i64 0, i64 %tmp_15_i2
 
 ST_62: stg_248 [1/1] 2.71ns
-:5  store float %biased_4, float* %mem_conv2_addr_4, align 4
+:5  store float %biased_2, float* %mem_conv2_addr_4, align 4
 
 ST_62: empty_15 [1/1] 0.00ns
-:6  %empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_21_i)
+:6  %empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_22_i)
 
 ST_62: stg_250 [1/1] 0.00ns
 :7  br label %dense_mlp.1.exit
@@ -1213,7 +1213,7 @@ exitcond1               (icmp             ) [ 0000000001111111111111111111000000
 n                       (add              ) [ 00000000111111111111111111110000000000000000000000000000000000000]
 stg_83                  (br               ) [ 00000000011111111111111111111111111111111111111000000000000000000]
 stg_84                  (specloopname     ) [ 00000000000000000000000000000000000000000000000000000000000000000]
-tmp_17_i                (specregionbegin  ) [ 00000000001111111111111111110000000000000000000000000000000000000]
+tmp_18_i                (specregionbegin  ) [ 00000000001111111111111111110000000000000000000000000000000000000]
 stg_86                  (br               ) [ 00000000011111111111111111110000000000000000000000000000000000000]
 sum_i                   (phi              ) [ 00000000001111111111111111000000000000000000000000000000000000000]
 m_i                     (phi              ) [ 00000000001000000000000000000000000000000000000000000000000000000]
@@ -1245,7 +1245,7 @@ notrhs                  (icmp             ) [ 0000000000000000000000000000000000
 tmp_2                   (or               ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 tmp_3                   (fcmp             ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 tmp_4                   (and              ) [ 00000000000000000000000000000000000000000000000000000000000000000]
-biased_1                (select           ) [ 00000000000000000000000000010000000000000000000000000000000000000]
+tmp_17_i                (select           ) [ 00000000000000000000000000010000000000000000000000000000000000000]
 mem_conv2_addr_2        (getelementptr    ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 stg_133                 (store            ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 empty_9                 (specregionend    ) [ 00000000000000000000000000000000000000000000000000000000000000000]
@@ -1256,7 +1256,7 @@ exitcond2               (icmp             ) [ 0000000000000000000000000000111111
 n_1                     (add              ) [ 00000000010000000000000000001111111111111111111000000000000000000]
 stg_140                 (br               ) [ 00000000000000000000000000001111111111111111111111111111111111100]
 stg_141                 (specloopname     ) [ 00000000000000000000000000000000000000000000000000000000000000000]
-tmp_19_i                (specregionbegin  ) [ 00000000000000000000000000000111111111111111111000000000000000000]
+tmp_20_i                (specregionbegin  ) [ 00000000000000000000000000000111111111111111111000000000000000000]
 p_shl_i                 (bitconcatenate   ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 p_shl_i_cast            (zext             ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 p_shl1_i                (bitconcatenate   ) [ 00000000000000000000000000000000000000000000000000000000000000000]
@@ -1285,8 +1285,8 @@ stg_177                 (specloopname     ) [ 0000000000000000000000000000000000
 sum_1                   (fadd             ) [ 00000000000000000000000000001111111111111111111000000000000000000]
 stg_179                 (br               ) [ 00000000000000000000000000001111111111111111111000000000000000000]
 fc2_bias_load           (load             ) [ 00000000000000000000000000000000000000001111100000000000000000000]
-biased_2                (fadd             ) [ 00000000000000000000000000000000000000000000010000000000000000000]
-biased_2_to_int         (bitcast          ) [ 00000000000000000000000000000000000000000000000000000000000000000]
+biased_1                (fadd             ) [ 00000000000000000000000000000000000000000000010000000000000000000]
+biased_1_to_int         (bitcast          ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 tmp_13                  (partselect       ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 tmp_14                  (trunc            ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 notlhs3                 (icmp             ) [ 00000000000000000000000000000000000000000000000000000000000000000]
@@ -1294,7 +1294,7 @@ notrhs3                 (icmp             ) [ 0000000000000000000000000000000000
 tmp_15                  (or               ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 tmp_16                  (fcmp             ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 tmp_17                  (and              ) [ 00000000000000000000000000000000000000000000000000000000000000000]
-biased_3                (select           ) [ 00000000000000000000000000000000000000000000001000000000000000000]
+tmp_17_i1               (select           ) [ 00000000000000000000000000000000000000000000001000000000000000000]
 mem_conv1_addr_1        (getelementptr    ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 stg_196                 (store            ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 empty_12                (specregionend    ) [ 00000000000000000000000000000000000000000000000000000000000000000]
@@ -1307,7 +1307,7 @@ exitcond4               (icmp             ) [ 0000000000000000000000000000000000
 n_2                     (add              ) [ 00000000000000000000000000001000000000000000000111111111111111100]
 stg_205                 (br               ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 stg_206                 (specloopname     ) [ 00000000000000000000000000000000000000000000000000000000000000000]
-tmp_21_i                (specregionbegin  ) [ 00000000000000000000000000000000000000000000000011111111111111100]
+tmp_22_i                (specregionbegin  ) [ 00000000000000000000000000000000000000000000000011111111111111100]
 stg_208                 (br               ) [ 00000000000000000000000000000000000000000000000111111111111111100]
 mem_conv2_addr_1        (getelementptr    ) [ 00000000000000000000000000000000000000000000000000000000000000010]
 sum_i1                  (phi              ) [ 00000000000000000000000000000000000000000000000011111111111111000]
@@ -1330,7 +1330,7 @@ tmp_14_i2               (fmul             ) [ 0000000000000000000000000000000000
 stg_239                 (specloopname     ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 sum_2                   (fadd             ) [ 00000000000000000000000000000000000000000000000111111111111111100]
 stg_241                 (br               ) [ 00000000000000000000000000000000000000000000000111111111111111100]
-biased_4                (fadd             ) [ 00000000000000000000000000000000000000000000000000000000000000100]
+biased_2                (fadd             ) [ 00000000000000000000000000000000000000000000000000000000000000100]
 tmp_15_i2               (zext             ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 mem_conv2_addr_4        (getelementptr    ) [ 00000000000000000000000000000000000000000000000000000000000000000]
 stg_248                 (store            ) [ 00000000000000000000000000000000000000000000000000000000000000000]
@@ -2464,7 +2464,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="fadd(9) " fcode="fadd"/>
-<opset="sum/15 biased/21 sum_1/34 biased_2/40 biased_4/48 sum_2/53 "/>
+<opset="sum/15 biased/21 sum_1/34 biased_1/40 biased_2/48 sum_2/53 "/>
 </bind>
 </comp>
 
@@ -2528,7 +2528,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 <pin id="456" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="biased biased_2 biased_4 "/>
+<opset="biased biased_1 biased_2 "/>
 </bind>
 </comp>
 
@@ -2742,7 +2742,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="563" class="1004" name="biased_1_fu_563">
+<comp id="563" class="1004" name="tmp_17_i_fu_563">
 <pin_list>
 <pin id="564" dir="0" index="0" bw="1" slack="0"/>
 <pin id="565" dir="0" index="1" bw="32" slack="1"/>
@@ -2751,7 +2751,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="biased_1/26 "/>
+<opset="tmp_17_i/26 "/>
 </bind>
 </comp>
 
@@ -2930,14 +2930,14 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="653" class="1004" name="biased_2_to_int_fu_653">
+<comp id="653" class="1004" name="biased_1_to_int_fu_653">
 <pin_list>
 <pin id="654" dir="0" index="0" bw="32" slack="1"/>
 <pin id="655" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="biased_2_to_int/45 "/>
+<opset="biased_1_to_int/45 "/>
 </bind>
 </comp>
 
@@ -3014,7 +3014,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="695" class="1004" name="biased_3_fu_695">
+<comp id="695" class="1004" name="tmp_17_i1_fu_695">
 <pin_list>
 <pin id="696" dir="0" index="0" bw="1" slack="0"/>
 <pin id="697" dir="0" index="1" bw="32" slack="1"/>
@@ -3023,7 +3023,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="biased_3/45 "/>
+<opset="tmp_17_i1/45 "/>
 </bind>
 </comp>
 
@@ -3435,13 +3435,13 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="910" class="1005" name="biased_1_reg_910">
+<comp id="910" class="1005" name="tmp_17_i_reg_910">
 <pin_list>
 <pin id="911" dir="0" index="0" bw="32" slack="1"/>
 <pin id="912" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="biased_1 "/>
+<opset="tmp_17_i "/>
 </bind>
 </comp>
 
@@ -3535,13 +3535,13 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 </bind>
 </comp>
 
-<comp id="966" class="1005" name="biased_3_reg_966">
+<comp id="966" class="1005" name="tmp_17_i1_reg_966">
 <pin_list>
 <pin id="967" dir="0" index="0" bw="32" slack="1"/>
 <pin id="968" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="biased_3 "/>
+<opset="tmp_17_i1 "/>
 </bind>
 </comp>
 
@@ -4309,7 +4309,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 		notrhs : 2
 		tmp_2 : 3
 		tmp_4 : 3
-		biased_1 : 3
+		tmp_17_i : 3
 	State 27
 		stg_133 : 1
 	State 28
@@ -4359,7 +4359,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 		notrhs3 : 2
 		tmp_15 : 3
 		tmp_17 : 3
-		biased_3 : 3
+		tmp_17_i1 : 3
 	State 46
 		stg_196 : 1
 	State 47
@@ -4381,7 +4381,7 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 		fc3_weight_addr : 4
 		fc3_weight_load : 5
 		bias_load_phi_i : 1
-		biased_4 : 2
+		biased_2 : 2
 	State 49
 		tmp_14_i2 : 1
 	State 50
@@ -4445,8 +4445,8 @@ stg_268                 (ret              ) [ 0000000000000000000000000000000000
 |          |        m_2_fu_731       |    0    |    0    |    0    |    7    |
 |          |     w_index_2_fu_737    |    0    |    0    |    0    |    8    |
 |----------|-------------------------|---------|---------|---------|---------|
-|          |     biased_1_fu_563     |    0    |    0    |    0    |    32   |
-|  select  |     biased_3_fu_695     |    0    |    0    |    0    |    32   |
+|          |     tmp_17_i_fu_563     |    0    |    0    |    0    |    32   |
+|  select  |     tmp_17_i1_fu_695    |    0    |    0    |    0    |    32   |
 |          |  bias_load_phi_i_fu_757 |    0    |    0    |    0    |    32   |
 |----------|-------------------------|---------|---------|---------|---------|
 |          |     exitcond1_fu_472    |    0    |    0    |    0    |    3    |
@@ -4525,8 +4525,6 @@ Memories:
 |                         |   FF   |
 +-------------------------+--------+
 | bias_load_phi_i_reg_1007|   32   |
-|     biased_1_reg_910    |   32   |
-|     biased_3_reg_966    |   32   |
 |  fc1_bias_addr_reg_895  |    7   |
 |  fc1_bias_load_reg_905  |   32   |
 | fc1_weight_addr_reg_885 |   16   |
@@ -4569,6 +4567,8 @@ Memories:
 |      sum_i_reg_274      |   32   |
 |    tmp_15_i1_reg_946    |   64   |
 |     tmp_15_i_reg_890    |   64   |
+|    tmp_17_i1_reg_966    |   32   |
+|     tmp_17_i_reg_910    |   32   |
 |      tmp_i4_reg_923     |   15   |
 +-------------------------+--------+
 |          Total          |   930  |

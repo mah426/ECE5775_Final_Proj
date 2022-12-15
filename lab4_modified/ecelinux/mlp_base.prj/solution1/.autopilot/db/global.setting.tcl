@@ -43,8 +43,8 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c {../../layer.cpp ../../mlp.cpp}}
 set SourceFlags {sc {} c {{ } { }}}
-set DirectiveFile {/home/nrb74/ece5775/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_base.prj/solution1/solution1.directive}
-set TBFiles {verilog {../../data ../../mlp_test.cpp} bc {../../data ../../mlp_test.cpp} sc {../../data ../../mlp_test.cpp} vhdl {../../data ../../mlp_test.cpp} c {} cas {../../data ../../mlp_test.cpp}}
+set DirectiveFile {/home/qs73/ece5775/b_qi2/ECE5775_Final_Proj/lab4_modified/ecelinux/mlp_base.prj/solution1/solution1.directive}
+set TBFiles {verilog {../../test_data2 ../../data2 ../../mlp_test.cpp} bc {../../test_data2 ../../data2 ../../mlp_test.cpp} sc {../../test_data2 ../../data2 ../../mlp_test.cpp} vhdl {../../test_data2 ../../data2 ../../mlp_test.cpp} c {} cas {../../test_data2 ../../data2 ../../mlp_test.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

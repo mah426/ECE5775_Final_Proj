@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dut'" level="0">
-<item name = "Date">Fri Dec  9 22:55:43 2022
+<item name = "Date">Wed Dec 14 19:58:48 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">mlp_base.prj</item>
@@ -129,7 +129,7 @@
 <item name = "Max Delay">8.16</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'output_V', mlp.cpp:62">call, 8.16, 8.16, -, -, -, -, -, -, -, -, -, dut_mlp_xcel, -</column>
+<column name="'output_V', mlp.cpp:38">call, 8.16, 8.16, -, -, -, -, -, -, -, -, -, dut_mlp_xcel, -</column>
 </table>
 </item>
 </section>

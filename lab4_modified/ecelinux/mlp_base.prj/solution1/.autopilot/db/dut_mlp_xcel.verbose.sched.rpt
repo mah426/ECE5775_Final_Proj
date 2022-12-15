@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'dut_mlp_xcel'
 ================================================================
-* Date:           Fri Dec  9 22:55:40 2022
+* Date:           Wed Dec 14 19:58:46 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        mlp_base.prj
@@ -292,8 +292,8 @@ ST_9: stg_83 [1/1] 1.57ns
 ST_9: stg_84 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_9: tmp_17_i [1/1] 0.00ns
-:1  %tmp_17_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_9: tmp_18_i [1/1] 0.00ns
+:1  %tmp_18_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_9: stg_86 [1/1] 1.57ns
 :2  br label %2
@@ -455,17 +455,17 @@ ST_26: notlhs [1/1] 2.00ns
 ST_26: notrhs [1/1] 2.39ns
 :8  %notrhs = icmp eq i23 %tmp_12, 0
 
-ST_26: tmp_2 [1/1] 0.00ns (grouped into LUT with out node biased_1)
+ST_26: tmp_2 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i)
 :9  %tmp_2 = or i1 %notrhs, %notlhs
 
 ST_26: tmp_3 [1/1] 6.79ns
 :10  %tmp_3 = fcmp ogt float %biased, 0.000000e+00
 
-ST_26: tmp_4 [1/1] 0.00ns (grouped into LUT with out node biased_1)
+ST_26: tmp_4 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i)
 :11  %tmp_4 = and i1 %tmp_2, %tmp_3
 
-ST_26: biased_1 [1/1] 1.37ns (out node of the LUT)
-:12  %biased_1 = select i1 %tmp_4, float %biased, float 0.000000e+00
+ST_26: tmp_17_i [1/1] 1.37ns (out node of the LUT)
+:12  %tmp_17_i = select i1 %tmp_4, float %biased, float 0.000000e+00
 
 
  <State 27>: 2.71ns
@@ -473,10 +473,10 @@ ST_27: mem_conv2_addr_2 [1/1] 0.00ns
 :13  %mem_conv2_addr_2 = getelementptr [4704 x float]* %mem_conv2, i64 0, i64 %tmp_15_i
 
 ST_27: stg_133 [1/1] 2.71ns
-:14  store float %biased_1, float* %mem_conv2_addr_2, align 4
+:14  store float %tmp_17_i, float* %mem_conv2_addr_2, align 4
 
 ST_27: empty_9 [1/1] 0.00ns
-:15  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_17_i)
+:15  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_18_i)
 
 ST_27: stg_135 [1/1] 0.00ns
 :16  br label %0
@@ -501,8 +501,8 @@ dense_mlp.2.exit:4  br i1 %exitcond2, label %dense_mlp.1.exit, label %5
 ST_28: stg_141 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_28: tmp_19_i [1/1] 0.00ns
-:1  %tmp_19_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_28: tmp_20_i [1/1] 0.00ns
+:1  %tmp_20_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_28: p_shl_i [1/1] 0.00ns
 :2  %p_shl_i = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %n_i2, i7 0)
@@ -642,39 +642,39 @@ ST_39: fc2_bias_load [1/2] 2.39ns
 
 
  <State 40>: 7.26ns
-ST_40: biased_2 [5/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_40: biased_1 [5/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 41>: 7.26ns
-ST_41: biased_2 [4/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_41: biased_1 [4/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 42>: 7.26ns
-ST_42: biased_2 [3/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_42: biased_1 [3/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 43>: 7.26ns
-ST_43: biased_2 [2/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_43: biased_1 [2/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 44>: 7.26ns
-ST_44: biased_2 [1/5] 7.26ns
-:3  %biased_2 = fadd float %sum_i5, %fc2_bias_load
+ST_44: biased_1 [1/5] 7.26ns
+:3  %biased_1 = fadd float %sum_i5, %fc2_bias_load
 
 
  <State 45>: 8.16ns
-ST_45: biased_2_to_int [1/1] 0.00ns
-:4  %biased_2_to_int = bitcast float %biased_2 to i32
+ST_45: biased_1_to_int [1/1] 0.00ns
+:4  %biased_1_to_int = bitcast float %biased_1 to i32
 
 ST_45: tmp_13 [1/1] 0.00ns
-:5  %tmp_13 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %biased_2_to_int, i32 23, i32 30)
+:5  %tmp_13 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %biased_1_to_int, i32 23, i32 30)
 
 ST_45: tmp_14 [1/1] 0.00ns
-:6  %tmp_14 = trunc i32 %biased_2_to_int to i23
+:6  %tmp_14 = trunc i32 %biased_1_to_int to i23
 
 ST_45: notlhs3 [1/1] 2.00ns
 :7  %notlhs3 = icmp ne i8 %tmp_13, -1
@@ -682,17 +682,17 @@ ST_45: notlhs3 [1/1] 2.00ns
 ST_45: notrhs3 [1/1] 2.39ns
 :8  %notrhs3 = icmp eq i23 %tmp_14, 0
 
-ST_45: tmp_15 [1/1] 0.00ns (grouped into LUT with out node biased_3)
+ST_45: tmp_15 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i1)
 :9  %tmp_15 = or i1 %notrhs3, %notlhs3
 
 ST_45: tmp_16 [1/1] 6.79ns
-:10  %tmp_16 = fcmp ogt float %biased_2, 0.000000e+00
+:10  %tmp_16 = fcmp ogt float %biased_1, 0.000000e+00
 
-ST_45: tmp_17 [1/1] 0.00ns (grouped into LUT with out node biased_3)
+ST_45: tmp_17 [1/1] 0.00ns (grouped into LUT with out node tmp_17_i1)
 :11  %tmp_17 = and i1 %tmp_15, %tmp_16
 
-ST_45: biased_3 [1/1] 1.37ns (out node of the LUT)
-:12  %biased_3 = select i1 %tmp_17, float %biased_2, float 0.000000e+00
+ST_45: tmp_17_i1 [1/1] 1.37ns (out node of the LUT)
+:12  %tmp_17_i1 = select i1 %tmp_17, float %biased_1, float 0.000000e+00
 
 
  <State 46>: 2.71ns
@@ -700,10 +700,10 @@ ST_46: mem_conv1_addr_1 [1/1] 0.00ns
 :13  %mem_conv1_addr_1 = getelementptr [4704 x float]* %mem_conv1, i64 0, i64 %tmp_15_i1
 
 ST_46: stg_196 [1/1] 2.71ns
-:14  store float %biased_3, float* %mem_conv1_addr_1, align 4
+:14  store float %tmp_17_i1, float* %mem_conv1_addr_1, align 4
 
 ST_46: empty_12 [1/1] 0.00ns
-:15  %empty_12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_19_i)
+:15  %empty_12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_20_i)
 
 ST_46: stg_198 [1/1] 0.00ns
 :16  br label %dense_mlp.2.exit
@@ -734,8 +734,8 @@ dense_mlp.1.exit:6  br i1 %exitcond4, label %dense_mlp.exit, label %9
 ST_47: stg_206 [1/1] 0.00ns
 :0  call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind
 
-ST_47: tmp_21_i [1/1] 0.00ns
-:1  %tmp_21_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
+ST_47: tmp_22_i [1/1] 0.00ns
+:1  %tmp_22_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)
 
 ST_47: stg_208 [1/1] 1.57ns
 :2  br label %10
@@ -799,8 +799,8 @@ ST_48: tmp_18 [1/1] 0.00ns
 ST_48: bias_load_phi_i [1/1] 1.37ns
 :2  %bias_load_phi_i = select i1 %tmp_18, float 0x3FCEB24800000000, float 0xBFD067CE80000000
 
-ST_48: biased_4 [5/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_48: biased_2 [5/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 49>: 8.41ns
@@ -861,23 +861,23 @@ ST_57: stg_241 [1/1] 0.00ns
 
 
  <State 58>: 7.26ns
-ST_58: biased_4 [4/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_58: biased_2 [4/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 59>: 7.26ns
-ST_59: biased_4 [3/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_59: biased_2 [3/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 60>: 7.26ns
-ST_60: biased_4 [2/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_60: biased_2 [2/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 61>: 7.26ns
-ST_61: biased_4 [1/5] 7.26ns
-:3  %biased_4 = fadd float %sum_i1, %bias_load_phi_i
+ST_61: biased_2 [1/5] 7.26ns
+:3  %biased_2 = fadd float %sum_i1, %bias_load_phi_i
 
 
  <State 62>: 2.71ns
@@ -888,10 +888,10 @@ ST_62: mem_conv2_addr_4 [1/1] 0.00ns
 :4  %mem_conv2_addr_4 = getelementptr [4704 x float]* %mem_conv2, i64 0, i64 %tmp_15_i2
 
 ST_62: stg_248 [1/1] 2.71ns
-:5  store float %biased_4, float* %mem_conv2_addr_4, align 4
+:5  store float %biased_2, float* %mem_conv2_addr_4, align 4
 
 ST_62: empty_15 [1/1] 0.00ns
-:6  %empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_21_i)
+:6  %empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp_22_i)
 
 ST_62: stg_250 [1/1] 0.00ns
 :7  br label %dense_mlp.1.exit

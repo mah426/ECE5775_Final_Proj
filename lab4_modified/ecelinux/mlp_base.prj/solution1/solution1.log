@@ -13,15 +13,15 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:62) automatically.
+@I [XFORM-602] Inlining function 'mlp_xcel' into 'dut' (mlp.cpp:38) automatically.
 @I [XFORM-102] Automatically partitioning small array 'fc3_bias' completely based on array size.
 @I [XFORM-101] Partitioning array 'fc3_bias' in dimension 1 completely.
-@I [XFORM-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:156) automatically.
-@I [XFORM-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:158) automatically.
-@I [XFORM-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:159) automatically.
-@I [XFORM-401] Performing if-conversion on hyperblock from (layer.cpp:158:14) to (layer.cpp:157:36) in function 'conv1'... converting 4 basic blocks.
-@I [XFORM-11] Balancing expressions in function 'conv1' (layer.cpp:132)...3 expression(s) balanced.
-@I [HLS-111] Elapsed time: 5.72 seconds; current memory usage: 110 MB.
+@I [XFORM-602] Inlining function 'dense_mlp.2' into 'mlp_xcel' (mlp.cpp:118) automatically.
+@I [XFORM-602] Inlining function 'dense_mlp.1' into 'mlp_xcel' (mlp.cpp:120) automatically.
+@I [XFORM-602] Inlining function 'dense_mlp' into 'mlp_xcel' (mlp.cpp:121) automatically.
+@I [XFORM-401] Performing if-conversion on hyperblock from (layer.cpp:159:14) to (layer.cpp:158:36) in function 'conv1'... converting 4 basic blocks.
+@I [XFORM-11] Balancing expressions in function 'conv1' (layer.cpp:133)...3 expression(s) balanced.
+@I [HLS-111] Elapsed time: 5.58 seconds; current memory usage: 110 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'dut' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -29,7 +29,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 111 MB.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 111 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'dut_conv1' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -38,13 +38,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 111 MB.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 111 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'dut_max_pool' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.13 seconds; current memory usage: 112 MB.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 112 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'dut_max_pool' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -53,13 +53,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 112 MB.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 112 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'dut_mlp_xcel' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.14 seconds; current memory usage: 113 MB.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 113 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'dut_mlp_xcel' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -68,13 +68,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.18 seconds; current memory usage: 114 MB.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 114 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'dut' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.21 seconds; current memory usage: 114 MB.
+@I [HLS-111] Elapsed time: 0.17 seconds; current memory usage: 114 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'dut' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -83,7 +83,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 114 MB.
+@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 114 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'dut_conv1' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -96,7 +96,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'dut_max_pool'.
-@I [HLS-111] Elapsed time: 0.24 seconds; current memory usage: 117 MB.
+@I [HLS-111] Elapsed time: 0.2 seconds; current memory usage: 117 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'dut_mlp_xcel' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -104,7 +104,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [RTGEN-100] Generating core module 'dut_fcmp_32ns_32ns_1_1': 1 instance(s).
 @I [RTGEN-100] Generating core module 'dut_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'dut_mlp_xcel'.
-@I [HLS-111] Elapsed time: 0.39 seconds; current memory usage: 129 MB.
+@I [HLS-111] Elapsed time: 0.33 seconds; current memory usage: 129 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'dut' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -112,7 +112,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [RTGEN-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
 @I [RTGEN-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'dut'.
-@I [HLS-111] Elapsed time: 0.4 seconds; current memory usage: 132 MB.
+@I [HLS-111] Elapsed time: 0.3 seconds; current memory usage: 132 MB.
 @I [RTMG-279] Implementing memory 'dut_conv1_conv1_weight_rom' using auto ROMs.
 @I [RTMG-279] Implementing memory 'dut_conv1_conv2_weight_rom' using auto ROMs.
 @I [RTMG-279] Implementing memory 'dut_mlp_xcel_fc1_weight_rom' using auto ROMs.
@@ -126,4 +126,4 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [SYSC-301] Generating SystemC RTL for dut.
 @I [VHDL-304] Generating VHDL RTL for dut.
 @I [VLOG-307] Generating Verilog RTL for dut.
-@I [HLS-112] Total elapsed time: 45.575 seconds; peak memory usage: 132 MB.
+@I [HLS-112] Total elapsed time: 42.665 seconds; peak memory usage: 132 MB.

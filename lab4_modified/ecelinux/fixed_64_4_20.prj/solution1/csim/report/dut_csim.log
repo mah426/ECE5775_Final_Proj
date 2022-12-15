@@ -1,0 +1,7 @@
+   Compiling ../../../../mlp_test.cpp in release mode
+   Compiling ../../../../layer.cpp in release mode
+   Compiling ../../../../mlp.cpp in release mode
+   Generating csim.exe
+Accuracy: 0.92
+digirec mlp         :      1 calls; 518.493 msecs total time
+INFO: [SIM 1] CSim done with 0 errors.
