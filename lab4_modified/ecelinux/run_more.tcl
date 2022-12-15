@@ -56,7 +56,7 @@ set_directive_loop_unroll conv1/LOOP_R
 # -------------------------------------------------
 #Pipeline
 # -------------------------------------------------
-set_directive_pipeline conv/LOOP_N
+set_directive_pipeline conv1/LOOP_N
 
 # -------------------------------------------------
 # Array Reshape
